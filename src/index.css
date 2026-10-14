@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@keyframes slideDownSoft {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroScaleIn {
+  from { opacity: 0; transform: scale(1.035); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(1.5rem) scale(1.05); }
+  50% { transform: translateY(1.85rem) scale(1.05); }
+}
+
+@keyframes softPulse {
+  0%, 100% { box-shadow: 0 8px 20px rgb(236 72 153 / 22%); }
+  50% { box-shadow: 0 12px 28px rgb(236 72 153 / 40%); }
+}
+
+.site-navbar { animation: slideDownSoft 650ms cubic-bezier(.16, 1, .3, 1) both; }
+.site-logo { animation: gentleFloat 4s ease-in-out 800ms infinite; }
+.nav-item { animation: revealUp 500ms cubic-bezier(.16, 1, .3, 1) both; }
+.nav-item:nth-child(1) { animation-delay: 180ms; }
+.nav-item:nth-child(2) { animation-delay: 240ms; }
+.nav-item:nth-child(3) { animation-delay: 300ms; }
+.nav-item:nth-child(4) { animation-delay: 360ms; }
+.nav-item:nth-child(5) { animation-delay: 420ms; }
+.nav-item:nth-child(6) { animation-delay: 480ms; }
+.navbar-cta { animation: revealUp 550ms 420ms cubic-bezier(.16, 1, .3, 1) both, softPulse 2.8s 1.1s ease-in-out infinite; }
+
+.button-motion {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 320ms cubic-bezier(.16, 1, .3, 1), box-shadow 320ms ease, background-color 320ms ease, border-color 320ms ease;
+}
+.button-motion::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: -45%;
+  width: 35%;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 38%), transparent);
+  transform: skewX(-22deg) translateX(-220%);
+  transition: transform 650ms cubic-bezier(.16, 1, .3, 1);
+}
+.button-motion:hover {
+  transform: translateY(-3px) scale(1.018);
+  box-shadow: 0 14px 26px rgb(190 24 93 / 28%);
+}
+.button-motion:hover::before { transform: skewX(-22deg) translateX(680%); }
+.button-motion:active { transform: translateY(0) scale(.98); }
+
+.hero-banner-image { animation: heroScaleIn 900ms cubic-bezier(.16, 1, .3, 1) both; }
+.hero-content { animation: revealUp 800ms 180ms cubic-bezier(.16, 1, .3, 1) both; }
+.feature-panel, .info-panel { animation: revealUp 700ms cubic-bezier(.16, 1, .3, 1) both; }
+.lift-card { transition: transform 260ms ease, box-shadow 260ms ease; }
+.lift-card:hover { transform: translateY(-7px); box-shadow: 0 16px 30px rgb(190 24 93 / 12%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .site-navbar, .site-logo, .nav-item, .navbar-cta, .hero-banner-image, .hero-content, .feature-panel, .info-panel { animation: none; }
+  .button-motion, .lift-card { transition: none; }
+}
