@@ -107,8 +107,8 @@ function Feature() {
       />
 
       {/* 9 Features Cards Grid Section */}
-      <section className="bg-white px-3 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto max-w-[1720px]">
+      <section className="bg-white px-4 py-6 sm:px-6  lg:py-8">
+        <div className="mx-auto max-w-[1600px]">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 sm:gap-5">
             {featuresList.map((feature, index) => (
               <div

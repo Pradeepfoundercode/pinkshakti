@@ -24,6 +24,7 @@ import VisionBanner from "../components/common/VisionBanner"
 import PhoneBanner from '../components/common/PhoneBanner'
 
 function Home() {
+  
   return (
     <>
       <PageBanner
@@ -51,52 +52,102 @@ function Home() {
         }}
       />
 
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-3">
-        <div className="feature-panel mx-auto max-w-[1600px] rounded-3xl bg-[#fff7fa] px-6 py-2 ">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="inline-flex rounded-full bg-pink-100 px-3  text-xs font-bold uppercase tracking-wide text-[#e60067]">
-                • Our Features
-              </p>
-              <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#102849] sm:text-4xl">
-                <span className="text-[#e60067]">A Safer, Stronger</span>
-                <span className="block">and Empowered Women</span>
-              </h2>
-            </div>
+<section className="bg-white px-4 sm:px-6 lg:px-8 py-5 overflow-hidden">
+  <div className="feature-panel mx-auto max-w-[1600px] rounded-3xl bg-[#fff7fa] px-4 py-6 sm:px-6">
+    <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <p className="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#e60067]">
+          • Our Features
+        </p>
+        <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#102849] sm:text-4xl">
+          <span className="text-[#e60067]">A Safer, Stronger</span>
+          <span className="block">and Empowered Women</span>
+        </h2>
+      </div>
 
-            <p className="max-w-md pb-1 text-sm leading-relaxed text-slate-600 sm:text-base">
-              Pink Shakti brings together safety, awareness, health and opportunities for women in one platform.
-            </p>
+      <p className="max-w-md pb-1 text-sm leading-relaxed text-slate-600 sm:text-base">
+        Pink Shakti brings together safety, awareness, health and opportunities for women in one platform.
+      </p>
 
-            <Link to="/features" className="inline-flex items-center gap-2  text-sm font-bold text-[#e60067] transition hover:text-[#c9005a]">
-              Explore All Features
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+      <Link to="/features" className="group inline-flex items-center gap-2 text-sm font-bold text-[#e60067] transition hover:text-[#c9005a]">
+        Explore All Features
+        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+      </Link>
+    </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-            {[
-              { title: "Women Safety", description: "Emergency Response Support System (ERSS) for women.", icon: womenSafetyIcon },
-              { title: "Anonymous Crime Reporting", description: "Report incidents anonymously with map location & e-FIR.", icon: anonymousReportIcon },
-              { title: "Women Schemes", description: "Information about government schemes for women.", icon: womenSchemesIcon },
-              { title: "Women Laws & Rights", description: "Know your rights, laws and PoSH Act 2013.", icon: womenLawsIcon },
-              { title: "Pink Health", description: "Mental health, menstrual health and cervical cancer awareness.", icon: pinkHealthIcon },
-              { title: "E-FIR", description: "Direct access to UP Police e-FIR portal.", icon: eFirIcon },
-            ].map((feature) => (
-              <article key={feature.title} className="lift-card flex min-h-56 flex-col rounded-2xl bg-white p-5 shadow-sm ring-1 ring-pink-100">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-pink-100 p-2">
-                  <img src={feature.icon} alt="" className="h-full w-full object-contain" />
-                </div>
-                <h3 className="mt-5 font-serif text-lg font-bold leading-tight text-[#102849]">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{feature.description}</p>
-                <Link to="/features" aria-label={`Learn more about ${feature.title}`} className="mt-auto inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#e60067] text-white transition hover:bg-[#c9005a]">
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-            ))}
-          </div>
+    {/* Scroll Container: Py-8 adds vertical space for hover states so the box shadow and ring do not get cut. 
+        Instead of playing with negative margins which was causing the side clip, we just let the slider have px-2 padding and the gap-6 handles the space between. 
+        Added a pseudo element approach via Tailwind flex shrink-0 to give extra space at the end if needed, though px-2 usually suffices. */}
+   
+<div className="mt-4 overflow-hidden">
+  <div
+    className="
+      flex gap-6
+      overflow-x-auto overflow-y-hidden
+      px-3 pt-6 pb-8
+      snap-x snap-mandatory scroll-smooth
+      [&::-webkit-scrollbar]:hidden
+      [-ms-overflow-style:none]
+      [scrollbar-width:none]
+    "
+  >
+    {[
+      { title: "Women Safety", description: "Emergency Response Support System (ERSS) for women.", icon: womenSafetyIcon },
+      { title: "Anonymous Crime Reporting", description: "Report incidents anonymously with map location & e-FIR.", icon: anonymousReportIcon },
+      { title: "Women Schemes", description: "Information about government schemes for women.", icon: womenSchemesIcon },
+      { title: "Women Laws & Rights", description: "Know your rights, laws and PoSH Act 2013.", icon: womenLawsIcon },
+      { title: "Pink Health", description: "Mental health, menstrual health and cervical cancer awareness.", icon: pinkHealthIcon },
+      { title: "E-FIR", description: "Direct access to UP Police e-FIR portal.", icon: eFirIcon },
+    ].map((feature) => (
+      <article
+        key={feature.title}
+        className="
+          group snap-start shrink-0
+          w-[220px] sm:w-[230px]
+          lg:w-[calc(20%-1.2rem)]
+          flex flex-col text-left
+          rounded-2xl bg-white
+          px-4 py-4
+          border border-pink-200
+          shadow-sm
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:shadow-xl
+          hover:border-[#e60067]/40
+        "
+      >
+        <div className="mx-auto flex h-15 w-15 items-center justify-center rounded-full bg-pink-200 p-2.5 shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <img
+            src={feature.icon}
+            alt=""
+            className="h-full w-full object-contain"
+          />
         </div>
-      </section>
+
+        <h3 className="mt-4 font-serif text-[19px] font-bold leading-tight text-[#102849] transition-colors duration-300 group-hover:text-[#e60067]">
+          {feature.title}
+        </h3>
+
+        <p className="mt-1.5 mb-4 text-[13px] leading-tight text-slate-500">
+          {feature.description}
+        </p>
+
+        <Link
+          to="/features"
+          aria-label={`Learn more about ${feature.title}`}
+          className="mt-auto inline-flex h-8 w-8 items-center justify-center rounded-full bg-pink-50 text-[#e60067] shadow-sm transition-all duration-300 group-hover:bg-[#e60067] group-hover:text-white"
+        >
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+        </Link>
+      </article>
+    ))}
+
+    <div className="shrink-0 w-1 lg:hidden" />
+  </div>
+</div>
+
+  </div>
+</section>
 
       {/* <section className="bg-white px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14">
         <div className="info-panel mx-auto grid max-w-[1600px] gap-6 rounded-3xl bg-[#fff7fa] p-6 lg:grid-cols-[1.05fr_1.55fr] lg:p-7">
@@ -166,112 +217,138 @@ function Home() {
       />
 
       <section>
-        <div className="bg-white px-4  sm:px-6 lg:px-8 ">
-          <div className="mx-auto max-w-[1600px]">
-            <div className="flex flex-col gap-8 rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] shadow-sm sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:px-10 ">
-
-              {/* Left Headline */}
-              <div className="shrink-0 lg:max-w-xs xl:max-w-sm">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#e60067]">
-                  • OUR IMPACT
-                </span>
-                <h2 className="mt-2.5 font-serif text-2xl font-bold leading-tight text-[#102849] sm:text-3xl lg:text-[2rem]">
-                  <span className="text-[#e60067]">Together</span> For
-                  <span className="block text-[#102849]">A Safer Tomorrow</span>
-                </h2>
-              </div>
-
-              {/* 4 Impact Columns with Dividers */}
-              <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:flex lg:flex-1 lg:items-center lg:justify-around lg:gap-0">
-                {[
-                  { title: "Women's Safety", icon: womenSafetyIcon },
-                  { title: "Community Awareness", icon: communityIcon },
-                  { title: "Access to Rights", icon: eFirIcon },
-                  { title: "Health & Wellbeing", icon: pinkHealthIcon },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="flex flex-1 flex-col items-center justify-center px-2 text-center lg:border-l lg:border-pink-200/80 lg:px-4"
-                  >
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#fdebf3] p-3 transition-transform duration-300 hover:scale-105 sm:h-18 sm:w-18 sm:p-3.5">
-                      <img
-                        src={item.icon}
-                        alt={item.title}
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
-                    <span className="mt-3 text-xs font-bold text-[#102849] sm:text-sm lg:text-[0.95rem]">
-                      {item.title}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-            </div>
-          </div>
+  <div className="bg-white px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-[1600px]">
+      
+      {/* Main Container - Original padding (sm:p-8) and gap (gap-8) restored */}
+      <div className="group/card flex flex-col gap-8 rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] p-5 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+        
+        {/* Left Headline */}
+        <div className="shrink-0 lg:max-w-xs xl:max-w-sm">
+          <span className="inline-flex cursor-default items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-sm transition-transform duration-300 hover:scale-105">
+            {/* Modern Live Blinking Dot */}
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full  rounded-full bg-[#e60067] opacity-75"></span>
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#e60067]"></span>
+            </span>
+            OUR IMPACT
+          </span>
+          <h2 className="mt-2.5 font-serif text-2xl font-bold leading-tight text-[#102849] sm:text-3xl lg:text-[2rem]">
+            <span className="text-[#e60067]">Together</span> For
+            <span className="block text-[#102849]">A Safer Tomorrow</span>
+          </h2>
         </div>
-      </section>
+
+        {/* 4 Impact Columns - Original grid and gap (gap-6) restored */}
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:flex lg:flex-1 lg:items-center lg:justify-around lg:gap-0">
+          {[
+            { title: "Women's Safety", icon: womenSafetyIcon },
+            { title: "Community Awareness", icon: communityIcon },
+            { title: "Access to Rights", icon: eFirIcon },
+            { title: "Health & Wellbeing", icon: pinkHealthIcon },
+          ].map((item, index) => (
+            <div
+              key={item.title}
+              className={`group flex flex-1 cursor-pointer flex-col items-center justify-center px-2 text-center lg:px-4 ${
+                index !== 0 ? "lg:border-l lg:border-pink-200/80" : ""
+              }`}
+            >
+              {/* Icon Container - Restored to original rounded-full with modern hover effect */}
+              <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[#fdebf3] p-3 transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:shadow-md group-hover:shadow-pink-200 sm:h-[72px] sm:w-[72px] sm:p-3.5">
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="relative z-10 h-full w-full object-contain transition-all duration-500 ease-out group-hover:scale-110"
+                />
+                {/* Subtle Glow Effect Behind Icon on Hover */}
+                <div className="absolute inset-0 -z-10 rounded-full bg-pink-400 opacity-0 blur transition-opacity duration-500 group-hover:opacity-20"></div>
+              </div>
+              
+              {/* Text Styling - Restored original font sizes */}
+              <span className="mt-3 text-xs font-bold text-[#102849] transition-colors duration-300 group-hover:text-[#e60067] sm:text-sm lg:text-[0.95rem]">
+                {item.title}
+              </span>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Gallery Section */}
-      <section className="mt-7">
-        <div className="bg-white px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-          <div className="mx-auto max-w-[1600px]">
-            <div className="flex flex-col gap-6 rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] p-5 shadow-sm sm:p-7 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:px-8 xl:px-10">
+    <section className="mt-7">
+  <div className="bg-white px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
+    <div className="mx-auto max-w-[1600px]">
+      
+      {/* Main Container - Original padding (p-5, sm:p-7) and gap (gap-6) restored */}
+      <div className="group/section flex flex-col gap-6 rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] p-5 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 sm:p-7 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:px-8 xl:px-10">
 
-              {/* Left Title Area */}
-              <div className="w-full shrink-0 lg:w-64 xl:w-80">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#e60067]">
-                  • GALLERY
-                </span>
-                <h2 className="mt-2.5 font-serif text-2xl font-bold leading-tight text-[#102849] sm:text-3xl lg:text-[1.75rem] xl:text-[2rem]">
-                  <span className="text-[#e60067]">Creating Awareness,</span>
-                  <span className="block text-[#102849]">Building Stronger Communities</span>
-                </h2>
-              </div>
-
-              {/* 4 Gallery Photos - Fully Responsive Grid */}
-              <div className="grid w-full min-w-0 flex-1 grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3 lg:gap-3 xl:gap-4">
-                {[
-                  { id: 1, src: image1, alt: "Community Awareness" },
-                  { id: 2, src: image2, alt: "Pink Shakti Outreach" },
-                  { id: 3, src: image3, alt: "Women Workshop" },
-                  { id: 4, src: image4, alt: "Awareness Drive" },
-                ].map((item, idx) => (
-                  <div
-                    key={item.id}
-                    className="group relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-xl border border-pink-100 bg-pink-50/60 shadow-xs transition-transform duration-300 hover:scale-105 sm:rounded-2xl"
-                  >
-                    {item.src ? (
-                      <img
-                        src={item.src}
-                        alt={item.alt}
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-pink-100/70 to-pink-50 p-2 text-center text-pink-400">
-                        <ImageIcon className="h-6 w-6 stroke-1 text-pink-400/80" />
-                        <span className="mt-1 text-[11px] font-semibold text-pink-500">Image {idx + 1}</span>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Right CTA Button */}
-              <div className="flex shrink-0 justify-start lg:justify-end">
-                <Link
-                  to="/gallery"
-                  className="button-motion inline-flex items-center gap-2 rounded-full border-2 border-[#e60067] bg-white px-5 py-2.5 text-sm font-semibold text-[#e60067] whitespace-nowrap shadow-xs transition hover:bg-[#e60067] hover:text-white"
-                >
-                  View Gallery
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-
-            </div>
-          </div>
+        {/* Left Title Area */}
+        <div className="w-full shrink-0 lg:w-64 xl:w-80">
+          <span className="inline-flex cursor-default items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-sm transition-transform duration-300 hover:scale-105">
+            {/* Modern Live Blinking Dot */}
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full  rounded-full bg-[#e60067] opacity-75"></span>
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#e60067]"></span>
+            </span>
+            GALLERY
+          </span>
+          <h2 className="mt-2.5 font-serif text-2xl font-bold leading-tight text-[#102849] sm:text-3xl lg:text-[1.75rem] xl:text-[2rem]">
+            <span className="text-[#e60067]">Creating Awareness,</span>
+            <span className="block text-[#102849]">Building Stronger Communities</span>
+          </h2>
         </div>
-      </section>
+
+        {/* 4 Gallery Photos - Original gaps (gap-2.5, sm:gap-3) restored */}
+        <div className="grid w-full min-w-0 flex-1 grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3 lg:gap-3 xl:gap-4">
+          {[
+            { id: 1, src: image1, alt: "Community Awareness" }, // Ensure variables are defined
+            { id: 2, src: image2, alt: "Pink Shakti Outreach" },
+            { id: 3, src: image3, alt: "Women Workshop" },
+            { id: 4, src: image4, alt: "Awareness Drive" },
+          ].map((item, idx) => (
+            <div
+              key={item.id}
+              className="group relative aspect-[4/3] w-full min-w-0 cursor-pointer overflow-hidden rounded-xl bg-pink-50/60 shadow-xs border border-pink-100 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:shadow-pink-200 sm:rounded-2xl"
+            >
+              {item.src ? (
+                <>
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  />
+                  {/* Subtle Dark Overlay on Hover */}
+                  <div className="absolute inset-0 bg-pink-900/0 transition-colors duration-500 group-hover:bg-pink-900/10"></div>
+                </>
+              ) : (
+                <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-pink-100/70 to-pink-50 p-2 text-center transition-transform duration-500 group-hover:scale-105">
+                  <ImageIcon className="h-6 w-6 stroke-1 text-pink-400/80 transition-transform duration-500 group-hover:-translate-y-1 group-hover:text-pink-500" />
+                  <span className="mt-1 text-[11px] font-semibold text-pink-500">Image {idx + 1}</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Right CTA Button - Original padding restored */}
+        <div className="flex shrink-0 justify-start lg:justify-end">
+          <Link
+            to="/gallery"
+            className="group inline-flex items-center gap-2 rounded-full border-2 border-[#e60067] bg-white px-5 py-2.5 text-sm font-semibold text-[#e60067] whitespace-nowrap shadow-xs transition-all duration-300 ease-out hover:bg-[#e60067] hover:text-white hover:shadow-md hover:shadow-pink-500/40"
+          >
+            View Gallery
+            {/* Arrow Animation on Hover */}
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
+          </Link>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
     </>
   )
 }
