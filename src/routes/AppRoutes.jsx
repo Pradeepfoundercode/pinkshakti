@@ -14,6 +14,7 @@ function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/features" element={<Feature />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   )

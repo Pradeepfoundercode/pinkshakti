@@ -1,27 +1,11 @@
 import React from 'react'
-import { ArrowRight, Download, Quote, Image as ImageIcon } from 'lucide-react'
+import { ArrowRight, Download, Image as ImageIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import homeBanner from "../assets/home/Empowered Women Shaping Tomorrow.png"
-import womenSafetyIcon from "../assets/logo/women_safety.png"
-import anonymousReportIcon from "../assets/logo/bell.png"
-import womenSchemesIcon from "../assets/logo/women_schems.png"
-import womenLawsIcon from "../assets/logo/laws&rights.png"
-import pinkHealthIcon from "../assets/logo/healths.png"
-import eFirIcon from "../assets/logo/note.png"
-import communityIcon from "../assets/logo/communities.png"
-import appDownloadBanner from "../assets/home/banner2.png"
-import qrCode from "../assets/home/qr.png"
-import googlePlayBadge from "../assets/logo/play_store.png"
-import appleStoreBadge from "../assets/logo/apple.png"
-import waveBackdrop from "../assets/home/Pastel Pink Botanical Frame.png"
-import visionPortrait from "../assets/home/mam_image.png"
-import image1 from "../assets/home/1fourth.png"
-import image2 from "../assets/home/2fourth.png"
-import image3 from "../assets/home/3fourth.png"
-import image4 from "../assets/home/3th.png"
 import PageBanner from "../components/common/PageBanner"
 import VisionBanner from "../components/common/VisionBanner"
 import PhoneBanner from '../components/common/PhoneBanner'
+import { homeFeatures, homeImpactItems, homeGalleryItems } from '../constants/homeData'
 
 function Home() {
   
@@ -91,14 +75,7 @@ function Home() {
       [scrollbar-width:none]
     "
   >
-    {[
-      { title: "Women Safety", description: "Emergency Response Support System (ERSS) for women.", icon: womenSafetyIcon },
-      { title: "Anonymous Crime Reporting", description: "Report incidents anonymously with map location & e-FIR.", icon: anonymousReportIcon },
-      { title: "Women Schemes", description: "Information about government schemes for women.", icon: womenSchemesIcon },
-      { title: "Women Laws & Rights", description: "Know your rights, laws and PoSH Act 2013.", icon: womenLawsIcon },
-      { title: "Pink Health", description: "Mental health, menstrual health and cervical cancer awareness.", icon: pinkHealthIcon },
-      { title: "E-FIR", description: "Direct access to UP Police e-FIR portal.", icon: eFirIcon },
-    ].map((feature) => (
+    {homeFeatures.map((feature) => (
       <article
         key={feature.title}
         className="
@@ -241,12 +218,7 @@ function Home() {
 
         {/* 4 Impact Columns - Original grid and gap (gap-6) restored */}
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:flex lg:flex-1 lg:items-center lg:justify-around lg:gap-0">
-          {[
-            { title: "Women's Safety", icon: womenSafetyIcon },
-            { title: "Community Awareness", icon: communityIcon },
-            { title: "Access to Rights", icon: eFirIcon },
-            { title: "Health & Wellbeing", icon: pinkHealthIcon },
-          ].map((item, index) => (
+          {homeImpactItems.map((item, index) => (
             <div
               key={item.title}
               className={`group flex flex-1 cursor-pointer flex-col items-center justify-center px-2 text-center lg:px-4 ${
@@ -303,12 +275,7 @@ function Home() {
 
         {/* 4 Gallery Photos - Original gaps (gap-2.5, sm:gap-3) restored */}
         <div className="grid w-full min-w-0 flex-1 grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3 lg:gap-3 xl:gap-4">
-          {[
-            { id: 1, src: image1, alt: "Community Awareness" }, // Ensure variables are defined
-            { id: 2, src: image2, alt: "Pink Shakti Outreach" },
-            { id: 3, src: image3, alt: "Women Workshop" },
-            { id: 4, src: image4, alt: "Awareness Drive" },
-          ].map((item, idx) => (
+          {homeGalleryItems.map((item, idx) => (
             <div
               key={item.id}
               className="group relative aspect-[4/3] w-full min-w-0 cursor-pointer overflow-hidden rounded-xl bg-pink-50/60 shadow-xs border border-pink-100 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:shadow-pink-200 sm:rounded-2xl"

@@ -1,0 +1,4 @@
+export * from './homeData'
+export * from './aboutData'
+export * from './featuresData'
+export * from './contactData'

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Mail, Phone, MapPin, Send, User, ChevronDown, Shield, Users, Leaf, ExternalLink } from 'lucide-react'
 import PageBanner from '../components/common/PageBanner'
 import PhoneBanner from '../components/common/PhoneBanner'
+import { subjectOptions, officeLocation } from '../constants/contactData'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -275,11 +276,9 @@ export default function Contact() {
             className="w-full appearance-none rounded-xl border border-pink-200/80 bg-white px-3.5 py-2 pr-8 text-[13px] sm:text-sm text-slate-700 outline-none transition-all duration-300 hover:border-pink-300 hover:shadow-sm focus:-translate-y-0.5 focus:border-[#e60067] focus:shadow-md focus:shadow-pink-100 focus:ring-1 focus:ring-pink-200 cursor-pointer"
           >
             <option value="" disabled>Select a subject</option>
-            <option value="General Inquiry">General Inquiry</option>
-            <option value="Partnership & Collaboration">Partnership &amp; Collaboration</option>
-            <option value="Women Support & Awareness">Women Support &amp; Awareness</option>
-            <option value="Media & Press">Media &amp; Press</option>
-            <option value="Feedback">Feedback</option>
+            {subjectOptions.map((subj) => (
+              <option key={subj} value={subj}>{subj}</option>
+            ))}
           </select>
           <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-500 transition-colors duration-300 group-hover/select:text-[#e60067] group-focus-within/field:text-[#e60067]" />
         </div>
@@ -319,6 +318,89 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Location Section: Find Us Here (Pure Background Color Matching Design) */}
+     <section className="bg-white px-4 pb-4 sm:px-6  lg:px-8  pt-0">
+  <div className="mx-auto max-w-[1600px]">
+    {/* Main Container - Reduced padding (p-4 sm:p-5 lg:p-6) and added Hover Lift */}
+    <div className="group/location relative overflow-hidden rounded-2xl sm:rounded-3xl border border-pink-100 bg-[#fff5f8] px-2 md:px-8  py-4 shadow-xs transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-500/10">
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:items-center">
+        
+        {/* Left Details */}
+        <div className="lg:col-span-5">
+          {/* Badge */}
+          <div>
+            <span className="inline-flex cursor-default items-center gap-1.5 rounded-full bg-[#ffd8e6] px-2.5 py-0.5 text-[11px] font-bold text-[#e60067] shadow-sm transition-transform duration-300 hover:scale-105 hover:bg-[#ffc2d8]">
+              <MapPin className="h-2.5 w-2.5 fill-[#e60067]" />
+              <span>{officeLocation.badge}</span>
+            </span>
+          </div>
+
+          {/* Heading - Reduced top margin (mt-1.5) */}
+          <h2 className="mt-1.5 font-bold text-xl sm:text-2xl lg:text-[1.75rem] leading-tight">
+            <span className="text-[#e60067] transition-colors duration-300 group-hover/location:text-[#c9005a]">
+              {officeLocation.titlePink}
+            </span>{" "}
+            <span className="text-[#102849]">{officeLocation.titleNavy}</span>
+          </h2>
+
+          {/* Address - Reduced top margin (mt-1.5) */}
+          <p className="mt-1.5 text-[11px] sm:text-xs font-semibold text-[#102849] leading-relaxed transition-colors duration-300 group-hover/location:text-slate-800">
+            {officeLocation.addressLine1}<br />
+            {officeLocation.addressLine2}
+          </p>
+
+          {/* Get Directions Link Button - Reduced top margin (mt-3) and added icon animation */}
+          <div className="mt-3">
+            <a
+              href={officeLocation.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 rounded-xl bg-[#e60067] px-4 py-2 text-[11px] sm:text-xs font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c9005a] hover:shadow-md hover:shadow-pink-500/30 active:scale-[0.98]"
+            >
+              <MapPin className="h-3.5 w-3.5" />
+              <span>Get Directions</span>
+              {/* Icon slide animation on hover */}
+              <ExternalLink className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
+            </a>
+          </div>
+        </div>
+
+        {/* Right Map View - Reduced heights (h-[180px] to h-[240px]) */}
+        <div className="lg:w-[700px] lg:h-[210px]">
+          <div className="relative h-[180px] sm:h-[220px] md:h-[210px] w-full overflow-hidden rounded-2xl border border-pink-200/80 shadow-xs transition-all duration-500 hover:shadow-lg hover:shadow-pink-200">
+            <iframe
+              src={officeLocation.mapEmbedSrc}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="AKTU New Campus - Navachar Incubation Centre, FOAP"
+              className="h-full w-full border-0 transition-transform duration-700 hover:scale-[1.02]"
+            ></iframe>
+
+            {/* Marker Tooltip Overlay - Added hover scale effect */}
+            <div className="absolute left-3 top-3 sm:left-4 sm:top-4 z-10 flex cursor-default items-center gap-2 rounded-xl border border-pink-100 bg-white/95 px-3 py-2 shadow-md backdrop-blur-xs transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#ffd8e6] text-[#e60067]">
+                <MapPin className="h-3.5 w-3.5 fill-[#e60067]" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-[#102849] leading-tight">
+                  {officeLocation.name}
+                </p>
+                <p className="text-[10px] text-slate-500 leading-tight">
+                  {officeLocation.addressLine2}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Pillars Strip: Safety | Awareness | Empowerment */}
     <section className="bg-white px-2 sm:px-4 py-6 sm:px-6 lg:py-6">
