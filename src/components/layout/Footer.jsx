@@ -7,14 +7,14 @@ import googlePlayBadge from "../../assets/logo/play_store.png";
 
 export default function Footer() {
   const quickLinksLeft = [
-    { name: "One Stop Centers", path: "/" },
-    { name: "Emergency Helplines", path: "/" },
+    { name: "One Stop Centers", path: "/one-stop-centers" },
+    { name: "Emergency Helplines", path: "/emergency-helplines" },
     { name: "Our Feedback", path: "/" },
   ];
 
   const quickLinksRight = [
     { name: "Gallery", path: "/gallery" },
-    { name: "Downloads", path: "/downloads" },
+   
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -112,24 +112,24 @@ export default function Footer() {
             <div className="mt-3.5 grid grid-cols-2 gap-x-4 gap-y-2">
               <div className="flex flex-col space-y-2">
                 {quickLinksLeft.map((link) => (
-                  <Link
+                  <a
                     key={link.name}
-                    to={link.path}
+                    href={link.path}
                     className="inline-block w-fit text-xs sm:text-sm font-medium text-pink-100/85 transition-all duration-300 ease-out hover:translate-x-1.5 hover:text-white"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
               <div className="flex flex-col space-y-2">
                 {quickLinksRight.map((link) => (
-                  <Link
+                  <a
                     key={link.name}
-                    to={link.path}
+                    href={link.path}
                     className="inline-block w-fit text-xs sm:text-sm font-medium text-pink-100/85 transition-all duration-300 ease-out hover:translate-x-1.5 hover:text-white"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function Footer() {
             <div className="mt-3.5 flex flex-wrap items-center gap-2.5">
               {/* Google Play Button with modern pop up animation */}
               <Link
-                to="/downloads"
+                to="/"
                 aria-label="Get it on Google Play"
                 className="group inline-flex h-10 w-[132px] items-center justify-center gap-2 rounded-lg bg-black px-2.5 text-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:bg-neutral-900 hover:shadow-lg hover:shadow-black/40"
               >
@@ -200,19 +200,19 @@ export default function Footer() {
             © 2024 Pink Shakti. All Rights Reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link
-              to="/privacy-policy"
+            <a
+              href="/privacy-policy"
               className="transition-all duration-300 hover:-translate-y-0.5 hover:text-white"
             >
               Privacy Policy
-            </Link>
+            </a>
             <span className="text-white/30">|</span>
-            <Link
-              to="/terms-and-conditions"
+            <a
+              href="/terms-and-conditions"
               className="transition-all duration-300 hover:-translate-y-0.5 hover:text-white"
             >
               Terms &amp; Conditions
-            </Link>
+            </a>
           </div>
         </div>
       </div>

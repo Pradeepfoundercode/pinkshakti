@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import appDownloadBanner from "../../assets/home/banner2.png";
+import appDownloadBanner from "../../assets/home/Pink Mobile App Showcase Banner (1).png";
 import googlePlayBadge from "../../assets/logo/play_store.png";
 import qrCode from "../../assets/home/qr.png";
 
@@ -12,19 +12,19 @@ export default function PhoneBanner() {
   }, []);
 
   return (
-    <section className="relative isolate overflow-hidden w-full h-[260px] sm:h-[320px] md:h-[360px] lg:h-[400px]">
+    <section className="relative isolate overflow-hidden w-full h-[190px]  md:h-[300px] lg:h-[300px]">
       {/* Background Image with slow zoom-out effect */}
       <img
         src={appDownloadBanner}
         alt="Pink Shakti App on mobile"
-        className={`absolute inset-0 h-full w-full object-cover sm:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
+        className={`absolute inset-0 h-full w-full object-fill object-center  lg:object-fill  -z-10 transition-transform duration-[2000ms] ease-out ${
           isLoaded ? "scale-100" : "scale-110"
         }`}
       />
 
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-100/70 to-pink-100/95 sm:hidden z-0"></div>
 
-      <div className="relative z-10 flex flex-col justify-center h-full ml-[38%] sm:ml-[42%] lg:ml-[45%] w-[58%] sm:w-[45%] lg:w-[40%] text-[#102849] pr-2 sm:pr-0">
+      <div className="relative z-10 flex flex-col justify-center h-full ml-[41%] sm:ml-[45%] lg:ml-[45%] w-[58%] sm:w-[45%] lg:w-[40%] text-[#102849] pr-2 sm:pr-0">
         
         {/* Badge */}
         <div 

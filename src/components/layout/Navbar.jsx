@@ -53,30 +53,32 @@ export default function Navbar() {
     return (
         <nav 
             className={`w-full sticky top-0 z-50 transition-all duration-500 ease-in-out border-b ${
-                scrolled ? "bg-white/90 backdrop-blur-md border-pink-100 shadow-[0_4px_20px_rgba(230,0,103,0.08)] py-1.5" : "bg-white border-transparent py-2.5"
+                scrolled ? "bg-white/95 backdrop-blur-md border-pink-100 shadow-[0_4px_20px_rgba(230,0,103,0.08)] py-1" : "bg-white border-transparent py-1.5"
             }`}
         >
             <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Navbar container - flex with relative for absolute centering of nav links */}
-                <div className="flex items-center justify-between w-full h-16 sm:h-16 relative">
+                {/* Navbar container - Flex layout prevents overlapping */}
+                <div className="flex items-center justify-between w-full h-14">
                     
-                    {/* Logo (Left side) */}
-                    <Link to="/" className="relative z-10 flex items-center flex-shrink-0 group lg:ml-10">
-                        <img
-                            src={logo}
-                            alt="Pink Shakti"
-                            className="h-14 sm:h-18 w-auto object-contain transition-all duration-500 group-hover:scale-110 group-hover:-rotate-1"
-                        />
-                    </Link>
+                    {/* Left Side (Logo) */}
+                    <div className="flex sm:ml-10 lg:flex-1 items-center justify-start">
+                        <Link to="/" className="relative z-10 flex items-center flex-shrink-0 group">
+                            <img
+                                src={logo}
+                                alt="Pink Shakti"
+                                className="h-14 sm:h-16 w-auto object-contain transition-all duration-500 group-hover:scale-105"
+                            />
+                        </Link>
+                    </div>
 
-                    {/* Nav Links (Perfectly Centered) */}
-                    <div className="hidden md:flex items-center space-x-6 lg:space-x-10 absolute left-1/2 -translate-x-1/2">
+                    {/* Center (Nav Links) - Perfectly centered, won't overlap */}
+                    <div className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-10">
                         {navLinks.map((link) => (
                             <NavLink
                                 key={link.name}
                                 to={link.path}
                                 className={({ isActive }) =>
-                                    `group relative py-2 text-[15px] font-medium transition-colors duration-300 ${
+                                    `group relative py-2 text-[15px] font-medium transition-colors duration-300 whitespace-nowrap ${
                                         isActive ? "text-[#E60067]" : "text-gray-600 hover:text-[#E60067]"
                                     }`
                                 }
@@ -93,13 +95,13 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    {/* Right Actions (Right side) */}
-                    <div className="flex items-center gap-3 sm:gap-4 lg:mr-6">
+                    {/* Right Side (Actions) */}
+                    <div className="flex lg:flex-1 items-center justify-end gap-3 sm:gap-4">
                         
                         {/* Get The App CTA */}
                         <Link
                             to="/downloads"
-                            className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95"
+                            className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 whitespace-nowrap"
                         >
                             <Download className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1" />
                             <span>Get The App</span>
@@ -109,7 +111,7 @@ export default function Navbar() {
                         <div className="hidden md:block relative" ref={langRef}>
                             <button
                                 onClick={() => setIsLangOpen(!isLangOpen)}
-                                className="flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95"
+                                className="flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 whitespace-nowrap"
                             >
                                 <span>Language</span>
                                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isLangOpen ? "rotate-180" : ""}`} />
@@ -123,11 +125,11 @@ export default function Navbar() {
                             </div>
                         </div>
 
-                        {/* Hamburger Button (Mobile Only) */}
+                        {/* Hamburger Button (Mobile & Tablet) */}
                         <button
                             type="button"
                             onClick={() => setIsOpen(!isOpen)}
-                            className="md:hidden p-2.5 rounded-full text-gray-700 hover:text-[#E60067] hover:bg-pink-50 transition-all duration-300 focus:outline-none"
+                            className="lg:hidden p-2 rounded-full text-gray-700 hover:text-[#E60067] hover:bg-pink-50 transition-all duration-300 focus:outline-none"
                         >
                             <div className="relative w-6 h-6 flex items-center justify-center">
                                 <Menu className={`absolute w-6 h-6 transition-all duration-300 ${isOpen ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"}`} />
@@ -139,7 +141,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Dropdown Menu with smooth slide down */}
-            <div className={`md:hidden overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] bg-white/95 backdrop-blur-md shadow-2xl ${isOpen ? "max-h-[500px] opacity-100 border-t border-pink-50" : "max-h-0 opacity-0"}`}>
+            <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] bg-white/95 backdrop-blur-md shadow-2xl ${isOpen ? "max-h-[500px] opacity-100 border-t border-pink-50" : "max-h-0 opacity-0"}`}>
                 <div className="px-4 py-5 space-y-2">
                     {navLinks.map((link) => (
                         <NavLink
@@ -157,7 +159,7 @@ export default function Navbar() {
                     ))}
                     
                     {/* Mobile Language Option */}
-                    <div className="pt-2">
+                    <div className="pt-2 md:hidden">
                         <button
                             onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
                             className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-base font-medium text-gray-600 transition-colors duration-300 hover:text-[#E60067] hover:bg-gray-50"
@@ -187,7 +189,7 @@ export default function Navbar() {
                     <Link
                         to="/downloads"
                         onClick={() => setIsOpen(false)}
-                        className="mt-6 flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-4 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 active:scale-95"
+                        className="mt-6 flex sm:hidden items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-4 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 active:scale-95"
                     >
                         <Download className="h-5 w-5" />
                         <span>Get The App</span>

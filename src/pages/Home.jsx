@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <PageBanner
-        bannerImage={homeBanner}
+      
         alt="Women from diverse professions representing Pink Shakti"
         badge={["SAFE WOMEN", "STRONGER SOCIETY"]}
         title={
@@ -53,10 +53,10 @@ function Home() {
         Pink Shakti brings together safety, awareness, health and opportunities for women in one platform.
       </p>
 
-      <Link to="/features" className="group inline-flex items-center gap-2 text-sm font-bold text-[#e60067] transition hover:text-[#c9005a]">
+      <a href="/features" className="group inline-flex items-center gap-2 text-sm font-bold text-[#e60067] transition hover:text-[#c9005a]">
         Explore All Features
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-      </Link>
+      </a>
     </div>
 
     {/* Scroll Container: Py-8 adds vertical space for hover states so the box shadow and ring do not get cut. 
@@ -302,14 +302,14 @@ function Home() {
 
         {/* Right CTA Button - Original padding restored */}
         <div className="flex shrink-0 justify-start lg:justify-end">
-          <Link
-            to="/gallery"
+          <a
+            href="/gallery"
             className="group inline-flex items-center gap-2 rounded-full border-2 border-[#e60067] bg-white px-5 py-2.5 text-sm font-semibold text-[#e60067] whitespace-nowrap shadow-xs transition-all duration-300 ease-out hover:bg-[#e60067] hover:text-white hover:shadow-md hover:shadow-pink-500/40"
           >
             View Gallery
             {/* Arrow Animation on Hover */}
             <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
-          </Link>
+          </a>
         </div>
 
       </div>

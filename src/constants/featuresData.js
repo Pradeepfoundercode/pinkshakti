@@ -110,7 +110,7 @@ export const featuresList = [
   {
     title: "One Stop Centers",
     description: "Find One Stop Centers near you for support and assistance.",
-    link: "/features",
+    link: "/one-stop-centers",
     bgImage: cardBgImage9,
     icon: communityIcon,
   },
