@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Camera, X } from "lucide-react";
-import PhoneBanner from "../components/common/PhoneBanner";
-import galleryBanner from "../assets/gallery/Pink Community Leadership Photo Collage (1).png";
-import { getGalleryImage } from "../services/gallery.service";
+import { useTranslation } from "react-i18next";
+import PhoneBanner from "../../components/common/PhoneBanner";
+import galleryBanner from "../../assets/gallery/Pink Community Leadership Photo Collage (1).png";
+import { getGalleryImage } from "../../services/gallery.service";
 
 function Gallery() {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  
+
   const [galleryData, setGalleryData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,7 +24,7 @@ function Gallery() {
       try {
         setIsLoading(true);
         const response = await getGalleryImage();
-        
+
         if (isMounted && response?.status && response?.data) {
           setGalleryData(response.data);
         }
@@ -50,49 +52,44 @@ function Gallery() {
         <img
           src={galleryBanner}
           alt="Pink Shakti Gallery - Moments of Change, Stories of Strength"
-          className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${
-            isLoaded ? "scale-100" : "scale-110"
-          }`}
+          className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+            }`}
         />
 
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent md:hidden" />
 
         <div className="hero-content relative z-10 flex h-full w-[95%] flex-col justify-center px-[5%] text-[#102849] sm:w-[85%] sm:px-[8%] md:w-[65%] lg:w-[55%]">
           <h1
-            className={`font-serif text-[28px] font-bold leading-tight tracking-tight text-[#102849] transition-all duration-700 ease-out delay-300 sm:text-[34px] md:text-[40px] lg:text-[46px] ${
-              isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            }`}
+            className={`font-serif text-[28px] font-bold leading-tight tracking-tight text-[#102849] transition-all duration-700 ease-out delay-300 sm:text-[30px] md:text-[34px] lg:text-[38px] ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
           >
-            Gallery
+            {t("gallery.title", { defaultValue: "Gallery" })}
           </h1>
 
           <h2
-            className={`mt-1.5 text-base font-bold leading-snug text-[#e60067] transition-all duration-700 ease-out delay-400 sm:mt-2 sm:text-lg lg:text-[1.2rem] ${
-              isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            }`}
+            className={`mt-1.5 text-base font-bold leading-snug text-[#e60067] transition-all duration-700 ease-out delay-400 sm:mt-2 sm:text-lg lg:text-[1.2rem] ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
           >
-            Moments of Change, Stories of Strength
+            {t("gallery.subtitle", { defaultValue: "Moments of Change, Stories of Strength" })}
           </h2>
 
           <p
-            className={`mt-1.5 max-w-lg text-[12px] font-medium leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 sm:mt-2 sm:text-[13px] lg:text-[14px] ${
-              isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            }`}
+            className={`mt-1.5 max-w-lg text-[12px] font-medium leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 sm:mt-2 sm:text-[13px] lg:text-[14px] ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
           >
-            A glimpse of our awareness programs, community engagements,
-            events, and initiatives towards a safer, stronger society.
+            {t("gallery.description", { defaultValue: "A glimpse of our awareness programs, community engagements, events, and initiatives towards a safer, stronger society." })}
           </p>
         </div>
       </section>
 
       <section className="bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-[1600px] flex flex-col gap-10">
-          
+
           {isLoading ? (
             <div className="flex h-60 items-center justify-center">
               <div className="flex flex-col items-center gap-3">
                 <div className="h-10 w-10 animate-spin rounded-full border-4 border-pink-200 border-t-[#e60067]"></div>
-                <p className="text-sm font-medium text-slate-500">Loading gallery...</p>
+                <p className="text-sm font-medium text-slate-500">{t("gallery.loading", { defaultValue: "Loading gallery..." })}</p>
               </div>
             </div>
           ) : (
@@ -101,15 +98,15 @@ function Gallery() {
                 if (!images || images.length === 0) return null;
 
                 return (
-                  <div 
-                    key={categoryKey} 
+                  <div
+                    key={categoryKey}
                     className="relative overflow-hidden rounded-[24px] border border-pink-100 bg-[#fff5f8] p-5 sm:p-6 lg:p-7 shadow-sm"
                   >
                     <div className="mb-6 flex flex-col gap-4">
                       <div>
                         <span className="inline-flex cursor-default items-center gap-1.5 rounded-full bg-[#ffd8e6] px-2.5 py-0.5 text-[11px] font-bold text-[#e60067] shadow-sm uppercase tracking-wide">
                           <Camera className="h-3 w-3 fill-[#e60067]" />
-                          <span>PHOTO GALLERY</span>
+                          <span>{t("gallery.badge", { defaultValue: "PHOTO GALLERY" })}</span>
                         </span>
 
                         <h2 className="mt-2 text-2xl font-bold leading-tight text-[#e60067] sm:text-3xl">
@@ -117,7 +114,7 @@ function Gallery() {
                         </h2>
 
                         <p className="mt-1 max-w-3xl text-[13px] leading-relaxed text-slate-600 sm:text-sm">
-                          Snapshots from our events, awareness campaigns, workshops and community outreach programs.
+                          {t("gallery.sectionSubtitle", { defaultValue: "Snapshots from our events, awareness campaigns, workshops and community outreach programs." })}
                         </p>
                       </div>
                     </div>
@@ -140,7 +137,7 @@ function Gallery() {
                             }}
                             className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                           />
-                          
+
                           <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 p-3">
                             <p className="translate-y-4 text-[11px] font-medium leading-tight text-white transition-transform duration-300 group-hover:translate-y-0 line-clamp-2">
                               {image.image_title || image.gallery_name}
@@ -154,7 +151,7 @@ function Gallery() {
               })}
             </>
           )}
-          
+
           {!isLoading && Object.keys(galleryData).length === 0 && (
             <div className="rounded-2xl border border-slate-200 bg-white py-16 text-center shadow-sm">
               <Camera className="mx-auto mb-4 h-12 w-12 text-slate-300" />
@@ -193,7 +190,7 @@ function Gallery() {
                 className="max-h-[75vh] max-w-full object-contain"
               />
             </div>
-            
+
             {(selectedImage.image_title || selectedImage.gallery_name) && (
               <div className="mt-4 px-2 text-center sm:px-6">
                 <span className="mb-2 inline-block rounded-full bg-[#e60067] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">

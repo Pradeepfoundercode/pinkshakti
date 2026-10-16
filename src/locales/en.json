@@ -1,0 +1,480 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "features": "Features",
+    "gallery": "Gallery",
+    "contact": "Contact Us",
+    "getApp": "Get The App"
+  },
+  "footer": {
+    "tagline": "Women Safety & Empowerment",
+    "description": "Empowering women through awareness, rapid response helplines, and dedicated one-stop support centers.",
+    "quickLinksTitle": "Quick Links",
+    "oneStopCenters": "One Stop Centers",
+    "emergencyHelplines": "Emergency Helplines",
+    "gallery": "Gallery",
+    "contactUs": "Contact Us",
+    "ourFeedback": "Our Feedback",
+    "contactTitle": "Contact",
+    "location": "Uttar Pradesh, India",
+    "website": "www.pinkshakti.in",
+    "totalVisitors": "Total Visitors",
+    "getItOn": "Get it on",
+    "googlePlay": "Google Play",
+    "allRightsReserved": "Pink Shakti. All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsAndConditions": "Terms & Conditions"
+  },
+  "phoneBanner": {
+    "badge": "DOWNLOAD NOW",
+    "titlePink": "Pink Shakti App",
+    "titleNavy": "Now On Your Mobile",
+    "description": "A Safer, Empowered and Informed You – Always.",
+    "scanTitle": "Scan to Download",
+    "scanSubtitle": "Pink Shakti App",
+    "getItOn": "GET IT ON",
+    "googlePlay": "Google Play"
+  },
+  "pinkInfo": {
+    "bannerTitlePink": "Pink",
+    "bannerTitleNavy": "Info",
+    "bannerDesc": "Reliable information on government schemes, women laws, rights and PoSH Act 2013 to help, protect and empower women.",
+    "pills": {
+      "knowledge": "Knowledge",
+      "safety": "Safety",
+      "awareness": "Awareness",
+      "empowerment": "Empowerment"
+    },
+    "cards": {
+      "exploreDetails": "Explore Details",
+      "schemes": {
+        "title": "Government Schemes",
+        "desc": "Discover various government schemes and programs for women's education, health, skill development, financial support and overall empowerment."
+      },
+      "laws": {
+        "title": "Women Laws",
+        "desc": "Learn about important laws and legal provisions that protect women from violence, harassment and discrimination."
+      },
+      "rights": {
+        "title": "Women Rights",
+        "desc": "Know your rights, including equality, dignity, safety, education, property rights and access to justice for a more equal and empowered society."
+      },
+      "posh": {
+        "title": "PoSH Act 2013",
+        "desc": "Get information about the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 and your rights at the workplace."
+      }
+    }
+  },
+  "anonymousCrime": {
+    "bannerTitlePink": "Anonymous",
+    "bannerTitleNavy": "Crime Reporting",
+    "bannerDesc": "Report incidents anonymously with map location and e-FIR information, Help create safer communities and support women by sharing details of unsafe locations, incidents and more.",
+    "reportNow": "Report Now",
+    "sectionTitle": "Report Incidents Anonymously",
+    "sectionDesc": "Pink Shakti enables women to report unsafe locations, incidents and other concerns anonymously. You can share details with map location, upload photos and help create safer communities.",
+    "reportAnonymouslyBtn": "Report Anonymously",
+    "features": {
+      "map": {
+        "title": "Map Based Reporting",
+        "desc": "Mark the exact location of the incident on map."
+      },
+      "photos": {
+        "title": "Add Photos",
+        "desc": "Upload images to provide more details."
+      },
+      "stayAnonymous": {
+        "title": "Stay Anonymous",
+        "desc": "Your identity remains private and confidential."
+      },
+      "communitySafety": {
+        "title": "Community Safety",
+        "desc": "Help make your city safer for all women."
+      },
+      "efirInfo": {
+        "title": "e-FIR Information",
+        "desc": "Get information and redirection to e-FIR portal if needed."
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Report an incident in just a few simple steps.",
+      "steps": {
+        "step1": {
+          "title": "Select Location",
+          "desc": "Mark the incident location on map."
+        },
+        "step2": {
+          "title": "Add Details",
+          "desc": "Describe the incident and any relevant information."
+        },
+        "step3": {
+          "title": "Upload Photos",
+          "desc": "Add images if available."
+        },
+        "step4": {
+          "title": "Submit Anonymously",
+          "desc": "Your report will be submitted securely without revealing your identity."
+        }
+      }
+    },
+    "keyBenefits": {
+      "title": "Key Benefits",
+      "subtitle": "Your report can help create a safer environment for women.",
+      "benefits": {
+        "benefit1": {
+          "title": "Helps Identify Unsafe Locations",
+          "desc": "Supports data collection for safer communities."
+        },
+        "benefit2": {
+          "title": "Raises Awareness",
+          "desc": "Helps authorities and communities become more aware."
+        },
+        "benefit3": {
+          "title": "Supports Action",
+          "desc": "Contributes to safety measures and better planning."
+        },
+        "benefit4": {
+          "title": "Empowers Women",
+          "desc": "Encourages more women to speak up and share information."
+        }
+      }
+    }
+  },
+  "home": {
+    "badgeSafe": "SAFE WOMEN",
+    "badgeSociety": "STRONGER SOCIETY",
+    "heroTitle1": "Empowering Women",
+    "heroFor": "For",
+    "heroSaferTomorrow": "A Safer Tomorrow",
+    "heroDesc": "Pink Shakti is a Women Safety, Awareness and Empowerment platform dedicated to building a safer, stronger and more independent Uttar Pradesh.",
+    "getApp": "Get The App",
+    "knowMore": "Know More",
+    "featuresBadge": "• Our Features",
+    "featuresHeadingPink": "A Safer, Stronger",
+    "featuresHeadingNavy": "and Empowered Women",
+    "featuresDesc": "Pink Shakti brings together safety, awareness, health and opportunities for women in one platform.",
+    "exploreAllFeatures": "Explore All Features",
+    "featureList": {
+      "womenSafetyTitle": "Women Safety",
+      "womenSafetyDesc": "Emergency Response Support System (ERSS) for women.",
+      "crimeReportTitle": "Anonymous Crime Reporting",
+      "crimeReportDesc": "Report incidents anonymously with map location & e-FIR.",
+      "schemesTitle": "Women Schemes",
+      "schemesDesc": "Information about government schemes for women.",
+      "lawsTitle": "Women Laws & Rights",
+      "lawsDesc": "Know your rights, laws and PoSH Act 2013.",
+      "healthTitle": "Pink Health",
+      "healthDesc": "Mental health, menstrual health and cervical cancer awareness.",
+      "eFirTitle": "E-FIR",
+      "eFirDesc": "Direct access to UP Police e-FIR portal."
+    },
+    "visionBadge": "Our Vision",
+    "visionTitle1": "A Safer Uttar Pradesh",
+    "visionWith": "With",
+    "visionTitle2": "Empowered Women",
+    "visionDesc": "Pink Shakti is the vision of Snigdhaa Ritesh, envisioned to create a safer, more aware and empowered community of women in Uttar Pradesh.",
+    "visionName": "Snigdhaa Ritesh",
+    "visionRole": "Chief Visionary, Pink Shakti",
+    "visionQuote": "When women are safe, aware and empowered, society becomes stronger.",
+    "impactBadge": "OUR IMPACT",
+    "impactTogether": "Together",
+    "impactFor": "For",
+    "impactSaferTomorrow": "A Safer Tomorrow",
+    "impactItems": {
+      "womenSafety": "Women's Safety",
+      "communityAwareness": "Community Awareness",
+      "accessToRights": "Access to Rights",
+      "healthWellbeing": "Health & Wellbeing"
+    },
+    "galleryBadge": "GALLERY",
+    "galleryTitlePink": "Creating Awareness,",
+    "galleryTitleNavy": "Building Stronger Communities",
+    "viewGallery": "View Gallery"
+  },
+  "about": {
+    "bannerTitlePink": "About",
+    "bannerTitleNavy": "Pink Shakti",
+    "bannerDesc": "An award-winning social startup working towards SDG-5 (Gender Equality), Pink Shakti is a one-stop technology solution for women's safety, awareness and empowerment.",
+    "journeyBadge": "• OUR JOURNEY",
+    "journeyTitle1": "A Step Towards",
+    "journeyTitle2": "A Safer & Stronger Society.",
+    "journeyDesc": "The Pink Shakti app has been developed after four years of extensive research and was launched on Women's Day 2024 by the Mayor of Lucknow, Ms. Sushma Kharkwal.",
+    "visionBadge": "• OUR VISION",
+    "visionText": "Promoting Holistic Women Empowerment through Technology-driven Aids to ensure Safety, Awareness & Empowerment of Women Populace in a Violence-Free Environment.",
+    "missionBadge": "• OUR MISSION",
+    "missionText": "To achieve SDG 5 by Empowering Women Populace of India and giving them a fair chance to contribute to Nation-Building with dignity, in a Discrimination-Free Environment with equal opportunities.",
+    "founderBadge": "OUR FOUNDER",
+    "founderName": "Ms. Snigdhaa Ritesh",
+    "founderRole": "Chief Visionary, Pink Shakti",
+    "founderDesc": "Ms. Snigdhaa Ritesh is a journalist with 16 years of experience in electronic and print media. Through her work, she has closely witnessed the challenges that women face in society. Her passion for creating a safer, more aware and empowered community of women led to the inception of Pink Shakti.",
+    "leadershipBadge": "• LEADERSHIP PANEL",
+    "leadershipTitle": "Our Leadership Panel",
+    "wisdomBadge": "• WISDOM PANEL",
+    "wisdomTitle": "Our Wisdom Panel",
+    "enrichmentBadge": "• ENRICHMENT PANEL",
+    "enrichmentTitle": "Our Enrichment Panel",
+    "partnersBadge": "• SOCIAL IMPACT PARTNERS",
+    "partnersTitle": "Our Partners",
+    "partnersSubtitle": "In Creating A Safer Society"
+  },
+  "features": {
+    "badge": "OUR FEATURES",
+    "titlePink": "A Safer, Stronger",
+    "titleNavy": "and Empowered Women",
+    "description": "Pink Shakti brings together safety, awareness, health and opportunities for women in one platform.",
+    "exploreFeature": "Explore Feature",
+    "dedicatedEfir": "View dedicated E-FIR page →",
+    "dedicatedCityScan": "View dedicated City Scan page →",
+    "items": {
+      "womenSafety": {
+        "title": "Women Safety",
+        "desc": "Emergency Response Support System (ERSS) and safety resources for women."
+      },
+      "anonymousCrime": {
+        "title": "Anonymous Crime Reporting",
+        "desc": "Report incidents anonymously with map location & e-FIR information."
+      },
+      "eFir": {
+        "title": "E-FIR",
+        "desc": "E-FIR information and official link to UP Police e-FIR portal."
+      },
+      "cityScan": {
+        "title": "City Scan",
+        "desc": "Check safety information and report unsafe areas in your city."
+      },
+      "pinkInfo": {
+        "title": "Pink Info",
+        "desc": "Important information and resources for a brighter tomorrow.",
+        "b1": "Government Schemes",
+        "b2": "Women Laws & Rights",
+        "b3": "PoSH Act 2013"
+      },
+      "pinkHealth": {
+        "title": "Pink Health",
+        "desc": "Health awareness and resources for women's well-being.",
+        "b1": "Mental Health",
+        "b2": "Menstrual Health",
+        "b3": "Cervical Cancer Awareness"
+      },
+      "analytics": {
+        "title": "Crime Data Analytics",
+        "desc": "View crime data, trends and safety insights for a safer Uttar Pradesh."
+      },
+      "helplines": {
+        "title": "Emergency Helplines",
+        "desc": "Access important helpline numbers like 112, 181, 1090 and more."
+      },
+      "oneStop": {
+        "title": "One Stop Centers",
+        "desc": "Find One Stop Centers near you for support and assistance."
+      }
+    }
+  },
+  "contact": {
+    "banner": {
+      "titlePink": "Contact",
+      "titleNavy": "Us",
+      "subtitleBold": "We're here to help you connect with Pink Shakti.",
+      "subtitleDesc": "For any inquiries, collaborations, support or information, please reach out to us. We would love to hear from you."
+    },
+    "info": {
+      "badge": "GET IN TOUCH",
+      "titlePink": "Contact",
+      "titleNavy": "Information",
+      "subtitle": "You can reach out to us through the following details:"
+    },
+    "form": {
+      "badge": "SEND US A MESSAGE",
+      "titlePink": "Send Us",
+      "titleNavy": "a Message",
+      "subtitle": "Fill in the form below and we will get back to you as soon as possible.",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "Enter 10-digit number",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "Enter subject",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Type your message here...",
+      "sendButton": "Send Message",
+      "sendingButton": "Sending..."
+    },
+    "location": {
+      "badge": "OUR LOCATION",
+      "titlePink": "Find Us",
+      "titleNavy": "Here",
+      "getDirections": "Get Directions"
+    },
+    "pillars": {
+      "safety": "Safety",
+      "awareness": "Awareness",
+      "empowerment": "Empowerment"
+    }
+  },
+  "feedback": {
+    "banner": {
+      "titlePink": "Your",
+      "titleNavy": "Feedback",
+      "subtitleBold": "Your Voice Matters to Us",
+      "subtitleDesc": "Help us improve and make Pink Shakti more useful, accessible and impactful for every woman. Share your feedback, suggestions or experience with us."
+    },
+    "form": {
+      "badge": "SEND US YOUR FEEDBACK",
+      "titlePink": "Share",
+      "titleNavy": "Your Feedback",
+      "subtitle": "Your feedback helps us serve you better. Please fill in the details below.",
+      "successAlert": "Thank you! Your feedback has been submitted successfully.",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "Enter 10-digit number",
+      "locationLabel": "Location (City/District)",
+      "locationPlaceholder": "Enter your city or district",
+      "ratingQuestion": "How would you rate your experience with Pink Shakti?",
+      "ratings": {
+        "poor": "Poor",
+        "fair": "Fair",
+        "good": "Good",
+        "veryGood": "Very Good",
+        "excellent": "Excellent"
+      },
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "Enter subject",
+      "messageLabel": "Your Feedback / Suggestions",
+      "messagePlaceholder": "Type your feedback or suggestion here...",
+      "submitButton": "Submit Feedback",
+      "submittingButton": "Submitting..."
+    },
+    "whyMatters": {
+      "badge": "WHY YOUR FEEDBACK MATTERS",
+      "titlePink": "Together",
+      "titleNavy": "for a Safer Tomorrow",
+      "desc": "Your feedback helps us understand what's working well and what can be improved to create a safer, more supportive platform.",
+      "f1Title": "Improve Services",
+      "f1Desc": "Help us enhance features and services based on input.",
+      "f2Title": "Better Support",
+      "f2Desc": "Your suggestions help provide timely and effective support.",
+      "f3Title": "Stronger Community",
+      "f3Desc": "Build a safer and more empowered community together.",
+      "f4Title": "Real Impact",
+      "f4Desc": "Drive positive change and greater impact across UP."
+    },
+    "immediate": {
+      "badge": "OTHER WAYS TO REACH US",
+      "titlePink": "Need",
+      "titleNavy": "Immediate Assistance?",
+      "subtitle": "For urgent support, please use our emergency helplines.",
+      "h1Title": "Emergency Response",
+      "h2Title": "Women Helpline",
+      "h3Title": "UP Power Line"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Moments of Change, Stories of Strength",
+    "description": "A glimpse of our awareness programs, community engagements, events, and initiatives towards a safer, stronger society.",
+    "badge": "PHOTO GALLERY",
+    "sectionSubtitle": "Snapshots from our events, awareness campaigns, workshops and community outreach programs.",
+    "loading": "Loading gallery..."
+  },
+  "emergencyHelplines": {
+    "banner": {
+      "titlePink": "Emergency",
+      "titleNavy": "Helplines",
+      "subtitleBold": "Immediate Assistance When You Need It Most",
+      "subtitleDesc": "Access 24x7 emergency helpline numbers for immediate help, protection, medical assistance, and legal support across India and Uttar Pradesh."
+    },
+    "callNow": "Call Now",
+    "badge24x7": "24 x 7",
+    "items": {
+      "h112Title": "Emergency Services",
+      "h112Desc": "India all-in-one emergency helpline number 112 was launched by Union Home Minister Rajnath Singh in 16 states and Union Territories. The 112 emergency helpline number would provide immediate assistance for any kind of emergency services for citizens like police help, hospital emergency, fire case women safety issue and child protection. Any citizen in distress situation can dial 112 and immediate help will reach to him or her within minutes.",
+      "h181Title": "Women Helpline for Domestic Violence",
+      "h181Desc": "181 is a National Helpline in India that serves as a dedicated support system for women facing adversity. With a focus on issues like domestic violence and harassment, it offers a safe space for women to seek help. Beyond immediate aid, Helpline 181 provides counselling, legal assistance, and rescue services, contributing significantly to women safety and well-being across the country.",
+      "h1090Title": "Women Power Line (Uttar Pradesh, India)",
+      "h1090Desc": "Women Power Line 1090 in Uttar Pradesh is a proactive initiative combating crimes against women. This helpline offers a rapid response to reports of harassment, stalking, and abuse, reinforcing women safety. By empowering women to speak out and seek assistance, Women Power Line 1090 plays a crucial role in building a secure and supportive community for women in the region."
+    },
+    "otherSection": {
+      "badge": "OTHER HELPLINES",
+      "titlePink": "Additional",
+      "titleNavy": "Support Services",
+      "desc": "Direct dial emergency and support helplines for specialized assistance.",
+      "h1098Title": "Child Helpline",
+      "h1098Desc": "For children in need of care and protection",
+      "h108Title": "Ambulance Service",
+      "h108Desc": "For medical emergency assistance",
+      "h14567Title": "Senior Citizen Helpline",
+      "h14567Desc": "Support for senior citizens in distress",
+      "h1930Title": "Cyber Crime Helpline",
+      "h1930Desc": "Report online fraud and cyber crime",
+      "h1091Title": "Women Safety Helpline (UP)",
+      "h1091Desc": "For immediate assistance and security"
+    },
+    "otherHelplinesHeading": "Other",
+    "otherHelplinesHeading2": "Important Helplines",
+    "safetyTipsHeading": "Safety",
+    "safetyTipsHeading2": "Tips",
+    "safetyTipsSubtitle": "Stay alert, stay safe. Keep these tips in mind:",
+    "safetyTipsList": [
+      "Save important helpline numbers in your phone",
+      "Share your live location with trusted family or friends",
+      "Use the Pink Shakti app for additional safety features",
+      "Stay aware of your surroundings while travelling",
+      "Report any suspicious activity immediately"
+    ]
+  },
+  "oneStopCenter": {
+    "banner": {
+      "titlePink": "One Stop",
+      "titleNavy": "Centers",
+      "subtitleBold": "Support. Safety. Assistance. All in One Place.",
+      "subtitleDesc": "One Stop Centers (OSC) provide integrated support and assistance to women affected by violence, under one roof, including medical aid, police assistance, legal support, counseling and temporary shelter."
+    },
+    "searchBox": {
+      "titlePink": "One Stop Center",
+      "titlePrefix": "Find a",
+      "titleSuffix": "Near You",
+      "subtitle": "Search by district, city or center name to get location, contact details and services available.",
+      "districtLabel": "District",
+      "allDistricts": "All Districts",
+      "cityAreaLabel": "City/Area",
+      "selectCityArea": "Select City/Area",
+      "searchLabel": "Center / Officer / Keyword",
+      "searchPlaceholder": "Enter center name, officer...",
+      "searchButton": "Search",
+      "reset": "Reset"
+    },
+    "results": {
+      "total": "Total",
+      "totalCentersInUP": "One Stop Centers in Uttar Pradesh",
+      "loading": "Loading One Stop Centers...",
+      "loadingSub": "Fetching latest records from government directory",
+      "officerLabel": "Officer:",
+      "support24x7": "24 x 7 Support",
+      "viewOnMap": "View on Map",
+      "noCenters": "No centers found matching your filter criteria.",
+      "resetAll": "Reset all filters",
+      "showing": "Showing",
+      "to": "to",
+      "of": "of",
+      "centersWord": "centers",
+      "servicesTitle": "Services Available at",
+      "servicesTitlePink": "One Stop Centers",
+      "services": {
+        "medical": "Medical Assistance",
+        "police": "Police Assistance",
+        "legal": "Legal Aid",
+        "counseling": "Counseling Services",
+        "shelter": "Temporary Shelter",
+        "video": "Video Conferencing Facility",
+        "rehab": "Support for Rehabilitation",
+        "referral": "Referral to Government Schemes"
+      }
+    }
+  }
+}

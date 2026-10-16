@@ -43,7 +43,7 @@ export const featuresList = [
   {
     title: "Anonymous Crime Reporting",
     description: "Report incidents anonymously with map location & e-FIR information.",
-    link: "/features",
+    link: "/features/anonymous-crime-reporting",
     bgImage: cardBgImage2,
     icon: anonymousReportIcon,
   },
@@ -77,7 +77,7 @@ export const featuresList = [
       "Women Laws & Rights",
       "PoSH Act 2013",
     ],
-    link: "/features",
+    link: "/features/pink-info",
     bgImage: cardBgImage5,
     icon: womenLawsIcon,
   },

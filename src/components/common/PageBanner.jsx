@@ -26,20 +26,18 @@ export default function PageBanner({
       <img
         src={bannerImage}
         alt={alt}
-        className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill  -z-10 transition-transform duration-[2000ms] ease-out ${
-          isLoaded ? "scale-100" : "scale-110"
-        }`}
+        className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill  -z-10 transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+          }`}
       />
 
       <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/10 md:hidden z-0"></div>
 
       <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[65%] lg:w-[55%] text-[#102849]">
-        
+
         {/* Breadcrumb / Badge */}
-        <div 
-          className={`transition-all duration-700 ease-out delay-100 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+        <div
+          className={`transition-all duration-700 ease-out delay-100 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {breadcrumb && (
             <div className="mb-1.5 sm:mb-2">
@@ -79,10 +77,9 @@ export default function PageBanner({
 
         {/* Title */}
         {title && (
-          <h1 
-            className={`mt-1 sm:mt-1.5 font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[38px] font-bold leading-[1.15] sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <h1
+            className={`mt-1 sm:mt-1.5 font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[38px] font-bold leading-[1.15] sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             {title}
           </h1>
@@ -90,10 +87,9 @@ export default function PageBanner({
 
         {/* Description */}
         {description && (
-          <p 
-            className={`mt-1.5 sm:mt-2 max-w-[34rem] text-[12px] sm:text-[13px] lg:text-[14px] font-medium leading-snug sm:leading-relaxed text-slate-700 line-clamp-3 transition-all duration-700 ease-out delay-500 ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <p
+            className={`mt-1.5 sm:mt-2 max-w-[34rem] text-[12px] sm:text-[13px] lg:text-[14px] font-medium leading-snug sm:leading-relaxed text-slate-700 line-clamp-3 transition-all duration-700 ease-out delay-500 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             {description}
           </p>
@@ -101,10 +97,9 @@ export default function PageBanner({
 
         {/* Buttons */}
         {(primaryButton || secondaryButton || children) && (
-          <div 
-            className={`mt-2.5 sm:mt-3.5 lg:mt-4 flex flex-wrap items-center gap-2.5 sm:gap-3 transition-all duration-700 ease-out delay-700 ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <div
+            className={`mt-2.5 sm:mt-3.5 lg:mt-4 flex flex-wrap items-center gap-2.5 sm:gap-3 transition-all duration-700 ease-out delay-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             {/* Primary Button (Exact same animation classes as Navbar) */}
             {primaryButton && (
