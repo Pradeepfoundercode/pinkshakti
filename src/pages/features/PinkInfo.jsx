@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight, Landmark, Gavel, ShieldCheck, Briefcase } from 'lucide-react'
 import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
@@ -20,11 +21,12 @@ function PinkInfo() {
     {
       id: 'schemes',
       icon: Landmark,
-      title: t('pinkInfo.cards.schemes.title', { defaultValue: 'Government Schemes' }),
+      title: t('pinkInfo.cards.schemes.title', { defaultValue: 'Women Schemes' }),
       description: t('pinkInfo.cards.schemes.desc', {
-        defaultValue: "Discover various government schemes and programs for women's education, health, skill development, financial support and overall empowerment.",
+        defaultValue: "Discover schemes and programs that support women's education, health, financial independence, skill development, and overall empowerment.",
       }),
       bgImage: cardBgImage,
+      link: '/features/pink-info/women-schemes',
     },
     {
       id: 'laws',
@@ -34,6 +36,7 @@ function PinkInfo() {
         defaultValue: 'Learn about important laws and legal provisions that protect women from violence, harassment and discrimination.',
       }),
       bgImage: cardBgImage2,
+      link: '/features/pink-info/women-laws',
     },
     {
       id: 'rights',
@@ -43,6 +46,7 @@ function PinkInfo() {
         defaultValue: 'Know your rights, including equality, dignity, safety, education, property rights and access to justice for a more equal and empowered society.',
       }),
       bgImage: cardBgImage3,
+      link: '/features/pink-info/women-rights',
     },
     {
       id: 'posh',
@@ -52,6 +56,7 @@ function PinkInfo() {
         defaultValue: 'Get information about the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 and your rights at the workplace.',
       }),
       bgImage: cardBgImage4,
+      link: '/features/pink-info/posh-act2013',
     },
   ]
 
@@ -184,9 +189,11 @@ function PinkInfo() {
                       <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-[#ffd8e6] text-[#e60067] shadow-xs transition-transform duration-300 group-hover:scale-110">
                         <item.icon className="h-4.5 w-4.5 sm:h-5 sm:w-5 stroke-[2.2]" />
                       </div>
-                      <h3 className="font-serif text-base sm:text-lg lg:text-[19px] font-bold text-[#e60067] leading-tight">
-                        {item.title}
-                      </h3>
+                      <Link to={item.link} className="hover:opacity-90">
+                        <h3 className="font-serif text-base sm:text-lg lg:text-[19px] font-bold text-[#e60067] leading-tight">
+                          {item.title}
+                        </h3>
+                      </Link>
                     </div>
 
                     {/* Description */}
@@ -197,13 +204,13 @@ function PinkInfo() {
 
                   {/* Explore Details Button */}
                   <div className="mt-3 sm:mt-3.5">
-                    <button
-                      type="button"
+                    <Link
+                      to={item.link}
                       className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-[#e60067] px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold text-white shadow-sm shadow-pink-500/20 transition-all duration-300 hover:bg-[#c9005a] hover:shadow-md hover:scale-[1.03] active:scale-95 cursor-pointer"
                     >
                       <span>{t("pinkInfo.cards.exploreDetails", { defaultValue: "Explore Details" })}</span>
                       <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

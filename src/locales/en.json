@@ -49,8 +49,8 @@
     "cards": {
       "exploreDetails": "Explore Details",
       "schemes": {
-        "title": "Government Schemes",
-        "desc": "Discover various government schemes and programs for women's education, health, skill development, financial support and overall empowerment."
+        "title": "Women Schemes",
+        "desc": "Discover schemes and programs that support women's education, health, financial independence, skill development, and overall empowerment."
       },
       "laws": {
         "title": "Women Laws",
@@ -138,6 +138,62 @@
           "title": "Empowers Women",
           "desc": "Encourages more women to speak up and share information."
         }
+      }
+    }
+  },
+  "cityScan": {
+    "bannerTitlePink": "City",
+    "bannerTitleNavy": "Scan",
+    "bannerSubtitle": "Make Your City Safer for Women",
+    "bannerDesc": "Share your experience and help us build safer cities. Your input helps us understand safety concerns, identify unsafe areas and create data-driven insights for better communities.",
+    "cards": {
+      "identifyUnsafe": "Identify Unsafe Areas",
+      "cityInsights": "City-Wise Insights",
+      "saferCities": "Safer Cities for Women"
+    },
+    "howItHelps": {
+      "title": "How City Scan Helps?",
+      "subtitle": "Your inputs create valuable insights to make cities safer for women.",
+      "highlightConcerns": {
+        "title": "Highlight Concerns",
+        "desc": "Identify safety concerns in different areas."
+      },
+      "dataInsights": {
+        "title": "Data Insights",
+        "desc": "Helps understand city-wise trends and common issues."
+      },
+      "communitySupport": {
+        "title": "Community Support",
+        "desc": "Supports better planning for safer cities."
+      },
+      "positiveChange": {
+        "title": "Positive Change",
+        "desc": "Contributes to safer and more secure environments for women."
+      }
+    },
+    "form": {
+      "title": "Submit City Scan",
+      "subtitle": "Share your experience and help us build safer cities for women.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Enter your name",
+      "mobileLabel": "Mobile Number",
+      "mobilePlaceholder": "Enter your mobile number",
+      "districtLabel": "Select District",
+      "pincodeLabel": "Select Pincode",
+      "policeStationLabel": "Select Police Station",
+      "problemLabel": "Select Problem",
+      "submitBtn": "Submit City Scan",
+      "submitting": "Submitting...",
+      "successMsg": "Thank you! Your City Scan report has been submitted successfully.",
+      "problems": {
+        "poorLighting": "Poor Street Lighting",
+        "eveTeasing": "Harassment / Eve Teasing Hotspot",
+        "patrolling": "Lack of Police Patrolling",
+        "isolated": "Deserted / Isolated Stretch",
+        "drinking": "Open Drinking / Anti-Social Elements",
+        "toilets": "Lack of Women Public Toilets",
+        "transport": "Unsafe Public Transport Stand",
+        "other": "Other Safety Concern"
       }
     }
   },
@@ -246,7 +302,7 @@
       "pinkInfo": {
         "title": "Pink Info",
         "desc": "Important information and resources for a brighter tomorrow.",
-        "b1": "Government Schemes",
+        "b1": "Women Schemes",
         "b2": "Women Laws & Rights",
         "b3": "PoSH Act 2013"
       },
@@ -476,5 +532,576 @@
         "referral": "Referral to Government Schemes"
       }
     }
+  },
+  "womenSafety": {
+    "banner": {
+      "badge": "WOMEN SAFETY",
+      "titlePink": "Women",
+      "titleNavy": "Safety",
+      "desc": "Emergency support, safety tools and helpful resources for a safer, stronger and more empowered Uttar Pradesh."
+    },
+    "erss": {
+      "titlePink": "Emergency Response",
+      "titleNavy": "Support System (ERSS)",
+      "desc": "Pink Shakti provides quick access to emergency support for women. With one click, you can connect to the Emergency Response Support System (ERSS) and get help in critical situations.",
+      "button": "Use Emergency Help",
+      "features": {
+        "sos": {
+          "title": "One Click SOS",
+          "desc": "Get immediate support in emergency situations."
+        },
+        "location": {
+          "title": "Share Live Location",
+          "desc": "Share your real-time location with trusted contacts."
+        },
+        "contacts": {
+          "title": "Trusted Contacts",
+          "desc": "Add family or friends to keep them informed during an emergency."
+        },
+        "connect": {
+          "title": "Connect with ERSS",
+          "desc": "Directly connect to UP Emergency Response Support System (112)."
+        },
+        "resources": {
+          "title": "Safety Resources",
+          "desc": "Access useful tips, guidelines and support information for women."
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Get help in emergency situations in just a few simple steps.",
+      "steps": {
+        "step1": {
+          "title": "Tap on SOS",
+          "desc": "Click on the emergency help button."
+        },
+        "step2": {
+          "title": "Share Your Location",
+          "desc": "Your live location will be shared instantly."
+        },
+        "step3": {
+          "title": "Notify Trusted Contacts",
+          "desc": "Your selected contacts will be alerted."
+        },
+        "step4": {
+          "title": "Get Immediate Support",
+          "desc": "You will be connected to ERSS (112) for help."
+        }
+      }
+    },
+    "keyBenefits": {
+      "title": "Key Benefits",
+      "subtitle": "Helping women feel safer, more confident and more supported.",
+      "benefits": {
+        "benefit1": {
+          "title": "Faster Emergency Help",
+          "desc": "Quick access to ERSS (112) during critical situations."
+        },
+        "benefit2": {
+          "title": "Greater Safety",
+          "desc": "Friends and family stay informed in real time."
+        },
+        "benefit3": {
+          "title": "Peace of Mind",
+          "desc": "Feel safer wherever you go with trusted support."
+        },
+        "benefit4": {
+          "title": "More Awareness",
+          "desc": "Access safety tips and important resources."
+        }
+      }
+    },
+    "safetyTipsBanner": {
+      "titlePink": "Safety Tips",
+      "titleNavy": "for Women",
+      "subtitle": "Simple tips to stay safer in daily life.",
+      "viewAll": "View All Tips",
+      "tips": {
+        "tip1": {
+          "title": "Be Aware",
+          "desc": "of Surroundings"
+        },
+        "tip2": {
+          "title": "Keep Emergency",
+          "desc": "Numbers Handy"
+        },
+        "tip3": {
+          "title": "Share Your",
+          "desc": "Travel Details"
+        },
+        "tip4": {
+          "title": "Use Trusted",
+          "desc": "Transport Options"
+        },
+        "tip5": {
+          "title": "Avoid Isolated",
+          "desc": "Areas at Night"
+        }
+      }
+    }
+  },
+  "eFirPage": {
+    "badge": "E-FIR",
+    "titlePink": "E-FIR",
+    "titleNavy": "– File a Complaint Online",
+    "desc": "Get information about E-FIR and access the official Uttar Pradesh Police e-FIR portal to register your complaint online. Know when and how to use e-FIR for a faster and easier process.",
+    "button": "Go to UP Police e-FIR Portal",
+    "aboutSection": {
+      "titlePink": "About",
+      "titleNavy": "E-FIR",
+      "desc": "E-FIR (Electronic First Information Report) is an online facility provided by Uttar Pradesh Police to register certain types of complaints. Pink Shakti provides information and a direct link to the official UP Police e-FIR portal.",
+      "button": "Visit Official e-FIR Portal",
+      "cards": {
+        "registerOnline": {
+          "title": "Register Online",
+          "desc": "File your complaint online through the official UP Police portal."
+        },
+        "saveTime": {
+          "title": "Save Time",
+          "desc": "Avoid unnecessary travel to the police station for eligible cases."
+        },
+        "trackStatus": {
+          "title": "Track Status",
+          "desc": "Check the status of your complaint on the e-FIR portal."
+        },
+        "officialSecure": {
+          "title": "Official & Secure",
+          "desc": "A government platform managed by Uttar Pradesh Police."
+        }
+      }
+    },
+    "whenToUse": {
+      "titlePink": "When to Use",
+      "titleNavy": "E-FIR?",
+      "desc": "E-FIR can be used for certain types of non-cognizable offences such as:",
+      "cards": {
+        "theft": {
+          "title": "Theft",
+          "subtitle": "(Lost items)"
+        },
+        "mobileTheft": {
+          "title": "Mobile Theft"
+        },
+        "vehicleTheft": {
+          "title": "Vehicle Theft"
+        },
+        "documentLoss": {
+          "title": "Document Loss"
+        },
+        "otherEligible": {
+          "title": "Other Eligible Complaints"
+        }
+      }
+    },
+    "whenToVisitPolice": {
+      "titlePink": "When to Visit",
+      "titleNavy": "Police Station?",
+      "desc": "For serious and cognizable offences, please visit your nearest police station or contact emergency helplines such as 112. Examples:",
+      "cards": {
+        "physicalAssault": {
+          "title": "Physical Assault"
+        },
+        "seriousCrimes": {
+          "title": "Serious Crimes"
+        },
+        "domesticViolence": {
+          "title": "Domestic Violence"
+        },
+        "harassment": {
+          "title": "Harassment"
+        },
+        "otherUrgent": {
+          "title": "Other Urgent Matters"
+        }
+      }
+    },
+    "howToRegister": {
+      "titlePink": "How to Register",
+      "titleNavy": "E-FIR",
+      "desc": "Follow these simple steps on the official UP Police e-FIR portal.",
+      "steps": {
+        "step1": {
+          "num": "01",
+          "title": "Visit Official Portal",
+          "desc": "Click on the UP Police e-FIR portal link."
+        },
+        "step2": {
+          "num": "02",
+          "title": "Fill Complaint Details",
+          "desc": "Provide the required information about the incident."
+        },
+        "step3": {
+          "num": "03",
+          "title": "Upload Documents",
+          "desc": "Attach relevant documents or photos if required."
+        },
+        "step4": {
+          "num": "04",
+          "title": "Submit & Note Reference",
+          "desc": "Submit your complaint and note the reference number for future use."
+        }
+      }
+    },
+    "importantPoints": {
+      "titlePink": "Important",
+      "titleNavy": "Points",
+      "points": [
+        "E-FIR facility is provided by Uttar Pradesh Police.",
+        "Pink Shakti does not register FIR directly.",
+        "Only certain types of complaints are eligible for e-FIR.",
+        "Provide correct and accurate information.",
+        "For urgent or serious matters, call 112 or visit nearest police station.",
+        "Keep your complaint reference number safe."
+      ]
+    }
+  },
+  "pinkHealthPage": {
+    "badge": "Pink Health",
+    "titlePink": "Pink",
+    "titleNavy": "Health",
+    "subtitle": "Healthy Women. Stronger Families. Brighter Future.",
+    "desc": "Access reliable information and resources on women's health and well-being for a healthier and happier life.",
+    "cards": {
+      "mentalHealth": {
+        "title": "Mental Health",
+        "desc": "Learn about mental health, common concerns, coping strategies and where to seek support for a healthier and happier you.",
+        "readMore": "Read More"
+      },
+      "menstrualHealth": {
+        "title": "Menstrual Health",
+        "desc": "Get information about menstrual health, hygiene, common issues and tips for a safe and healthy menstrual cycle.",
+        "readMore": "Read More"
+      },
+      "cervicalCancer": {
+        "title": "Cervical Cancer",
+        "desc": "Learn about cervical cancer, its prevention, screening, vaccination and early detection for a healthier future.",
+        "readMore": "Read More"
+      }
+    }
+  },
+  "womenSchemesPage": {
+    "badge": "PINK INFO",
+    "titleNavy": "Women",
+    "titlePink": "Schemes",
+    "subtitle": "SCHEMES FOR WOMEN IN UTTAR PRADESH",
+    "desc": "Information about various schemes and initiatives by the Government of Uttar Pradesh for the safety, education, financial support and overall empowerment of women and girls.",
+    "importantNote": "The information provided here is for awareness and reference purposes only. Please check eligibility, detailed benefits and application process on the official government scheme portals.",
+    "scholarships": {
+      "kvs": {
+        "title": "KVS Single Girl Child Admission Scheme",
+        "desc": "Fee waiver and admission for single girl child in Kendriya Vidyalayas as per rules."
+      },
+      "cbse": {
+        "title": "CBSE Merit Scholarship Scheme (for Single Girl Child)",
+        "desc": "For single girl child with 60% or more in Class X and studying in Class XI/XII. ₹1,000 per month for two years."
+      },
+      "udaan": {
+        "title": "CBSE UDAAN Scheme",
+        "desc": "Free engineering entrance coaching, study material and mentoring for Class XI/XII girls."
+      },
+      "indira": {
+        "title": "Post Graduate Indira Gandhi Scholarship for Single Girl Child",
+        "desc": "Scholarship of ₹36,200 per year for single girl child to pursue post graduation."
+      }
+    }
+  },
+  "womenLawsPage": {
+    "badge": "PINK INFO",
+    "titlePink": "Women",
+    "titleNavy": "Laws",
+    "desc": "Understand the important legal provisions to protect women from violence, harassment, exploitation and discrimination.",
+    "importantNoteTitle": "Important Note:",
+    "importantNoteDesc": "This information is for legal awareness only. Laws and penalties may change over time. For current legal advice, please consult a qualified lawyer or refer to official government sources.",
+    "explanation": "Explanation",
+    "mainConstituents": "Main Constituents",
+    "punishment": "Punishment",
+    "readDetails": "Read Full Details",
+    "close": "Close",
+    "emergencyHelplines": "Emergency Helplines",
+    "keyRights": "Key Legal Rights & Next Steps",
+    "cards": {
+      "eveTeasing": {
+        "title": "Outraging the Modesty of Women / Eve Teasing",
+        "explanation": "Covers words, gestures or acts intended to outrage the modesty of a woman.",
+        "constituents": [
+          "Obscene words or gestures",
+          "Unwanted physical contact",
+          "Any act intended to outrage modesty"
+        ],
+        "punishment": "Imprisonment and/or fine as per law. Punishment may vary based on circumstances."
+      },
+      "disrobing": {
+        "title": "Disrobing a Woman",
+        "explanation": "Covers the act of disrobing a woman or compelling her to be nude.",
+        "constituents": [
+          "Forcibly disrobing a woman",
+          "Compelling a woman to be nude",
+          "Intent to insult or outrage modesty"
+        ],
+        "punishment": "Imprisonment and/or fine as per law. Punishment may vary based on circumstances."
+      },
+      "stalking": {
+        "title": "Stalking",
+        "explanation": "Covers following, contacting or surveilling a woman repeatedly despite her disinterest.",
+        "constituents": [
+          "Repeatedly following",
+          "Contacting through any means",
+          "Monitoring online/offline activities"
+        ],
+        "punishment": "Imprisonment and/or fine as per law. Punishment may vary based on circumstances."
+      },
+      "rape": {
+        "title": "Rape",
+        "explanation": "Covers sexual intercourse with a woman against her will or without her consent.",
+        "constituents": [
+          "Without consent",
+          "Against her will",
+          "Through force, threat or coercion"
+        ],
+        "punishment": "Imprisonment (rigorous) and fine as per law. Punishment may vary based on circumstances."
+      }
+    }
+  },
+  "womenRightsPage": {
+    "badge": "PINK INFO",
+    "titlePink": "Women",
+    "titleNavy": "Rights",
+    "tagline": "Know your rights. Build confidence. Make informed choices.",
+    "desc": "Learn about the rights available to women for a safer, fairer and more equal society.",
+    "importantNoteTitle": "Important Note:",
+    "importantNoteDesc": "This information is for awareness only. Laws and provisions may change over time. For current and detailed legal advice, please consult a qualified lawyer or refer to official government sources.",
+    "readDetails": "Read Full Details",
+    "cards": {
+      "equalPay": {
+        "title": "Right to Equal Pay",
+        "desc": "Women have the right to receive equal pay for equal work."
+      },
+      "dignity": {
+        "title": "Right to Dignity and Decency",
+        "desc": "Every woman has the right to live with dignity and decency."
+      },
+      "domesticViolence": {
+        "title": "Right Against Domestic Violence",
+        "desc": "Women have the right to live free from domestic violence."
+      },
+      "legalAid": {
+        "title": "Right to Free Legal Aid",
+        "desc": "Women have the right to free legal aid and support."
+      }
+    }
+  },
+  "poshActPage": {
+    "badge": "PINK INFO",
+    "titlePink": "THE PREVENTION OF",
+    "titleNavy": "SEXUAL HARASSMENT (PoSH) ACT, 2013",
+    "desc": "A safe and secure working environment for women.",
+    "posterFooter": "A SAFE WORKPLACE IS EVERY WOMAN'S RIGHT",
+    "panels": {
+      "purpose": {
+        "title": "Purpose and Objective",
+        "desc": "The Prevention of Sexual Harassment (PoSH) Act, 2013 aims to protect women against sexual harassment at the workplace and to provide a safe and secure working environment. It also provides a mechanism for filing and redressing complaints."
+      },
+      "definition": {
+        "title": "Definition of Sexual Harassment",
+        "intro": "As per the Act, sexual harassment includes any one or more of the following (whether directly or by implication):",
+        "bullets": [
+          "Physical contact and advances.",
+          "Demand or request for sexual favors.",
+          "Sexually colored remarks.",
+          "Showing pornography.",
+          "Any other unwelcome physical, verbal or non-verbal conduct of a sexual nature."
+        ]
+      },
+      "scope": {
+        "title": "Scope of the Act",
+        "intro": "The Act applies to:",
+        "bullets": [
+          "All Government bodies.",
+          "Private and public sector organizations.",
+          "Non-governmental organizations (NGOs).",
+          "Vocational and educational institutions.",
+          "Sports institutes.",
+          "Any place visited by a woman in the course of her employment, including transportation."
+        ]
+      },
+      "icc": {
+        "title": "Internal Complaints Committee (ICC)",
+        "desc": "Every employer with 10 or more employees is required to constitute an Internal Complaints Committee (ICC) at each office or branch. The ICC must have a Presiding Officer who is a senior woman employee and at least two other members who are committed to the cause of women or have experience in social work, legal knowledge or experience in dealing with sexual harassment issues."
+      },
+      "shebox": {
+        "title": "SHe-Box",
+        "desc": "SHe-Box is an online complaint management platform launched by the Ministry of Women and Child Development (Government of India) for lodging complaints of sexual harassment at the workplace.",
+        "stepsHeading": "Steps to File a Complaint on SHe-Box",
+        "steps": [
+          "Visit the official portal - shebox.wcd.gov.in",
+          "Choose your employment sector.",
+          "Enter details of complainant, workplace and respondent.",
+          "Describe the complaint and upload supporting documents (if any).",
+          "Submit the complaint and note the reference number to track the status."
+        ]
+      }
+    }
+  },
+  "mentalHealthPage": {
+    "badge": "PINK HEALTH",
+    "titlePink": "Mental",
+    "titleNavy": "Health",
+    "desc": "A healthy mind leads to a healthier, happier and stronger you.",
+    "poster": {
+      "title": "MENTAL HEALTH MATTERS",
+      "subtitle": "Take Care • Stay Positive • Be Strong"
+    },
+    "cards": {
+      "whatIs": {
+        "title": "What is Mental Health?",
+        "desc": "Mental health refers to our emotional, psychological and social well-being. It affects how we think, feel, act and handle stress. Good mental health helps you lead a happier, healthier and more productive life."
+      },
+      "concerns": {
+        "title": "Common Mental Health Concerns",
+        "bullets": [
+          "Stress and anxiety",
+          "Depression",
+          "Mood swings",
+          "Low self-esteem",
+          "Relationship and family issues",
+          "Work or study pressure",
+          "Any other emotional distress"
+        ]
+      },
+      "tips": {
+        "title": "Tips for Better Mental Health",
+        "bullets": [
+          "Take time for yourself",
+          "Talk to someone you trust",
+          "Maintain a healthy routine (sleep, food and exercise)",
+          "Stay positive and practice gratitude",
+          "Seek professional help if needed"
+        ]
+      }
+    },
+    "note": {
+      "label": "Important Note:",
+      "text": "This information is for awareness only. If you are experiencing severe or persistent mental health concerns, please consult a qualified mental health professional."
+    }
+  },
+  "bnsSection79Page": {
+    "badge": "PINK INFO",
+    "titlePink": "BNS",
+    "titleNavy": "Section 79",
+    "subtitle": "Outraging the Modesty of Women / Eve Teasing",
+    "desc": "Know about the legal provisions, punishments and your rights to stay safe, aware and empowered.",
+    "cards": {
+      "explanation": {
+        "title": "Explanation",
+        "desc": "BNS Section 79 covers words, gestures or any act intended to outrage the modesty of a woman. This includes any behaviour that is indecent, obscene or unwelcome and makes a woman feel uncomfortable, humiliated or unsafe in a public or private place."
+      },
+      "constituents": {
+        "title": "Main Constituents",
+        "bullets": [
+          "Obscene words or gestures directed towards a woman.",
+          "Unwanted physical contact.",
+          "Any act intended to outrage the modesty of a woman.",
+          "Can be committed in public or private place, including online through messages, calls or social media."
+        ]
+      },
+      "punishment": {
+        "title": "Punishment",
+        "line1": "Imprisonment for a term which may extend up to 3 years and/or fine as per law.",
+        "line2": "Punishment may vary based on the circumstances of the case."
+      },
+      "examples": {
+        "title": "Examples of Such Offences",
+        "bullets": [
+          "Passing obscene remarks.",
+          "Eve teasing in public places like streets, markets, schools or colleges.",
+          "Unwanted touching or physical advances.",
+          "Sending inappropriate messages or images online.",
+          "Any behaviour that humiliates or makes a woman feel unsafe."
+        ]
+      }
+    }
+  },
+  "equalPayPage": {
+    "badge": "WOMEN RIGHTS",
+    "titlePink": "Right to",
+    "titleNavy": "Equal Pay",
+    "desc": "Women have the right to receive equal pay for equal work without discrimination.",
+    "cards": {
+      "explanation": {
+        "title": "Explanation",
+        "desc": "Every woman has the right to receive equal pay for equal work. This means that a woman cannot be paid less than a man for the same work or work of a similar nature. Discrimination in wages on the basis of gender is not allowed."
+      },
+      "constituents": {
+        "title": "Main Constituents",
+        "bullets": [
+          "Equal pay for same work or work of similar nature.",
+          "No discrimination in wages on the basis of gender.",
+          "Equal opportunities for employment and promotion.",
+          "Women should be treated at par with men in all aspects of employment."
+        ]
+      },
+      "whatYouCanDo": {
+        "title": "What You Can Do",
+        "bullets": [
+          "Be aware of your right to equal pay.",
+          "Speak up if you are paid less than a man for the same work.",
+          "Keep records of your work, salary and related documents.",
+          "Report discrimination to the concerned authorities or labour department.",
+          "Seek legal help if necessary."
+        ]
+      }
+    },
+    "importantNoteTitle": "Important Note:",
+    "importantNoteDesc": "This information is for awareness only. Laws and provisions may change over time. For current and detailed legal advice, please consult a qualified lawyer or refer to official government sources."
+  },
+  "stateWomenCommissionPage": {
+    "titlePink": "State Women",
+    "titleNavy": "Commission",
+    "desc": "A step towards a safer, stronger and more empowered society for women.",
+    "complaintSection": {
+      "heading": "FILE YOUR COMPLAINT HERE",
+      "subheading": "You can file your complaint with the State Women Commission, Uttar Pradesh through the following ways:",
+      "formDownload": {
+        "title": "To submit your application personally",
+        "action": "Click to download the form"
+      },
+      "tollFree": {
+        "title": "Toll Free No.",
+        "number": "1800-180-5220"
+      },
+      "phone": {
+        "title": "Phone No.",
+        "number": "0522-2306403"
+      },
+      "email": {
+        "title": "File Complaint Via E-Mail",
+        "address": "up.mahilaayog@yahoo.com"
+      },
+      "whatsapp": {
+        "title": "File Complaint Via WhatsApp",
+        "number": "6306511708"
+      },
+      "fax": {
+        "title": "File Complaint Via Fax",
+        "number": "0522-2728671"
+      },
+      "online": {
+        "title": "To file Online Complaint",
+        "action": "Click here"
+      },
+      "address": {
+        "title": "To submit the complaint in person or via registered post",
+        "line1": "State Women's Commission, Uttar Pradesh,",
+        "line2": "Third Floor, Manav Adhikar Bhawan,",
+        "line3": "TC-34 V.-1 Vibhuti Khand, Gomti Nagar, Lucknow."
+      }
+    }
   }
 }
+
+
+
+
+
+

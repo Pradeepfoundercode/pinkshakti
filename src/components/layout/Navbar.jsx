@@ -57,14 +57,13 @@ export default function Navbar() {
     };
 
     return (
-        <nav 
-            className={`w-full sticky top-0 z-50 transition-all duration-500 ease-in-out border-b ${
-                scrolled ? "bg-white/95 backdrop-blur-md border-pink-100 shadow-[0_4px_20px_rgba(230,0,103,0.08)] py-1" : "bg-white border-transparent py-1.5"
-            }`}
+        <nav
+            className={`w-full sticky top-0 z-50 transition-all duration-500 ease-in-out border-b ${scrolled ? "bg-white/95 backdrop-blur-md border-pink-100 shadow-[0_4px_20px_rgba(230,0,103,0.08)] py-1" : "bg-white border-transparent py-1.5"
+                }`}
         >
             <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between w-full h-14">
-                    
+
                     {/* Left Side (Logo) */}
                     <div className="flex sm:ml-10 lg:flex-1 items-center justify-start">
                         <Link to="/" className="relative z-10 flex items-center flex-shrink-0 group">
@@ -83,17 +82,15 @@ export default function Navbar() {
                                 key={link.name}
                                 to={link.path}
                                 className={({ isActive }) =>
-                                    `group relative py-2 text-[15px] font-medium transition-colors duration-300 whitespace-nowrap ${
-                                        isActive ? "text-[#E60067]" : "text-gray-600 hover:text-[#E60067]"
+                                    `group relative py-2 text-[15px] font-medium transition-colors duration-300 whitespace-nowrap ${isActive ? "text-[#E60067]" : "text-gray-600 hover:text-[#E60067]"
                                     }`
                                 }
                             >
                                 {({ isActive }) => (
                                     <>
                                         {link.name}
-                                        <span className={`absolute left-1/2 bottom-0 h-[2.5px] rounded-full -translate-x-1/2 bg-[#E60067] transition-all duration-300 ease-out ${
-                                            isActive ? "w-4/5 opacity-100" : "w-0 opacity-0 group-hover:w-4/5 group-hover:opacity-100"
-                                        }`}></span>
+                                        <span className={`absolute left-1/2 bottom-0 h-[2.5px] rounded-full -translate-x-1/2 bg-[#E60067] transition-all duration-300 ease-out ${isActive ? "w-4/5 opacity-100" : "w-0 opacity-0 group-hover:w-4/5 group-hover:opacity-100"
+                                            }`}></span>
                                     </>
                                 )}
                             </NavLink>
@@ -102,7 +99,7 @@ export default function Navbar() {
 
                     {/* Right Side (Actions) */}
                     <div className="flex lg:flex-1 items-center justify-end gap-3 sm:gap-4">
-                        
+
                         {/* Get The App CTA */}
                         <Link
                             to="/downloads"
@@ -119,29 +116,28 @@ export default function Navbar() {
                                 className="group flex items-center justify-center gap-1.5 rounded-full bg-pink-50/50 border border-pink-100 px-3.5 py-1.5 shadow-sm transition-all duration-300 hover:bg-pink-100 hover:border-pink-200 hover:shadow-md active:scale-95 whitespace-nowrap"
                                 aria-label="Select Language"
                             >
-                                <Languages 
-                                    strokeWidth={2.5} 
-                                    className="h-4 w-4 text-[#E60067] transition-transform duration-300 group-hover:scale-110" 
+                                <Languages
+                                    strokeWidth={2.5}
+                                    className="h-4 w-4 text-[#E60067] transition-transform duration-300 group-hover:scale-110"
                                 />
                                 <span className="text-sm font-bold text-[#E60067] tracking-wide">
                                     {language === "EN" ? "EN" : "आ"}
                                 </span>
                                 <ChevronDown className={`w-3.5 h-3.5 text-[#E60067] transition-transform duration-300 group-hover:translate-y-0.5 ${isLangOpen ? "rotate-180" : ""}`} />
                             </button>
-                            
-                            <div className={`absolute right-0 mt-3 w-36 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 overflow-hidden transition-all duration-300 origin-top-right ${
-                                isLangOpen ? "scale-100 opacity-100 translate-y-0 visible" : "scale-95 opacity-0 -translate-y-2 invisible"
-                            }`}>
+
+                            <div className={`absolute right-0 mt-3 w-36 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 overflow-hidden transition-all duration-300 origin-top-right ${isLangOpen ? "scale-100 opacity-100 translate-y-0 visible" : "scale-95 opacity-0 -translate-y-2 invisible"
+                                }`}>
                                 <div className="p-1.5">
-                                    <button 
-                                        onClick={() => changeLanguage("EN")} 
+                                    <button
+                                        onClick={() => changeLanguage("EN")}
                                         className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${language === "EN" ? "bg-pink-50 text-[#E60067]" : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"}`}
                                     >
                                         English
                                         {language === "EN" && <span className="h-1.5 w-1.5 rounded-full bg-[#E60067]"></span>}
                                     </button>
-                                    <button 
-                                        onClick={() => changeLanguage("HI")} 
+                                    <button
+                                        onClick={() => changeLanguage("HI")}
                                         className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${language === "HI" ? "bg-pink-50 text-[#E60067]" : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"}`}
                                     >
                                         हिन्दी
@@ -175,15 +171,14 @@ export default function Navbar() {
                             to={link.path}
                             onClick={() => setIsOpen(false)}
                             className={({ isActive }) =>
-                                `block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                                    isActive ? "bg-pink-50 text-[#E60067] translate-x-2" : "text-gray-600 hover:bg-gray-50 hover:text-[#E60067] hover:translate-x-1"
+                                `block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${isActive ? "bg-pink-50 text-[#E60067] translate-x-2" : "text-gray-600 hover:bg-gray-50 hover:text-[#E60067] hover:translate-x-1"
                                 }`
                             }
                         >
                             {link.name}
                         </NavLink>
                     ))}
-                    
+
                     {/* Mobile Language Button (Like Desktop) */}
                     <div className="pt-2 px-2 md:hidden">
                         <button
@@ -191,9 +186,9 @@ export default function Navbar() {
                             className="group flex items-center justify-center gap-1.5 rounded-full bg-pink-50/50 border border-pink-100 px-4 py-2 shadow-sm transition-all duration-300 hover:bg-pink-100 hover:border-pink-200 w-max"
                             aria-label="Select Language"
                         >
-                            <Languages 
-                                strokeWidth={2.5} 
-                                className="h-4 w-4 text-[#E60067]" 
+                            <Languages
+                                strokeWidth={2.5}
+                                className="h-4 w-4 text-[#E60067]"
                             />
                             <span className="text-sm font-bold text-[#E60067] tracking-wide">
                                 {language === "EN" ? "EN" : "आ"}
@@ -204,15 +199,15 @@ export default function Navbar() {
                         {/* Mobile Language Dropdown */}
                         <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileLangOpen ? "max-h-32 opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
                             <div className="w-40 bg-white rounded-2xl shadow-md border border-gray-100 p-1.5 ml-1">
-                                <button 
-                                    onClick={() => changeLanguage("EN")} 
+                                <button
+                                    onClick={() => changeLanguage("EN")}
                                     className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${language === "EN" ? "bg-pink-50 text-[#E60067]" : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"}`}
                                 >
                                     English
                                     {language === "EN" && <span className="h-1.5 w-1.5 rounded-full bg-[#E60067]"></span>}
                                 </button>
-                                <button 
-                                    onClick={() => changeLanguage("HI")} 
+                                <button
+                                    onClick={() => changeLanguage("HI")}
                                     className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${language === "HI" ? "bg-pink-50 text-[#E60067]" : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"}`}
                                 >
                                     हिन्दी

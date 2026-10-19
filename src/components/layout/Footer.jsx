@@ -127,8 +127,8 @@ export default function Footer() {
   }, []);
 
   const quickLinks = [
-    { name: t("footer.oneStopCenters", { defaultValue: "One Stop Centers" }), path: "/one-stop-centers" },
-    { name: t("footer.emergencyHelplines", { defaultValue: "Emergency Helplines" }), path: "/emergency-helplines" },
+    { name: t("footer.oneStopCenters", { defaultValue: "One Stop Centers" }), path: "/features/one-stop-centers" },
+    { name: t("footer.emergencyHelplines", { defaultValue: "Emergency Helplines" }), path: "/features/emergency-helplines" },
     { name: t("footer.gallery", { defaultValue: "Gallery" }), path: "/gallery" },
     { name: t("footer.contactUs", { defaultValue: "Contact Us" }), path: "/contact" },
     { name: t("footer.ourFeedback", { defaultValue: "Our Feedback" }), path: "/our-feedback" },
@@ -140,7 +140,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-6 py-8 lg:py-10">
         {/* Reduced gaps (gap-6 lg:gap-8) to make it more compact */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-12 lg:gap-8 items-start">
-          
+
           {/* Brand & Socials */}
           <div className="lg:col-span-4 flex flex-col">
             <div className="group flex cursor-pointer items-center gap-3 w-fit">
@@ -161,7 +161,7 @@ export default function Footer() {
             <p className="mt-3 text-xs text-pink-100/85 leading-relaxed max-w-xs">
               {t("footer.description", { defaultValue: "Empowering women through awareness, rapid response helplines, and dedicated one-stop support centers." })}
             </p>
-            
+
             {/* Social Icons */}
             <div className="mt-4 flex gap-2.5">
               {socialLinks.map((item) => (
@@ -220,7 +220,7 @@ export default function Footer() {
             <div className="relative overflow-hidden group flex items-center gap-3.5 bg-gradient-to-br from-white/20 to-white/5 rounded-xl px-4 py-3 border border-white/30 shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md w-fit cursor-default transition-all duration-300 hover:border-white/50 hover:shadow-[0_8px_30px_rgba(255,255,255,0.2)]">
               {/* Background Glow Effect */}
               <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-white/20 blur-xl transition-all duration-500 group-hover:bg-white/30 group-hover:scale-150"></div>
-              
+
               <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 shadow-inner">
                 <img
                   src={communitiesLogo}
@@ -228,7 +228,7 @@ export default function Footer() {
                   className="h-6 w-6 object-contain brightness-0 invert drop-shadow-md transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              
+
               <div className="relative z-10">
                 <div className="text-[9px] text-pink-100 uppercase tracking-widest font-bold mb-0.5 opacity-90">{t("footer.totalVisitors", { defaultValue: "Total Visitors" })}</div>
                 <div className="font-extrabold text-white text-xl leading-none tracking-tight drop-shadow-sm">
@@ -253,7 +253,7 @@ export default function Footer() {
         </div>
       </div>
 
-    
+
       {/* Sub-footer */}
       <div className="border-t border-white/10 bg-black/10">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-center gap-4 px-6 py-4 text-[12px] font-medium text-pink-200/90 sm:flex-row sm:gap-12 sm:px-8">
