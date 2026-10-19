@@ -20,3 +20,8 @@ export const getProblems = async () => {
   const res = await API.get("/getProblems.php");
   return res.data;
 };
+
+export const storeCityScan = async (payload) => {
+  const res = await API.post("/store_city_scan.php", payload);
+  return res.data;
+};

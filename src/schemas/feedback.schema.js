@@ -18,7 +18,6 @@ export const feedbackSchema = z.object({
     .refine((val) => !val || /^[0-9]{10}$/.test(val), {
       message: 'Please enter a valid 10-digit phone number',
     }),
-  location: z.string().trim().optional(),
   rating: z
     .number({ invalid_type_error: 'Please select a rating' })
     .min(1, { message: 'Please select a rating for your experience' })

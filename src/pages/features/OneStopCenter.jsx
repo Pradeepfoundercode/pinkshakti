@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import PageBanner from '../../components/common/PageBanner'
 import PhoneBanner from '../../components/common/PhoneBanner'
@@ -22,6 +22,9 @@ import {
   HeartHandshake,
   User,
   Loader2,
+  Building2,
+  ChevronDown,
+  Check,
 } from 'lucide-react'
 
 // Helper function to format UPPERCASE strings into Title Case
@@ -32,6 +35,169 @@ const formatTitleCase = (str) => {
     .split(' ')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
+}
+
+// Reusable Premium UI Dropdown Component
+function CustomSelect({
+  icon: Icon,
+  label,
+  required = false,
+  placeholder,
+  value,
+  onChange,
+  options = [],
+  searchPlaceholder = 'Search...',
+  emptyText = 'No options found',
+}) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const dropdownRef = useRef(null)
+  const searchInputRef = useRef(null)
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false)
+        setSearchQuery('')
+      }
+    }
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false)
+        setSearchQuery('')
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isOpen && searchInputRef.current) {
+      setTimeout(() => searchInputRef.current?.focus(), 50)
+    }
+  }, [isOpen])
+
+  const selectedOption = options.find((opt) => String(opt.value) === String(value))
+  const displayLabel = selectedOption ? selectedOption.label : ''
+
+  const filteredOptions = options.filter((opt) =>
+    opt.label?.toString().toLowerCase().includes(searchQuery.toLowerCase().trim())
+  )
+
+  const handleSelect = (val) => {
+    onChange(val)
+    setIsOpen(false)
+    setSearchQuery('')
+  }
+
+  return (
+    <div className={`relative ${isOpen ? 'z-30' : 'z-10'}`} ref={dropdownRef}>
+      {label && (
+        <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+          {label} {required && <span className="text-[#e60067]">*</span>}
+        </label>
+      )}
+
+      {/* Trigger Button */}
+      <button
+        type="button"
+        onClick={() => {
+          setIsOpen((prev) => !prev)
+          setSearchQuery('')
+        }}
+        className={`w-full relative flex items-center pl-10 pr-8 py-2.5 bg-white border text-left rounded-xl text-xs sm:text-[13px] transition-all duration-200 shadow-2xs group cursor-pointer ${
+          isOpen
+            ? 'border-[#e60067] ring-4 ring-pink-500/15 bg-white'
+            : 'border-pink-200 hover:border-[#e60067]/60'
+        }`}
+      >
+        {/* Left Icon badge */}
+        <div
+          className={`absolute left-2.5 w-6 h-6 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 pointer-events-none ${
+            isOpen
+              ? 'bg-[#e60067] text-white shadow-xs'
+              : 'bg-pink-100/80 text-[#e60067] group-hover:bg-[#e60067] group-hover:text-white'
+          }`}
+        >
+          {Icon && <Icon className="w-3.5 h-3.5" />}
+        </div>
+
+        {/* Selected text or placeholder */}
+        <span
+          className={`truncate font-medium block flex-1 ${
+            value ? 'text-slate-800 font-semibold' : 'text-slate-400'
+          }`}
+        >
+          {displayLabel || placeholder}
+        </span>
+
+        {/* Right Chevron */}
+        <div className="absolute right-2.5 flex items-center pointer-events-none">
+          <ChevronDown
+            className={`w-4 h-4 transition-transform duration-200 ${
+              isOpen ? 'rotate-180 text-[#e60067]' : 'text-slate-400 group-hover:text-[#e60067]'
+            }`}
+          />
+        </div>
+      </button>
+
+      {/* Floating Menu */}
+      {isOpen && (
+        <div className="absolute z-50 left-0 right-0 mt-1.5 bg-white rounded-xl border border-pink-200 shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+          {/* Search Bar if > 5 options */}
+          {options.length > 5 && (
+            <div className="p-2 border-b border-pink-100 bg-pink-50/40">
+              <div className="relative flex items-center">
+                <Search className="absolute left-2.5 w-3.5 h-3.5 text-slate-400" />
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={searchPlaceholder}
+                  className="w-full pl-8 pr-3 py-1.5 text-xs bg-white border border-pink-200 rounded-lg text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-[#e60067] focus:ring-2 focus:ring-pink-500/15"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Options List */}
+          <div className="max-h-56 overflow-y-auto divide-y divide-pink-50/60 custom-scrollbar">
+            {filteredOptions.length === 0 ? (
+              <div className="py-4 px-3 text-center text-xs text-slate-400 font-medium">
+                {emptyText}
+              </div>
+            ) : (
+              filteredOptions.map((opt) => {
+                const isSelected = String(opt.value) === String(value)
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => handleSelect(opt.value)}
+                    className={`w-full text-left px-3.5 py-2.5 text-xs sm:text-[12.5px] transition-all duration-150 flex items-center justify-between group cursor-pointer ${
+                      isSelected
+                        ? 'bg-pink-50 text-[#e60067] font-bold'
+                        : 'text-slate-700 hover:bg-pink-50/70 hover:text-[#e60067] font-medium'
+                    }`}
+                  >
+                    <span className="truncate pr-2">{opt.label}</span>
+                    {isSelected && (
+                      <Check className="w-3.5 h-3.5 text-[#e60067] shrink-0" />
+                    )}
+                  </button>
+                )
+              })
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  )
 }
 
 function OneStopCenter() {
@@ -230,46 +396,44 @@ function OneStopCenter() {
             >
               {/* District Dropdown */}
               <div className="lg:col-span-3">
-                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                  {t("oneStopCenter.searchBox.districtLabel", { defaultValue: "District" })} <span className="text-[#e60067]">*</span>
-                </label>
-                <select
+                <CustomSelect
+                  icon={Building2}
+                  label={t("oneStopCenter.searchBox.districtLabel", { defaultValue: "District" })}
+                  required={true}
+                  placeholder={t("oneStopCenter.searchBox.allDistricts", { defaultValue: "All Districts" })}
                   value={selectedDistrict}
-                  onChange={(e) => {
-                    setSelectedDistrict(e.target.value)
+                  onChange={(val) => {
+                    setSelectedDistrict(val)
                     setCurrentPage(1)
                   }}
-                  className="w-full rounded-xl border border-pink-200 bg-white px-3.5 py-2.5 text-xs sm:text-sm text-[#102849] focus:border-[#e60067] focus:outline-none transition-all shadow-xs"
-                >
-                  <option value="">{t("oneStopCenter.searchBox.allDistricts", { defaultValue: "All Districts" })}</option>
-                  {availableDistricts.map((dist) => (
-                    <option key={dist} value={dist}>
-                      {dist}
-                    </option>
-                  ))}
-                </select>
+                  options={[
+                    { value: '', label: t("oneStopCenter.searchBox.allDistricts", { defaultValue: "All Districts" }) },
+                    ...availableDistricts.map((dist) => ({ value: dist, label: dist }))
+                  ]}
+                  searchPlaceholder="Search district..."
+                  emptyText="No districts found"
+                />
               </div>
 
               {/* City/Area Dropdown */}
               <div className="lg:col-span-3">
-                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                  {t("oneStopCenter.searchBox.cityAreaLabel", { defaultValue: "City/Area" })} <span className="text-[#e60067]">*</span>
-                </label>
-                <select
+                <CustomSelect
+                  icon={MapPin}
+                  label={t("oneStopCenter.searchBox.cityAreaLabel", { defaultValue: "City/Area" })}
+                  required={true}
+                  placeholder={t("oneStopCenter.searchBox.selectCityArea", { defaultValue: "Select City/Area" })}
                   value={selectedCity}
-                  onChange={(e) => {
-                    setSelectedCity(e.target.value)
+                  onChange={(val) => {
+                    setSelectedCity(val)
                     setCurrentPage(1)
                   }}
-                  className="w-full rounded-xl border border-pink-200 bg-white px-3.5 py-2.5 text-xs sm:text-sm text-[#102849] focus:border-[#e60067] focus:outline-none transition-all shadow-xs"
-                >
-                  <option value="">{t("oneStopCenter.searchBox.selectCityArea", { defaultValue: "Select City/Area" })}</option>
-                  {oneStopCenterCities.map((city) => (
-                    <option key={city} value={city}>
-                      {city}
-                    </option>
-                  ))}
-                </select>
+                  options={[
+                    { value: '', label: t("oneStopCenter.searchBox.selectCityArea", { defaultValue: "Select City/Area" }) },
+                    ...oneStopCenterCities.map((city) => ({ value: city, label: city }))
+                  ]}
+                  searchPlaceholder="Search city/area..."
+                  emptyText="No cities found"
+                />
               </div>
 
               {/* Center Name Input */}
@@ -277,16 +441,21 @@ function OneStopCenter() {
                 <label className="block text-xs font-semibold text-gray-700 mb-1.5">
                   {t("oneStopCenter.searchBox.searchLabel", { defaultValue: "Center / Officer / Keyword" })}
                 </label>
-                <input
-                  type="text"
-                  placeholder={t("oneStopCenter.searchBox.searchPlaceholder", { defaultValue: "Enter center name, officer..." })}
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value)
-                    setCurrentPage(1)
-                  }}
-                  className="w-full rounded-xl border border-pink-200 bg-white px-3.5 py-2.5 text-xs sm:text-sm text-[#102849] placeholder:text-gray-400 focus:border-[#e60067] focus:outline-none transition-all shadow-xs"
-                />
+                <div className="relative flex items-center group">
+                  <div className="absolute left-2.5 w-6 h-6 rounded-lg bg-pink-100/80 text-[#e60067] flex items-center justify-center shrink-0 group-focus-within:bg-[#e60067] group-focus-within:text-white transition-all duration-200 pointer-events-none">
+                    <Search className="w-3.5 h-3.5" />
+                  </div>
+                  <input
+                    type="text"
+                    placeholder={t("oneStopCenter.searchBox.searchPlaceholder", { defaultValue: "Enter center name, officer..." })}
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value)
+                      setCurrentPage(1)
+                    }}
+                    className="w-full pl-10 pr-3.5 py-2.5 bg-white border border-pink-200 rounded-xl text-xs sm:text-[13px] text-[#102849] placeholder:text-gray-400 focus:border-[#e60067] focus:ring-4 focus:ring-pink-500/15 focus:outline-none transition-all shadow-xs"
+                  />
+                </div>
               </div>
 
               {/* Action Buttons */}

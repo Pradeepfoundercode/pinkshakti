@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   MapPin,
@@ -18,6 +18,8 @@ import {
   Settings,
   FileText,
   ArrowRight,
+  Check,
+  Search,
 } from 'lucide-react'
 import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
 import PhoneBanner from '../../components/common/PhoneBanner'
@@ -26,7 +28,282 @@ import {
   getZipcodes,
   getPoliceStations,
   getProblems,
+  storeCityScan,
 } from '../../services/cityscan.services'
+
+// Reusable Premium UI Dropdown Component
+function CustomDropdown({
+  icon: Icon,
+  label,
+  placeholder,
+  value,
+  onChange,
+  options = [],
+  disabled = false,
+  loading = false,
+  error = '',
+  searchable = true,
+  searchPlaceholder = 'Search...',
+  emptyText = 'No options available',
+  isMulti = false,
+}) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const dropdownRef = useRef(null)
+  const searchInputRef = useRef(null)
+
+  // Close on outside click or Escape
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false)
+        setSearchQuery('')
+      }
+    }
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false)
+        setSearchQuery('')
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
+  // Auto focus search input when opening
+  useEffect(() => {
+    if (isOpen && searchInputRef.current) {
+      setTimeout(() => searchInputRef.current?.focus(), 50)
+    }
+  }, [isOpen])
+
+  // Display Content logic
+  let displayContent = null
+  if (isMulti) {
+    const selectedArr = Array.isArray(value) ? value : []
+    if (selectedArr.length === 0) {
+      displayContent = <span className="text-slate-400 font-medium">{placeholder}</span>
+    } else {
+      displayContent = (
+        <div className="flex items-center gap-1.5 flex-wrap py-0.5">
+          {selectedArr.map((item) => (
+            <span
+              key={item}
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-pink-100 text-[#e60067] border border-pink-200"
+            >
+              <span className="truncate max-w-[120px] sm:max-w-[160px]">{item}</span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  onChange(selectedArr.filter((i) => i !== item))
+                }}
+                className="hover:text-pink-900 cursor-pointer font-bold ml-0.5 text-xs leading-none"
+              >
+                ×
+              </button>
+            </span>
+          ))}
+        </div>
+      )
+    }
+  } else {
+    const selectedOption = options.find((opt) => String(opt.value) === String(value))
+    const displayLabel = selectedOption ? selectedOption.label : ''
+    displayContent = (
+      <span
+        className={`truncate font-medium block flex-1 ${
+          displayLabel ? 'text-slate-800 font-semibold' : 'text-slate-400'
+        }`}
+      >
+        {loading ? 'Loading...' : displayLabel || placeholder}
+      </span>
+    )
+  }
+
+  const filteredOptions = options.filter((opt) =>
+    opt.label?.toString().toLowerCase().includes(searchQuery.toLowerCase().trim())
+  )
+
+  const handleSelect = (val) => {
+    if (isMulti) {
+      const selectedArr = Array.isArray(value) ? [...value] : []
+      const index = selectedArr.indexOf(val)
+      if (index > -1) {
+        selectedArr.splice(index, 1)
+      } else {
+        selectedArr.push(val)
+      }
+      onChange(selectedArr)
+    } else {
+      onChange(val)
+      setIsOpen(false)
+      setSearchQuery('')
+    }
+  }
+
+  return (
+    <div className={`relative ${isOpen ? 'z-30' : 'z-10'}`} ref={dropdownRef}>
+      {label && (
+        <label className="block text-xs font-bold text-[#102849] mb-1.5">
+          {label} <span className="text-[#e60067]">*</span>
+        </label>
+      )}
+
+      {/* Trigger Button */}
+      <button
+        type="button"
+        disabled={disabled}
+        onClick={() => {
+          if (!disabled) {
+            setIsOpen((prev) => !prev)
+            setSearchQuery('')
+          }
+        }}
+        className={`w-full relative min-h-[42px] flex items-center pl-11 pr-8 py-2 bg-white border text-left rounded-xl text-xs sm:text-[12.5px] transition-all duration-200 shadow-2xs group cursor-pointer ${
+          disabled
+            ? 'bg-slate-100/90 border-slate-200 text-slate-400 cursor-not-allowed opacity-80'
+            : error
+            ? 'border-red-400 ring-2 ring-red-100'
+            : isOpen
+            ? 'border-[#e60067] ring-4 ring-pink-500/15 bg-white'
+            : 'border-pink-200/90 hover:border-[#e60067]/60'
+        }`}
+      >
+        {/* Left Icon badge */}
+        <div
+          className={`absolute left-2.5 top-2 w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 pointer-events-none ${
+            disabled
+              ? 'bg-slate-200/80 text-slate-400'
+              : isOpen
+              ? 'bg-[#e60067] text-white shadow-xs'
+              : 'bg-pink-100/80 text-[#e60067] group-hover:bg-[#e60067] group-hover:text-white'
+          }`}
+        >
+          {loading ? (
+            <div className="w-3.5 h-3.5 border-2 border-pink-200 border-t-[#e60067] rounded-full animate-spin" />
+          ) : (
+            Icon && <Icon className="w-3.5 h-3.5" />
+          )}
+        </div>
+
+        {/* Selected content */}
+        <div className="flex-1 overflow-hidden pr-2">
+          {loading ? <span className="text-slate-400">Loading...</span> : displayContent}
+        </div>
+
+        {/* Right Chevron */}
+        <div className="absolute right-2.5 top-3 flex items-center pointer-events-none">
+          <ChevronDown
+            className={`w-4 h-4 transition-transform duration-200 ${
+              isOpen
+                ? 'rotate-180 text-[#e60067]'
+                : disabled
+                ? 'text-slate-300'
+                : 'text-slate-400 group-hover:text-[#e60067]'
+            }`}
+          />
+        </div>
+      </button>
+
+      {/* Floating Menu */}
+      {isOpen && !disabled && (
+        <div className="absolute z-50 left-0 right-0 mt-1.5 bg-white rounded-xl border border-pink-200 shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+          {/* Search Bar if > 5 options */}
+          {searchable && options.length > 5 && (
+            <div className="p-2 border-b border-pink-100 bg-pink-50/40">
+              <div className="relative flex items-center">
+                <Search className="absolute left-2.5 w-3.5 h-3.5 text-slate-400" />
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={searchPlaceholder}
+                  className="w-full pl-8 pr-3 py-1.5 text-xs bg-white border border-pink-200 rounded-lg text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-[#e60067] focus:ring-2 focus:ring-pink-500/15"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Options List */}
+          <div className="max-h-56 overflow-y-auto divide-y divide-pink-50/60 custom-scrollbar">
+            {filteredOptions.length === 0 ? (
+              <div className="py-4 px-3 text-center text-xs text-slate-400 font-medium">
+                {emptyText}
+              </div>
+            ) : (
+              filteredOptions.map((opt) => {
+                const isSelected = isMulti
+                  ? Array.isArray(value) && value.includes(opt.value)
+                  : String(opt.value) === String(value)
+
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => handleSelect(opt.value)}
+                    className={`w-full text-left px-3.5 py-2.5 text-xs sm:text-[12.5px] transition-all duration-150 flex items-center justify-between group cursor-pointer ${
+                      isSelected
+                        ? 'bg-pink-50 text-[#e60067] font-bold'
+                        : 'text-slate-700 hover:bg-pink-50/70 hover:text-[#e60067] font-medium'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0 pr-2">
+                      {isMulti && (
+                        <div
+                          className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors ${
+                            isSelected
+                              ? 'bg-[#e60067] border-[#e60067] text-white'
+                              : 'border-slate-300 bg-white group-hover:border-pink-300'
+                          }`}
+                        >
+                          {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
+                        </div>
+                      )}
+                      <span className="truncate">{opt.label}</span>
+                    </div>
+
+                    {!isMulti && isSelected && (
+                      <Check className="w-3.5 h-3.5 text-[#e60067] shrink-0" />
+                    )}
+                  </button>
+                )
+              })
+            )}
+          </div>
+
+          {/* Multi-select bottom bar */}
+          {isMulti && (
+            <div className="p-2 border-t border-pink-100 bg-pink-50/30 flex items-center justify-between text-xs">
+              <span className="text-[11px] text-slate-500 font-medium pl-1">
+                {Array.isArray(value) && value.length > 0
+                  ? `${value.length} selected`
+                  : 'Select one or more'}
+              </span>
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="px-3 py-1 bg-[#e60067] text-white rounded-lg text-[11px] font-bold hover:bg-[#c9005a] cursor-pointer"
+              >
+                Done
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Validation Error */}
+      {error && (
+        <p className="text-[10.5px] font-semibold text-red-500 mt-1">{error}</p>
+      )}
+    </div>
+  )
+}
 
 function CityScan() {
   const { t } = useTranslation()
@@ -46,11 +323,12 @@ function CityScan() {
     district: '',
     pincode: '',
     policeStation: '',
-    problem: '',
+    problems: [],
   })
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [serverMessage, setServerMessage] = useState({ type: '', text: '' })
 
 
 
@@ -84,9 +362,7 @@ function CityScan() {
   }, []);
 
   // Fetch pincodes and police stations when a district is selected
-  const handleDistrictChange = async (e) => {
-    const districtId = e.target.value
-
+  const handleDistrictChange = async (districtId) => {
     setFormData((prev) => ({
       ...prev,
       district: districtId,
@@ -115,8 +391,8 @@ function CityScan() {
         getPoliceStations(districtId),
       ])
 
-      setZipcodes(zipRes.data)
-      setPoliceStations(policeRes.data)
+      setZipcodes(zipRes.data || [])
+      setPoliceStations(policeRes.data || [])
 
       console.log('Pincodes:', zipRes.data)
       console.log('Police Stations:', policeRes.data)
@@ -126,6 +402,13 @@ function CityScan() {
       setPoliceStations([])
     } finally {
       setLoadingDetails(false)
+    }
+  }
+
+  const handleFieldChange = (name, value) => {
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: '' }))
     }
   }
 
@@ -158,12 +441,15 @@ function CityScan() {
     if (!formData.district) newErrors.district = 'Please select a district'
     if (!formData.pincode) newErrors.pincode = 'Please select a pincode'
     if (!formData.policeStation) newErrors.policeStation = 'Please select a police station'
-    if (!formData.problem) newErrors.problem = 'Please select a problem'
+    if (!formData.problems || formData.problems.length === 0) {
+      newErrors.problems = 'Please select at least one problem'
+    }
     return newErrors
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setServerMessage({ type: '', text: '' })
     const validationErrors = validate()
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors)
@@ -171,24 +457,58 @@ function CityScan() {
     }
 
     setIsSubmitting(true)
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 800))
-    setIsSubmitting(false)
-    setSubmitted(true)
-    setFormData({
-      name: '',
-      mobile: '',
-      district: '',
-      pincode: '',
-      policeStation: '',
-      problem: '',
-    })
-    setZipcodes([])
-    setPoliceStations([])
 
-    setTimeout(() => {
-      setSubmitted(false)
-    }, 5000)
+    try {
+      const payload = {
+        mobile: formData.mobile,
+        name: formData.name,
+        district: String(formData.district),
+        pincode: String(formData.pincode),
+        policestation: String(formData.policeStation),
+        problems: formData.problems,
+        category: 'Feel Safe',
+      }
+
+      const res = await storeCityScan(payload)
+
+      if (res?.status || res?.success || res?.id) {
+        setSubmitted(true)
+        setServerMessage({
+          type: 'success',
+          text: res?.message || 'Thank you! Your City Scan report has been submitted successfully.',
+        })
+        setFormData({
+          name: '',
+          mobile: '',
+          district: '',
+          pincode: '',
+          policeStation: '',
+          problems: [],
+        })
+        setZipcodes([])
+        setPoliceStations([])
+
+        setTimeout(() => {
+          setSubmitted(false)
+          setServerMessage({ type: '', text: '' })
+        }, 5000)
+      } else {
+        setServerMessage({
+          type: 'error',
+          text: res?.message || 'Failed to submit report. Please try again.',
+        })
+      }
+    } catch (error) {
+      console.error('Submit City Scan Error:', error)
+      setServerMessage({
+        type: 'error',
+        text:
+          error?.response?.data?.message ||
+          'Failed to submit your City Scan report. Please try again.',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
 
@@ -464,11 +784,21 @@ function CityScan() {
                 </div>
               </div>
 
-              {/* Success message */}
-              {submitted && (
-                <div className="mt-4 p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-[13px] flex items-center gap-2.5 shadow-sm">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                  <span className="font-medium">{t("cityScan.form.successMsg", { defaultValue: "Thank you! Your City Scan report has been submitted successfully." })}</span>
+              {/* Server status message */}
+              {serverMessage.text && (
+                <div
+                  className={`mt-4 p-3.5 rounded-2xl border text-xs sm:text-[13px] flex items-center gap-2.5 shadow-sm ${
+                    serverMessage.type === 'error'
+                      ? 'bg-red-50 border-red-200 text-red-700'
+                      : 'bg-emerald-50 border-emerald-200 text-emerald-800'
+                  }`}
+                >
+                  {serverMessage.type === 'error' ? (
+                    <AlertTriangle className="w-5 h-5 text-red-500 shrink-0" />
+                  ) : (
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                  )}
+                  <span className="font-medium">{serverMessage.text}</span>
                 </div>
               )}
 
@@ -523,123 +853,90 @@ function CityScan() {
                 </div>
 
                 {/* Row 2: District, Pincode, Police Station */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 relative z-20">
                   {/* District */}
-                  <div>
-                    <label className="block text-xs font-bold text-[#102849] mb-1.5">
-                      {t("cityScan.form.districtLabel", { defaultValue: "Select District" })} <span className="text-[#e60067]">*</span>
-                    </label>
-                    <div className="relative flex items-center group">
-                      <div className="absolute left-2.5 w-7 h-7 rounded-lg bg-pink-100/80 text-[#e60067] flex items-center justify-center shrink-0 group-focus-within:bg-[#e60067] group-focus-within:text-white transition-all duration-200 pointer-events-none">
-                        <Building2 className="w-3.5 h-3.5" />
-                      </div>
-                      <select
-                        name="district"
-                        value={formData.district}
-                        onChange={handleDistrictChange}
-                        className={`w-full pl-11 pr-7 py-2.5 sm:py-2.5 bg-white border ${errors.district ? "border-red-400 ring-2 ring-red-100" : "border-pink-200/90"
-                          } rounded-xl text-xs sm:text-[12.5px] text-slate-700 font-medium shadow-2xs focus:outline-none focus:border-[#e60067] focus:ring-4 focus:ring-pink-500/15 appearance-none transition-all duration-200 cursor-pointer truncate`}
-                      >
-                        <option value="">{t("cityScan.form.districtLabel", { defaultValue: "Select District" })}</option>
-                        {districts.map((dist) => (
-                          <option key={dist.id} value={dist.id}>{dist.district}</option>
-                        ))}
-                      </select>
-                      <ChevronDown className="absolute right-2.5 w-4 h-4 text-slate-400 pointer-events-none group-focus-within:text-[#e60067] transition-colors" />
-                    </div>
-                    {errors.district && <p className="text-[10.5px] font-semibold text-red-500 mt-1">{errors.district}</p>}
-                  </div>
+                  <CustomDropdown
+                    icon={Building2}
+                    label={t("cityScan.form.districtLabel", { defaultValue: "Select District" })}
+                    placeholder={t("cityScan.form.districtLabel", { defaultValue: "Select District" })}
+                    value={formData.district}
+                    onChange={handleDistrictChange}
+                    options={districts.map((dist) => ({
+                      value: String(dist.id),
+                      label: dist.district,
+                    }))}
+                    error={errors.district}
+                    searchPlaceholder="Search district..."
+                    emptyText="No districts found"
+                  />
 
                   {/* Pincode */}
-                  <div>
-                    <label className="block text-xs font-bold text-[#102849] mb-1.5">
-                      {t("cityScan.form.pincodeLabel", { defaultValue: "Select Pincode" })} <span className="text-[#e60067]">*</span>
-                    </label>
-                    <div className="relative flex items-center group">
-                      <div className="absolute left-2.5 w-7 h-7 rounded-lg bg-pink-100/80 text-[#e60067] flex items-center justify-center shrink-0 group-focus-within:bg-[#e60067] group-focus-within:text-white transition-all duration-200 pointer-events-none">
-                        <MapPin className="w-3.5 h-3.5" />
-                      </div>
-                      <select
-                        name="pincode"
-                        value={formData.pincode}
-                        onChange={handleInputChange}
-                        disabled={!formData.district || loadingDetails}
-                        className={`w-full pl-11 pr-7 py-2.5 sm:py-2.5 bg-white border ${errors.pincode ? "border-red-400 ring-2 ring-red-100" : "border-pink-200/90"
-                          } rounded-xl text-xs sm:text-[12.5px] text-slate-700 font-medium shadow-2xs focus:outline-none focus:border-[#e60067] focus:ring-4 focus:ring-pink-500/15 appearance-none transition-all duration-200 cursor-pointer truncate disabled:bg-slate-100 disabled:cursor-not-allowed`}
-                      >
-                        <option value="">
-                          {loadingDetails
-                            ? "Loading Pincodes..."
-                            : t("cityScan.form.pincodeLabel", { defaultValue: "Select Pincode" })}
-                        </option>
-                        {zipcodes.map((item) => {
-                          const pin = item.Pincode || item.pincode
-                          return (
-                            <option key={item.id || pin} value={pin}>{pin}</option>
-                          )
-                        })}
-                      </select>
-                      <ChevronDown className="absolute right-2.5 w-4 h-4 text-slate-400 pointer-events-none group-focus-within:text-[#e60067] transition-colors" />
-                    </div>
-                    {errors.pincode && <p className="text-[10.5px] font-semibold text-red-500 mt-1">{errors.pincode}</p>}
-                  </div>
+                  <CustomDropdown
+                    icon={MapPin}
+                    label={t("cityScan.form.pincodeLabel", { defaultValue: "Select Pincode" })}
+                    placeholder={
+                      loadingDetails
+                        ? "Loading Pincodes..."
+                        : !formData.district
+                        ? "Select District first"
+                        : t("cityScan.form.pincodeLabel", { defaultValue: "Select Pincode" })
+                    }
+                    value={formData.pincode}
+                    onChange={(val) => handleFieldChange("pincode", val)}
+                    options={zipcodes.map((item) => {
+                      const pin = String(item.Pincode || item.pincode || '')
+                      const idVal = String(item.id || pin)
+                      return { value: idVal, label: pin }
+                    })}
+                    disabled={!formData.district || loadingDetails}
+                    loading={loadingDetails}
+                    error={errors.pincode}
+                    searchPlaceholder="Search pincode..."
+                    emptyText="No pincodes available"
+                  />
 
                   {/* Police Station */}
-                  <div>
-                    <label className="block text-xs font-bold text-[#102849] mb-1.5">
-                      {t("cityScan.form.policeStationLabel", { defaultValue: "Select Police Station" })} <span className="text-[#e60067]">*</span>
-                    </label>
-                    <div className="relative flex items-center group">
-                      <div className="absolute left-2.5 w-7 h-7 rounded-lg bg-pink-100/80 text-[#e60067] flex items-center justify-center shrink-0 group-focus-within:bg-[#e60067] group-focus-within:text-white transition-all duration-200 pointer-events-none">
-                        <Shield className="w-3.5 h-3.5" />
-                      </div>
-                      <select
-                        name="policeStation"
-                        value={formData.policeStation}
-                        onChange={handleInputChange}
-                        disabled={!formData.district || loadingDetails}
-                        className={`w-full pl-11 pr-7 py-2.5 sm:py-2.5 bg-white border ${errors.policeStation ? "border-red-400 ring-2 ring-red-100" : "border-pink-200/90"
-                          } rounded-xl text-xs sm:text-[12.5px] text-slate-700 font-medium shadow-2xs focus:outline-none focus:border-[#e60067] focus:ring-4 focus:ring-pink-500/15 appearance-none transition-all duration-200 cursor-pointer truncate disabled:bg-slate-100 disabled:cursor-not-allowed`}
-                      >
-                        <option value="">
-                          {loadingDetails
-                            ? "Loading Police Stations..."
-                            : t("cityScan.form.policeStationLabel", { defaultValue: "Select Police Station" })}
-                        </option>
-                        {policeStations.map((ps) => (
-                          <option key={ps.id} value={ps.name}>{ps.name}</option>
-                        ))}
-                      </select>
-                      <ChevronDown className="absolute right-2.5 w-4 h-4 text-slate-400 pointer-events-none group-focus-within:text-[#e60067] transition-colors" />
-                    </div>
-                    {errors.policeStation && <p className="text-[10.5px] font-semibold text-red-500 mt-1">{errors.policeStation}</p>}
-                  </div>
+                  <CustomDropdown
+                    icon={Shield}
+                    label={t("cityScan.form.policeStationLabel", { defaultValue: "Select Police Station" })}
+                    placeholder={
+                      loadingDetails
+                        ? "Loading Police Stations..."
+                        : !formData.district
+                        ? "Select District first"
+                        : t("cityScan.form.policeStationLabel", { defaultValue: "Select Police Station" })
+                    }
+                    value={formData.policeStation}
+                    onChange={(val) => handleFieldChange("policeStation", val)}
+                    options={policeStations.map((ps) => ({
+                      value: String(ps.id || ps.name),
+                      label: ps.name || ps.police_station || String(ps.id),
+                    }))}
+                    disabled={!formData.district || loadingDetails}
+                    loading={loadingDetails}
+                    error={errors.policeStation}
+                    searchPlaceholder="Search police station..."
+                    emptyText="No police stations available"
+                  />
                 </div>
 
-                {/* Row 3: Select Problem */}
-                <div>
-                  <label className="block text-xs font-bold text-[#102849] mb-1.5">
-                    {t("cityScan.form.problemLabel", { defaultValue: "Select Problem" })} <span className="text-[#e60067]">*</span>
-                  </label>
-                  <div className="relative flex items-center group">
-                    <div className="absolute left-2.5 w-7 h-7 rounded-lg bg-pink-100/80 text-[#e60067] flex items-center justify-center shrink-0 group-focus-within:bg-[#e60067] group-focus-within:text-white transition-all duration-200 pointer-events-none">
-                      <AlertTriangle className="w-3.5 h-3.5" />
-                    </div>
-                    <select
-                      name="problem"
-                      value={formData.problem}
-                      onChange={handleInputChange}
-                      className={`w-full pl-11 pr-8 py-2.5 sm:py-2.5 bg-white border ${errors.problem ? "border-red-400 ring-2 ring-red-100" : "border-pink-200/90"
-                        } rounded-xl text-xs sm:text-[13px] text-slate-700 font-medium shadow-2xs focus:outline-none focus:border-[#e60067] focus:ring-4 focus:ring-pink-500/15 appearance-none transition-all duration-200 cursor-pointer`}
-                    >
-                      <option value="">{t("cityScan.form.problemLabel", { defaultValue: "Select Problem" })}</option>
-                      {problems.map((p) => (
-                        <option key={p.id} value={p.problem_name}>{p.problem_name}</option>
-                      ))}
-                    </select>
-                    <ChevronDown className="absolute right-3 w-4 h-4 text-slate-400 pointer-events-none group-focus-within:text-[#e60067] transition-colors" />
-                  </div>
-                  {errors.problem && <p className="text-[10.5px] font-semibold text-red-500 mt-1">{errors.problem}</p>}
+                {/* Row 3: Select Problem (Multi-select) */}
+                <div className="relative z-10">
+                  <CustomDropdown
+                    icon={AlertTriangle}
+                    label={t("cityScan.form.problemLabel", { defaultValue: "Select Problem(s)" })}
+                    placeholder={t("cityScan.form.problemLabel", { defaultValue: "Select one or more problems" })}
+                    value={formData.problems}
+                    onChange={(val) => handleFieldChange("problems", val)}
+                    options={problems.map((p) => ({
+                      value: p.problem_name,
+                      label: p.problem_name,
+                    }))}
+                    isMulti={true}
+                    error={errors.problems}
+                    searchPlaceholder="Search problems..."
+                    emptyText="No problems found"
+                  />
                 </div>
 
                 {/* Submit Button - Wide, sleek height (py-2.5), zero shadow, rich gradient */}

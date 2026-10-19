@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight, Landmark, Gavel, ShieldCheck, Briefcase } from 'lucide-react'
-import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
-import cardBgImage from "../../assets/features/Smiling Woman with Pink Shield Design.png"
-import cardBgImage2 from "../../assets/features/Pink Security Alert with Hidden Figure.png"
-import cardBgImage3 from "../../assets/features/Glossy Pink E-FIR Legal Laptop Illustration.png"
-import cardBgImage4 from "../../assets/features/Glossy Pink City Map Banner.png"
+import bannerBg from '../../assets/pinkInfo/banner.png'
+import cardBgImage from "../../assets/pinkInfo/e726b4cb-7e86-4313-8089-c7a40539f54c.png"
+import cardBgImage2 from "../../assets/pinkInfo/97994605-1eef-4eee-9ffe-ab5bb70bf8f5.png"
+import cardBgImage3 from "../../assets/pinkInfo/1e1024c3-4848-4eec-8050-2ccb3630466a.png"
+import cardBgImage4 from "../../assets/pinkInfo/ccbbf1cb-259c-4315-9350-54a8a73b61e5.png"
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 function PinkInfo() {
@@ -68,7 +68,7 @@ function PinkInfo() {
         <img
           src={bannerBg}
           alt="Pink Info - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
+          className={`absolute inset-0 h-full w-full object-cover  lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
             isLoaded ? "scale-100" : "scale-110"
           }`}
         />
@@ -170,11 +170,11 @@ function PinkInfo() {
                 className="group relative flex flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border border-pink-100/90 bg-[#fff5f8]/50 p-4 sm:p-5 lg:p-5.5 shadow-xs transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-500/10 min-h-[155px] sm:min-h-[170px]"
               >
                 {/* Background Illustration on Right */}
-                <div className="absolute right-0 top-0 bottom-0 w-[42%] sm:w-[46%] pointer-events-none flex items-center justify-end overflow-hidden">
+                <div className="absolute right-0 top-0 bottom-0 w-[100%] sm:w-[100%] pointer-events-none flex items-center justify-end overflow-hidden">
                   <img
                     src={item.bgImage}
                     alt={item.title}
-                    className="h-full w-full object-contain object-right transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="h-full w-full object-cover object-[80%_center] md:object-fill transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
 

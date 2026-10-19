@@ -75,7 +75,7 @@ function EFIR() {
             }`}
           >
             <a
-              href="/"
+              href="https://cctnsup.gov.in/eFIR/login.aspx?cd=MQA3ADAA"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-[#e60067] hover:bg-[#c90059] active:scale-[0.98] px-4.5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold text-white shadow-md shadow-pink-500/20 transition-all duration-200 cursor-pointer w-fit group"
@@ -159,7 +159,7 @@ function EFIR() {
 
                   <div className="mt-2.5 sm:mt-3">
                     <a
-                      href="/"
+                      href="https://cctnsup.gov.in/eFIR/login.aspx?cd=MQA3ADAA"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 rounded-xl bg-[#e60067] hover:bg-[#c90059] active:scale-[0.98] text-white font-bold text-[11.5px] sm:text-xs py-2 px-4 shadow-sm shadow-pink-500/20 transition-all duration-200 cursor-pointer w-fit group"

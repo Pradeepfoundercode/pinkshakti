@@ -9,12 +9,12 @@ import {
   ratingOptions,
   subjectOptions,
 } from '../../schemas/feedback.schema'
+import { submitFeedback } from '../../services/feedback.service'
 import {
   Megaphone,
   User,
   Mail,
   Phone,
-  MapPin,
   Star,
   ChevronDown,
   PenLine,
@@ -33,7 +33,7 @@ import {
 export default function Feedback() {
   const { t } = useTranslation()
   const [hoveredRating, setHoveredRating] = useState(0)
-  const [submitted, setSubmitted] = useState(false)
+  const [serverMessage, setServerMessage] = useState({ type: '', text: '' })
 
   const {
     register,
@@ -48,7 +48,6 @@ export default function Feedback() {
       name: '',
       email: '',
       phone: '',
-      location: '',
       rating: 0,
       subject: '',
       message: '',
@@ -64,15 +63,40 @@ export default function Feedback() {
   }
 
   const onSubmit = async (data) => {
-    // Simulate API submission
-    await new Promise((resolve) => setTimeout(resolve, 800))
-    console.log('Feedback submitted:', data)
-    setSubmitted(true)
-    reset()
-
-    setTimeout(() => {
-      setSubmitted(false)
-    }, 5000)
+    try {
+      const payload = {
+        full_name: data.name,
+        email: data.email,
+        phone: data.phone ? `+91${data.phone}` : '',
+        rating: String(data.rating),
+        subject: data.subject,
+        message: data.message,
+      }
+      const res = await submitFeedback(payload)
+      if (res?.status) {
+        setServerMessage({
+          type: 'success',
+          text: res.message,
+        })
+        reset()
+        setTimeout(() => {
+          setServerMessage({ type: '', text: '' })
+        }, 5000)
+      } else {
+        setServerMessage({
+          type: 'error',
+          text: res?.message || 'Something went wrong. Please try again.',
+        })
+      }
+    } catch (error) {
+      console.error('Feedback submit error:', error)
+      setServerMessage({
+        type: 'error',
+        text:
+          error?.response?.data?.message ||
+          'Failed to submit your feedback. Please try again later.',
+      })
+    }
   }
 
   return (
@@ -124,11 +148,21 @@ export default function Feedback() {
                 {t("feedback.form.subtitle", { defaultValue: "Your feedback helps us serve you better. Please fill in the details below." })}
               </p>
 
-              {/* Success Alert */}
-              {submitted && (
-                <div className="mt-2.5 flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 p-2 text-xs font-semibold text-emerald-800 animate-in fade-in duration-300">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600" />
-                  <span>{t("feedback.form.successAlert", { defaultValue: "Thank you! Your feedback has been submitted successfully." })}</span>
+              {/* Server Message Alert */}
+              {serverMessage.text && (
+                <div
+                  className={`mt-2.5 flex items-center gap-2 rounded-xl border p-2.5 text-xs font-semibold animate-in fade-in duration-300 ${
+                    serverMessage.type === 'success'
+                      ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
+                      : 'border-red-200 bg-red-50 text-red-600'
+                  }`}
+                >
+                  {serverMessage.type === 'success' ? (
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600" />
+                  ) : (
+                    <AlertCircle className="h-4 w-4 shrink-0 text-red-500" />
+                  )}
+                  <span>{serverMessage.text}</span>
                 </div>
               )}
 
@@ -190,67 +224,48 @@ export default function Feedback() {
                   </div>
                 </div>
 
-                {/* Row 2: Phone Number & Location */}
-                <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                  <div className="group/field">
-                    <label className="block text-[11px] font-semibold text-[#102849] mb-0.5">
-                      {t("feedback.form.phoneLabel", { defaultValue: "Phone Number" })}
-                    </label>
-                    <div className="relative flex items-center">
-                      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2.5 text-slate-400">
-                        <Phone className="h-3.5 w-3.5" />
-                      </div>
-                      <span className="pointer-events-none absolute left-7 inset-y-0 flex items-center text-xs sm:text-[12.5px]  text-[#102849] select-none border-r border-pink-200/90 pr-1.5 h-4 my-auto">
-                        +91
-                      </span>
-                      <input
-                        type="tel"
-                        inputMode="numeric"
-                        maxLength={10}
-                        {...register('phone', {
-                          onChange: (e) => {
-                            e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10)
-                          },
-                        })}
-                        onKeyDown={(e) => {
-                          if (
-                            !/[0-9]/.test(e.key) &&
-                            !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'].includes(e.key)
-                          ) {
-                            e.preventDefault()
-                          }
-                        }}
-                        placeholder={t("feedback.form.phonePlaceholder", { defaultValue: "Enter 10-digit number" })}
-                        className={`w-full rounded-xl border bg-white py-1.5 pl-16 pr-2.5 text-xs sm:text-[13px] text-slate-700 placeholder-slate-400 outline-none transition-all duration-300 hover:shadow-xs focus:ring-1 ${errors.phone
-                          ? 'border-red-400 focus:border-red-500 focus:ring-red-100'
-                          : 'border-pink-200/80 hover:border-pink-300 focus:border-[#e60067] focus:ring-pink-200'
-                          }`}
-                      />
+                {/* Row 2: Phone Number */}
+                <div className="group/field">
+                  <label className="block text-[11px] font-semibold text-[#102849] mb-0.5">
+                    {t("feedback.form.phoneLabel", { defaultValue: "Phone Number" })}
+                  </label>
+                  <div className="relative flex items-center">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2.5 text-slate-400">
+                      <Phone className="h-3.5 w-3.5" />
                     </div>
-                    {errors.phone && (
-                      <p className="mt-0.5 flex items-center gap-1 text-[10px] font-medium text-red-500">
-                        <AlertCircle className="h-2.5 w-2.5 shrink-0" />
-                        <span>{errors.phone.message}</span>
-                      </p>
-                    )}
+                    <span className="pointer-events-none absolute left-7 inset-y-0 flex items-center text-xs sm:text-[12.5px]  text-[#102849] select-none border-r border-pink-200/90 pr-1.5 h-4 my-auto">
+                      +91
+                    </span>
+                    <input
+                      type="tel"
+                      inputMode="numeric"
+                      maxLength={10}
+                      {...register('phone', {
+                        onChange: (e) => {
+                          e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10)
+                        },
+                      })}
+                      onKeyDown={(e) => {
+                        if (
+                          !/[0-9]/.test(e.key) &&
+                          !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'].includes(e.key)
+                        ) {
+                          e.preventDefault()
+                        }
+                      }}
+                      placeholder={t("feedback.form.phonePlaceholder", { defaultValue: "Enter 10-digit number" })}
+                      className={`w-full rounded-xl border bg-white py-1.5 pl-16 pr-2.5 text-xs sm:text-[13px] text-slate-700 placeholder-slate-400 outline-none transition-all duration-300 hover:shadow-xs focus:ring-1 ${errors.phone
+                        ? 'border-red-400 focus:border-red-500 focus:ring-red-100'
+                        : 'border-pink-200/80 hover:border-pink-300 focus:border-[#e60067] focus:ring-pink-200'
+                        }`}
+                    />
                   </div>
-
-                  <div className="group/field">
-                    <label className="block text-[11px] font-semibold text-[#102849] mb-0.5">
-                      {t("feedback.form.locationLabel", { defaultValue: "Location (City/District)" })}
-                    </label>
-                    <div className="relative flex items-center">
-                      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2.5 text-slate-400">
-                        <MapPin className="h-3.5 w-3.5" />
-                      </div>
-                      <input
-                        type="text"
-                        {...register('location')}
-                        placeholder={t("feedback.form.locationPlaceholder", { defaultValue: "Enter your city or district" })}
-                        className="w-full rounded-xl border border-pink-200/80 bg-white py-1.5 pl-8 pr-2.5 text-xs sm:text-[13px] text-slate-700 placeholder-slate-400 outline-none transition-all duration-300 hover:border-pink-300 hover:shadow-xs focus:border-[#e60067] focus:ring-1 focus:ring-pink-200"
-                      />
-                    </div>
-                  </div>
+                  {errors.phone && (
+                    <p className="mt-0.5 flex items-center gap-1 text-[10px] font-medium text-red-500">
+                      <AlertCircle className="h-2.5 w-2.5 shrink-0" />
+                      <span>{errors.phone.message}</span>
+                    </p>
+                  )}
                 </div>
 
                 {/* Rating Section with Stars and Labels */}
