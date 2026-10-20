@@ -462,7 +462,7 @@ function OneStopCenter() {
               <div className="lg:col-span-3 flex items-center gap-2.5 sm:gap-3">
                 <button
                   type="submit"
-                  className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl bg-[#e60067] px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#c40057] active:scale-95 cursor-pointer"
+                  className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl btn-pink px-4 py-2.5 text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200 active:scale-95 cursor-pointer"
                 >
                   <Search className="h-4 w-4" />
                   <span>{t("oneStopCenter.searchBox.searchButton", { defaultValue: "Search" })}</span>
@@ -520,45 +520,108 @@ function OneStopCenter() {
                       >
                         <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
                           {/* Left Number & Details */}
-                          <div className="flex items-start gap-3.5 flex-1 min-w-0">
+                          <div className="flex items-start gap-3 sm:gap-3.5 flex-1 min-w-0 w-full">
                             {/* Number Badge */}
-                            <div className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full bg-pink-100 font-bold text-[#e60067] text-sm sm:text-base border border-pink-200/60 shadow-xs">
+                            <div className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full bg-pink-100 font-bold text-[#e60067] text-sm sm:text-base border border-pink-200/80 shadow-xs">
                               {centerNumber}
                             </div>
 
                             {/* Center Info */}
                             <div className="flex-1 min-w-0">
-                              <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                              <div className="flex flex-wrap items-center gap-2 mb-1">
                                 <h4 className="font-bold text-sm sm:text-base text-[#102849]">
                                   {centerName}
                                 </h4>
                               </div>
 
                               {centerAddress && (
-                                <p className="text-xs text-gray-500 flex items-start gap-1.5 mb-1.5">
+                                <p className="text-xs text-gray-500 flex items-start gap-1.5 mb-2">
                                   <MapPin className="h-3.5 w-3.5 text-[#e60067] shrink-0 mt-0.5" />
                                   <span className="line-clamp-2 leading-relaxed">{centerAddress}</span>
                                 </p>
                               )}
 
-
                               {center.concerned_officer && (
-                                <div className="text-xs text-gray-700 flex items-center gap-1.5 mt-2 bg-white/70 border border-pink-100/80 rounded-lg py-1 w-fit">
-                                  <User className="h-3.5 w-3.5 text-[#e60067] shrink-0" />
-                                  <span className="font-semibold text-gray-800">{t("oneStopCenter.results.officerLabel", { defaultValue: "Officer:" })}</span>{' '}
-                                  <span>{center.concerned_officer.trim()}</span>
-                                  {center.designation && (
-                                    <span className="text-gray-500 font-normal">
-                                      • {center.designation.trim()}
-                                    </span>
-                                  )}
+                                <div className="text-xs text-gray-700 flex items-start gap-1.5 mb-1.5">
+                                  <User className="h-3.5 w-3.5 text-[#e60067] shrink-0 mt-0.5" />
+                                  <div className="leading-relaxed">
+                                    <span className="font-semibold text-gray-800">{t("oneStopCenter.results.officerLabel", { defaultValue: "Officer:" })}</span>{' '}
+                                    <span className="font-medium text-gray-900">{center.concerned_officer.trim()}</span>
+                                    {center.designation && (
+                                      <span className="text-gray-500 font-normal">
+                                        {' '}• {center.designation.trim()}
+                                      </span>
+                                    )}
+                                  </div>
                                 </div>
                               )}
+
+                              {/* Mobile-Only Contact Info: Perfectly aligned under Officer & Location */}
+                              <div className="sm:hidden mt-2.5 pt-2.5 border-t border-pink-100/80 space-y-2 text-xs text-gray-600">
+                                {formattedPhone && (
+                                  <div className="flex items-center gap-1.5">
+                                    <Phone className="h-3.5 w-3.5 text-[#e60067] shrink-0" />
+                                    <div className="flex flex-wrap items-center gap-x-1.5">
+                                      {formattedPhone.split(',').map((num, i, arr) => {
+                                        const cleanNum = num.trim()
+                                        return (
+                                          <span key={i} className="inline-flex items-center">
+                                            <a
+                                              href={`tel:${cleanNum.replace(/\s+/g, '')}`}
+                                              className="font-medium text-gray-700 hover:text-[#e60067] transition-colors"
+                                            >
+                                              {cleanNum}
+                                            </a>
+                                            {i < arr.length - 1 && <span className="text-gray-400 ml-1">,</span>}
+                                          </span>
+                                        )
+                                      })}
+                                    </div>
+                                  </div>
+                                )}
+                                {center.email && (
+                                  <p className="flex items-center gap-2">
+                                    <Mail className="h-3.5 w-3.5 text-[#e60067] shrink-0" />
+                                    <a
+                                      href={`mailto:${center.email.trim()}`}
+                                      className="hover:text-[#e60067] hover:underline transition-colors break-all text-gray-700"
+                                    >
+                                      {center.email.trim()}
+                                    </a>
+                                  </p>
+                                )}
+                                <p className="flex items-center gap-2 text-gray-500">
+                                  <Clock className="h-3.5 w-3.5 text-[#e60067] shrink-0" />
+                                  <span>{center.timing || t("oneStopCenter.results.support24x7", { defaultValue: "24 x 7 Support" })}</span>
+                                </p>
+
+                                {/* Action Button: View on Map */}
+                                <div className="pt-1">
+                                  <button
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.preventDefault()
+                                      if (centerAddress || center.district) {
+                                        window.open(
+                                          `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                            (centerAddress || `${center.district} One Stop Center`) + ', Uttar Pradesh'
+                                          )}`,
+                                          '_blank'
+                                        )
+                                      }
+                                    }}
+                                    className="inline-flex items-center gap-1.5 rounded-full border border-pink-200 bg-white px-3 py-1.5 text-xs font-semibold tracking-wide text-[#e60067] shadow-2xs transition-all hover:bg-pink-50 hover:border-pink-300 active:scale-95 cursor-pointer"
+                                  >
+                                    <MapPin className="h-3.5 w-3.5" />
+                                    {t("oneStopCenter.results.viewOnMap", { defaultValue: "View on Map" })}
+                                  </button>
+                                </div>
+                              </div>
                             </div>
                           </div>
 
-                          {/* Contact Info Column */}
-                          <div className="w-full sm:w-auto shrink-0 space-y-1.5 text-xs text-gray-600 pt-2 sm:pt-0 border-t sm:border-t-0 border-pink-50">
+                          {/* Desktop-Only Contact Info Column */}
+                          <div className="hidden sm:flex sm:flex-col sm:justify-start shrink-0 space-y-1.5 text-xs text-gray-600 sm:border-l sm:border-pink-100/80 sm:pl-5 min-w-[220px]">
                             {formattedPhone && (
                               <p className="flex items-center gap-1.5">
                                 <Phone className="h-3.5 w-3.5 text-[#e60067] shrink-0" />
@@ -570,7 +633,7 @@ function OneStopCenter() {
                                 <Mail className="h-3.5 w-3.5 text-[#e60067] shrink-0" />
                                 <a
                                   href={`mailto:${center.email.trim()}`}
-                                  className="hover:text-[#e60067] hover:underline transition-colors"
+                                  className="hover:text-[#e60067] hover:underline transition-colors break-all"
                                 >
                                   {center.email.trim()}
                                 </a>
@@ -581,7 +644,7 @@ function OneStopCenter() {
                               <span>{center.timing || t("oneStopCenter.results.support24x7", { defaultValue: "24 x 7 Support" })}</span>
                             </p>
 
-                            {/* Action Button: View on Map directly under 24x7 */}
+                            {/* Action Button: View on Map */}
                             <div className="pt-1.5">
                               <button
                                 type="button"
@@ -596,17 +659,13 @@ function OneStopCenter() {
                                     )
                                   }
                                 }}
-                                className="flex w-fit items-center gap-1 rounded-full border border-pink-200/60 bg-pink-50/50 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-[#e60067] transition-all hover:bg-pink-100 hover:border-pink-300 active:scale-95 cursor-pointer"
+                                className="flex w-fit items-center gap-1 rounded-full border border-pink-200/80 bg-pink-50/60 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-[#e60067] transition-all hover:bg-pink-100 hover:border-pink-300 active:scale-95 cursor-pointer"
                               >
                                 <MapPin className="h-3 w-3" />
                                 {t("oneStopCenter.results.viewOnMap", { defaultValue: "View on Map" })}
                               </button>
                             </div>
                           </div>
-
-                          {/* Empty 3rd column preserved to maintain exact original layout spacing */}
-                          <div className="hidden sm:block sm:w-12 shrink-0"></div>
-
                         </div>
                       </div>
                     )

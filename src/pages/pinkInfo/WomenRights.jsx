@@ -86,7 +86,7 @@ function WomenRights() {
         <img
           src={bannerBg}
           alt="Women Rights - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
+          className={`absolute inset-0 h-full w-full object-cover object-[60%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
             isLoaded ? 'scale-100' : 'scale-110'
           }`}
         />
@@ -197,33 +197,23 @@ function WomenRights() {
                     </h3>
 
                     {/* Text */}
-                    <p className="text-slate-700 text-xs sm:text-[13px] lg:text-[13.5px] font-medium leading-relaxed mb-3.5 sm:mb-4">
+                    <p className="text-slate-700 text-xs sm:text-[13px] lg:text-[13.5px] font-medium leading-relaxed mb-1.5 sm:mb-2">
                       {card.desc}
                     </p>
-                  </div>
 
-                  {/* Read Full Details Filled Button */}
-                  <div className="mt-auto pt-1">
-                    {card.link ? (
-                      <Link
-                        to={card.link}
-                        className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-[#e60067] hover:bg-[#c80058] active:scale-[0.99] text-white transition-all text-xs sm:text-[12.5px] font-semibold w-fit shadow-xs shadow-pink-200"
-                      >
-                        <span>
-                          {t('womenRightsPage.readDetails', { defaultValue: 'Read Full Details' })}
-                        </span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    ) : (
-                      <button
-                        type="button"
-                        className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-[#e60067] hover:bg-[#c80058] active:scale-[0.99] text-white transition-all text-xs sm:text-[12.5px] font-semibold w-fit shadow-xs shadow-pink-200"
-                      >
-                        <span>
-                          {t('womenRightsPage.readDetails', { defaultValue: 'Read Full Details' })}
-                        </span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
+                    {/* Small pink text link "Read more" - Only on first card */}
+                    {card.link && (
+                      <div className="pt-0.5">
+                        <Link
+                          to={card.link}
+                          className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-[#e60067] hover:text-[#c9005a] hover:underline transition-colors"
+                        >
+                          <span>
+                            {t('womenRightsPage.readMore', { defaultValue: 'Read more' })}
+                          </span>
+                          <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                        </Link>
+                      </div>
                     )}
                   </div>
                 </div>

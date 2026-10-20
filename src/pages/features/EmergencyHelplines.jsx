@@ -209,7 +209,7 @@ function EmergencyHelplines() {
                   {/* Call Button */}
                   <a
                     href={item.callLink}
-                    className="mt-5 flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#e60067] px-4 py-2.5 text-xs font-bold text-white shadow-xs transition-all duration-300 hover:bg-[#c40057] hover:shadow-md hover:shadow-pink-500/25 active:scale-[0.98] sm:py-3 sm:text-sm"
+                    className="mt-5 flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl btn-pink-solid px-4 py-2.5 text-xs font-bold shadow-xs transition-all duration-300 hover:shadow-md hover:shadow-pink-500/25 active:scale-[0.98] sm:py-3 sm:text-sm"
                   >
                     <Phone className="h-4 w-4 fill-white" />
                     <span>{t("emergencyHelplines.callNow", { defaultValue: "Call" })} {item.number}</span>

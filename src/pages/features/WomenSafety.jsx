@@ -223,7 +223,7 @@ function WomenSafety() {
                   <div className="mt-3">
                     <a
                       href="tel:112"
-                      className="bg-[#e60067] hover:bg-[#c90059] active:scale-[0.98] text-white font-bold text-xs sm:text-[12.5px] py-2 px-4.5 rounded-xl shadow-sm shadow-pink-500/20 inline-flex items-center gap-1.5 transition-all duration-200 group w-fit cursor-pointer"
+                      className="btn-pink active:scale-[0.98] font-bold text-xs sm:text-[12.5px] py-2 px-4.5 rounded-xl shadow-sm shadow-pink-500/20 inline-flex items-center gap-1.5 transition-all duration-200 group w-fit cursor-pointer"
                     >
                       <span>{t('womenSafety.erss.button', { defaultValue: 'Use Emergency Help' })}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -435,7 +435,7 @@ function WomenSafety() {
             <div className="shrink-0 w-full xl:w-auto flex justify-end">
               <Link
                 to="/features/emergency-helplines"
-                className="w-full xl:w-auto justify-center border-2 border-[#e60067] text-[#e60067] hover:bg-[#e60067] hover:text-white font-bold text-xs sm:text-[13px] py-2.5 sm:py-3 px-5 rounded-xl transition-all duration-200 inline-flex items-center gap-2 shadow-sm hover:shadow-md active:scale-95 group cursor-pointer"
+                className="btn-pink-outline w-full xl:w-auto justify-center font-bold text-xs sm:text-[13px] py-2.5 sm:py-3 px-5 rounded-xl transition-all duration-200 inline-flex items-center gap-2 shadow-sm hover:shadow-md active:scale-95 group cursor-pointer"
               >
                 <span>{t('womenSafety.safetyTipsBanner.viewAll', { defaultValue: 'View All Tips' })}</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />

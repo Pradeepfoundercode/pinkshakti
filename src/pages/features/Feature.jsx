@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import PageBanner from '../../components/common/PageBanner'
@@ -108,9 +107,9 @@ function Feature() {
                     {/* Text Details */}
                     <div className="flex-1 min-w-0 pr-1">
                       <h3 className="font-bold text-xs sm:text-[14px] text-[#102849] leading-snug">
-                        <Link to={feature.link} className="hover:text-[#e60067] transition-colors">
+                        <a href={feature.link} className="hover:text-[#e60067] transition-colors">
                           {trans.title}
-                        </Link>
+                        </a>
                       </h3>
 
                       <p className="mt-0.5 text-[10px] md:text-[11.5px] text-slate-600 leading-relaxed">
@@ -119,12 +118,12 @@ function Feature() {
 
                       {/* Dedicated Page Link (if present) */}
                       {feature.dedicatedLink && (
-                        <Link
-                          to={feature.dedicatedLink.to}
+                        <a
+                          href={feature.dedicatedLink.to}
                           className="mt-0.5 inline-block text-[11px] sm:text-xs font-semibold text-[#e60067] hover:underline"
                         >
                           {trans.dedicated || feature.dedicatedLink.text}
-                        </Link>
+                        </a>
                       )}
 
                       {/* Bullet Points (if present) */}
@@ -146,13 +145,13 @@ function Feature() {
 
                       {/* Explore Feature CTA Button */}
                       <div className="mt-1.5 sm:mt-2">
-                        <Link
-                          to={feature.link}
-                          className="button-motion inline-flex items-center whitespace-nowrap gap-1.5 rounded-full bg-[#e60067] px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-semibold text-white shadow-xs transition hover:bg-[#d0005a] active:scale-95"
+                        <a
+                          href={feature.link}
+                          className="button-motion inline-flex items-center whitespace-nowrap gap-1.5 rounded-full btn-pink px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-semibold shadow-xs transition active:scale-95"
                         >
                           <span>{t("features.exploreFeature", { defaultValue: "Explore Feature" })}</span>
                           <ArrowRight className="h-3 w-3 shrink-0 stroke-[2.5]" />
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   </div>

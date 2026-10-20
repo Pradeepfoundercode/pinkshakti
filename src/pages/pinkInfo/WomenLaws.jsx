@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import {
   FileText,
@@ -150,7 +149,7 @@ function WomenLaws() {
         <img
           src={bannerBg}
           alt="Women Laws - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
+          className={`absolute inset-0 h-full w-full object-cover object-[60%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
             isLoaded ? 'scale-100' : 'scale-110'
           }`}
         />
@@ -201,9 +200,9 @@ function WomenLaws() {
       </section>
 
       {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Important Note Banner */}
-        <div className="bg-[#FFF0F4] border border-[#FBCFE8]/90 rounded-2xl p-3.5 sm:p-4 mb-8 sm:mb-10 flex items-start sm:items-center gap-3 shadow-xs">
+        <div className="bg-[#FFF0F4] border border-[#FBCFE8]/90 rounded-2xl p-3.5 sm:p-4 mb-4 sm:mb-5 flex items-start sm:items-center gap-3 shadow-xs">
           <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full bg-[#e60067] flex items-center justify-center shrink-0 text-white font-bold text-xs mt-0.5 sm:mt-0 shadow-xs">
             i
           </div>
@@ -220,7 +219,7 @@ function WomenLaws() {
 
         {/* 4 Law Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4">
-          {lawsData.map((law) => (
+          {lawsData.map((law, index) => (
             <div
               key={law.id}
               className="bg-white rounded-2xl border border-pink-100/90 shadow-[0_2px_10px_-3px_rgba(230,0,103,0.06)] hover:shadow-[0_8px_20px_-4px_rgba(230,0,103,0.12)] transition-all duration-300 p-2.5 sm:p-3 flex flex-col justify-between group"
@@ -289,34 +288,22 @@ function WomenLaws() {
                       <p className="text-[10.5px] sm:text-[11px] text-slate-600 leading-snug mt-0.5">
                         {law.punishment}
                       </p>
+
+                      {/* Small pink text link "Read more" under punishment */}
+                      {index === 0 && law.link && (
+                        <div className="mt-2">
+                          <a
+                            href={law.link}
+                            className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-[#e60067] hover:text-[#c9005a] hover:underline transition-colors"
+                          >
+                            <span>{t('womenLawsPage.readMore', { defaultValue: 'Read more' })}</span>
+                            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Read Full Details Button */}
-              <div className="mt-3.5 pt-2.5 border-t border-pink-50/80">
-                {law.link ? (
-                  <Link
-                    to={law.link}
-                    className="w-full bg-[#e60067] hover:bg-[#c80058] active:scale-[0.99] text-white font-medium text-[11.5px] sm:text-xs py-1.5 sm:py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 transition-all duration-200 shadow-xs shadow-pink-200"
-                  >
-                    <span>
-                      {t('womenLawsPage.readDetails', { defaultValue: 'Read Full Details' })}
-                    </span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                ) : (
-                  <button
-                    type="button"
-                    className="w-full bg-[#e60067] hover:bg-[#c80058] active:scale-[0.99] text-white font-medium text-[11.5px] sm:text-xs py-1.5 sm:py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 transition-all duration-200 shadow-xs shadow-pink-200"
-                  >
-                    <span>
-                      {t('womenLawsPage.readDetails', { defaultValue: 'Read Full Details' })}
-                    </span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                )}
               </div>
             </div>
           ))}

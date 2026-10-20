@@ -1,13 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import PageBanner from '../../components/common/PageBanner'
-import homeBanner from "../../assets/home/Empowered_Women.png"
-
-
 import communities from "../../assets/home/Pink Shakti Community Portrait.png"
 import cameralogo from "../../assets/home/Pink Target and Binoculars Icons1.png"
 import targetlogo from "../../assets/home/Pink Target and Binoculars Icons.png"
-
 import VisionBanner from '../../components/common/VisionBanner'
 import PhoneBanner from '../../components/common/PhoneBanner'
 import { impactPartners, enrichmentPanel, leadershipPanel, leadershipPanel1 } from '../../constants/aboutData'

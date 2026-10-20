@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
-  ArrowRight,
   Settings,
   Shield,
   MapPin,
@@ -13,7 +12,7 @@ import {
   Users,
   Heart,
 } from 'lucide-react'
-import bannerBg from '../../assets/banner/4b2974e3-7b3a-4a00-8e51-654b7fa39b45.png'
+import bannerBg from '../../assets/banner/anonymousbanner.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 function AnonymousCrimeReporting() {
@@ -152,12 +151,12 @@ function AnonymousCrimeReporting() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between">
       {/* Banner Section */}
-      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[300px] lg:h-[320px]">
+      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[340px]">
         {/* Background Image with slow zoom-out effect */}
         <img
           src={bannerBg}
           alt="Anonymous Crime Reporting - Pink Shakti"
-          className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+          className={`absolute inset-0 -z-10 h-full w-full object-cover object-[52%_center] lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
             }`}
         />
 
@@ -186,22 +185,6 @@ function AnonymousCrimeReporting() {
                 "Report incidents anonymously with map location and e-FIR information, Help create safer communities and support women by sharing details of unsafe locations, incidents and more.",
             })}
           </p>
-
-          {/* Report Now Button */}
-          <div
-            className={`mt-3 sm:mt-4 lg:mt-5 flex items-center transition-all duration-700 ease-out delay-700 ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <button
-              type="button"
-              className="group inline-flex items-center gap-2 rounded-xl bg-[#e60067] px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md shadow-pink-500/25 transition-all duration-300 hover:bg-[#c9005a] hover:shadow-lg hover:scale-[1.03] active:scale-95 cursor-pointer"
-            >
-              <span>{t("anonymousCrime.reportNow", { defaultValue: "Report Now" })}</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
-          </div>
-
         </div>
       </section>
 
@@ -241,15 +224,6 @@ function AnonymousCrimeReporting() {
                       "Pink Shakti enables women to report unsafe locations, incidents and other concerns anonymously. You can share details with map location, upload photos and help create safer communities.",
                   })}
                 </p>
-                <div className="mt-2.5 sm:mt-3">
-                  <button
-                    type="button"
-                    className="group inline-flex items-center gap-1.5 rounded-lg sm:rounded-xl bg-[#e60067] px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold text-white shadow-xs shadow-pink-500/20 transition-all duration-300 hover:bg-[#c9005a] hover:scale-[1.03] active:scale-95 cursor-pointer"
-                  >
-                    <span>{t("anonymousCrime.reportAnonymouslyBtn", { defaultValue: "Report Anonymously" })}</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </button>
-                </div>
               </div>
             </div>
 

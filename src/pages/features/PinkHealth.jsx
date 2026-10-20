@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight } from 'lucide-react'
 import bannerBg from '../../assets/banner/pinkhealth.png'
@@ -36,7 +35,6 @@ function PinkHealth() {
         defaultValue:
           'Get information about menstrual health, hygiene, common issues and tips for a safe and healthy menstrual cycle.',
       }),
-      readMore: t('pinkHealthPage.cards.menstrualHealth.readMore', { defaultValue: 'Read More' }),
     },
     {
       id: 'cervicalCancer',
@@ -46,7 +44,6 @@ function PinkHealth() {
         defaultValue:
           'Learn about cervical cancer, its prevention, screening, vaccination and early detection for a healthier future.',
       }),
-      readMore: t('pinkHealthPage.cards.cervicalCancer.readMore', { defaultValue: 'Read More' }),
     },
   ]
 
@@ -58,7 +55,7 @@ function PinkHealth() {
         <img
           src={bannerBg}
           alt="Pink Health - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
+          className={`absolute inset-0 h-full w-full object-cover object-[80%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
             isLoaded ? 'scale-100' : 'scale-110'
           }`}
         />
@@ -137,20 +134,15 @@ function PinkHealth() {
                     </p>
                   </div>
 
-                  {/* Read More Link */}
-                  {card.link ? (
-                    <Link
-                      to={card.link}
+                  {/* Read More Link - Only on first card */}
+                  {card.link && card.readMore && (
+                    <a
+                      href={card.link}
                       className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#e60067] group-hover:text-[#c9005a] transition-colors mt-auto cursor-pointer"
                     >
                       <span>{card.readMore}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                    </Link>
-                  ) : (
-                    <div className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#e60067] group-hover:text-[#c9005a] transition-colors mt-auto cursor-pointer">
-                      <span>{card.readMore}</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                    </div>
+                    </a>
                   )}
                 </div>
               </div>

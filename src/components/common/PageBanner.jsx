@@ -104,23 +104,40 @@ export default function PageBanner({
             {/* Primary Button (Exact same animation classes as Navbar) */}
             {primaryButton && (
               primaryButton.to ? (
-                <Link
-                  to={primaryButton.to}
-                  onClick={primaryButton.onClick}
-                  className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 w-auto"
-                >
-                  {primaryButton.icon ? (
-                    <primaryButton.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                  ) : (
-                    <Download className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                  )}
-                  <span>{primaryButton.text || "Get The App"}</span>
-                </Link>
+                primaryButton.to.startsWith("http") ? (
+                  <a
+                    href={primaryButton.to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={primaryButton.onClick}
+                    className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full btn-pink-gradient px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 w-auto"
+                  >
+                    {primaryButton.icon ? (
+                      <primaryButton.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                    ) : (
+                      <Download className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                    )}
+                    <span>{primaryButton.text || "Get The App"}</span>
+                  </a>
+                ) : (
+                  <Link
+                    to={primaryButton.to}
+                    onClick={primaryButton.onClick}
+                    className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full btn-pink-gradient px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 w-auto"
+                  >
+                    {primaryButton.icon ? (
+                      <primaryButton.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                    ) : (
+                      <Download className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                    )}
+                    <span>{primaryButton.text || "Get The App"}</span>
+                  </Link>
+                )
               ) : (
                 <button
                   type="button"
                   onClick={primaryButton.onClick}
-                  className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 w-auto"
+                  className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full btn-pink-gradient px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 w-auto"
                 >
                   {primaryButton.icon ? (
                     <primaryButton.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:-translate-y-1" />
@@ -138,7 +155,7 @@ export default function PageBanner({
                 <Link
                   to={secondaryButton.to}
                   onClick={secondaryButton.onClick}
-                  className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full border-2 border-[#e60067] bg-white/90 backdrop-blur-sm px-4 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-semibold text-[#e60067] transition-all duration-300 hover:bg-[#e60067] hover:text-white hover:shadow-lg hover:scale-[1.03] active:scale-95 w-auto"
+                  className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full btn-pink-outline backdrop-blur-sm px-4 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:scale-[1.03] active:scale-95 w-auto"
                 >
                   <span>{secondaryButton.text || "Know More"}</span>
                   {secondaryButton.icon ? (
@@ -151,7 +168,7 @@ export default function PageBanner({
                 <button
                   type="button"
                   onClick={secondaryButton.onClick}
-                  className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full border-2 border-[#e60067] bg-white/90 backdrop-blur-sm px-4 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-semibold text-[#e60067] transition-all duration-300 hover:bg-[#e60067] hover:text-white hover:shadow-lg hover:scale-[1.03] active:scale-95 w-auto"
+                  className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full btn-pink-outline backdrop-blur-sm px-4 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:scale-[1.03] active:scale-95 w-auto"
                 >
                   <span>{secondaryButton.text || "Know More"}</span>
                   {secondaryButton.icon ? (

@@ -36,7 +36,7 @@ function StateWomenCommission() {
         <img
           src={bannerBg}
           alt="State Women Commission - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
+          className={`absolute inset-0 h-full w-full object-cover object-[70%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
             isLoaded ? 'scale-100' : 'scale-110'
           }`}
         />
@@ -118,7 +118,7 @@ function StateWomenCommission() {
                   href="https://mahilaayog.up.gov.in/pdf/complaint_form.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-block font-bold text-xs sm:text-[13px] text-[#e60067] underline hover:text-[#c80058] transition-colors"
+                  className="mt-1 inline-block font-bold text-xs sm:text-[13px] text-[#e60067] underline hover:text-[#c9005a] transition-colors"
                 >
                   {t(
                     'stateWomenCommissionPage.complaintSection.formDownload.action',
@@ -182,7 +182,7 @@ function StateWomenCommission() {
                 </p>
                 <a
                   href="mailto:up.mahilaayog@yahoo.com"
-                  className="mt-1 block font-bold text-xs sm:text-[13px] text-[#e60067] underline hover:text-[#c80058] truncate transition-colors"
+                  className="mt-1 block font-bold text-xs sm:text-[13px] text-[#e60067] underline hover:text-[#c9005a] truncate transition-colors"
                 >
                   up.mahilaayog@yahoo.com
                 </a>
@@ -244,7 +244,7 @@ function StateWomenCommission() {
                   href="https://mahilaayog.up.gov.in/complaint.aspx"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-block font-bold text-xs sm:text-[13px] text-[#e60067] underline hover:text-[#c80058] transition-colors"
+                  className="mt-1 inline-block font-bold text-xs sm:text-[13px] text-[#e60067] underline hover:text-[#c9005a] transition-colors"
                 >
                   {t(
                     'stateWomenCommissionPage.complaintSection.online.action',

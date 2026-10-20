@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight, Landmark, Gavel, ShieldCheck, Briefcase } from 'lucide-react'
 import bannerBg from '../../assets/pinkInfo/banner.png'
@@ -68,7 +67,7 @@ function PinkInfo() {
         <img
           src={bannerBg}
           alt="Pink Info - Pink Shakti"
-          className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+          className={`absolute inset-0 -z-10 h-full w-full object-cover object-[60%_center] lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
             }`}
         />
 
@@ -188,11 +187,11 @@ function PinkInfo() {
                       <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-[#ffd8e6] text-[#e60067] shadow-xs transition-transform duration-300 group-hover:scale-110">
                         <item.icon className="h-4.5 w-4.5 sm:h-5 sm:w-5 stroke-[2.2]" />
                       </div>
-                      <Link to={item.link} className="hover:opacity-90">
+                      <a href={item.link} className="hover:opacity-90">
                         <h3 className="font-serif text-base sm:text-lg lg:text-[19px] font-bold text-[#e60067] leading-tight">
                           {item.title}
                         </h3>
-                      </Link>
+                      </a>
                     </div>
 
                     {/* Description */}
@@ -203,13 +202,13 @@ function PinkInfo() {
 
                   {/* Explore Details Button */}
                   <div className="mt-3 sm:mt-3.5">
-                    <Link
-                      to={item.link}
-                      className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-[#e60067] px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold text-white shadow-sm shadow-pink-500/20 transition-all duration-300 hover:bg-[#c9005a] hover:shadow-md hover:scale-[1.03] active:scale-95 cursor-pointer"
+                    <a
+                      href={item.link}
+                      className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl btn-pink px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold shadow-sm shadow-pink-500/20 transition-all duration-300 hover:shadow-md hover:scale-[1.03] active:scale-95 cursor-pointer"
                     >
                       <span>{t("pinkInfo.cards.exploreDetails", { defaultValue: "Explore Details" })}</span>
                       <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

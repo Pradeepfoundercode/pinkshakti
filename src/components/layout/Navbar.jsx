@@ -101,13 +101,15 @@ export default function Navbar() {
                     <div className="flex lg:flex-1 items-center justify-end gap-3 sm:gap-4">
 
                         {/* Get The App CTA */}
-                        <Link
-                            to="/downloads"
-                            className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 whitespace-nowrap"
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.inaequalisconsulting.pinkshakti"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full btn-pink-gradient px-4 py-2 text-sm font-semibold shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 whitespace-nowrap"
                         >
                             <Download className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1" />
                             <span>{t("navbar.getApp", { defaultValue: "Get The App" })}</span>
-                        </Link>
+                        </a>
 
                         {/* Modern Desktop Language Button */}
                         <div className="hidden md:block relative" ref={langRef}>
@@ -217,14 +219,16 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <Link
-                        to="/downloads"
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.inaequalisconsulting.pinkshakti"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setIsOpen(false)}
-                        className="mt-6 flex sm:hidden items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-[#E60067] to-[#ff2a85] px-4 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 active:scale-95"
+                        className="mt-6 flex sm:hidden items-center justify-center gap-2 w-full rounded-xl btn-pink-gradient px-4 py-3.5 text-sm font-semibold shadow-md transition-all duration-300 active:scale-95"
                     >
                         <Download className="h-5 w-5" />
                         <span>{t("navbar.getApp", { defaultValue: "Get The App" })}</span>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </nav>

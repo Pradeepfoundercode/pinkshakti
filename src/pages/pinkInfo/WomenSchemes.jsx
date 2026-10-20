@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ExternalLink, ArrowRight, Info } from 'lucide-react'
-import bannerBg from '../../assets/banner/women-schemes.png'
+import bannerBg from '../../assets/banner/womenschemes.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 // 10 Scheme Banner Images from assets/pinkInfo
@@ -237,7 +237,7 @@ function WomenSchemes() {
         <img
           src={bannerBg}
           alt="Women Schemes - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${isLoaded ? 'scale-100' : 'scale-110'
+          className={`absolute inset-0 h-full w-full object-cover object-[85%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${isLoaded ? 'scale-100' : 'scale-110'
             }`}
         />
 
@@ -335,7 +335,7 @@ function WomenSchemes() {
                         href={scheme.applyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 rounded-md bg-[#e60067] hover:bg-[#c90059] active:scale-95 px-2.5 py-1 text-[9.5px] font-bold text-white shadow-xs shadow-pink-500/20 transition-all duration-200 cursor-pointer"
+                        className="inline-flex items-center gap-1 rounded-md btn-pink active:scale-95 px-2.5 py-1 text-[9.5px] font-bold shadow-xs shadow-pink-500/20 transition-all duration-200 cursor-pointer"
                       >
                         <span>APPLY ONLINE</span>
                         <ArrowRight className="w-2.5 h-2.5 stroke-[2.5] transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -345,7 +345,7 @@ function WomenSchemes() {
                         href={scheme.portalUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-[10.5px] font-semibold text-[#e60067] hover:text-[#c90059] hover:underline transition-colors"
+                        className="inline-flex items-center gap-1 text-[10.5px] font-semibold text-[#e60067] hover:text-[#c9005a] hover:underline transition-colors"
                       >
                         <ExternalLink className="w-3 h-3 stroke-[2]" />
                         <span>{scheme.portalText}</span>

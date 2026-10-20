@@ -56,7 +56,7 @@ function EqualPay() {
         <img
           src={bannerBg}
           alt="Right to Equal Pay - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
+          className={`absolute inset-0 h-full w-full object-cover object-[65%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
             isLoaded ? 'scale-100' : 'scale-110'
           }`}
         />

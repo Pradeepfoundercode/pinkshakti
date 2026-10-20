@@ -516,12 +516,12 @@ function CityScan() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between">
       {/* banner */}
-      <section className="relative isolate overflow-hidden w-full min-h-[280px] sm:min-h-[320px] md:h-[360px] lg:h-[400px] flex items-center">
+      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
         {/* Background Image with slow zoom-out effect */}
         <img
           src={bannerBg}
           alt="City Scan - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+          className={`absolute inset-0 -z-10 h-full w-full object-cover object-[61%_center] lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
             }`}
         />
 
@@ -557,9 +557,9 @@ function CityScan() {
             })}
           </p>
 
-          {/* 3 Feature Cards */}
+          {/* 3 Feature Cards - Hidden on small screens, only visible on large screens */}
           <div
-            className={`mt-3 sm:mt-4 flex flex-wrap items-center gap-2 sm:gap-3 transition-all duration-700 ease-out delay-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`hidden lg:flex mt-4 items-center gap-3 transition-all duration-700 ease-out delay-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
             {/* 1. Identify Unsafe Areas */}
@@ -979,7 +979,7 @@ function CityScan() {
               <Settings className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2.3] fill-[#e60067]/15" />
             </div>
             <div>
-              <h2 className="font-serif text-[20px] sm:text-[23px] lg:text-[26px] font-bold text-[#e60067] leading-tight transition-colors duration-300 group-hover:text-[#c40057]">
+              <h2 className="font-serif text-[20px] sm:text-[23px] lg:text-[26px] font-bold text-[#e60067] leading-tight transition-colors duration-300 group-hover:text-[#c9005a]">
                 {t("cityScan.steps.title", { defaultValue: "Simple Steps to Submit" })}
               </h2>
               <p className="text-slate-600 font-medium text-[11px] sm:text-[12px] leading-tight mt-0.5">
@@ -995,7 +995,7 @@ function CityScan() {
               className={`flex-1 w-full relative bg-white rounded-2xl pt-3.5 pb-3 px-3 sm:px-3.5 border border-pink-200/80 shadow-[0_3px_12px_rgba(230,0,103,0.04)] hover:shadow-[0_12px_28px_rgba(230,0,103,0.12)] hover:border-[#e60067]/50 hover:-translate-y-1.5 transition-all duration-300 ease-out flex flex-col items-center text-center group cursor-pointer delay-300 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
             >
-              <div className="absolute top-2.5 left-2.5 w-6 h-6 rounded-full bg-[#e60067] text-white font-bold text-[11px] flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#d0005d]">
+              <div className="absolute top-2.5 left-2.5 w-6 h-6 rounded-full bg-[#e60067] text-white font-bold text-[11px] flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#c9005a]">
                 01
               </div>
               <div className="my-1 sm:my-1.5 text-[#e60067] transition-all duration-300 group-hover:scale-115 group-hover:-translate-y-0.5">
@@ -1022,7 +1022,7 @@ function CityScan() {
               className={`flex-1 w-full relative bg-white rounded-2xl pt-3.5 pb-3 px-3 sm:px-3.5 border border-pink-200/80 shadow-[0_3px_12px_rgba(230,0,103,0.04)] hover:shadow-[0_12px_28px_rgba(230,0,103,0.12)] hover:border-[#e60067]/50 hover:-translate-y-1.5 transition-all duration-300 ease-out flex flex-col items-center text-center group cursor-pointer delay-400 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
             >
-              <div className="absolute top-2.5 left-2.5 w-6 h-6 rounded-full bg-[#e60067] text-white font-bold text-[11px] flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#d0005d]">
+              <div className="absolute top-2.5 left-2.5 w-6 h-6 rounded-full bg-[#e60067] text-white font-bold text-[11px] flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#c9005a]">
                 02
               </div>
               <div className="my-1 sm:my-1.5 text-[#e60067] transition-all duration-300 group-hover:scale-115 group-hover:-translate-y-0.5">
@@ -1049,7 +1049,7 @@ function CityScan() {
               className={`flex-1 w-full relative bg-white rounded-2xl pt-3.5 pb-3 px-3 sm:px-3.5 border border-pink-200/80 shadow-[0_3px_12px_rgba(230,0,103,0.04)] hover:shadow-[0_12px_28px_rgba(230,0,103,0.12)] hover:border-[#e60067]/50 hover:-translate-y-1.5 transition-all duration-300 ease-out flex flex-col items-center text-center group cursor-pointer delay-500 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
             >
-              <div className="absolute top-2.5 left-2.5 w-6 h-6 rounded-full bg-[#e60067] text-white font-bold text-[11px] flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#d0005d]">
+              <div className="absolute top-2.5 left-2.5 w-6 h-6 rounded-full bg-[#e60067] text-white font-bold text-[11px] flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#c9005a]">
                 03
               </div>
               <div className="my-1 sm:my-1.5 text-[#e60067] transition-all duration-300 group-hover:scale-115 group-hover:-translate-y-0.5">
@@ -1076,7 +1076,7 @@ function CityScan() {
               className={`flex-1 w-full relative bg-white rounded-2xl pt-3.5 pb-3 px-3 sm:px-3.5 border border-pink-200/80 shadow-[0_3px_12px_rgba(230,0,103,0.04)] hover:shadow-[0_12px_28px_rgba(230,0,103,0.12)] hover:border-[#e60067]/50 hover:-translate-y-1.5 transition-all duration-300 ease-out flex flex-col items-center text-center group cursor-pointer delay-600 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
             >
-              <div className="absolute top-2.5 left-2.5 w-6 h-6 rounded-full bg-[#e60067] text-white font-bold text-[11px] flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#d0005d]">
+              <div className="absolute top-2.5 left-2.5 w-6 h-6 rounded-full bg-[#e60067] text-white font-bold text-[11px] flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#c9005a]">
                 04
               </div>
               <div className="my-1 sm:my-1.5 text-[#e60067] transition-all duration-300 group-hover:scale-115 group-hover:-translate-y-0.5">

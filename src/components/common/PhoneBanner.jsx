@@ -61,26 +61,32 @@ export default function PhoneBanner() {
 
         {/* MODERN BUTTON */}
         <div 
-          className={`mt-2 sm:mt-4 lg:mt-5 flex items-center transition-all duration-[1200ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] delay-700 ${
+          className={`mt-1.5 sm:mt-3 md:mt-4 lg:mt-5 flex items-center transition-all duration-[1200ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] delay-700 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <Link
-            to="/downloads"
+          <a
+            href="https://play.google.com/store/apps/details?id=com.inaequalisconsulting.pinkshakti"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Get Pink Shakti on Google Play"
-            className="flex items-center gap-2.5 bg-black rounded-lg px-3.5 py-2.5 border border-neutral-800 w-fit transition-all hover:bg-neutral-900 hover:border-neutral-600 hover:-translate-y-0.5 shadow-lg"
+            className="group flex items-center gap-1.5 sm:gap-2 md:gap-2.5 btn-playstore rounded-md sm:rounded-lg md:rounded-xl px-2.5 py-1 sm:px-3.5 sm:py-1.5 md:px-4 md:py-2 w-fit transition-all duration-300 hover:border-neutral-600 hover:scale-[1.03] hover:-translate-y-0.5 active:scale-95 shadow-md hover:shadow-lg"
           >
-            <img src={googlePlayBadge} alt="Play Store" className="h-5 w-5 object-contain" />
+            <img src={googlePlayBadge} alt="Play Store" className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 object-contain transition-transform duration-300 group-hover:scale-105" />
             <div>
-              <div className="text-[8px] uppercase tracking-wider text-neutral-400 leading-none mb-0.5">{t("phoneBanner.getItOn", { defaultValue: "Get it on" })}</div>
-              <div className="text-[13px] font-semibold text-white leading-none tracking-wide">{t("phoneBanner.googlePlay", { defaultValue: "Google Play" })}</div>
+              <div className="text-[7px] sm:text-[7.5px] md:text-[8px] uppercase tracking-wider text-neutral-400 leading-none mb-0.5">{t("phoneBanner.getItOn", { defaultValue: "Get it on" })}</div>
+              <div className="text-[10px] sm:text-[11.5px] md:text-[13px] font-semibold text-white leading-none tracking-wide">{t("phoneBanner.googlePlay", { defaultValue: "Google Play" })}</div>
             </div>
-          </Link>
+          </a>
         </div>
       </div>
 
       {/* MODERN QR CODE */}
-      <div 
+      <a 
+        href="https://play.google.com/store/apps/details?id=com.inaequalisconsulting.pinkshakti"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Scan or click to download Pink Shakti app on Google Play"
         className={`hidden sm:flex absolute right-[3%] lg:right-[5%] top-1/2 -translate-y-1/2 w-[100px] md:w-[115px] lg:w-[130px] flex-col items-center justify-center rounded-xl border-2 border-pink-300 bg-white/95 p-2 shadow-xl z-10 cursor-pointer 
         transition-all duration-[1200ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] delay-700
         hover:scale-110 hover:-translate-y-[55%] hover:border-[#e60067] hover:shadow-[0_20px_40px_-15px_rgba(230,0,103,0.5)]
@@ -96,7 +102,7 @@ export default function PhoneBanner() {
         <p className="mt-1.5 text-center text-[10px] md:text-[11px] lg:text-[12px] font-bold leading-tight text-[#e60067]">
           {t("phoneBanner.scanTitle", { defaultValue: "Scan to Download" })}<br />{t("phoneBanner.scanSubtitle", { defaultValue: "Pink Shakti App" })}
         </p>
-      </div>
+      </a>
     </section>
   );
 }

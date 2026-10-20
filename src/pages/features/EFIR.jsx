@@ -20,21 +20,21 @@ function EFIR() {
         <img
           src={bannerBg}
           alt="E-FIR - Pink Shakti"
-          className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+          className={`absolute inset-0 -z-10 h-full w-full object-cover object-[60%_center] lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
             }`}
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/10 md:hidden z-0"></div>
 
-        <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[70%] lg:w-[60%] text-[#102849]">
+        <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[65%] lg:w-[58%] text-[#102849]">
           {/* Badge: • E-FIR */}
           <div
             className={`transition-all duration-700 ease-out delay-100 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="mb-1.5 sm:mb-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-xs">
+            <div className="mb-0.5 sm:mb-1.5">
+              <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-pink-100/90 px-2 py-0.5 sm:px-3 sm:py-0.5 text-[9.5px] sm:text-[11px] font-bold text-[#e60067] shadow-xs">
                 <span className="text-sm leading-none">•</span>
                 <span>{t('eFirPage.badge', { defaultValue: 'E-FIR' })}</span>
               </span>
@@ -43,7 +43,7 @@ function EFIR() {
 
           {/* Title: E-FIR – File a Complaint Online */}
           <h1
-            className={`mt-1 sm:mt-1.5 font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-[1.15] sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${
+            className={`mt-0.5 sm:mt-1 font-serif text-[17px] sm:text-[24px] md:text-[30px] lg:text-[36px] font-bold leading-tight sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -57,7 +57,7 @@ function EFIR() {
 
           {/* Description */}
           <p
-            className={`mt-1.5 sm:mt-2.5 max-w-[36rem] text-[12px] sm:text-[13.5px] lg:text-[14.5px] font-medium leading-snug sm:leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 ${
+            className={`mt-1 sm:mt-1.5 max-w-[34rem] text-[10.5px] sm:text-[12.5px] lg:text-[14px] font-medium leading-snug sm:leading-relaxed text-slate-700 line-clamp-2 sm:line-clamp-3 transition-all duration-700 ease-out delay-500 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -67,9 +67,9 @@ function EFIR() {
             })}
           </p>
 
-          {/* Button: Go to UP Police e-FIR Portal */}
+          {/* Button: Go to UP Police e-FIR Portal (Same gradient & responsive sizing as Home banner) */}
           <div
-            className={`mt-3.5 sm:mt-4.5 lg:mt-5 transition-all duration-700 ease-out delay-700 ${
+            className={`mt-2 sm:mt-3 lg:mt-4 flex flex-wrap items-center gap-2 sm:gap-3 transition-all duration-700 ease-out delay-700 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -77,10 +77,10 @@ function EFIR() {
               href="https://cctnsup.gov.in/eFIR/login.aspx?cd=MQA3ADAA"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#e60067] hover:bg-[#c90059] active:scale-[0.98] px-4.5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold text-white shadow-md shadow-pink-500/20 transition-all duration-200 cursor-pointer w-fit group"
+              className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full btn-pink-gradient px-3.5 py-1.5 sm:px-5 sm:py-2.5 text-[11px] sm:text-sm font-semibold shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 w-fit"
             >
               <span>{t('eFirPage.button', { defaultValue: 'Go to UP Police e-FIR Portal' })}</span>
-              <ExternalLink className="w-4 h-4 stroke-[2.3] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
         </div>
@@ -161,7 +161,7 @@ function EFIR() {
                       href="https://cctnsup.gov.in/eFIR/login.aspx?cd=MQA3ADAA"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-xl bg-[#e60067] hover:bg-[#c90059] active:scale-[0.98] text-white font-bold text-[11.5px] sm:text-xs py-2 px-4 shadow-sm shadow-pink-500/20 transition-all duration-200 cursor-pointer w-fit group"
+                      className="inline-flex items-center gap-1.5 rounded-xl btn-pink active:scale-[0.98] font-bold text-[11.5px] sm:text-xs py-2 px-4 shadow-sm shadow-pink-500/20 transition-all duration-200 cursor-pointer w-fit group"
                     >
                       <span>
                         {t('eFirPage.aboutSection.button', {

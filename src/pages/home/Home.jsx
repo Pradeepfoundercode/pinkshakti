@@ -65,7 +65,7 @@ function Home() {
         description={t("home.heroDesc", { defaultValue: "Pink Shakti is a Women Safety, Awareness and Empowerment platform dedicated to building a safer, stronger and more independent Uttar Pradesh." })}
         primaryButton={{
           text: t("home.getApp", { defaultValue: "Get The App" }),
-          to: "/downloads",
+          to: "https://play.google.com/store/apps/details?id=com.inaequalisconsulting.pinkshakti",
           icon: Download,
         }}
         secondaryButton={{
@@ -113,9 +113,11 @@ function Home() {
             >
               {homeFeatures.map((feature) => {
                 const trans = featureTranslations[feature.title] || { title: feature.title, desc: feature.description }
+                const targetPath = feature.path || "/features"
                 return (
-                  <article
+                  <a
                     key={feature.title}
+                    href={targetPath}
                     className="
                 group snap-start shrink-0
                 w-[220px] sm:w-[230px]
@@ -129,6 +131,7 @@ function Home() {
                 hover:-translate-y-1
                 hover:shadow-xl
                 hover:border-[#e60067]/40
+                cursor-pointer
               "
                   >
                     <div className="mx-auto flex h-15 w-15 items-center justify-center rounded-full bg-pink-200 p-2.5 shadow-sm transition-transform duration-300 group-hover:scale-105">
@@ -147,14 +150,13 @@ function Home() {
                       {trans.desc}
                     </p>
 
-                    <Link
-                      to="/features"
+                    <div
                       aria-label={`Learn more about ${trans.title}`}
                       className="mt-auto inline-flex h-8 w-8 items-center justify-center rounded-full bg-pink-50 text-[#e60067] shadow-sm transition-all duration-300 group-hover:bg-[#e60067] group-hover:text-white"
                     >
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                    </Link>
-                  </article>
+                    </div>
+                  </a>
                 )
               })}
 
@@ -178,7 +180,7 @@ function Home() {
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
               Access essential information on government schemes, women’s laws & rights, PoSH Act 2013 and more — all in one place.
             </p>
-            <Link to="/features" className="button-motion mt-5 inline-flex w-fit items-center gap-2 rounded-xl bg-[#e60067] px-6 py-3 text-sm font-semibold text-white shadow-md shadow-pink-500/25 transition hover:bg-[#d0005a]">
+            <Link to="/features" className="button-motion mt-5 inline-flex w-fit items-center gap-2 rounded-xl btn-pink px-6 py-3 text-sm font-semibold shadow-md shadow-pink-500/25 transition">
               Explore Pink Info
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -343,7 +345,7 @@ function Home() {
               <div className="flex shrink-0 justify-start lg:justify-end">
                 <a
                   href="/gallery"
-                  className="group inline-flex items-center gap-2 rounded-full border-2 border-[#e60067] bg-white px-5 py-2.5 text-sm font-semibold text-[#e60067] whitespace-nowrap shadow-xs transition-all duration-300 ease-out hover:bg-[#e60067] hover:text-white hover:shadow-md hover:shadow-pink-500/40"
+                  className="group inline-flex items-center gap-2 rounded-full btn-pink-outline px-5 py-2.5 text-sm font-semibold whitespace-nowrap shadow-xs transition-all duration-300 ease-out hover:shadow-md hover:shadow-pink-500/40"
                 >
                   {t("home.viewGallery", { defaultValue: "View Gallery" })}
                   {/* Arrow Animation on Hover */}

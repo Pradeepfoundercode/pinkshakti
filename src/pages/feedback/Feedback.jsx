@@ -378,7 +378,7 @@ export default function Feedback() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#e60067] py-2 px-4 text-xs sm:text-[13px] font-bold text-white shadow-md shadow-pink-500/20 transition-all duration-300 hover:bg-[#d0005b] hover:shadow-lg hover:shadow-pink-500/30 active:scale-[0.99] disabled:opacity-70 cursor-pointer"
+                    className="group flex w-full items-center justify-center gap-2 rounded-xl btn-pink-solid py-2 px-4 text-xs sm:text-[13px] font-bold shadow-md shadow-pink-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/30 active:scale-[0.99] disabled:opacity-70 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <div className="h-3.5 w-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />

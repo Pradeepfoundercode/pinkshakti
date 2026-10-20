@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BookOpen, Users, Gavel, Lightbulb } from 'lucide-react'
-import bannerBg from '../../assets/banner/ebd093ba-e8c3-4928-9c56-cef743899f53.png'
+import bannerBg from '../../assets/banner/a8e0bc73-7c16-4d15-983e-008a0b69104b.png'
 import eveTeasingPoster from '../../assets/pinkInfo/251ca6b7-f21a-4fc1-a6d0-e9dfd0e1364d.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
@@ -57,7 +57,7 @@ function BnsSection() {
         <img
           src={bannerBg}
           alt="BNS Section 79 - Pink Shakti"
-           className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+           className={`absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center] lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
             }`}
         />
 

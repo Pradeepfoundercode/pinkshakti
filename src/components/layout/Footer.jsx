@@ -185,13 +185,13 @@ export default function Footer() {
             <ul className="flex flex-col space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.path}
+                  <a
+                    href={link.path}
                     className="group flex items-center text-xs font-medium text-pink-50 transition-all hover:translate-x-1 hover:text-white"
                   >
                     <ChevronRight className="h-3 w-3 opacity-0 -ml-3 mr-1 transition-all group-hover:opacity-100 group-hover:ml-0" />
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -238,16 +238,19 @@ export default function Footer() {
             </div>
 
             {/* Play Store Button */}
-            <Link
-              to="/"
-              className="flex items-center gap-2.5 bg-black rounded-lg px-3.5 py-2.5 border border-neutral-800 w-fit transition-all hover:bg-neutral-900 hover:border-neutral-600 hover:-translate-y-0.5 shadow-lg"
+            <a
+              href="https://play.google.com/store/apps/details?id=com.inaequalisconsulting.pinkshakti"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get Pink Shakti on Google Play"
+              className="flex items-center gap-2.5 btn-playstore rounded-lg px-3.5 py-2.5 w-fit transition-all hover:border-neutral-600 hover:-translate-y-0.5 shadow-lg"
             >
               <img src={googlePlayBadge} alt="Play Store" className="h-5 w-5 object-contain" />
               <div>
                 <div className="text-[8px] uppercase tracking-wider text-neutral-400 leading-none mb-0.5">{t("footer.getItOn", { defaultValue: "Get it on" })}</div>
                 <div className="text-[13px] font-semibold text-white leading-none tracking-wide">{t("footer.googlePlay", { defaultValue: "Google Play" })}</div>
               </div>
-            </Link>
+            </a>
           </div>
 
         </div>
