@@ -95,12 +95,29 @@ export default function Footer() {
   const [visitorCount, setVisitorCount] = useState(93211);
 
   useEffect(() => {
+    // 1. Check if footer data is already cached in this tab session
+    const cachedData = sessionStorage.getItem("pinkshakti_footer_data");
+    if (cachedData) {
+      try {
+        const { links, visitors } = JSON.parse(cachedData);
+        if (links?.length) setSocialLinks(links);
+        if (visitors) setVisitorCount(visitors);
+        return; // Cache exists, do not call API again!
+      } catch (err) {
+        console.error("Cache parsing error:", err);
+      }
+    }
+
+    // 2. First visit in this tab: Call API once
     let isMounted = true;
     getSocialMediaContent()
       .then((res) => {
         if (!isMounted) return;
+        let formattedLinks = [];
+        let totalVisitors = null;
+
         if (res?.status && res?.social_media?.data?.length > 0) {
-          const links = res.social_media.data
+          formattedLinks = res.social_media.data
             .filter((item) => item.status === "1" || item.status === 1 || item.status === undefined)
             .sort((a, b) => Number(a.sort_order || 0) - Number(b.sort_order || 0))
             .map((item) => ({
@@ -109,13 +126,24 @@ export default function Footer() {
               url: cleanUrl(item.platform_url),
               iconName: item.icon,
             }));
-          if (links.length > 0) {
-            setSocialLinks(links);
+          if (formattedLinks.length > 0) {
+            setSocialLinks(formattedLinks);
           }
         }
+
         if (res?.status && res?.visitors?.total) {
-          setVisitorCount(res.visitors.total);
+          totalVisitors = res.visitors.total;
+          setVisitorCount(totalVisitors);
         }
+
+        // 3. Save to sessionStorage (automatically cleared when tab is closed)
+        sessionStorage.setItem(
+          "pinkshakti_footer_data",
+          JSON.stringify({
+            links: formattedLinks.length > 0 ? formattedLinks : defaultSocialLinks,
+            visitors: totalVisitors || 93211,
+          })
+        );
       })
       .catch((err) => {
         console.error("Failed to fetch social media & visitors:", err);

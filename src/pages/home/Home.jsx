@@ -167,49 +167,7 @@ function Home() {
         </div>
       </section>
 
-      {/* <section className="bg-white px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14">
-        <div className="info-panel mx-auto grid max-w-[1600px] gap-6 rounded-3xl bg-[#fff7fa] p-6 lg:grid-cols-[1.05fr_1.55fr] lg:p-7">
-          <div className="flex flex-col justify-center">
-            <p className="inline-flex w-fit rounded-full bg-pink-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#e60067]">
-              • Pink Info
-            </p>
-            <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#102849] sm:text-4xl">
-              <span className="text-[#e60067]">Important Information</span>
-              <span className="block">For A Brighter <span className="text-[#e60067]">Tomorrow</span></span>
-            </h2>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
-              Access essential information on government schemes, women’s laws & rights, PoSH Act 2013 and more — all in one place.
-            </p>
-            <Link to="/features" className="button-motion mt-5 inline-flex w-fit items-center gap-2 rounded-xl btn-pink px-6 py-3 text-sm font-semibold shadow-md shadow-pink-500/25 transition">
-              Explore Pink Info
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { title: "Women Schemes", description: "Government schemes for education, employment, financial support and more.", icon: womenSchemesIcon },
-              { title: "Women Laws & Rights", description: "Know your legal rights including PoSH Act 2013, important laws and useful resources.", icon: womenLawsIcon },
-            ].map((info) => (
-              <article key={info.title} className="lift-card flex min-h-48 flex-col rounded-2xl bg-white p-5 shadow-sm ring-1 ring-pink-100">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-pink-100 p-2">
-                    <img src={info.icon} alt="" className="h-full w-full object-contain" />
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-lg font-bold text-[#102849]">{info.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{info.description}</p>
-                  </div>
-                </div>
-                <Link to="/features" aria-label={`Learn more about ${info.title}`} className="mt-auto inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#e60067] text-white transition hover:bg-[#c9005a]">
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
+      
 
 
       <PhoneBanner />

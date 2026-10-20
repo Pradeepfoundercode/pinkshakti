@@ -14,7 +14,6 @@ import {
   Lightbulb,
   Car,
 } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import PageBanner from '../../components/common/PageBanner'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
@@ -433,13 +432,13 @@ function WomenSafety() {
 
             {/* Right: View All Tips Button */}
             <div className="shrink-0 w-full xl:w-auto flex justify-end">
-              <Link
-                to="/features/emergency-helplines"
+              <a
+                href="/features/emergency-helplines"
                 className="btn-pink-outline w-full xl:w-auto justify-center font-bold text-xs sm:text-[13px] py-2.5 sm:py-3 px-5 rounded-xl transition-all duration-200 inline-flex items-center gap-2 shadow-sm hover:shadow-md active:scale-95 group cursor-pointer"
               >
                 <span>{t('womenSafety.safetyTipsBanner.viewAll', { defaultValue: 'View All Tips' })}</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
+              </a>
             </div>
 
           </div>

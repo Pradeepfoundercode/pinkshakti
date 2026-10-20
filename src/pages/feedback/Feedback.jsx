@@ -151,11 +151,10 @@ export default function Feedback() {
               {/* Server Message Alert */}
               {serverMessage.text && (
                 <div
-                  className={`mt-2.5 flex items-center gap-2 rounded-xl border p-2.5 text-xs font-semibold animate-in fade-in duration-300 ${
-                    serverMessage.type === 'success'
+                  className={`mt-2.5 flex items-center gap-2 rounded-xl border p-2.5 text-xs font-semibold animate-in fade-in duration-300 ${serverMessage.type === 'success'
                       ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
                       : 'border-red-200 bg-red-50 text-red-600'
-                  }`}
+                    }`}
                 >
                   {serverMessage.type === 'success' ? (
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600" />
