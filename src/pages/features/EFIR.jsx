@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ExternalLink } from 'lucide-react'
-import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
+import bannerBg from '../../assets/banner/e-fir.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 function EFIR() {
@@ -15,14 +15,13 @@ function EFIR() {
   return (
     <div className="w-full bg-white flex flex-col justify-between min-h-screen">
       {/* Top Banner Section */}
-      <section className="relative isolate overflow-hidden w-full h-[270px] sm:h-[320px] md:h-[350px] lg:h-[400px] flex items-center">
+      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[345px]">
         {/* Background Image with slow zoom-out effect */}
         <img
           src={bannerBg}
           alt="E-FIR - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
-            isLoaded ? 'scale-100' : 'scale-110'
-          }`}
+          className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+            }`}
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/10 md:hidden z-0"></div>

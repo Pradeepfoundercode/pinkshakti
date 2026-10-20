@@ -63,14 +63,13 @@ function PinkInfo() {
   return (
     <div className="w-full bg-white">
       {/* Banner with exact same height, width, size, animations, CSS & typography as PageBanner */}
-      <section className="relative isolate overflow-hidden w-full h-[250px] sm:h-[310px] md:h-[340px] lg:h-[400px]">
+      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
         {/* Background Image with slow zoom-out effect */}
         <img
           src={bannerBg}
           alt="Pink Info - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover  lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
-            isLoaded ? "scale-100" : "scale-110"
-          }`}
+          className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+            }`}
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/10 md:hidden z-0"></div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight } from 'lucide-react'
-import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
+import bannerBg from '../../assets/banner/pinkhealth.png'
 import mentalHealthImg from '../../assets/pinkhealths/Serene Pink Wellness Portrait Banner.png'
 import menstrualHealthImg from '../../assets/pinkhealths/Menstrual Health in Bloom.png'
 import cervicalCancerImg from '../../assets/pinkhealths/Pink Ribbon Awareness Portrait.png'
@@ -53,7 +53,7 @@ function PinkHealth() {
   return (
     <div className="w-full bg-white flex flex-col justify-between min-h-screen">
       {/* Top Banner Section */}
-      <section className="relative isolate overflow-hidden w-full h-[250px] sm:h-[310px] md:h-[340px] lg:h-[400px] flex items-center">
+      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[335px]">
         {/* Background Image with slow zoom-out effect */}
         <img
           src={bannerBg}

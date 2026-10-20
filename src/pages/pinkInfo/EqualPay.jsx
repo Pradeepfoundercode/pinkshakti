@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BookOpen, Users, Lightbulb } from 'lucide-react'
-import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
+import bannerBg from '../../assets/pinkInfo/banner.png'
 import equalPayPoster from '../../assets/pinkInfo/56181046-8da5-41ed-ba2f-5e8e1703224c.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
@@ -51,7 +51,7 @@ function EqualPay() {
   return (
     <div className="w-full bg-[#FFF9FA] min-h-screen flex flex-col justify-between">
       {/* Top Banner Section */}
-      <section className="relative isolate overflow-hidden w-full h-[270px] sm:h-[320px] md:h-[350px] lg:h-[400px] flex items-center">
+      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
         {/* Background Image with slow zoom-out effect */}
         <img
           src={bannerBg}

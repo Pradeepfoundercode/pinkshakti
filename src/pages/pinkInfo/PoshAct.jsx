@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BookOpen, Users, FileText, Laptop } from 'lucide-react'
-import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
+import bannerBg from '../../assets/banner/posh-awareness.png'
 import poshPoster from '../../assets/pinkInfo/5731ab1b-589a-4e11-b964-58b223e94fbb.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
@@ -73,7 +73,7 @@ function PoshAct() {
   return (
     <div className="min-h-screen bg-[#FFF9FA]">
       {/* Top Banner Section */}
-      <section className="relative isolate overflow-hidden w-full h-[270px] sm:h-[320px] md:h-[350px] lg:h-[400px] flex items-center">
+      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[340px]">
         <img
           src={bannerBg}
           alt="PoSH Act - Pink Shakti"

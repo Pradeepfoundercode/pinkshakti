@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BookOpen, Users, Gavel, Lightbulb } from 'lucide-react'
-import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
+import bannerBg from '../../assets/banner/ebd093ba-e8c3-4928-9c56-cef743899f53.png'
 import eveTeasingPoster from '../../assets/pinkInfo/251ca6b7-f21a-4fc1-a6d0-e9dfd0e1364d.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
@@ -52,14 +52,13 @@ function BnsSection() {
   return (
     <div className="w-full bg-[#FFF9FA] min-h-screen flex flex-col justify-between">
       {/* Top Banner Section */}
-      <section className="relative isolate overflow-hidden w-full h-[270px] sm:h-[320px] md:h-[350px] lg:h-[400px] flex items-center">
+      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
         {/* Background Image with slow zoom-out effect */}
         <img
           src={bannerBg}
           alt="BNS Section 79 - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
-            isLoaded ? 'scale-100' : 'scale-110'
-          }`}
+           className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
+            }`}
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/10 md:hidden z-0"></div>

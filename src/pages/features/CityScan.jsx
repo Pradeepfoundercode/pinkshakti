@@ -21,7 +21,7 @@ import {
   Check,
   Search,
 } from 'lucide-react'
-import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
+import bannerBg from '../../assets/pinkInfo/banner.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 import {
   getDistricts,

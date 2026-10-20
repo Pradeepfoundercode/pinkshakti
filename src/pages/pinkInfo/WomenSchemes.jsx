@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ExternalLink, ArrowRight, Info } from 'lucide-react'
-import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
+import bannerBg from '../../assets/banner/women-schemes.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 // 10 Scheme Banner Images from assets/pinkInfo
@@ -232,7 +232,7 @@ function WomenSchemes() {
   return (
     <div className="w-full bg-white flex flex-col justify-between min-h-screen">
       {/* Top Banner Section */}
-      <section className="relative isolate overflow-hidden w-full h-[270px] sm:h-[320px] md:h-[350px] lg:h-[400px] flex items-center">
+      <section className="relative isolate overflow-hidden w-full h-[250px] sm:h-[270px] md:h-[290px] lg:h-[290px] flex items-center">
 
         <img
           src={bannerBg}

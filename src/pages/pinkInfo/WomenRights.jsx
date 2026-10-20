@@ -9,7 +9,7 @@ import {
   Scale,
   ArrowRight,
 } from 'lucide-react'
-import bannerBg from '../../assets/home/Empowered Women in Pink Horizons (1).png'
+import bannerBg from '../../assets/pinkInfo/banner.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 // Card Images from assets/pinkInfo
@@ -82,7 +82,7 @@ function WomenRights() {
   return (
     <div className="min-h-screen bg-[#FFF9FA]">
       {/* Top Banner Section */}
-      <section className="relative isolate overflow-hidden w-full h-[270px] sm:h-[320px] md:h-[350px] lg:h-[400px] flex items-center">
+      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
         <img
           src={bannerBg}
           alt="Women Rights - Pink Shakti"
