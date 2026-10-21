@@ -62,6 +62,7 @@ export default function Feedback() {
     setValue('rating', val, { shouldValidate: true, shouldDirty: true })
   }
 
+  console.log("feedback")
   const onSubmit = async (data) => {
     try {
       const payload = {
