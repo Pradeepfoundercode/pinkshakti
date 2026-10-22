@@ -25,7 +25,7 @@ function PinkHealth() {
           'Learn about mental health, common concerns, coping strategies and where to seek support for a healthier and happier you.',
       }),
       readMore: t('pinkHealthPage.cards.mentalHealth.readMore', { defaultValue: 'Read More' }),
-      link: '/features/pink-health/mental-health',
+      link: '/highlights/pink-health/mental-health',
     },
     {
       id: 'menstrualHealth',

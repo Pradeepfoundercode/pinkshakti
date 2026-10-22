@@ -143,13 +143,13 @@ function Feature() {
                         </ul>
                       )}
 
-                      {/* Explore Feature CTA Button */}
+                      {/* Know More CTA Button */}
                       <div className="mt-1.5 sm:mt-2">
                         <a
                           href={feature.link}
                           className="button-motion inline-flex items-center whitespace-nowrap gap-1.5 rounded-full btn-pink px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-semibold shadow-xs transition active:scale-95"
                         >
-                          <span>{t("features.exploreFeature", { defaultValue: "Explore Feature" })}</span>
+                          <span>{t("features.knowMore", { defaultValue: "Know More" })}</span>
                           <ArrowRight className="h-3 w-3 shrink-0 stroke-[2.5]" />
                         </a>
                       </div>

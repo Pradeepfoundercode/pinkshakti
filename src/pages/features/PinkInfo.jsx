@@ -25,7 +25,7 @@ function PinkInfo() {
         defaultValue: "Discover schemes and programs that support women's education, health, financial independence, skill development, and overall empowerment.",
       }),
       bgImage: cardBgImage,
-      link: '/features/pink-info/women-schemes',
+      link: '/highlights/pink-info/women-schemes',
     },
     {
       id: 'laws',
@@ -35,7 +35,7 @@ function PinkInfo() {
         defaultValue: 'Learn about important laws and legal provisions that protect women from violence, harassment and discrimination.',
       }),
       bgImage: cardBgImage2,
-      link: '/features/pink-info/women-laws',
+      link: '/highlights/pink-info/women-laws',
     },
     {
       id: 'rights',
@@ -45,7 +45,7 @@ function PinkInfo() {
         defaultValue: 'Know your rights, including equality, dignity, safety, education, property rights and access to justice for a more equal and empowered society.',
       }),
       bgImage: cardBgImage3,
-      link: '/features/pink-info/women-rights',
+      link: '/highlights/pink-info/women-rights',
     },
     {
       id: 'posh',
@@ -55,7 +55,7 @@ function PinkInfo() {
         defaultValue: 'Get information about the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 and your rights at the workplace.',
       }),
       bgImage: cardBgImage4,
-      link: '/features/pink-info/posh-act2013',
+      link: '/highlights/pink-info/posh-act2013',
     },
   ]
 
@@ -200,13 +200,13 @@ function PinkInfo() {
                     </p>
                   </div>
 
-                  {/* Explore Details Button */}
+                  {/* Know More Button */}
                   <div className="mt-3 sm:mt-3.5">
                     <a
                       href={item.link}
                       className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl btn-pink px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold shadow-sm shadow-pink-500/20 transition-all duration-300 hover:shadow-md hover:scale-[1.03] active:scale-95 cursor-pointer"
                     >
-                      <span>{t("pinkInfo.cards.exploreDetails", { defaultValue: "Explore Details" })}</span>
+                      <span>{t("pinkInfo.cards.knowMore", { defaultValue: "Know More" })}</span>
                       <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                     </a>
                   </div>

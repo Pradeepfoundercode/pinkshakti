@@ -6,7 +6,8 @@ import homeBanner from "../../assets/home/Empowered Women Shaping Tomorrow.png"
 import PageBanner from "../../components/common/PageBanner"
 import VisionBanner from "../../components/common/VisionBanner"
 import PhoneBanner from '../../components/common/PhoneBanner'
-import { homeFeatures, homeImpactItems, homeGalleryItems } from '../../constants/homeData'
+import HoverCardsSlider from '../../components/common/HoverCardsSlider'
+import { homeFeatures, homeFeatureCards, homeImpactItems, homeGalleryItems } from '../../constants/homeData'
 
 function Home() {
   const { t } = useTranslation()
@@ -75,12 +76,12 @@ function Home() {
         }}
       />
 
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-5 overflow-hidden">
+      <section className="bg-white px-4 sm:px-6 lg:px-8 pt-7 overflow-hidden">
         <div className="feature-panel mx-auto max-w-[1600px] rounded-3xl bg-[#fff7fa] px-4 py-6 sm:px-6">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#e60067]">
-                {t("home.featuresBadge", { defaultValue: "• Our Features" })}
+                {t("home.featuresBadge", { defaultValue: "• Our Highlights" })}
               </p>
               <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#102849] sm:text-4xl">
                 <span className="text-[#e60067]">{t("home.featuresHeadingPink", { defaultValue: "A Safer, Stronger" })}</span>
@@ -92,85 +93,17 @@ function Home() {
               {t("home.featuresDesc", { defaultValue: "Pink Shakti brings together safety, awareness, health and opportunities for women in one platform." })}
             </p>
 
-            <a href="/features" className="group inline-flex items-center gap-2 text-sm font-bold text-[#e60067] transition hover:text-[#c9005a]">
-              {t("home.exploreAllFeatures", { defaultValue: "Explore All Features" })}
+            <Link to="/highlights" className="group inline-flex items-center gap-2 text-sm font-bold text-[#e60067] transition hover:text-[#c9005a]">
+              {t("home.allHighlights", { defaultValue: "All Highlights" })}
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            </Link>
           </div>
 
-          {/* Scroll Container */}
-          <div className="mt-4 overflow-hidden">
-            <div
-              className="
-          flex gap-6
-          overflow-x-auto overflow-y-hidden
-          px-3 pt-6 pb-8
-          snap-x snap-mandatory scroll-smooth
-          [&::-webkit-scrollbar]:hidden
-          [-ms-overflow-style:none]
-          [scrollbar-width:none]
-        "
-            >
-              {homeFeatures.map((feature) => {
-                const trans = featureTranslations[feature.title] || { title: feature.title, desc: feature.description }
-                const targetPath = feature.path || "/features"
-                return (
-                  <a
-                    key={feature.title}
-                    href={targetPath}
-                    className="
-                group snap-start shrink-0
-                w-[220px] sm:w-[230px]
-                lg:w-[calc(20%-1.2rem)]
-                flex flex-col text-left
-                rounded-2xl bg-white
-                px-4 py-4
-                border border-pink-200
-                shadow-sm
-                transition-all duration-300
-                hover:-translate-y-1
-                hover:shadow-xl
-                hover:border-[#e60067]/40
-                cursor-pointer
-              "
-                  >
-                    <div className="mx-auto flex h-15 w-15 items-center justify-center rounded-full bg-pink-200 p-2.5 shadow-sm transition-transform duration-300 group-hover:scale-105">
-                      <img
-                        src={feature.icon}
-                        alt=""
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
-
-                    <h3 className="mt-4 font-serif text-[19px] font-bold leading-tight text-[#102849] transition-colors duration-300 group-hover:text-[#e60067]">
-                      {trans.title}
-                    </h3>
-
-                    <p className="mt-1.5 mb-4 text-[13px] leading-tight text-slate-500">
-                      {trans.desc}
-                    </p>
-
-                    <div
-                      aria-label={`Learn more about ${trans.title}`}
-                      className="mt-auto inline-flex h-8 w-8 items-center justify-center rounded-full bg-pink-50 text-[#e60067] shadow-sm transition-all duration-300 group-hover:bg-[#e60067] group-hover:text-white"
-                    >
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                    </div>
-                  </a>
-                )
-              })}
-
-              <div className="shrink-0 w-1 lg:hidden" />
-            </div>
-          </div>
+          {/* Reusable Framer Hover Feature Cards Slider */}
+          <HoverCardsSlider items={homeFeatureCards} />
 
         </div>
       </section>
-
-      
-
-
-      <PhoneBanner />
 
 
       <VisionBanner
@@ -192,6 +125,14 @@ function Home() {
           author: t("home.visionName", { defaultValue: "Snigdhaa Ritesh" }),
         }}
       />
+
+      
+
+
+      <PhoneBanner />
+
+
+      
 
       <section>
         <div className="bg-white px-4 sm:px-6 lg:px-8">

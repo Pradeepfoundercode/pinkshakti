@@ -3,7 +3,10 @@
     "home": "Home",
     "about": "About Us",
     "features": "Features",
+    "highlights": "Highlights",
     "gallery": "Gallery",
+    "blogs": "Blogs",
+    "ourVision": "Our Vision",
     "contact": "Contact Us",
     "getApp": "Get The App"
   },
@@ -48,6 +51,7 @@
     },
     "cards": {
       "exploreDetails": "Explore Details",
+      "knowMore": "Know More",
       "schemes": {
         "title": "Women Schemes",
         "desc": "Discover schemes and programs that support women's education, health, financial independence, skill development, and overall empowerment."
@@ -206,11 +210,12 @@
     "heroDesc": "Pink Shakti is a Women Safety, Awareness and Empowerment platform dedicated to building a safer, stronger and more independent Uttar Pradesh.",
     "getApp": "Get The App",
     "knowMore": "Know More",
-    "featuresBadge": "• Our Features",
+    "featuresBadge": "• Our Highlights",
     "featuresHeadingPink": "A Safer, Stronger",
     "featuresHeadingNavy": "and Empowered Women",
     "featuresDesc": "Pink Shakti brings together safety, awareness, health and opportunities for women in one platform.",
     "exploreAllFeatures": "Explore All Features",
+    "allHighlights": "All Highlights",
     "featureList": {
       "womenSafetyTitle": "Women Safety",
       "womenSafetyDesc": "Emergency Response Support System (ERSS) for women.",
@@ -280,6 +285,7 @@
     "titleNavy": "and Empowered Women",
     "description": "Pink Shakti brings together safety, awareness, health and opportunities for women in one platform.",
     "exploreFeature": "Explore Feature",
+    "knowMore": "Know More",
     "dedicatedEfir": "View dedicated E-FIR page →",
     "dedicatedCityScan": "View dedicated City Scan page →",
     "items": {
@@ -1097,6 +1103,35 @@
         "line3": "TC-34 V.-1 Vibhuti Khand, Gomti Nagar, Lucknow."
       }
     }
+  },
+  "blogs": {
+    "pageBadge": "• BLOG",
+    "pageTitle1": "Empowering",
+    "pageTitle2": "Women",
+    "pageSubtitle": "A Comprehensive Guide to Modern Safety",
+    "pageDesc": "Insightful perspectives, actionable safety strategies, and legal knowledge to empower women across Uttar Pradesh and beyond.",
+    "articleBadge": "SAFETY & AWARENESS",
+    "readTime": "6 Min Read",
+    "publishDate": "March 2024",
+    "share": "Share Guide",
+    "copied": "Link Copied!",
+    "titlePrefix": "Empowering Women:",
+    "titleSuffix": "A Guide to Ensuring Safety in Today's World",
+    "introP1": "In a world where empowerment and equality are at the forefront of discussions, ensuring women's safety remains a critical aspect of achieving true progress. Every woman deserves to feel safe and secure in her daily life, whether she's walking down the street, working late at the office, or socializing with friends.",
+    "introP2": "However, the reality is that women still face numerous challenges and threats to their safety. From street harassment to domestic violence, the spectrum of dangers women encounter is vast and often daunting. But fear not, because there are concrete, proactive steps every woman can take to enhance her personal safety, reclaim her sense of security, and empower those around her.",
+    "strategyBadge": "• 10 PRACTICAL STRATEGIES",
+    "strategyTitle": "Navigating the World Safely & Confidently",
+    "filterAll": "All (10)",
+    "filterMindset": "Mindset",
+    "filterDefense": "Defense",
+    "filterTech": "Tech",
+    "filterCommunity": "Community",
+    "conclusionBadge": "OUR COLLECTIVE MISSION",
+    "conclusionHeading": "Safety is a Collective Right, Not a Privilege.",
+    "conclusionP": "In conclusion, women's safety is a collective responsibility that requires proactive measures from individuals, communities, and society as a whole. By equipping ourselves with knowledge, skills, and support networks, we can create a world where every woman feels safe, respected, and empowered to live her life to the fullest. Together, we can make safety a reality for all women.",
+    "viewHelplines": "Emergency Helplines",
+    "getApp": "Download Pink Shakti App",
+    "exploreRights": "Explore Women Laws & Rights"
   }
 }
 

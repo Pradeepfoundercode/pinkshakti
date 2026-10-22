@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import {
-  FileText,
-  Shield,
-  Eye,
-  BookOpen,
-  Users,
-  Gavel,
-  ArrowRight,
-} from 'lucide-react'
+import { BookOpen, Gavel, Shield } from 'lucide-react'
 import bannerBg from '../../assets/pinkInfo/banner.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
+import { womenLawsList } from '../../constants/womenLawsData'
 
-// Card Images from assets/pinkInfo
-import imgEveTeasing from '../../assets/pinkInfo/268527dd-5df6-4f79-b1e0-8528bee5e60d.png'
-import imgDisrobing from '../../assets/pinkInfo/3f461a65-452f-4e96-90a1-0df1178f29fe.png'
-import imgStalking from '../../assets/pinkInfo/6dc84148-ee20-436a-b398-cf63a809ad15.png'
-import imgRape from '../../assets/pinkInfo/81572656-d175-4cff-851e-b437c8e27d2a.png'
+// Helper to bold and darken the leading Section reference (e.g., Section 77)
+const renderConcludingText = (text) => {
+  if (!text) return null
+  const match = text.match(/^(Section\s+[\w\(\)]+)\s*(.*)/s)
+  if (match) {
+    return (
+      <p className="text-slate-700 text-xs sm:text-sm lg:text-[14px] leading-relaxed font-normal pt-1 whitespace-pre-line">
+        <strong className="font-bold italic text-[#102849]">{match[1]}</strong>{' '}
+        {match[2]}
+      </p>
+    )
+  }
+  return (
+    <p className="text-slate-700 text-xs sm:text-sm lg:text-[14px] leading-relaxed font-normal pt-1 whitespace-pre-line">
+      {text}
+    </p>
+  )
+}
 
 function WomenLaws() {
   const { t } = useTranslation()
@@ -26,142 +32,23 @@ function WomenLaws() {
     setIsLoaded(true)
   }, [])
 
-  const lawsData = [
-    {
-      id: 'eveTeasing',
-      section: 'BNS Section 79',
-      image: imgEveTeasing,
-      link: '/features/pink-info/women-laws/bns-section79',
-      icon: <FileText className="w-3.5 h-3.5" />,
-      title: t('womenLawsPage.cards.eveTeasing.title', {
-        defaultValue: 'Outraging the Modesty of Women / Eve Teasing',
-      }),
-      explanation: t('womenLawsPage.cards.eveTeasing.explanation', {
-        defaultValue:
-          'Covers words, gestures or acts intended to outrage the modesty of a woman.',
-      }),
-      constituents: [
-        t('womenLawsPage.cards.eveTeasing.constituents.0', {
-          defaultValue: 'Obscene words or gestures',
-        }),
-        t('womenLawsPage.cards.eveTeasing.constituents.1', {
-          defaultValue: 'Unwanted physical contact',
-        }),
-        t('womenLawsPage.cards.eveTeasing.constituents.2', {
-          defaultValue: 'Any act intended to outrage modesty',
-        }),
-      ],
-      punishment: t('womenLawsPage.cards.eveTeasing.punishment', {
-        defaultValue:
-          'Imprisonment and/or fine as per law. Punishment may vary based on circumstances.',
-      }),
-    },
-    {
-      id: 'disrobing',
-      section: 'BNS Section 76',
-      image: imgDisrobing,
-      icon: <Shield className="w-3.5 h-3.5" />,
-      title: t('womenLawsPage.cards.disrobing.title', {
-        defaultValue: 'Disrobing a Woman',
-      }),
-      explanation: t('womenLawsPage.cards.disrobing.explanation', {
-        defaultValue:
-          'Covers the act of disrobing a woman or compelling her to be nude.',
-      }),
-      constituents: [
-        t('womenLawsPage.cards.disrobing.constituents.0', {
-          defaultValue: 'Forcibly disrobing a woman',
-        }),
-        t('womenLawsPage.cards.disrobing.constituents.1', {
-          defaultValue: 'Compelling a woman to be nude',
-        }),
-        t('womenLawsPage.cards.disrobing.constituents.2', {
-          defaultValue: 'Intent to insult or outrage modesty',
-        }),
-      ],
-      punishment: t('womenLawsPage.cards.disrobing.punishment', {
-        defaultValue:
-          'Imprisonment and/or fine as per law. Punishment may vary based on circumstances.',
-      }),
-    },
-    {
-      id: 'stalking',
-      section: 'BNS Section 78',
-      image: imgStalking,
-      icon: <Eye className="w-3.5 h-3.5" />,
-      title: t('womenLawsPage.cards.stalking.title', {
-        defaultValue: 'Stalking',
-      }),
-      explanation: t('womenLawsPage.cards.stalking.explanation', {
-        defaultValue:
-          'Covers following, contacting or surveilling a woman repeatedly despite her disinterest.',
-      }),
-      constituents: [
-        t('womenLawsPage.cards.stalking.constituents.0', {
-          defaultValue: 'Repeatedly following',
-        }),
-        t('womenLawsPage.cards.stalking.constituents.1', {
-          defaultValue: 'Contacting through any means',
-        }),
-        t('womenLawsPage.cards.stalking.constituents.2', {
-          defaultValue: 'Monitoring online/offline activities',
-        }),
-      ],
-      punishment: t('womenLawsPage.cards.stalking.punishment', {
-        defaultValue:
-          'Imprisonment and/or fine as per law. Punishment may vary based on circumstances.',
-      }),
-    },
-    {
-      id: 'rape',
-      section: 'BNS Section 63',
-      image: imgRape,
-      icon: <BookOpen className="w-3.5 h-3.5" />,
-      title: t('womenLawsPage.cards.rape.title', {
-        defaultValue: 'Rape',
-      }),
-      explanation: t('womenLawsPage.cards.rape.explanation', {
-        defaultValue:
-          'Covers sexual intercourse with a woman against her will or without her consent.',
-      }),
-      constituents: [
-        t('womenLawsPage.cards.rape.constituents.0', {
-          defaultValue: 'Without consent',
-        }),
-        t('womenLawsPage.cards.rape.constituents.1', {
-          defaultValue: 'Against her will',
-        }),
-        t('womenLawsPage.cards.rape.constituents.2', {
-          defaultValue: 'Through force, threat or coercion',
-        }),
-      ],
-      punishment: t('womenLawsPage.cards.rape.punishment', {
-        defaultValue:
-          'Imprisonment (rigorous) and fine as per law. Punishment may vary based on circumstances.',
-      }),
-    },
-  ]
-
   return (
-    <div className="min-h-screen bg-[#FFF9FA]">
+    <div className="min-h-screen bg-[#fffafa] flex flex-col justify-between">
       {/* Top Banner Section */}
       <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
         <img
           src={bannerBg}
           alt="Women Laws - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-[60%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
-            isLoaded ? 'scale-100' : 'scale-110'
-          }`}
+          className={`absolute inset-0 h-full w-full object-cover object-[60%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${isLoaded ? 'scale-100' : 'scale-110'
+            }`}
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/10 md:hidden z-0"></div>
 
         <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[70%] lg:w-[60%] text-[#102849]">
-          {/* Badge */}
           <div
-            className={`transition-all duration-700 ease-out delay-100 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`transition-all duration-700 ease-out delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             <div className="mb-1.5 sm:mb-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-xs">
@@ -171,11 +58,9 @@ function WomenLaws() {
             </div>
           </div>
 
-          {/* Title */}
           <h1
-            className={`mt-1 sm:mt-1.5 font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[38px] font-bold leading-[1.15] sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`mt-1 sm:mt-1.5 font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[38px] font-bold leading-[1.15] sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             <span className="text-[#e60067]">
               {t('womenLawsPage.titlePink', { defaultValue: 'Women' })}
@@ -185,11 +70,9 @@ function WomenLaws() {
             </span>
           </h1>
 
-          {/* Description */}
           <p
-            className={`mt-1.5 sm:mt-2 max-w-[34rem] text-[12px] sm:text-[13px] lg:text-[14px] font-medium leading-snug sm:leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`mt-1.5 sm:mt-2 max-w-[34rem] text-[12px] sm:text-[13px] lg:text-[14px] font-medium leading-snug sm:leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             {t('womenLawsPage.desc', {
               defaultValue:
@@ -200,109 +83,75 @@ function WomenLaws() {
       </section>
 
       {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        {/* Important Note Banner */}
-        <div className="bg-[#FFF0F4] border border-[#FBCFE8]/90 rounded-2xl p-3.5 sm:p-4 mb-4 sm:mb-5 flex items-start sm:items-center gap-3 shadow-xs">
-          <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full bg-[#e60067] flex items-center justify-center shrink-0 text-white font-bold text-xs mt-0.5 sm:mt-0 shadow-xs">
-            i
-          </div>
-          <p className="text-[12px] sm:text-[13px] text-slate-700 leading-relaxed">
-            <span className="font-bold text-[#e60067]">
-              {t('womenLawsPage.importantNoteTitle', { defaultValue: 'Important Note:' })}
-            </span>{' '}
-            {t('womenLawsPage.importantNoteDesc', {
-              defaultValue:
-                'This information is for legal awareness only. Laws and penalties may change over time. For current legal advice, please consult a qualified lawyer or refer to official government sources.',
-            })}
-          </p>
-        </div>
-
-        {/* 4 Law Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4">
-          {lawsData.map((law, index) => (
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 sm:py-10 w-full flex-1">
+        {/* Laws List - 2-Column Cards with Real Images and Exact User Content */}
+        <div className="space-y-6 sm:space-y-8 lg:space-y-10">
+          {womenLawsList.map((law, index) => (
             <div
               key={law.id}
-              className="bg-white rounded-2xl border border-pink-100/90 shadow-[0_2px_10px_-3px_rgba(230,0,103,0.06)] hover:shadow-[0_8px_20px_-4px_rgba(230,0,103,0.12)] transition-all duration-300 p-2.5 sm:p-3 flex flex-col justify-between group"
+              id={`law-${law.id}`}
+              style={{ transitionDelay: `${index * 40}ms` }}
+              className="bg-white rounded-3xl p-5 sm:p-7 lg:p-8 border border-pink-100/90 shadow-[0_4px_24px_-4px_rgba(230,0,103,0.06)] hover:shadow-[0_8px_30px_-4px_rgba(230,0,103,0.12)] transition-all duration-300"
             >
-              <div>
-                {/* Banner Image with BNS Badge already embedded in image */}
-                <div className="w-full h-[130px] rounded-xl overflow-hidden bg-pink-50 relative shadow-inner">
-                  <img
-                    src={law.image}
-                    alt={law.title}
-                    className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-105"
-                  />
+              <div className="grid grid-cols-1 lg:grid-cols-[45%_minmax(0,1fr)] gap-6 lg:gap-8 xl:gap-10 items-start">
+                {/* Left Column: Real Infographic Image (slightly wider, same height) */}
+                <div className="flex items-start justify-center">
+                  <div className="w-full max-w-[580px] rounded-2xl overflow-hidden border border-pink-100/80 shadow-xs bg-pink-50/30">
+                    <img
+                      src={law.image}
+                      alt={law.title}
+                      className="w-full h-auto sm:h-[360px] object-fill"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
 
-                {/* Law Title */}
-                <h3 className="font-serif font-bold text-[#102849] text-[15px] sm:text-[16px] leading-snug mt-2.5 mb-2.5 min-h-[40px] flex items-start">
-                  {law.title}
-                </h3>
+                {/* Right Column: Exact Heading & Full Content */}
+                <div className="flex flex-col justify-start space-y-4">
+                  {/* Law Title */}
+                  <h2 className="font-serif text-xl sm:text-2xl lg:text-[25px] font-bold text-[#824497] leading-tight">
+                    {law.title}
+                  </h2>
 
-                {/* 3 Detail Rows */}
-                <div className="space-y-2.5 sm:space-y-3">
                   {/* Explanation */}
-                  <div className="flex items-start gap-2">
-                    <div className="w-6 h-6 rounded-full bg-pink-50 flex items-center justify-center shrink-0 text-[#e60067] mt-0.5 shadow-2xs">
-                      {law.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-[11px] sm:text-[11.5px] font-bold text-[#e60067] leading-tight">
-                        {t('womenLawsPage.explanation', { defaultValue: 'Explanation' })}
-                      </h4>
-                      <p className="text-[10.5px] sm:text-[11px] text-slate-600 leading-snug mt-0.5">
-                        {law.explanation}
-                      </p>
-                    </div>
+                  <div>
+                    <h3 className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#102849] mb-1.5 flex items-center gap-1.5">
+                      <BookOpen className="w-3.5 h-3.5 text-[#e60067]" />
+                      <span>EXPLANATION:</span>
+                    </h3>
+                    <p className="text-slate-700 text-xs sm:text-sm lg:text-[14px] leading-relaxed font-normal whitespace-pre-line">
+                      {law.explanation}
+                    </p>
                   </div>
 
                   {/* Main Constituents */}
-                  <div className="flex items-start gap-2">
-                    <div className="w-6 h-6 rounded-full bg-pink-50 flex items-center justify-center shrink-0 text-[#e60067] mt-0.5 shadow-2xs">
-                      <Users className="w-3 h-3" />
-                    </div>
+                  {law.mainConstituents && (
                     <div>
-                      <h4 className="text-[11px] sm:text-[11.5px] font-bold text-[#e60067] leading-tight">
-                        {t('womenLawsPage.mainConstituents', { defaultValue: 'Main Constituents' })}
-                      </h4>
-                      <ul className="text-[10.5px] sm:text-[11px] text-slate-600 leading-snug mt-0.5 space-y-0.5">
-                        {law.constituents.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-1">
-                            <span className="text-slate-400 font-bold leading-none mt-1">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <h3 className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#102849] mb-1.5 flex items-center gap-1.5">
+                        <Shield className="w-3.5 h-3.5 text-[#e60067]" />
+                        <span>MAIN CONSTITUENTS:</span>
+                      </h3>
+                      <p className="text-slate-700 text-xs sm:text-sm lg:text-[14px] leading-relaxed font-normal whitespace-pre-line">
+                        {law.mainConstituents}
+                      </p>
                     </div>
-                  </div>
+                  )}
 
                   {/* Punishment */}
-                  <div className="flex items-start gap-2">
-                    <div className="w-6 h-6 rounded-full bg-pink-50 flex items-center justify-center shrink-0 text-[#e60067] mt-0.5 shadow-2xs">
-                      <Gavel className="w-3 h-3" />
-                    </div>
+                  {law.punishment && (
                     <div>
-                      <h4 className="text-[11px] sm:text-[11.5px] font-bold text-[#e60067] leading-tight">
-                        {t('womenLawsPage.punishment', { defaultValue: 'Punishment' })}
-                      </h4>
-                      <p className="text-[10.5px] sm:text-[11px] text-slate-600 leading-snug mt-0.5">
+                      <h3 className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#102849] mb-1.5 flex items-center gap-1.5">
+                        <Gavel className="w-3.5 h-3.5 text-[#e60067]" />
+                        <span>PUNISHMENT:</span>
+                      </h3>
+                      <p className="text-slate-700 text-xs sm:text-sm lg:text-[14px] leading-relaxed font-normal whitespace-pre-line">
                         {law.punishment}
                       </p>
-
-                      {/* Small pink text link "Read more" under punishment */}
-                      {index === 0 && law.link && (
-                        <div className="mt-2">
-                          <a
-                            href={law.link}
-                            className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-[#e60067] hover:text-[#c9005a] hover:underline transition-colors"
-                          >
-                            <span>{t('womenLawsPage.readMore', { defaultValue: 'Read more' })}</span>
-                            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
-                          </a>
-                        </div>
-                      )}
                     </div>
-                  </div>
+                  )}
+
+                  {/* Concluding Paragraph with Section bold/dark */}
+                  {law.conclusion && renderConcludingText(law.conclusion)}
                 </div>
               </div>
             </div>
@@ -311,7 +160,7 @@ function WomenLaws() {
       </main>
 
       {/* Bottom Phone Banner */}
-      <div className="mt-16 sm:mt-20">
+      <div className="mt-8">
         <PhoneBanner />
       </div>
     </div>
@@ -319,4 +168,3 @@ function WomenLaws() {
 }
 
 export default WomenLaws
-

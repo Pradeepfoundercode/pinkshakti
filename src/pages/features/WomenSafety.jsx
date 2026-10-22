@@ -433,7 +433,7 @@ function WomenSafety() {
             {/* Right: View All Tips Button */}
             <div className="shrink-0 w-full xl:w-auto flex justify-end">
               <a
-                href="/features/emergency-helplines"
+                href="/highlights/emergency-helplines"
                 className="btn-pink-outline w-full xl:w-auto justify-center font-bold text-xs sm:text-[13px] py-2.5 sm:py-3 px-5 rounded-xl transition-all duration-200 inline-flex items-center gap-2 shadow-sm hover:shadow-md active:scale-95 group cursor-pointer"
               >
                 <span>{t('womenSafety.safetyTipsBanner.viewAll', { defaultValue: 'View All Tips' })}</span>

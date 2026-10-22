@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import {
-  Coins,
-  Shield,
-  Check,
-  Home,
-  Scale,
-  ArrowRight,
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import bannerBg from '../../assets/pinkInfo/banner.png'
+import morphedDefenseImg from '../../assets/women-rights/download (1).png'
 import PhoneBanner from '../../components/common/PhoneBanner'
-
-// Card Images from assets/pinkInfo
-import imgEqualPay from '../../assets/pinkInfo/a1905b4a-fdea-4eeb-bb1c-b080733e49cf.png'
-import imgDignity from '../../assets/pinkInfo/138e27e5-bb26-4403-b680-8985a194eb0f.png'
-import imgDomesticViolence from '../../assets/pinkInfo/3195080d-5ba9-43bf-bab0-c7fd302dda8e.png'
-import imgLegalAid from '../../assets/pinkInfo/1f6b5164-31e1-417b-bff9-7da0664ea62e.png'
+import { womenRightsList } from '../../constants/womenRightsData'
 
 function WomenRights() {
   const { t } = useTranslation()
@@ -26,59 +15,6 @@ function WomenRights() {
     setIsLoaded(true)
   }, [])
 
-  const rightsCards = [
-    {
-      id: 'equalPay',
-      image: imgEqualPay,
-      link: '/features/pink-info/women-rights/equal-pay',
-      icon: <Coins className="w-8 h-8 text-[#e60067]" />,
-      title: t('womenRightsPage.cards.equalPay.title', {
-        defaultValue: 'Right to Equal Pay',
-      }),
-      desc: t('womenRightsPage.cards.equalPay.desc', {
-        defaultValue: 'Women have the right to receive equal pay for equal work.',
-      }),
-    },
-    {
-      id: 'dignity',
-      image: imgDignity,
-      icon: (
-        <div className="relative flex items-center justify-center">
-          <Shield className="w-8 h-8 fill-[#e60067] text-[#e60067]" />
-          <Check className="w-4 h-4 text-white absolute stroke-[3]" />
-        </div>
-      ),
-      title: t('womenRightsPage.cards.dignity.title', {
-        defaultValue: 'Right to Dignity and Decency',
-      }),
-      desc: t('womenRightsPage.cards.dignity.desc', {
-        defaultValue: 'Every woman has the right to live with dignity and decency.',
-      }),
-    },
-    {
-      id: 'domesticViolence',
-      image: imgDomesticViolence,
-      icon: <Home className="w-8 h-8 fill-[#e60067] text-[#e60067]" />,
-      title: t('womenRightsPage.cards.domesticViolence.title', {
-        defaultValue: 'Right Against Domestic Violence',
-      }),
-      desc: t('womenRightsPage.cards.domesticViolence.desc', {
-        defaultValue: 'Women have the right to live free from domestic violence.',
-      }),
-    },
-    {
-      id: 'legalAid',
-      image: imgLegalAid,
-      icon: <Scale className="w-8 h-8 text-[#e60067]" />,
-      title: t('womenRightsPage.cards.legalAid.title', {
-        defaultValue: 'Right to Free Legal Aid',
-      }),
-      desc: t('womenRightsPage.cards.legalAid.desc', {
-        defaultValue: 'Women have the right to free legal aid and support.',
-      }),
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-[#FFF9FA]">
       {/* Top Banner Section */}
@@ -86,9 +22,8 @@ function WomenRights() {
         <img
           src={bannerBg}
           alt="Women Rights - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-[60%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
-            isLoaded ? 'scale-100' : 'scale-110'
-          }`}
+          className={`absolute inset-0 h-full w-full object-cover object-[60%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${isLoaded ? 'scale-100' : 'scale-110'
+            }`}
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/10 md:hidden z-0"></div>
@@ -96,9 +31,8 @@ function WomenRights() {
         <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[70%] lg:w-[60%] text-[#102849]">
           {/* Badge */}
           <div
-            className={`transition-all duration-700 ease-out delay-100 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`transition-all duration-700 ease-out delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             <div className="mb-1.5 sm:mb-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-xs">
@@ -110,9 +44,8 @@ function WomenRights() {
 
           {/* Title */}
           <h1
-            className={`mt-1 sm:mt-1.5 font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[38px] font-bold leading-[1.15] sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`mt-1 sm:mt-1.5 font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[38px] font-bold leading-[1.15] sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             <span className="text-[#e60067]">
               {t('womenRightsPage.titlePink', { defaultValue: 'Women' })}
@@ -124,9 +57,8 @@ function WomenRights() {
 
           {/* Tagline */}
           <h2
-            className={`mt-1.5 sm:mt-2 text-sm sm:text-base md:text-[17px] font-bold font-serif text-[#102849] tracking-tight transition-all duration-700 ease-out delay-400 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`mt-1.5 sm:mt-2 text-sm sm:text-base md:text-[17px] font-bold font-serif text-[#102849] tracking-tight transition-all duration-700 ease-out delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             {t('womenRightsPage.tagline', {
               defaultValue: 'Know your rights. Build confidence. Make informed choices.',
@@ -135,9 +67,8 @@ function WomenRights() {
 
           {/* Description */}
           <p
-            className={`mt-1 sm:mt-1.5 max-w-[34rem] sm:max-w-[36rem] text-[12px] sm:text-[13.5px] lg:text-[14.5px] font-medium leading-snug sm:leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`mt-1 sm:mt-1.5 max-w-[34rem] sm:max-w-[36rem] text-[12px] sm:text-[13.5px] lg:text-[14.5px] font-medium leading-snug sm:leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             {t('womenRightsPage.desc', {
               defaultValue:
@@ -148,83 +79,198 @@ function WomenRights() {
       </section>
 
       {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        {/* Important Note Banner */}
-        <div className="bg-[#FFF0F4] border border-[#FBCFE8]/90 rounded-2xl p-3.5 sm:p-4 mb-8 sm:mb-10 flex items-start sm:items-center gap-3 shadow-xs">
-          <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full bg-[#e60067] flex items-center justify-center shrink-0 text-white font-bold text-xs mt-0.5 sm:mt-0 shadow-xs">
-            i
-          </div>
-          <p className="text-[12px] sm:text-[13px] text-slate-700 leading-relaxed">
-            <span className="font-bold text-[#e60067]">
-              {t('womenRightsPage.importantNoteTitle', { defaultValue: 'Important Note:' })}
-            </span>{' '}
-            {t('womenRightsPage.importantNoteDesc', {
-              defaultValue:
-                'This information is for awareness only. Laws and provisions may change over time. For current and detailed legal advice, please consult a qualified lawyer or refer to official government sources.',
-            })}
-          </p>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-3 sm:pb-4">
+        {/* Section Heading */}
+        <div className="mb-6 sm:mb-8">
+          <h2 className="font-serif text-xl sm:text-2xl lg:text-[28px] font-bold text-[#e60067] tracking-wide uppercase">
+            WOMEN – SPECIFIC RIGHTS
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#e60067] to-[#824497] rounded-full mt-2 sm:mt-2.5"></div>
         </div>
 
-        {/* 4 Rights Cards - 2x2 Grid */}
+        {/* 13 Rights Cards - 2-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-          {rightsCards.map((card) => (
+          {womenRightsList.map((card) => (
             <div
               key={card.id}
               className="bg-white rounded-2xl border border-pink-100/90 shadow-[0_2px_12px_-3px_rgba(230,0,103,0.06)] hover:shadow-[0_8px_24px_-4px_rgba(230,0,103,0.12)] transition-all duration-300 p-3 sm:p-4 flex flex-col sm:flex-row items-center sm:items-stretch gap-4 sm:gap-5 group"
             >
-              {/* Left Image */}
-              <div className="w-full sm:w-[42%] lg:w-[40%] aspect-[1.28/1] sm:aspect-auto rounded-xl overflow-hidden bg-pink-50 relative shrink-0 shadow-inner">
+              {/* Left Image (slightly wider, same height) */}
+              <div className="w-full sm:w-[50%] lg:w-[48%] aspect-[1.38/1] sm:aspect-auto rounded-xl overflow-hidden bg-pink-50 relative shrink-0 shadow-inner border border-pink-100/70">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
                 />
               </div>
 
-              {/* Right Content: Logo on left, Heading + Text + Button in one column */}
-              <div className="flex-1 flex items-start gap-3 sm:gap-3.5 py-1 sm:py-1.5 w-full h-full">
-                {/* Logo on Left */}
-                <div className="shrink-0 mt-0.5 sm:mt-1 flex items-center justify-center">
-                  {card.icon}
+              {/* Right Content: Heading, Text snippet, and Know More button */}
+              <div className="flex-1 flex flex-col justify-start items-start py-1 sm:py-1.5 w-full">
+                <div>
+                  {/* Heading */}
+                  <h3 className="font-serif font-bold text-[#e60067] text-[15px] sm:text-[16px] lg:text-[17px] leading-snug mb-1.5 sm:mb-2">
+                    {card.title}
+                  </h3>
+
+                  {/* 3-line description snippet */}
+                  <p className="text-slate-700 text-xs sm:text-[13px] font-medium leading-relaxed mb-2.5 line-clamp-3">
+                    {card.desc}
+                  </p>
                 </div>
 
-                {/* Single Column: Heading, Text, and Button */}
-                <div className="flex-1 flex flex-col justify-between h-full items-start">
-                  <div>
-                    {/* Heading */}
-                    <h3 className="font-serif font-bold text-[#e60067] text-[17px] sm:text-[19px] lg:text-[20px] leading-tight mb-2 sm:mb-2.5">
-                      {card.title}
-                    </h3>
-
-                    {/* Text */}
-                    <p className="text-slate-700 text-xs sm:text-[13px] lg:text-[13.5px] font-medium leading-relaxed mb-1.5 sm:mb-2">
-                      {card.desc}
-                    </p>
-
-                    {/* Small pink text link "Read more" - Only on first card */}
-                    {card.link && (
-                      <div className="pt-0.5">
-                        <Link
-                          to={card.link}
-                          className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-[#e60067] hover:text-[#c9005a] hover:underline transition-colors"
-                        >
-                          <span>
-                            {t('womenRightsPage.readMore', { defaultValue: 'Read more' })}
-                          </span>
-                          <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
-                        </Link>
-                      </div>
-                    )}
-                  </div>
+                {/* Know More Button placed higher up */}
+                <div className="mt-0.5">
+                  <Link
+                    to={`/highlights/pink-info/women-rights/${card.slug || card.id}`}
+                    className="inline-flex items-center gap-1.5 rounded-lg btn-pink py-1.5 px-3.5 text-xs font-semibold shadow-xs shadow-pink-500/20 active:scale-95 transition-all cursor-pointer"
+                  >
+                    <span>
+                      {t('womenRightsPage.knowMore', { defaultValue: 'Know More' })}
+                    </span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Special Highlight: Immediate Actions to Delete Morphed Photos */}
+        <div className="mt-7 sm:mt-8 bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 lg:p-6 border border-pink-200/90 shadow-[0_4px_20px_-4px_rgba(230,0,103,0.10)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-8 items-center">
+            {/* Left Infographic Thumbnail - Badi image with minimal outer spacing */}
+            <div className="lg:col-span-6 w-full flex justify-center">
+              <div className="w-full rounded-xl sm:rounded-2xl overflow-hidden border border-pink-200/80 shadow-sm bg-pink-50/50 group">
+                <img
+                  src={morphedDefenseImg}
+                  alt="Delete and Report Morphed Images - Your Digital Self-Defense"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Right Information */}
+            <div className="lg:col-span-6 flex flex-col items-start justify-center py-1 sm:py-2">
+              <h3 className="font-serif text-xl sm:text-2xl lg:text-[25px] font-extrabold text-[#e60067] leading-snug mb-2.5">
+                IMMEDIATE ACTIONS TO DELETE MORPHED PHOTOS FROM THE INTERNET
+              </h3>
+
+              <div className="text-slate-700 text-xs sm:text-[13.5px] leading-relaxed mb-4 space-y-1.5">
+                <p className="font-medium">
+                  <strong>Report to the Platform Hosting the Image</strong> Whether it's a social media site, website, forum, or Google, each has a mechanism to report such content:
+                </p>
+                <div className="pl-1 pt-0.5">
+                  <p className="font-semibold text-[#102849] mb-1">
+                    Social Media (Facebook, Instagram, Twitter, etc.)
+                  </p>
+                  <ol className="list-decimal list-inside space-y-0.5 text-slate-600 pl-1 font-medium">
+                    <li>Go to the post/photo → Click “Report”</li>
+                    <li>Select “Non-consensual intimate image”, “Harassment”, or “Inappropriate content”</li>
+                    <li>Use their support form if available (especially for image-based abuse).....</li>
+                  </ol>
+                </div>
+              </div>
+
+              <Link
+                to="/highlights/pink-info/women-rights/delete-morphed-photos"
+                className="inline-flex items-center gap-2 rounded-xl btn-pink py-2.5 px-5 text-xs sm:text-sm font-bold shadow-md shadow-pink-500/20 active:scale-95 transition-all cursor-pointer group"
+              >
+                <span>View Complete Step-by-Step Guide</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Right to Disconnect Details */}
+        <div className="mt-5 sm:mt-6 bg-white rounded-2xl p-4 sm:p-5 border border-pink-100 shadow-sm space-y-4">
+          {/* Section 1: How It Benefits Women */}
+          <div>
+            <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-[#e60067] mb-1.5">
+              How It Benefits Women
+            </h3>
+            <p className="text-slate-700 text-xs sm:text-sm font-medium leading-normal mb-2">
+              Women often shoulder dual responsibilities — professional work and unpaid household/caregiving work. This law directly supports them by:
+            </p>
+            <ol className="list-decimal list-inside space-y-1 text-xs sm:text-sm font-semibold text-[#102849] pl-1">
+              <li>Reducing Mental Load</li>
+              <li>Supporting Working Mothers</li>
+              <li>Encouraging Fair Work Culture</li>
+            </ol>
+          </div>
+
+          <div>
+            {/* Section 2: How Women Can Use This Law if a Boss Misuses Power */}
+            <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-[#e60067] mb-0.5">
+              How Women Can Use This Law if a Boss Misuses Power
+            </h3>
+            <p className="text-[11.5px] sm:text-xs font-semibold text-[#824497] mb-0.5">
+              Important: It should be used for protection, not confrontation
+            </p>
+            <p className="text-slate-600 text-xs sm:text-sm font-medium mb-2.5">
+              Here’s how women can assert their rights professionally and safely
+            </p>
+
+            <div className="space-y-2.5 text-xs sm:text-sm text-slate-700 leading-snug">
+              {/* 1 */}
+              <div>
+                <p>
+                  <strong className="text-[#102849]">1. Respond Politely Using the Law</strong> - If the boss messages after work hours: <span className="font-semibold text-[#824497]">“As per the Right to Disconnect guidelines, I will take this up during working hours tomorrow.”</span> A polite reminder, not a conflict.
+                </p>
+              </div>
+
+              {/* 2 */}
+              <div className="space-y-0.5">
+                <p>
+                  <strong className="text-[#102849]">2. Keep Proof</strong> - If late-night messages or calls are frequent, women can:
+                </p>
+                <ul className="list-disc list-inside space-y-0.5 text-slate-600 pl-4 font-medium">
+                  <li>Take screenshots</li>
+                  <li>Note dates/times</li>
+                  <li>Maintain a simple log</li>
+                </ul>
+                <p className="text-slate-600 text-[11.5px] sm:text-xs">
+                  This becomes evidence if the behaviour continues.
+                </p>
+              </div>
+
+              {/* 3 */}
+              <div>
+                <p>
+                  <strong className="text-[#102849]">3. Request Written Clarification of Work Hours</strong> - Ask HR or the reporting officer: <span className="font-semibold text-[#824497]">“Can you please clarify official working hours as per the Right to Disconnect policy?”</span> This puts gentle pressure on the organisation to follow rules.
+                </p>
+              </div>
+
+              {/* 4 */}
+              <div className="space-y-0.5">
+                <p>
+                  <strong className="text-[#102849]">4. Report Extreme Cases</strong> - If the boss:
+                </p>
+                <ul className="list-disc list-inside space-y-0.5 text-slate-600 pl-4 font-medium">
+                  <li>Repeatedly sending messages at night</li>
+                  <li>Threatens consequences</li>
+                  <li>Creates discomfort through late calls</li>
+                </ul>
+                <p className="text-slate-600 text-[11.5px] sm:text-xs">
+                  Women can raise it to HR - Internal Complaints Committee (for behaviour amounting to harassment) or to Labour authorities (if it becomes exploitation)
+                </p>
+              </div>
+
+              {/* 5 */}
+              <div>
+                <p>
+                  <strong className="text-[#102849]">5. Use Team Language, Not Personal</strong> - Instead of saying “You disturb me”, say: <span className="font-semibold text-[#824497]">“Our team should follow the Right to Disconnect policy for everyone."</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       {/* Bottom Phone Banner */}
-      <div className="mt-16 sm:mt-20">
+      <div className="mt-4 sm:mt-6">
         <PhoneBanner />
       </div>
     </div>

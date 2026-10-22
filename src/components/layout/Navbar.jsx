@@ -45,8 +45,10 @@ export default function Navbar() {
     const navLinks = [
         { name: t("navbar.home", { defaultValue: "Home" }), path: "/" },
         { name: t("navbar.about", { defaultValue: "About Us" }), path: "/about" },
-        { name: t("navbar.features", { defaultValue: "Features" }), path: "/features" },
+        { name: t("navbar.highlights", { defaultValue: "Highlights" }), path: "/highlights" },
         { name: t("navbar.gallery", { defaultValue: "Gallery" }), path: "/gallery" },
+        { name: t("navbar.blogs", { defaultValue: "Blogs" }), path: "/blogs" },
+        { name: t("navbar.ourVision", { defaultValue: "Our Vision" }), path: "/our-vision" },
         { name: t("navbar.contact", { defaultValue: "Contact Us" }), path: "/contact" },
     ];
 
@@ -70,13 +72,16 @@ export default function Navbar() {
                             <img
                                 src={logo}
                                 alt="Pink Shakti"
+                                loading="eager"
+                                fetchPriority="high"
+                                decoding="async"
                                 className="h-14 sm:h-16 w-auto object-contain transition-all duration-500 group-hover:scale-105"
                             />
                         </Link>
                     </div>
 
                     {/* Center (Nav Links) */}
-                    <div className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-10">
+                    <div className="hidden lg:flex items-center justify-center space-x-4 xl:space-x-7">
                         {navLinks.map((link) => (
                             <NavLink
                                 key={link.name}
