@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Download, ArrowRight, Home } from "lucide-react";
-import defaultBanner from "../../assets/home/Empowered Women in Pink Horizons (1).png";
+import defaultBanner from "../../assets/home/Empowered Women in Pink Horizons (1).png"
 
 export default function PageBanner({
   bannerImage = defaultBanner,
@@ -21,18 +21,20 @@ export default function PageBanner({
   }, []);
 
   return (
-    <section className="relative isolate overflow-hidden w-full h-[250px] sm:h-[310px] md:h-[340px] lg:h-[400px]">
-      {/* Background Image with slow zoom-out effect */}
+    <section className="relative isolate overflow-hidden w-full h-[250px] sm:h-[310px] md:h-[340px] lg:h-[430px]">
+      {/* Background Image without animation */}
       <img
         src={bannerImage}
         alt={alt}
-        className={`absolute inset-0 h-full w-full object-cover object-right lg:object-fill  -z-10 transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
-          }`}
+        className="absolute inset-0 h-full w-full object-cover object-right lg:object-fill -z-10"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/10 md:hidden z-0"></div>
+      {(title || description || breadcrumb || badge || primaryButton || secondaryButton || children) && (
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/10 md:hidden z-0"></div>
+      )}
 
-      <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[65%] lg:w-[55%] text-[#102849]">
+      {(title || description || breadcrumb || badge || primaryButton || secondaryButton || children) && (
+        <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[65%] lg:w-[55%] text-[#102849]">
 
         {/* Breadcrumb / Badge */}
         <div
@@ -184,6 +186,7 @@ export default function PageBanner({
           </div>
         )}
       </div>
+      )}
     </section>
   );
 }

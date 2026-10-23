@@ -49,7 +49,6 @@ export default function Navbar() {
         { name: t("navbar.gallery", { defaultValue: "Gallery" }), path: "/gallery" },
         { name: t("navbar.blogs", { defaultValue: "Blogs" }), path: "/blogs" },
         { name: t("navbar.ourVision", { defaultValue: "Our Vision" }), path: "/our-vision" },
-        { name: t("navbar.contact", { defaultValue: "Contact Us" }), path: "/contact" },
     ];
 
     const changeLanguage = (lang) => {

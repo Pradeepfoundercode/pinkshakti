@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ExternalLink } from 'lucide-react'
-import bannerBg from '../../assets/banner/e-fir.png'
+import BannerSlider from '../../components/common/BannerSlider'
+import efirBanner from '../../assets/banner/r2.jpg'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 function EFIR() {
@@ -15,76 +16,10 @@ function EFIR() {
   return (
     <div className="w-full bg-white flex flex-col justify-between min-h-screen">
       {/* Top Banner Section */}
-      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[345px]">
-        {/* Background Image with slow zoom-out effect */}
-        <img
-          src={bannerBg}
-          alt="E-FIR - Pink Shakti"
-          className={`absolute inset-0 -z-10 h-full w-full object-cover object-[60%_center] lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
-            }`}
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/10 md:hidden z-0"></div>
-
-        <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[65%] lg:w-[58%] text-[#102849]">
-          {/* Badge: • E-FIR */}
-          <div
-            className={`transition-all duration-700 ease-out delay-100 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <div className="mb-0.5 sm:mb-1.5">
-              <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-pink-100/90 px-2 py-0.5 sm:px-3 sm:py-0.5 text-[9.5px] sm:text-[11px] font-bold text-[#e60067] shadow-xs">
-                <span className="text-sm leading-none">•</span>
-                <span>{t('eFirPage.badge', { defaultValue: 'E-FIR' })}</span>
-              </span>
-            </div>
-          </div>
-
-          {/* Title: E-FIR – File a Complaint Online */}
-          <h1
-            className={`mt-0.5 sm:mt-1 font-serif text-[17px] sm:text-[24px] md:text-[30px] lg:text-[36px] font-bold leading-tight sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <span className="text-[#e60067]">
-              {t('eFirPage.titlePink', { defaultValue: 'E-FIR' })}
-            </span>{' '}
-            <span className="text-[#102849]">
-              {t('eFirPage.titleNavy', { defaultValue: '– File a Complaint Online' })}
-            </span>
-          </h1>
-
-          {/* Description */}
-          <p
-            className={`mt-1 sm:mt-1.5 max-w-[34rem] text-[10.5px] sm:text-[12.5px] lg:text-[14px] font-medium leading-snug sm:leading-relaxed text-slate-700 line-clamp-2 sm:line-clamp-3 transition-all duration-700 ease-out delay-500 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            {t('eFirPage.desc', {
-              defaultValue:
-                'Get information about E-FIR and access the official Uttar Pradesh Police e-FIR portal to register your complaint online. Know when and how to use e-FIR for a faster and easier process.',
-            })}
-          </p>
-
-          {/* Button: Go to UP Police e-FIR Portal (Same gradient & responsive sizing as Home banner) */}
-          <div
-            className={`mt-2 sm:mt-3 lg:mt-4 flex flex-wrap items-center gap-2 sm:gap-3 transition-all duration-700 ease-out delay-700 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <a
-              href="https://cctnsup.gov.in/eFIR/login.aspx?cd=MQA3ADAA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full btn-pink-gradient px-3.5 py-1.5 sm:px-5 sm:py-2.5 text-[11px] sm:text-sm font-semibold shadow-md transition-all duration-300 hover:shadow-[0_8px_20px_rgba(230,0,103,0.3)] hover:scale-[1.03] active:scale-95 w-fit"
-            >
-              <span>{t('eFirPage.button', { defaultValue: 'Go to UP Police e-FIR Portal' })}</span>
-              <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <BannerSlider
+        images={[efirBanner]}
+        autoPlay={false}
+      />
 
       {/* About E-FIR Section */}
       <section className="bg-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">

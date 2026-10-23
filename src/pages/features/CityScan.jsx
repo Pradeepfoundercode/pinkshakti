@@ -21,7 +21,8 @@ import {
   Check,
   Search,
 } from 'lucide-react'
-import bannerBg from '../../assets/pinkInfo/banner.png'
+import BannerSlider from '../../components/common/BannerSlider'
+import cityScanBanner from '../../assets/banner/cityEE.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 import {
   getDistricts,
@@ -516,116 +517,10 @@ function CityScan() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between">
       {/* banner */}
-      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
-        {/* Background Image with slow zoom-out effect */}
-        <img
-          src={bannerBg}
-          alt="City Scan - Pink Shakti"
-          className={`absolute inset-0 -z-10 h-full w-full object-cover object-[61%_center] lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
-            }`}
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/10 md:hidden z-0"></div>
-
-        <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[70%] lg:w-[60%] text-[#102849] py-4 sm:py-0">
-
-          {/* Main Title: City Scan */}
-          <h1
-            className={`font-serif text-[24px] sm:text-[30px] md:text-[36px] lg:text-[42px] font-bold leading-none tracking-tight transition-all duration-700 ease-out delay-300 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-          >
-            <span className="text-[#e60067]">{t("cityScan.bannerTitlePink", { defaultValue: "City" })}</span>{' '}
-            <span className="text-[#102849]">{t("cityScan.bannerTitleNavy", { defaultValue: "Scan" })}</span>
-          </h1>
-
-          {/* Subtitle: Make Your City Safer for Women */}
-          <h2
-            className={`mt-1 sm:mt-1.5 font-serif text-[15px] sm:text-[18px] md:text-[21px] lg:text-[23px] font-bold text-[#102849] leading-tight tracking-tight transition-all duration-700 ease-out delay-400 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-          >
-            {t("cityScan.bannerSubtitle", { defaultValue: "Make Your City Safer for Women" })}
-          </h2>
-
-          {/* Description */}
-          <p
-            className={`mt-1.5 sm:mt-2 max-w-[34rem] text-[11.5px] sm:text-[13px] lg:text-[13.5px] font-medium leading-snug sm:leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-          >
-            {t("cityScan.bannerDesc", {
-              defaultValue:
-                "Share your experience and help us build safer cities. Your input helps us understand safety concerns, identify unsafe areas and create data-driven insights for better communities.",
-            })}
-          </p>
-
-          {/* 3 Feature Cards - Hidden on small screens, only visible on large screens */}
-          <div
-            className={`hidden lg:flex mt-4 items-center gap-3 transition-all duration-700 ease-out delay-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-          >
-            {/* 1. Identify Unsafe Areas */}
-            <div className="w-[98px] sm:w-[110px] py-2 sm:py-2.5 px-2 sm:px-2.5 rounded-xl sm:rounded-2xl bg-gradient-to-b from-white via-pink-50/80 to-pink-100/60 backdrop-blur-sm shadow-[0_4px_16px_rgba(230,0,103,0.1)] border border-pink-200/90 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_24px_rgba(230,0,103,0.18)] hover:border-[#e60067]/40 cursor-default group">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white shadow-xs border border-pink-200/70 flex items-center justify-center shrink-0 mb-1.5 transition-transform duration-300 group-hover:scale-110">
-                <svg className="w-6 h-6 sm:w-6.5 sm:h-6.5" viewBox="0 0 24 24" fill="none">
-                  {/* Rising trend line */}
-                  <path
-                    d="M3 14.5L7.5 9.5L12 12.5L19 4.5"
-                    stroke="#e60067"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  {/* Solid filled arrowhead */}
-                  <polygon
-                    points="20.5,4 16,4.5 19.5,8"
-                    fill="#e60067"
-                    stroke="#e60067"
-                    strokeWidth="0.8"
-                    strokeLinejoin="round"
-                  />
-                  {/* 3 Ascending Rounded Bars */}
-                  <rect x="4" y="15.5" width="3.2" height="5.5" rx="0.9" fill="#e60067" />
-                  <rect x="9.4" y="11.5" width="3.2" height="9.5" rx="0.9" fill="#e60067" />
-                  <rect x="14.8" y="7.5" width="3.2" height="13.5" rx="0.9" fill="#e60067" />
-                </svg>
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-bold text-[#102849] text-center leading-tight">
-                {t("cityScan.cards.identifyUnsafe", { defaultValue: "Identify Unsafe Areas" })}
-              </span>
-            </div>
-
-            {/* 2. City-Wise Insights */}
-            <div className="w-[98px] sm:w-[110px] py-2 sm:py-2.5 px-2 sm:px-2.5 rounded-xl sm:rounded-2xl bg-gradient-to-b from-white via-pink-50/80 to-pink-100/60 backdrop-blur-sm shadow-[0_4px_16px_rgba(230,0,103,0.1)] border border-pink-200/90 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_24px_rgba(230,0,103,0.18)] hover:border-[#e60067]/40 cursor-default group">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white shadow-xs border border-pink-200/70 flex items-center justify-center shrink-0 mb-1.5 transition-transform duration-300 group-hover:scale-110">
-                <svg className="w-6 h-6 sm:w-6.5 sm:h-6.5" viewBox="0 0 24 24" fill="none">
-                  <circle cx="6" cy="9.5" r="2.8" fill="#e60067" />
-                  <path d="M1.5 18C1.5 15.2 3.5 13.5 6 13.5C7.2 13.5 8.2 13.9 9 14.6C8.3 15.4 7.9 16.4 7.9 17.5V18H1.5Z" fill="#e60067" />
-                  <circle cx="18" cy="9.5" r="2.8" fill="#e60067" />
-                  <path d="M22.5 18C22.5 15.2 20.5 13.5 18 13.5C16.8 13.5 15.8 13.9 15 14.6C15.7 15.4 16.1 16.4 16.1 17.5V18H22.5Z" fill="#e60067" />
-                  <circle cx="12" cy="8.5" r="3.2" fill="#e60067" />
-                  <path d="M6.5 18.5C6.5 15.2 9 12.8 12 12.8C15 12.8 17.5 15.2 17.5 18.5V19H6.5V18.5Z" fill="#e60067" />
-                </svg>
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-bold text-[#102849] text-center leading-tight">
-                {t("cityScan.cards.cityInsights", { defaultValue: "City-Wise Insights" })}
-              </span>
-            </div>
-
-            {/* 3. Safer Cities for Women */}
-            <div className="w-[98px] sm:w-[110px] py-2 sm:py-2.5 px-2 sm:px-2.5 rounded-xl sm:rounded-2xl bg-gradient-to-b from-white via-pink-50/80 to-pink-100/60 backdrop-blur-sm shadow-[0_4px_16px_rgba(230,0,103,0.1)] border border-pink-200/90 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_24px_rgba(230,0,103,0.18)] hover:border-[#e60067]/40 cursor-default group">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white shadow-xs border border-pink-200/70 flex items-center justify-center shrink-0 mb-1.5 transition-transform duration-300 group-hover:scale-110">
-                <svg className="w-6 h-6 sm:w-6.5 sm:h-6.5" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L3.5 5.8V11.5C3.5 17 7.1 21.4 12 22.8C16.9 21.4 20.5 17 20.5 11.5V5.8L12 2Z" fill="#e60067" />
-                  <path d="M8 12L10.8 14.8L16 9.2" stroke="white" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-bold text-[#102849] text-center leading-tight">
-                {t("cityScan.cards.saferCities", { defaultValue: "Safer Cities for Women" })}
-              </span>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      <BannerSlider
+        images={[cityScanBanner]}
+        autoPlay={false}
+      />
 
       {/* Main Feature & Form Section (Exact spacing from Feature.jsx, Rich Modern UI) */}
       <section className="bg-white px-6 sm:px-10 lg:px-16 py-6 lg:py-8">

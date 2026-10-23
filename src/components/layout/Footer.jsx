@@ -157,9 +157,8 @@ export default function Footer() {
   const quickLinks = [
     { name: t("footer.oneStopCenters", { defaultValue: "One Stop Centers" }), path: "/highlights/one-stop-centers" },
     { name: t("footer.emergencyHelplines", { defaultValue: "Emergency Helplines" }), path: "/highlights/emergency-helplines" },
-    { name: t("footer.gallery", { defaultValue: "Gallery" }), path: "/gallery" },
     { name: t("footer.contactUs", { defaultValue: "Contact Us" }), path: "/contact" },
-    { name: t("footer.ourFeedback", { defaultValue: "Our Feedback" }), path: "/our-feedback" },
+    { name: t("footer.ourFeedback", { defaultValue: "Our Feedback" }), path: "/feedback" },
   ];
 
   return (

@@ -62,7 +62,7 @@ export default function HoverProductCard({
 
       {/* Warm Orange Hover Overlay (Backdrop Blur + Vibrant Orange Gradient + Complete Text) */}
       <div
-  className={`absolute inset-0 flex flex-col justify-start p-3.5 sm:px-4  backdrop-blur-[2px] bg-[#c94e41] text-white transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+  className={`absolute inset-0 flex flex-col justify-start p-3.5 sm:px-4  backdrop-blur-[2px] bg-[#811454] text-white transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
     isTouchActive
       ? "opacity-100 pointer-events-auto"
       : "opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto"
@@ -106,7 +106,7 @@ export default function HoverProductCard({
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className="group/btn inline-flex items-center gap-1.5 rounded-full bg-white p-1 text-[10px] sm:text-xs font-bold text-[#c94e41] shadow-md transition-all duration-300 hover:bg-neutral-50 hover:shadow-lg hover:scale-105 active:scale-95"
+          className="group/btn inline-flex items-center gap-1.5 rounded-full bg-[#FFF0F6] px-2 py-1 text-[10px] sm:text-xs font-semibold text-[#8A145B] border border-white/40 shadow-md transition-all duration-300 hover:bg-[#FFD6E7] hover:shadow-lg hover:scale-105 active:scale-95"
         >
           <Download className="h-3 w-3 transition-transform duration-300 group-hover/btn:-translate-y-0.5" />
           <span>{buttonText}</span>

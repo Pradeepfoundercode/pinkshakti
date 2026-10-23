@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import PageBanner from '../../components/common/PageBanner'
+import BannerSlider from '../../components/common/BannerSlider'
+import oneStopBanner from '../../assets/banner/one-stop-center.jpg'
 import PhoneBanner from '../../components/common/PhoneBanner'
 import {
   oneStopCentersList,
@@ -344,24 +345,9 @@ function OneStopCenter() {
 
   return (
     <>
-      <PageBanner
-        alt="One Stop Centers - Pink Shakti"
-        title={
-          <>
-            <span className="text-[#e60067]">{t("oneStopCenter.banner.titlePink", { defaultValue: "One Stop" })}</span>{' '}
-            <span className="text-[#102849]">{t("oneStopCenter.banner.titleNavy", { defaultValue: "Centers" })}</span>
-          </>
-        }
-        description={
-          <>
-            <span className="block font-bold text-[#102849] text-sm sm:text-base lg:text-[1.1rem] mb-1.5 sm:mb-2">
-              {t("oneStopCenter.banner.subtitleBold", { defaultValue: "Support. Safety. Assistance. All in One Place." })}
-            </span>
-            <span>
-              {t("oneStopCenter.banner.subtitleDesc", { defaultValue: "One Stop Centers (OSC) provide integrated support and assistance to women affected by violence, under one roof, including medical aid, police assistance, legal support, counseling and temporary shelter." })}
-            </span>
-          </>
-        }
+      <BannerSlider
+        images={[oneStopBanner]}
+        autoPlay={false}
       />
 
       {/* Main Section */}

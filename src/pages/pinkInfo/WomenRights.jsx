@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight } from 'lucide-react'
-import bannerBg from '../../assets/pinkInfo/banner.png'
+import BannerSlider from '../../components/common/BannerSlider'
+import womenRightsBanner from '../../assets/women-rights/women_rights.png'
 import morphedDefenseImg from '../../assets/women-rights/download (1).png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 import { womenRightsList } from '../../constants/womenRightsData'
@@ -17,66 +18,10 @@ function WomenRights() {
 
   return (
     <div className="min-h-screen bg-[#FFF9FA]">
-      {/* Top Banner Section */}
-      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
-        <img
-          src={bannerBg}
-          alt="Women Rights - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-[60%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${isLoaded ? 'scale-100' : 'scale-110'
-            }`}
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/10 md:hidden z-0"></div>
-
-        <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[70%] lg:w-[60%] text-[#102849]">
-          {/* Badge */}
-          <div
-            className={`transition-all duration-700 ease-out delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-          >
-            <div className="mb-1.5 sm:mb-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-xs">
-                <span className="text-sm leading-none">•</span>
-                <span>{t('womenRightsPage.badge', { defaultValue: 'PINK INFO' })}</span>
-              </span>
-            </div>
-          </div>
-
-          {/* Title */}
-          <h1
-            className={`mt-1 sm:mt-1.5 font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[38px] font-bold leading-[1.15] sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-          >
-            <span className="text-[#e60067]">
-              {t('womenRightsPage.titlePink', { defaultValue: 'Women' })}
-            </span>{' '}
-            <span className="text-[#102849]">
-              {t('womenRightsPage.titleNavy', { defaultValue: 'Rights' })}
-            </span>
-          </h1>
-
-          {/* Tagline */}
-          <h2
-            className={`mt-1.5 sm:mt-2 text-sm sm:text-base md:text-[17px] font-bold font-serif text-[#102849] tracking-tight transition-all duration-700 ease-out delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-          >
-            {t('womenRightsPage.tagline', {
-              defaultValue: 'Know your rights. Build confidence. Make informed choices.',
-            })}
-          </h2>
-
-          {/* Description */}
-          <p
-            className={`mt-1 sm:mt-1.5 max-w-[34rem] sm:max-w-[36rem] text-[12px] sm:text-[13.5px] lg:text-[14.5px] font-medium leading-snug sm:leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-          >
-            {t('womenRightsPage.desc', {
-              defaultValue:
-                'Learn about the rights available to women for a safer, fairer and more equal society.',
-            })}
-          </p>
-        </div>
-      </section>
+      <BannerSlider
+        images={[womenRightsBanner]}
+        autoPlay={false}
+      />
 
       {/* Main Content Area */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-3 sm:pb-4">

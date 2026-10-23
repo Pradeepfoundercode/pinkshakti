@@ -35,6 +35,8 @@ function PinkHealth() {
         defaultValue:
           'Get information about menstrual health, hygiene, common issues and tips for a safe and healthy menstrual cycle.',
       }),
+      readMore: t('pinkHealthPage.cards.menstrualHealth.readMore', { defaultValue: 'Read More' }),
+      link: '/highlights/pink-health/menstrual-health',
     },
     {
       id: 'cervicalCancer',
@@ -44,6 +46,8 @@ function PinkHealth() {
         defaultValue:
           'Learn about cervical cancer, its prevention, screening, vaccination and early detection for a healthier future.',
       }),
+      readMore: t('pinkHealthPage.cards.cervicalCancer.readMore', { defaultValue: 'Read More' }),
+      link: '/highlights/pink-health/cervical-cancer',
     },
   ]
 

@@ -13,7 +13,8 @@ import {
   BellRing,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import PageBanner from '../../components/common/PageBanner'
+import BannerSlider from '../../components/common/BannerSlider'
+import emergencyBanner from '../../assets/banner/ashello.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 import bellLogo from '../../assets/logo/bell.png'
@@ -128,24 +129,9 @@ function EmergencyHelplines() {
 
   return (
     <>
-      <PageBanner
-        alt="Emergency Helplines - Pink Shakti"
-        title={
-          <>
-            <span className="text-[#e60067]">{t("emergencyHelplines.banner.titlePink", { defaultValue: "Emergency" })}</span>{' '}
-            <span className="text-[#102849]">{t("emergencyHelplines.banner.titleNavy", { defaultValue: "Helplines" })}</span>
-          </>
-        }
-        description={
-          <>
-            <span className="block font-bold text-[#102849] text-sm sm:text-base lg:text-[1.1rem] mb-1.5 sm:mb-2">
-              {t("emergencyHelplines.banner.subtitleBold", { defaultValue: "Immediate Assistance When You Need It Most" })}
-            </span>
-            <span>
-              {t("emergencyHelplines.banner.subtitleDesc", { defaultValue: "Access 24x7 emergency helpline numbers for immediate help, protection, medical assistance, and legal support across India and Uttar Pradesh." })}
-            </span>
-          </>
-        }
+      <BannerSlider
+        images={[emergencyBanner]}
+        autoPlay={false}
       />
 
 

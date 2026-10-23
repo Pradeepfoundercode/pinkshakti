@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
-import PageBanner from '../../components/common/PageBanner'
+import BannerSlider from '../../components/common/BannerSlider'
+import feedbackBanner from '../../assets/banner/feed.jpg'
 import PhoneBanner from '../../components/common/PhoneBanner'
 import {
   feedbackSchema,
@@ -103,24 +104,9 @@ export default function Feedback() {
   return (
     <>
       {/* Top Banner */}
-      <PageBanner
-        alt="Your Feedback - Pink Shakti"
-        title={
-          <>
-            <span className="text-[#e60067]">{t("feedback.banner.titlePink", { defaultValue: "Your" })}</span>{' '}
-            <span className="text-[#102849]">{t("feedback.banner.titleNavy", { defaultValue: "Feedback" })}</span>
-          </>
-        }
-        description={
-          <>
-            <span className="block font-bold text-[#102849] text-sm sm:text-base lg:text-[1.1rem] mb-1">
-              {t("feedback.banner.subtitleBold", { defaultValue: "Your Voice Matters to Us" })}
-            </span>
-            <span className="block text-slate-700 text-xs sm:text-sm">
-              {t("feedback.banner.subtitleDesc", { defaultValue: "Help us improve and make Pink Shakti more useful, accessible and impactful for every woman. Share your feedback, suggestions or experience with us." })}
-            </span>
-          </>
-        }
+      <BannerSlider
+        images={[feedbackBanner]}
+        autoPlay={false}
       />
 
       {/* Main Feedback Section - Sleek & Compact Profile */}

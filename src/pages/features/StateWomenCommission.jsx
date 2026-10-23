@@ -8,7 +8,8 @@ import {
   Globe,
   MapPin,
 } from 'lucide-react'
-import bannerBg from '../../assets/banner/posh-awareness.png'
+import BannerSlider from '../../components/common/BannerSlider'
+import commissionBanner from '../../assets/banner/STATE_WOMEN_COMMISSION-transformed.jpeg'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 // WhatsApp SVG Icon
@@ -31,50 +32,10 @@ function StateWomenCommission() {
   return (
     <div className="w-full bg-[#FFF9FA] min-h-screen flex flex-col justify-between">
       {/* Top Banner Section */}
-      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
-        {/* Background Image with slow zoom-out effect */}
-        <img
-          src={bannerBg}
-          alt="State Women Commission - Pink Shakti"
-          className={`absolute inset-0 h-full w-full object-cover object-[70%_center] lg:object-fill -z-10 transition-transform duration-[2000ms] ease-out ${
-            isLoaded ? 'scale-100' : 'scale-110'
-          }`}
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/10 md:hidden z-0"></div>
-
-        <div className="hero-content relative z-10 flex flex-col justify-center h-full px-[5%] sm:px-[8%] w-[95%] sm:w-[85%] md:w-[75%] lg:w-[65%] text-[#102849]">
-          {/* Main Heading: State Women Commission */}
-          <h1
-            className={`font-serif text-[22px] sm:text-[28px] md:text-[34px] lg:text-[38px] font-bold leading-[1.15] sm:leading-[1.18] tracking-tight transition-all duration-700 ease-out delay-200 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <span className="text-[#e60067] block">
-              {t('stateWomenCommissionPage.titlePink', {
-                defaultValue: 'State Women',
-              })}
-            </span>
-            <span className="text-[#102849] block">
-              {t('stateWomenCommissionPage.titleNavy', {
-                defaultValue: 'Commission',
-              })}
-            </span>
-          </h1>
-
-          {/* Description */}
-          <p
-            className={`mt-2 sm:mt-2.5 max-w-[34rem] sm:max-w-[36rem] text-[12px] sm:text-[13px] lg:text-[14px] font-medium leading-snug sm:leading-relaxed text-[#102849] transition-all duration-700 ease-out delay-300 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            {t('stateWomenCommissionPage.desc', {
-              defaultValue:
-                'A step towards a safer, stronger and more empowered society for women.',
-            })}
-          </p>
-        </div>
-      </section>
+      <BannerSlider
+        images={[commissionBanner]}
+        autoPlay={false}
+      />
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">

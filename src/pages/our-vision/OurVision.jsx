@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import PageBanner from '../../components/common/PageBanner'
+import BannerSlider from '../../components/common/BannerSlider'
+import visionBanner from '../../assets/ourvision/OUR VISION DRAFT.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 // Images from src/assets/ourvision
@@ -14,21 +15,9 @@ export default function OurVision() {
   return (
     <div className="w-full bg-[#FFF9FA] text-[#102849]">
       {/* Top Banner */}
-      <PageBanner
-        alt="Pink Shakti - Our Vision & Mission"
-        badge={t("ourVision.pageBadge", { defaultValue: "• OUR VISION" })}
-        title={
-          <>
-            {t("ourVision.bannerTitle1", { defaultValue: "Our Vision &" })}{" "}
-            <span className="text-[#e60067]">
-              {t("ourVision.bannerTitle2", { defaultValue: "Mission" })}
-            </span>
-          </>
-        }
-        description={t("ourVision.bannerDesc", {
-          defaultValue:
-            "Promoting Holistic Women Empowerment through Technology-driven Aids to ensure Safety, Awareness & Empowerment."
-        })}
+      <BannerSlider
+        images={[visionBanner]}
+        autoPlay={false}
       />
 
       {/* Main Content Area */}

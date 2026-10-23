@@ -104,3 +104,76 @@ export const homeFeatureCards = [
   },
 ]
 
+export const homeVideos = [
+  {
+    id: "gTcjH3DHxDc",
+    title: "Ms. Snigdha | Pink Shakti Official",
+    speaker: "Ms. Snigdha",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/gTcjH3DHxDc?si=TL1DSCVZLEGat7hD",
+  },
+  {
+    id: "Ja14ocNuiv8",
+    title: "Ms. Shushma Kharkwal , Hon'ble Mayor Lucknow",
+    speaker: "Ms. Shushma Kharkwal , Hon'ble Mayor",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/Ja14ocNuiv8?si=gGqCXB5J-27xX9Ck",
+  },
+  {
+    id: "Ym0oXYPTVQc",
+    title: "CEO, Lucknow Smart City, Mr. Inderjit Singh",
+    speaker: "CEO, Lucknow Smart City, Mr. Inderjit Singh",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/Ym0oXYPTVQc?si=sAYxjvilfoG3z_lr",
+  },
+  {
+    id: "Z75FfAK5b0g",
+    title: "Pink Shakti Women Empowerment & Safety Session",
+    speaker: "Pink Shakti Safety Initiative",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/Z75FfAK5b0g?si=9BjG2w2nhExD6lqM",
+  },
+  {
+    id: "E9E3TDXnbrE",
+    title: "Pink Shakti Community Awareness Drive",
+    speaker: "Pink Shakti Outreach Program",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/E9E3TDXnbrE?si=x2xDCf4kx3L3I3-V",
+  },
+  {
+    id: "ImAQXZ480Ak",
+    title: "Social Impact & Leadership for Women",
+    speaker: "Pink Shakti Leadership",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/ImAQXZ480Ak?si=qOTp_xF_KJdV3DJ9",
+  },
+  {
+    id: "UpnHZr4okXo",
+    title: "Women Safety Tech Innovation & Future",
+    speaker: "Pink Shakti Tech Solution",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/UpnHZr4okXo?si=ekpLvLkPEtCNcUG3",
+  },
+  {
+    id: "8747m6G1lFQ",
+    title: "Pink Shakti Highlights & Event Outreach",
+    speaker: "Pink Shakti Team",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/8747m6G1lFQ?si=hRJpg0ABR-h_HHjZ",
+  },
+  {
+    id: "Qrew_rdc6Zs",
+    title: "Pink Shakti Community & Empowerment Session",
+    speaker: "Pink Shakti Outreach",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/Qrew_rdc6Zs?si=bpwXRVGVDyK8uf7m",
+  },
+  {
+    id: "2JQyGfMlRA8",
+    title: "Pink Shakti Women Safety & Leadership Program",
+    speaker: "Pink Shakti Official",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/2JQyGfMlRA8?si=Qbf2ah48Gilfdtwv",
+  },
+]
+

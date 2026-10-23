@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import PageBanner from '../../components/common/PageBanner'
+import BannerSlider from '../../components/common/BannerSlider'
+import blogBanner from '../../assets/banner/dblog-tips.jpg'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 export default function Blogs() {
@@ -9,31 +10,17 @@ export default function Blogs() {
   return (
     <div className="w-full bg-[#FFF9FA] text-[#102849]">
       {/* Top Banner */}
-      <PageBanner
-        alt="Pink Shakti Blog"
-        badge={t("blogs.pageBadge", { defaultValue: "• BLOG" })}
-        title={
-          <>
-            {t("blogs.pageTitle1", { defaultValue: "Empowering" })}{" "}
-            <span className="text-[#e60067]">
-              {t("blogs.pageTitle2", { defaultValue: "Women" })}
-            </span>
-          </>
-        }
-        description={t("blogs.pageDesc", {
-          defaultValue:
-            "A comprehensive guide to ensuring women's safety, self-reliance, and empowerment in today's world."
-        })}
+      <BannerSlider
+        images={[blogBanner]}
+        autoPlay={false}
+        height="h-[250px] sm:h-[310px] md:h-[350px] lg:h-[470px]"
       />
 
       {/* Main Single Card Section */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 ">
         
         {/* Header Badge & Title */}
         <div className="text-center my-5">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-100/90 px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-xs">
-            • BLOG
-          </span>
 
           <h1 className="mt-10 font-serif text-2xl sm:text-3xl lg:text-[23px] font-extrabold leading-tight sm:leading-snug text-[#102849] max-w-4xl ">
             Title: Empowering Women: A Guide to Ensuring Safety in Today's World

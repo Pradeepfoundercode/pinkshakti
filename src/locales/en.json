@@ -958,37 +958,43 @@
       "title": "MENTAL HEALTH MATTERS",
       "subtitle": "Take Care • Stay Positive • Be Strong"
     },
-    "cards": {
-      "whatIs": {
-        "title": "What is Mental Health?",
-        "desc": "Mental health refers to our emotional, psychological and social well-being. It affects how we think, feel, act and handle stress. Good mental health helps you lead a happier, healthier and more productive life."
-      },
-      "concerns": {
-        "title": "Common Mental Health Concerns",
-        "bullets": [
-          "Stress and anxiety",
-          "Depression",
-          "Mood swings",
-          "Low self-esteem",
-          "Relationship and family issues",
-          "Work or study pressure",
-          "Any other emotional distress"
-        ]
-      },
-      "tips": {
-        "title": "Tips for Better Mental Health",
-        "bullets": [
-          "Take time for yourself",
-          "Talk to someone you trust",
-          "Maintain a healthy routine (sleep, food and exercise)",
-          "Stay positive and practice gratitude",
-          "Seek professional help if needed"
-        ]
-      }
+    "card1": {
+      "title": "What do you mean by mental health?",
+      "desc": "Mental health refers to our emotional, psychological, and social well-being. It affects how we think, feel, and act, and it also influences how we handle stress, relate to others, and make decisions."
     },
-    "note": {
-      "label": "Important Note:",
-      "text": "This information is for awareness only. If you are experiencing severe or persistent mental health concerns, please consult a qualified mental health professional."
+    "card2": {
+      "title": "What is Good Mental Health?",
+      "desc": "Good mental health is not just the absence of mental illness but also includes the presence of positive characteristics such as the ability to cope with life's challenges, maintain fulfilling relationships, and adapt to change."
+    },
+    "card3": {
+      "title": "What affects your Mental Health?",
+      "desc": "Factors that contribute to mental health include genetics, life experiences (such as trauma or abuse), and family history of mental health problems. Mental health conditions, such as depression, anxiety disorders, bipolar disorder, and schizophrenia, are common and can affect anyone, regardless of age, gender, or background."
+    },
+    "card4": {
+      "title": "How to deal with Mental Health issues?",
+      "items": [
+        {
+          "title": "Seeking Professional Help:",
+          "desc": "Therapists, counselors, and psychiatrists can provide valuable support and treatment."
+        },
+        {
+          "title": "Building a Support System:",
+          "desc": "Friends, family, and support groups can offer emotional support and understanding."
+        },
+        {
+          "title": "Healthy Lifestyle Choices:",
+          "desc": "Regular exercise, a balanced diet, adequate sleep, and avoiding harmful substances can improve mental well-being."
+        },
+        {
+          "title": "Stress Management:",
+          "desc": "Techniques like mindfulness, meditation, and relaxation exercises can help manage stress."
+        },
+        {
+          "title": "Engaging in Activities:",
+          "desc": "Hobbies and activities that bring joy and a sense of accomplishment can enhance mental health."
+        }
+      ],
+      "footer": "Reducing stigma around mental health and promoting open conversations are crucial steps towards a healthier society."
     }
   },
   "bnsSection79Page": {
@@ -1132,6 +1138,272 @@
     "viewHelplines": "Emergency Helplines",
     "getApp": "Download Pink Shakti App",
     "exploreRights": "Explore Women Laws & Rights"
+  },
+  "cervicalCancerPage": {
+    "whatIs": {
+      "title": "What is Cervical Cancer?",
+      "p1": "Cervical cancer occurs in the cells of the cervix, the lower part of the uterus. In India, 200 women die each day due to cervical cancer.",
+      "p2": "It is primarily caused by persistent infection with high-risk types of HPV.",
+      "p3": "Early detection and vaccination can prevent most cases."
+    },
+    "symptoms": {
+      "title": "Signs and Symptoms",
+      "items": [
+        "Involuntary weight loss",
+        "Fatigue or tiredness",
+        "Abnormal bleeding after intercourse / between periods",
+        "Lower back pain",
+        "Pelvic pain / discomfort",
+        "Bloody or foul smelling vaginal discharge",
+        "Very heavy periods",
+        "Pain while urinating"
+      ]
+    },
+    "causes": {
+      "title": "Causes & Risk Factors",
+      "items": [
+        "Persistent HPV infection (types 16 & 18)",
+        "Smoking",
+        "Weakened immune system",
+        "Multiple sexual partners",
+        "Long-term oral contraceptive use",
+        "Chlamydia (STIs)",
+        "Poverty / Low socioeconomic status",
+        "Family history",
+        "Not getting regular Pap tests – begin testing at age 21"
+      ]
+    },
+    "transmission": {
+      "title": "How HPV Infection Can Occur",
+      "modes": [
+        {
+          "title": "1. Sexual Transmission",
+          "points": [
+            "HPV is transmitted through sexual contact.",
+            "A person with HPV can pass the infection even without symptoms."
+          ]
+        },
+        {
+          "title": "2. Non-Sexual Transmission",
+          "points": [
+            "Skin-to-skin contact other than sexual activity.",
+            "HPV can be transmitted through fingers or contaminated surfaces.",
+            "Warts can spread infection if touched and hands are not washed."
+          ]
+        },
+        {
+          "title": "3. Vertical Transmission",
+          "points": [
+            "Through amniotic fluid, placenta, or during natural birth.",
+            "HPV can be passed from a birthing person to their baby."
+          ]
+        }
+      ],
+      "note": "HPV is one of the most prevalent sexually transmitted infections. Vaccines induce stronger immunity than natural infection. It is found that 8 in 10 women may contract HPV at some point in their lives."
+    },
+    "tests": {
+      "title": "Tests & Screening",
+      "testsHeading": "Tests",
+      "testList": [
+        {
+          "name": "Pap Smear",
+          "desc": "Detects precancerous or cancerous cells"
+        },
+        {
+          "name": "HPV Test",
+          "desc": "Identifies high-risk HPV types"
+        },
+        {
+          "name": "Colposcopy",
+          "desc": "Further examination if abnormalities are found"
+        }
+      ],
+      "screeningHeading": "Screening Recommendations",
+      "recommendations": [
+        {
+          "age": "Women 21–29",
+          "freq": "Pap Smear every 3 years"
+        },
+        {
+          "age": "Women 30–65",
+          "freq": "Pap Smear + HPV Test every 5 years"
+        }
+      ]
+    },
+    "prevention": {
+      "title": "Ways to Prevent HPV Infection",
+      "items": [
+        "HPV Vaccination (e.g., Cervavac, Gardasil)",
+        "Regular Screening (Pap Smear, HPV Test)",
+        "Safe sexual practices",
+        "Smoking cessation"
+      ]
+    },
+    "vaccines": {
+      "title": "Vaccines for Prevention",
+      "availableHeading": "Available HPV Vaccines",
+      "availableList": [
+        {
+          "name": "Cervavac",
+          "desc": "India’s indigenous, cost-effective vaccine"
+        },
+        {
+          "name": "Gardasil & Gardasil 9",
+          "desc": "Protect against HPV types 6, 11, 16, 18"
+        }
+      ],
+      "highlightsHeading": "Cervavac Highlights",
+      "highlights": [
+        "Affordable & accessible",
+        "Strong immunity against high-risk HPV",
+        "Suitable for girls & women aged 9–26"
+      ],
+      "dosesHeading": "Doses Recommended for Cervavac",
+      "group1": {
+        "title": "FOR GIRLS 9–14 YEARS",
+        "subtitle": "Two doses",
+        "doses": [
+          "First – (as elected date)",
+          "Second – (6 months of first dose)"
+        ]
+      },
+      "group2": {
+        "title": "FOR GIRLS 15–26 YEARS",
+        "subtitle": "Three doses",
+        "doses": [
+          "First – (as elected date)",
+          "Second – (2 months of first dose)",
+          "Third – (6 months)"
+        ]
+      }
+    },
+    "myths": {
+      "title": "Myths About Vaccination & Reality",
+      "items": [
+        {
+          "myth": "HPV vaccines promote sexual activity.",
+          "reality": "They only protect against cancer-causing HPV strains."
+        },
+        {
+          "myth": "Only sexually active women need the vaccine.",
+          "reality": "Most effective before HPV exposure."
+        },
+        {
+          "myth": "Vaccines are unsafe.",
+          "reality": "Rigorously tested and proven safe."
+        }
+      ]
+    },
+    "benefitsSideEffects": {
+      "title": "Benefits & Side Effects of Vaccine",
+      "benefitsHeading": "Benefits",
+      "benefits": [
+        "Prevents most cases of cervical cancer",
+        "Reduces healthcare costs",
+        "Provides long-term immunity"
+      ],
+      "sideEffectsHeading": "Mild Side Effects",
+      "sideEffects": [
+        "Pain at injection site",
+        "Fever or fatigue",
+        "Dizziness or nausea (rare)"
+      ]
+    },
+    "cta": "Stay Informed, Stay Protected!"
+  },
+  "menstrualHealthPage": {
+    "titlePink": "Menstrual",
+    "titleNavy": "Health",
+    "card1": {
+      "title": "What do you mean by Menstrual Health?",
+      "desc": "Menstrual health refers to the well-being of women during their menstrual cycle, encompassing physical, emotional, and social aspects. The menstrual cycle typically lasts about 28 days but can vary from 21 to 35 days. It involves hormonal changes that prepare the body for potential pregnancy, with menstruation marking the start of a new cycle."
+    },
+    "card2": {
+      "title": "What are the problems women face during Menstrual Cycle:",
+      "desc": "Many women experience symptoms such as cramps, bloating, mood swings, lower abdominal pain and fatigue. Some Women face fever, acne, insomnia during the cycle."
+    },
+    "card3": {
+      "title": "How to deal with the problems during Menstrual Cycle?",
+      "desc": "The problems during Menstrual Cycle often be managed with lifestyle changes. Specific Yoga exercises during Menstrual relieves from Period Cramps as it loosens up the muscles. Using a hot water bottle may also help to decrease the abdominal pain. Consuming mild pain killers and paracetamol also helps in countering the problems during Menstrual Cycle."
+    },
+    "card4": {
+      "title": "What type of diet one should follow during Menstrual Cycle?",
+      "desc": "One should follow healthy diet during Menstrual Cycle such as fruits with high water content such as Water Melon which reduces swelling, bloating and keeps your body hydrated. Intake of large amount of green leafy vegetables helps in balancing the iron levels in the body. Healthy Caffeine substitutes and Green Tea also helps in relaxing the body pain."
+    },
+    "card5": {
+      "title": "What is the importance of Menstrual Hygiene?",
+      "desc": "Proper menstrual hygiene management is crucial for preventing infections during periods. This includes using sanitary products like pads, tampons, or menstrual cups and changing them after every 4-5 hours. Taking bath and cleaning private parts with plain water is necessary to keep away the infections. Avoid using Vaginal washes as they destroy the good bacteria which helps in fighting the infections."
+    },
+    "card6": {
+      "title": "What are the myths related to Menstrual Cycle and what should be done?",
+      "subtitle": "These are the age-old myths which one should not believe but should follow healthy and hygienic practices:",
+      "myths": [
+        {
+          "myth": "A menstruating woman shouldn’t be touched.",
+          "fact": "It is against human rights and reflects discrimination. One should never believe in this evil myth."
+        },
+        {
+          "myth": "You shouldn’t enter the kitchen on your period.",
+          "fact": "It’s all about cleanliness and nothing else."
+        },
+        {
+          "myth": "Any contact with a man can gets a woman pregnant.",
+          "fact": "Proper sexual intercourse between male and female can only make a woman pregnant. So, never believe this myth."
+        },
+        {
+          "myth": "Women shouldn’t wash their hair while on their period.",
+          "fact": "Hygiene is most important during periods."
+        },
+        {
+          "myth": "Don't apply kajal during your period.",
+          "fact": "If you can apply kajal on other days then why not during periods."
+        },
+        {
+          "myth": "Don't consume curd during period.",
+          "fact": "Calcium is necessary for body but avoid taking curd at night or cold curd."
+        },
+        {
+          "myth": "Stay out and don't sleep on beds.",
+          "fact": "You should think of every possible comfort during your periods to carry your daily activities smoothly."
+        },
+        {
+          "myth": "Touching the pickle during period would spoil it.",
+          "fact": "It is also again about cleanliness. Touching it might give you craving to eat the spicy pickle but it won’t spoil it unless you touch it with dry and clean hands. Avoid consuming spicy foods during periods as it may cause acidity."
+        }
+      ]
+    },
+    "card7": {
+      "title": "What menstrual disorders can be caused due to hormonal imbalance and symptoms?",
+      "desc": "Hormonal fluctuations can affect mood and physical well-being. It's important to recognize and address these challenges. Women may face menstrual disorders, such as irregular periods, very less bleeding or heavy bleeding (menorrhagia), painful periods (dysmenorrhea), and conditions like polycystic ovary syndrome (PCOS). Often the symptoms for these kinds of disorders are weight gain, insomnia, skin problems, hair fall, excessive and smelly vaginal discharge, excessive body hair, intolerable abdominal pain during periods."
+    },
+    "card8": {
+      "title": "What are the serious diseases that affect Women’s Reproductive Health and Symptoms?",
+      "cervicalCancer": {
+        "title": "Cervical Cancer",
+        "desc": "Cervical Cancer is a very serious disease which if not treated timely can affect a woman’s reproductive health.",
+        "symptomsHeading": "Symptoms:",
+        "symptomsSub": "Sometimes you may have no symptoms, but some woman may experience:",
+        "symptoms": [
+          { "label": "Pain areas:", "text": "in the pelvis." },
+          { "label": "Pain circumstances:", "text": "can occur during sexual intercourse." },
+          { "label": "Menstrual:", "text": "abnormal menstruation, heavy menstruation, irregular menstruation, or spotting." },
+          { "label": "Groin:", "text": "abnormal vaginal bleeding or abnormal vaginal discharge." },
+          { "label": "Also common:", "text": "fatigue, nausea, or weight loss." }
+        ],
+        "footer": "Vaccination, timely treatment and regular screening and may prevent the complications of Cervical Cancer."
+      },
+      "hpv": {
+        "title": "HPV (Human Papilloma Virus) Infection",
+        "desc": "HPV (Human Papilloma Virus) Infection is also dangerous if not treated timely.",
+        "symptomsHeading": "Symptoms:",
+        "symptoms": [
+          "Flat lesions or skin injuries.",
+          "Small cauliflower-like bumps or tiny stemlike protrusions.",
+          "In women, genital warts appear mostly on the vulva but can also occur near the anus, on the cervix or in the vagina."
+        ],
+        "footer": "Vaccination, timely treatment and regular screening and may prevent the complications of HPV Infection."
+      }
+    }
   }
 }
 

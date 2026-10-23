@@ -2,12 +2,20 @@ import React from 'react'
 import { ArrowRight, Download, Image as ImageIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import homeBanner from "../../assets/home/Empowered Women Shaping Tomorrow.png"
-import PageBanner from "../../components/common/PageBanner"
+import BannerSlider from "../../components/common/BannerSlider"
 import VisionBanner from "../../components/common/VisionBanner"
 import PhoneBanner from '../../components/common/PhoneBanner'
 import HoverCardsSlider from '../../components/common/HoverCardsSlider'
+import VideoSlider from '../../components/common/VideoSlider'
 import { homeFeatures, homeFeatureCards, homeImpactItems, homeGalleryItems } from '../../constants/homeData'
+
+// Banner slider images
+import slide1 from "../../assets/home/Home Page 1st image alternative (2).png"
+import slide2 from "../../assets/home/Slide1.png"
+import slide3 from "../../assets/home/Slide2.png"
+import slide4 from "../../assets/home/Slide3.png"
+
+const homeBannerSlides = [slide1, slide2, slide3, slide4]
 
 function Home() {
   const { t } = useTranslation()
@@ -48,33 +56,7 @@ function Home() {
 
   return (
     <>
-      <PageBanner
-        alt="Women from diverse professions representing Pink Shakti"
-        badge={[
-          t("home.badgeSafe", { defaultValue: "SAFE WOMEN" }),
-          t("home.badgeSociety", { defaultValue: "STRONGER SOCIETY" })
-        ]}
-        title={
-          <>
-            {t("home.heroTitle1", { defaultValue: "Empowering Women" })}
-            <span className="block">
-              {t("home.heroFor", { defaultValue: "For" })}{' '}
-              <span className="text-[#e60067]">{t("home.heroSaferTomorrow", { defaultValue: "A Safer Tomorrow" })}</span>
-            </span>
-          </>
-        }
-        description={t("home.heroDesc", { defaultValue: "Pink Shakti is a Women Safety, Awareness and Empowerment platform dedicated to building a safer, stronger and more independent Uttar Pradesh." })}
-        primaryButton={{
-          text: t("home.getApp", { defaultValue: "Get The App" }),
-          to: "https://play.google.com/store/apps/details?id=com.inaequalisconsulting.pinkshakti",
-          icon: Download,
-        }}
-        secondaryButton={{
-          text: t("home.knowMore", { defaultValue: "Know More" }),
-          to: "/about",
-          icon: ArrowRight,
-        }}
-      />
+      <BannerSlider images={homeBannerSlides} />
 
       <section className="bg-white px-4 sm:px-6 lg:px-8 pt-7 overflow-hidden">
         <div className="feature-panel mx-auto max-w-[1600px] rounded-3xl bg-[#fff7fa] px-4 py-6 sm:px-6">
@@ -126,16 +108,16 @@ function Home() {
         }}
       />
 
-      
+
 
 
       <PhoneBanner />
 
 
-      
+
 
       <section>
-        <div className="bg-white px-4 sm:px-6 lg:px-8">
+        <div className="bg-transparent px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1600px]">
 
             {/* Main Container - Original padding (sm:p-8) and gap (gap-8) restored */}
@@ -256,8 +238,12 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Video Slider Section */}
+      <VideoSlider />
     </>
   )
 }
 
 export default Home
+

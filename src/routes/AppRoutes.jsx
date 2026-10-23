@@ -20,13 +20,16 @@ import WomenSchemsDetails from '../pages/pinkInfo/WomenSchemsDetails'
 import WomenLaws from '../pages/pinkInfo/WomenLaws'
 import WomenRights from '../pages/pinkInfo/WomenRights'
 import PoshAct from '../pages/pinkInfo/PoshAct'
-import MentalHealth from '../pages/features/MentalHealth'
+
 import BnsSection from '../pages/pinkInfo/BnsSection'
 import EqualPay from '../pages/pinkInfo/EqualPay'
 import DeleteMorphedPhotos from '../pages/pinkInfo/DeleteMorphedPhotos'
 import StateWomenCommission from '../pages/features/StateWomenCommission'
 import Blogs from '../pages/blogs/Blogs'
 import OurVision from '../pages/our-vision/OurVision'
+import MentalHealth from '../pages/pinkHealth/MentalHealth'
+import MenstrualHealth from '../pages/pinkHealth/MenstrualHealth'
+import CervicalCancer from '../pages/pinkHealth/CervicalCancer'
 
 
 function AppRoutes() {
@@ -47,6 +50,8 @@ function AppRoutes() {
         <Route path="/highlights/e-fir" element={<EFIR />} />
         <Route path="/highlights/pink-health" element={<PinkHealth />} />
         <Route path="/highlights/pink-health/mental-health" element={<MentalHealth />} />
+        <Route path="/highlights/pink-health/menstrual-health" element={<MenstrualHealth />} />
+        <Route path="/highlights/pink-health/cervical-cancer" element={<CervicalCancer />} />
         <Route path="/highlights/state-women-commission" element={<StateWomenCommission />} />
 
         {/* pinkinfo */}

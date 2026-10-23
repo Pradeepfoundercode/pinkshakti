@@ -2,20 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Camera, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import PhoneBanner from "../../components/common/PhoneBanner";
-import galleryBanner from "../../assets/gallery/Pink Community Leadership Photo Collage (1).png";
 import { getGalleryImage } from "../../services/gallery.service";
 
 function Gallery() {
   const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-
   const [galleryData, setGalleryData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
 
   useEffect(() => {
     let isMounted = true;
@@ -48,41 +41,7 @@ function Gallery() {
 
   return (
     <>
-      <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[350px]">
-        <img
-          src={galleryBanner}
-          alt="Pink Shakti Gallery - Moments of Change, Stories of Strength"
-          className={`absolute inset-0 -z-10 h-full w-full object-cover object-center lg:object-fill transition-transform duration-[2000ms] ease-out ${isLoaded ? "scale-100" : "scale-110"
-            }`}
-        />
-
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent md:hidden" />
-
-        <div className="hero-content relative z-10 flex h-full w-[95%] flex-col justify-center px-[5%] text-[#102849] sm:w-[85%] sm:px-[8%] md:w-[65%] lg:w-[55%]">
-          <h1
-            className={`font-serif text-[28px] font-bold leading-tight tracking-tight text-[#102849] transition-all duration-700 ease-out delay-300 sm:text-[30px] md:text-[34px] lg:text-[38px] ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-              }`}
-          >
-            {t("gallery.title", { defaultValue: "Gallery" })}
-          </h1>
-
-          <h2
-            className={`mt-1.5 text-base font-bold leading-snug text-[#e60067] transition-all duration-700 ease-out delay-400 sm:mt-2 sm:text-lg lg:text-[1.2rem] ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-              }`}
-          >
-            {t("gallery.subtitle", { defaultValue: "Moments of Change, Stories of Strength" })}
-          </h2>
-
-          <p
-            className={`mt-1.5 max-w-lg text-[12px] font-medium leading-relaxed text-slate-700 transition-all duration-700 ease-out delay-500 sm:mt-2 sm:text-[13px] lg:text-[14px] ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-              }`}
-          >
-            {t("gallery.description", { defaultValue: "A glimpse of our awareness programs, community engagements, events, and initiatives towards a safer, stronger society." })}
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <section className="bg-white px-4 py-4 sm:px-6  lg:px-8">
         <div className="mx-auto max-w-[1600px] flex flex-col gap-10">
 
           {isLoading ? (
