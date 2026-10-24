@@ -8,7 +8,7 @@ import {
   oneStopCenterDistricts,
   oneStopCenterCities,
   oneStopCenterServices,
-} from '../../constants'
+} from '../../constants/oneStopCenterData'
 import { getOneStopCenters } from '../../services/onestop.service'
 import {
   Search,
