@@ -22,18 +22,19 @@ import {
 import BannerSlider from '../../components/common/BannerSlider'
 import poshBanner from '../../assets/posh-act/POSH 1.jpg'
 import poshActImage from '../../assets/posh-act/post_act2.jpeg'
+import poshActImageHi from '../../assets/women-rights/3.png'
 import sheboxImage from '../../assets/posh-act/download.png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 function PoshAct() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
   }, [])
 
-  const unwelcomeActs = [
+  const defaultUnwelcomeActs = [
     'Physical contact and advances',
     'A demand or request for sexual favors',
     'Sexually colored remarks',
@@ -41,7 +42,12 @@ function PoshAct() {
     'Any other unwelcome physical, verbal, or non-verbal conduct of a sexual nature',
   ]
 
-  const extendedWorkplaces = [
+  const unwelcomeActs = t('poshActPage.cards.definition.unwelcomeActs', {
+    returnObjects: true,
+    defaultValue: defaultUnwelcomeActs,
+  })
+
+  const defaultExtendedWorkplaces = [
     'Government bodies',
     'Private and public sector organizations',
     'Non-governmental organizations',
@@ -50,7 +56,12 @@ function PoshAct() {
     'Places visited by the employee during the course of employment, including transportation',
   ]
 
-  const sheboxSteps = [
+  const extendedWorkplaces = t('poshActPage.cards.scope.places', {
+    returnObjects: true,
+    defaultValue: defaultExtendedWorkplaces,
+  })
+
+  const defaultSheboxSteps = [
     {
       num: 1,
       title: 'Access the Portal',
@@ -129,6 +140,18 @@ function PoshAct() {
     },
   ]
 
+  const sheboxStepsData = t('poshActPage.shebox.steps', {
+    returnObjects: true,
+    defaultValue: defaultSheboxSteps,
+  })
+
+  const sheboxSteps = Array.isArray(sheboxStepsData) && sheboxStepsData.length > 0
+    ? sheboxStepsData.map((step) => ({
+        ...step,
+        link: step.num === 1 ? 'https://shebox.wcd.gov.in' : undefined,
+      }))
+    : defaultSheboxSteps
+
   return (
     <div className="min-h-screen bg-[#FFF9FA]">
       {/* Top Banner Section */}
@@ -147,7 +170,7 @@ function PoshAct() {
           {/* Section Header */}
           <div className="mb-4 text-center sm:text-left">
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-[28px] font-bold text-[#102849] tracking-tight">
-              THE PREVENTION OF SEXUAL HARASSMENT (PoSH) ACT, 2013
+              {t('poshActPage.heading', { defaultValue: 'THE PREVENTION OF SEXUAL HARASSMENT (PoSH) ACT, 2013' })}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#e60067] to-[#824497] rounded-full mt-2 mx-auto sm:mx-0"></div>
           </div>
@@ -157,8 +180,8 @@ function PoshAct() {
             <div className="bg-white rounded-2xl border border-pink-100 shadow-[0_4px_18px_-4px_rgba(230,0,103,0.08)] overflow-hidden">
               <div className="p-2 sm:p-2.5 bg-gradient-to-b from-pink-50/50 to-white flex justify-center">
                 <img
-                  src={poshActImage}
-                  alt="Right Against Workplace Harassment - PoSH Act 2013"
+                  src={i18n.language === 'hi' ? poshActImageHi : poshActImage}
+                  alt={t('poshActPage.imageAlt', { defaultValue: 'Right Against Workplace Harassment - PoSH Act 2013' })}
                   className="w-full h-auto max-h-[350px] object-cover sm:object-fill rounded-xl border border-pink-100/90 shadow-2xs"
                 />
               </div>
@@ -168,7 +191,10 @@ function PoshAct() {
           {/* Intro paragraph below image */}
           <div className="mb-5">
             <p className="text-slate-700 text-sm sm:text-base leading-relaxed max-w-4xl font-medium">
-              The Prevention of Sexual Harassment (PoSH) Act, 2013, is a significant piece of legislation in India aimed at ensuring a safe and secure working environment for women. Here are the essential aspects of the PoSH Act, 2013:
+              {t('poshActPage.intro', {
+                defaultValue:
+                  'The Prevention of Sexual Harassment (PoSH) Act, 2013, is a significant piece of legislation in India aimed at ensuring a safe and secure working environment for women. Here are the essential aspects of the PoSH Act, 2013:',
+              })}
             </p>
           </div>
 
@@ -182,10 +208,13 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Purpose and Objective
+                    {t('poshActPage.cards.purpose.title', { defaultValue: 'Purpose and Objective' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] lg:text-[14px] leading-relaxed font-medium">
-                    The primary aim of the PoSH Act is to provide protection against sexual harassment of women at the workplace and to establish a redressal mechanism for complaints. It is intended to create a safe working environment that enables women to work without fear of prejudice, gender bias, or sexual harassment.
+                    {t('poshActPage.cards.purpose.desc', {
+                      defaultValue:
+                        'The primary aim of the PoSH Act is to provide protection against sexual harassment of women at the workplace and to establish a redressal mechanism for complaints. It is intended to create a safe working environment that enables women to work without fear of prejudice, gender bias, or sexual harassment.',
+                    })}
                   </p>
                 </div>
               </div>
@@ -199,18 +228,19 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Scope of the Act
+                    {t('poshActPage.cards.scope.title', { defaultValue: 'Scope of the Act' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] font-medium mb-2">
-                    The Act applies to all workplaces in India, including:
+                    {t('poshActPage.cards.scope.desc', { defaultValue: 'The Act applies to all workplaces in India, including:' })}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs sm:text-[13px] text-slate-700 font-medium">
-                    {extendedWorkplaces.map((place, idx) => (
-                      <div key={idx} className="flex items-center gap-1.5 p-1.5 rounded-lg bg-pink-50/60">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#e60067] shrink-0"></span>
-                        <span className="truncate">{place}</span>
-                      </div>
-                    ))}
+                    {Array.isArray(extendedWorkplaces) &&
+                      extendedWorkplaces.map((place, idx) => (
+                        <div key={idx} className="flex items-center gap-1.5 p-1.5 rounded-lg bg-pink-50/60">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#e60067] shrink-0"></span>
+                          <span className="truncate">{place}</span>
+                        </div>
+                      ))}
                   </div>
                 </div>
               </div>
@@ -224,21 +254,33 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Definition of Sexual Harassment
+                    {t('poshActPage.cards.definition.title', { defaultValue: 'Definition of Sexual Harassment' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] lg:text-[14px] font-medium mb-2.5">
-                    The Act defines sexual harassment in a broad manner, covering any unwelcome acts or behavior (whether directly or by implication) such as:
+                    {t('poshActPage.cards.definition.desc', {
+                      defaultValue:
+                        'The Act defines sexual harassment in a broad manner, covering any unwelcome acts or behavior (whether directly or by implication) such as:',
+                    })}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
-                    {unwelcomeActs.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs sm:text-[13.5px] text-slate-700 font-medium">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#e60067] mt-1.5 shrink-0"></span>
-                        <span>{item}</span>
-                      </div>
-                    ))}
+                    {Array.isArray(unwelcomeActs) &&
+                      unwelcomeActs.map((item, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-xs sm:text-[13.5px] text-slate-700 font-medium">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#e60067] mt-1.5 shrink-0"></span>
+                          <span>{item}</span>
+                        </div>
+                      ))}
                   </div>
                   <div className="p-3 bg-pink-50/70 rounded-xl border border-pink-100 text-xs sm:text-[13px] text-slate-700 font-medium">
-                    <strong className="text-[#102849]">The definition also extends to places visited by the employee during the course of employment, including:</strong> Government bodies, private &amp; public sector organizations, NGOs, vocational &amp; educational institutions, sports institutes, and places visited during the course of employment, including transportation.
+                    <strong className="text-[#102849]">
+                      {t('poshActPage.cards.definition.extendedNoteBold', {
+                        defaultValue: 'The definition also extends to places visited by the employee during the course of employment, including:',
+                      })}
+                    </strong>{' '}
+                    {t('poshActPage.cards.definition.extendedNoteText', {
+                      defaultValue:
+                        'Government bodies, private & public sector organizations, NGOs, vocational & educational institutions, sports institutes, and places visited during the course of employment, including transportation.',
+                    })}
                   </div>
                 </div>
               </div>
@@ -252,23 +294,36 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Internal Complaints Committee (ICC)
+                    {t('poshActPage.cards.icc.title', { defaultValue: 'Internal Complaints Committee (ICC)' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] lg:text-[14px] leading-relaxed font-medium mb-2">
-                    Every employer with 10 or more employees is required to constitute an Internal Complaints Committee (ICC) at each office or branch. The ICC is responsible for addressing complaints of sexual harassment and is composed of:
+                    {t('poshActPage.cards.icc.desc', {
+                      defaultValue:
+                        'Every employer with 10 or more employees is required to constitute an Internal Complaints Committee (ICC) at each office or branch. The ICC is responsible for addressing complaints of sexual harassment and is composed of:',
+                    })}
                   </p>
                   <ul className="space-y-1.5 text-xs sm:text-[13px] lg:text-[13.5px] text-slate-700 font-medium border-l-2 border-[#e60067] pl-3">
                     <li className="flex items-start gap-2">
                       <span className="text-[#e60067] font-bold">&bull;</span>
-                      <span>A senior woman employee as the Presiding Officer</span>
+                      <span>
+                        {t('poshActPage.cards.icc.points.0', { defaultValue: 'A senior woman employee as the Presiding Officer' })}
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[#e60067] font-bold">&bull;</span>
-                      <span>At least two employees committed to the cause of women or having experience in social work or legal knowledge</span>
+                      <span>
+                        {t('poshActPage.cards.icc.points.1', {
+                          defaultValue: 'At least two employees committed to the cause of women or having experience in social work or legal knowledge',
+                        })}
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[#e60067] font-bold">&bull;</span>
-                      <span>One external member from an NGO or association committed to the cause of women</span>
+                      <span>
+                        {t('poshActPage.cards.icc.points.2', {
+                          defaultValue: 'One external member from an NGO or association committed to the cause of women',
+                        })}
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -283,10 +338,13 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Local Complaints Committee (LCC)
+                    {t('poshActPage.cards.lcc.title', { defaultValue: 'Local Complaints Committee (LCC)' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] lg:text-[14px] leading-relaxed font-medium">
-                    For workplaces with fewer than 10 employees or if the complaint is against the employer, a Local Complaints Committee (LCC) must be established by the District Officer. The LCC serves the same purpose as the ICC but operates at the district level.
+                    {t('poshActPage.cards.lcc.desc', {
+                      defaultValue:
+                        'For workplaces with fewer than 10 employees or if the complaint is against the employer, a Local Complaints Committee (LCC) must be established by the District Officer. The LCC serves the same purpose as the ICC but operates at the district level.',
+                    })}
                   </p>
                 </div>
               </div>
@@ -300,42 +358,51 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-2.5">
-                    Complaint Procedure
+                    {t('poshActPage.cards.procedure.title', { defaultValue: 'Complaint Procedure' })}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div className="p-3 rounded-xl bg-pink-50/60 border border-pink-100">
                       <span className="text-[10px] font-bold uppercase text-[#e60067] bg-pink-100 px-2 py-0.5 rounded-md inline-block mb-1.5">
-                        Step 1
+                        {t('poshActPage.cards.procedure.step1.tag', { defaultValue: 'Step 1' })}
                       </span>
                       <h4 className="font-bold text-[#102849] text-xs sm:text-sm mb-1">
-                        Filing of Complaint
+                        {t('poshActPage.cards.procedure.step1.title', { defaultValue: 'Filing of Complaint' })}
                       </h4>
                       <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-medium">
-                        The aggrieved woman must submit a written complaint within <strong>three months</strong> from the date of the incident. This period can be extended by another three months if there are valid reasons.
+                        {t('poshActPage.cards.procedure.step1.desc', {
+                          defaultValue:
+                            'The aggrieved woman must submit a written complaint within three months from the date of the incident. This period can be extended by another three months if there are valid reasons.',
+                        })}
                       </p>
                     </div>
 
                     <div className="p-3 rounded-xl bg-pink-50/60 border border-pink-100">
                       <span className="text-[10px] font-bold uppercase text-[#e60067] bg-pink-100 px-2 py-0.5 rounded-md inline-block mb-1.5">
-                        Step 2
+                        {t('poshActPage.cards.procedure.step2.tag', { defaultValue: 'Step 2' })}
                       </span>
                       <h4 className="font-bold text-[#102849] text-xs sm:text-sm mb-1">
-                        Conciliation
+                        {t('poshActPage.cards.procedure.step2.title', { defaultValue: 'Conciliation' })}
                       </h4>
                       <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-medium">
-                        Before initiating an inquiry, the ICC/LCC can take steps to settle the matter between the aggrieved woman and the respondent through conciliation, if requested by the complainant.
+                        {t('poshActPage.cards.procedure.step2.desc', {
+                          defaultValue:
+                            'Before initiating an inquiry, the ICC/LCC can take steps to settle the matter between the aggrieved woman and the respondent through conciliation, if requested by the complainant.',
+                        })}
                       </p>
                     </div>
 
                     <div className="p-3 rounded-xl bg-pink-50/60 border border-pink-100">
                       <span className="text-[10px] font-bold uppercase text-[#e60067] bg-pink-100 px-2 py-0.5 rounded-md inline-block mb-1.5">
-                        Step 3
+                        {t('poshActPage.cards.procedure.step3.tag', { defaultValue: 'Step 3' })}
                       </span>
                       <h4 className="font-bold text-[#102849] text-xs sm:text-sm mb-1">
-                        Inquiry
+                        {t('poshActPage.cards.procedure.step3.title', { defaultValue: 'Inquiry' })}
                       </h4>
                       <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-medium">
-                        If conciliation is not possible or desired, the ICC/LCC conducts an inquiry following principles of natural justice.
+                        {t('poshActPage.cards.procedure.step3.desc', {
+                          defaultValue:
+                            'If conciliation is not possible or desired, the ICC/LCC conducts an inquiry following principles of natural justice.',
+                        })}
                       </p>
                     </div>
                   </div>
@@ -351,10 +418,13 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Protection Against Retaliation
+                    {t('poshActPage.cards.protection.title', { defaultValue: 'Protection Against Retaliation' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] lg:text-[14px] leading-relaxed font-medium">
-                    The Act ensures protection for complainants, witnesses, and ICC/LCC members against any form of retaliation or victimization.
+                    {t('poshActPage.cards.protection.desc', {
+                      defaultValue:
+                        'The Act ensures protection for complainants, witnesses, and ICC/LCC members against any form of retaliation or victimization.',
+                    })}
                   </p>
                 </div>
               </div>
@@ -368,23 +438,31 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Time-bound Process
+                    {t('poshActPage.cards.timebound.title', { defaultValue: 'Time-bound Process' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] font-medium mb-2">
-                    The Act mandates a time-bound process:
+                    {t('poshActPage.cards.timebound.desc', { defaultValue: 'The Act mandates a time-bound process:' })}
                   </p>
                   <ul className="space-y-1.5 text-xs sm:text-[13.5px] text-slate-700 font-medium">
                     <li className="flex items-start gap-2">
                       <span className="text-[#e60067] font-bold mt-0.5">&bull;</span>
-                      <span>The inquiry should be completed within 90 days.</span>
+                      <span>
+                        {t('poshActPage.cards.timebound.points.0', { defaultValue: 'The inquiry should be completed within 90 days.' })}
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[#e60067] font-bold mt-0.5">&bull;</span>
-                      <span>The report of the inquiry should be submitted to the employer within 10 days of completion.</span>
+                      <span>
+                        {t('poshActPage.cards.timebound.points.1', {
+                          defaultValue: 'The report of the inquiry should be submitted to the employer within 10 days of completion.',
+                        })}
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[#e60067] font-bold mt-0.5">&bull;</span>
-                      <span>Action on the report should be taken within 60 days.</span>
+                      <span>
+                        {t('poshActPage.cards.timebound.points.2', { defaultValue: 'Action on the report should be taken within 60 days.' })}
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -399,19 +477,27 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Penalties for Non-compliance
+                    {t('poshActPage.cards.penalties.title', { defaultValue: 'Penalties for Non-compliance' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] font-medium mb-2">
-                    Employers who do not comply with the provisions of the Act face various penalties, including:
+                    {t('poshActPage.cards.penalties.desc', {
+                      defaultValue: 'Employers who do not comply with the provisions of the Act face various penalties, including:',
+                    })}
                   </p>
                   <ul className="space-y-1.5 text-xs sm:text-[13.5px] text-slate-700 font-medium">
                     <li className="flex items-start gap-2">
                       <span className="text-[#e60067] font-bold">&bull;</span>
-                      <span>A fine of up to <strong>₹50,000</strong></span>
+                      <span>
+                        {t('poshActPage.cards.penalties.p1', { defaultValue: 'A fine of up to ₹50,000' })}
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[#e60067] font-bold">&bull;</span>
-                      <span>Repeat offenses may lead to higher fines and <strong>cancellation of business licenses</strong></span>
+                      <span>
+                        {t('poshActPage.cards.penalties.p2', {
+                          defaultValue: 'Repeat offenses may lead to higher fines and cancellation of business licenses',
+                        })}
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -426,10 +512,13 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Training and Awareness
+                    {t('poshActPage.cards.training.title', { defaultValue: 'Training and Awareness' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] lg:text-[14px] leading-relaxed font-medium">
-                    Employers are responsible for organizing workshops and awareness programs at regular intervals for sensitizing employees about the provisions of the Act and forming a gender-sensitive workplace.
+                    {t('poshActPage.cards.training.desc', {
+                      defaultValue:
+                        'Employers are responsible for organizing workshops and awareness programs at regular intervals for sensitizing employees about the provisions of the Act and forming a gender-sensitive workplace.',
+                    })}
                   </p>
                 </div>
               </div>
@@ -443,13 +532,18 @@ function PoshAct() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#e60067] text-base sm:text-lg mb-1.5">
-                    Annual Report
+                    {t('poshActPage.cards.annualReport.title', { defaultValue: 'Annual Report' })}
                   </h3>
                   <p className="text-slate-700 text-xs sm:text-[13.5px] lg:text-[14px] leading-relaxed font-medium mb-2">
-                    The ICC is required to prepare an annual report with details of the number of cases filed and their disposal, which must be included in the employer's annual report to the respective state government.
+                    {t('poshActPage.cards.annualReport.desc', {
+                      defaultValue:
+                        "The ICC is required to prepare an annual report with details of the number of cases filed and their disposal, which must be included in the employer's annual report to the respective state government.",
+                    })}
                   </p>
                   <div className="p-2.5 bg-pink-50/80 rounded-xl text-xs sm:text-[13.5px] text-[#102849] font-semibold border border-pink-100">
-                    The PoSH Act, 2013, represents a crucial step towards safeguarding women in the workplace.
+                    {t('poshActPage.cards.annualReport.highlight', {
+                      defaultValue: 'The PoSH Act, 2013, represents a crucial step towards safeguarding women in the workplace.',
+                    })}
                   </div>
                 </div>
               </div>
@@ -464,7 +558,7 @@ function PoshAct() {
           {/* Section Header */}
           <div className="mb-4 text-center sm:text-left">
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-[28px] font-bold text-[#102849] tracking-tight">
-              SHe- BOX
+              {t('poshActPage.shebox.heading', { defaultValue: 'SHe- BOX' })}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#e60067] to-[#824497] rounded-full mt-2 mx-auto sm:mx-0"></div>
           </div>
@@ -475,7 +569,7 @@ function PoshAct() {
               <div className="p-2 sm:p-2.5 bg-gradient-to-b from-pink-50/50 to-white flex justify-center">
                 <img
                   src={sheboxImage}
-                  alt="SHe-Box Sexual Harassment Complaints Portal"
+                  alt={t('poshActPage.shebox.imageAlt', { defaultValue: 'SHe-Box Sexual Harassment Complaints Portal' })}
                   className="w-full h-auto max-h-[320px] object-cover sm:object-fill rounded-xl border border-pink-100/90 shadow-2xs"
                 />
               </div>
@@ -485,7 +579,10 @@ function PoshAct() {
           {/* SHe-Box Intro Below Image */}
           <div className="mb-5">
             <p className="text-slate-700 text-sm sm:text-base leading-relaxed max-w-4xl font-medium">
-              SHe-Box (Sexual Harassment electronic Box) is an initiative by the Ministry of Women &amp; Child Development, Government of India, providing a single-window platform for women to report workplace sexual harassment. It caters to women across all sectors organized or unorganized, public or private.
+              {t('poshActPage.shebox.intro', {
+                defaultValue:
+                  'SHe-Box (Sexual Harassment electronic Box) is an initiative by the Ministry of Women & Child Development, Government of India, providing a single-window platform for women to report workplace sexual harassment. It caters to women across all sectors organized or unorganized, public or private.',
+              })}
             </p>
           </div>
 
@@ -494,7 +591,7 @@ function PoshAct() {
             <div className="flex items-center gap-2 mb-3">
               <FileCheck className="w-5 h-5 text-[#e60067]" />
               <h3 className="font-serif text-lg sm:text-xl font-bold text-[#102849]">
-                Steps to File a Complaint on SHe-Box
+                {t('poshActPage.shebox.stepsHeading', { defaultValue: 'Steps to File a Complaint on SHe-Box' })}
               </h3>
             </div>
 
@@ -571,10 +668,12 @@ function PoshAct() {
                   <Lock className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                 </div>
                 <h4 className="font-serif font-bold text-[#102849] text-sm sm:text-base mb-1">
-                  Confidentiality
+                  {t('poshActPage.shebox.features.confidentiality.title', { defaultValue: 'Confidentiality' })}
                 </h4>
                 <p className="text-slate-700 text-xs sm:text-[13px] font-medium leading-relaxed">
-                  All complaints are handled with strict confidentiality.
+                  {t('poshActPage.shebox.features.confidentiality.desc', {
+                    defaultValue: 'All complaints are handled with strict confidentiality.',
+                  })}
                 </p>
               </div>
 
@@ -584,10 +683,13 @@ function PoshAct() {
                   <Building2 className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                 </div>
                 <h4 className="font-serif font-bold text-[#102849] text-sm sm:text-base mb-1">
-                  Jurisdiction
+                  {t('poshActPage.shebox.features.jurisdiction.title', { defaultValue: 'Jurisdiction' })}
                 </h4>
                 <p className="text-slate-700 text-xs sm:text-[13px] font-medium leading-relaxed">
-                  Complaints are forwarded to the appropriate Internal Committee (IC) or Local Committee (LC) based on your workplace.
+                  {t('poshActPage.shebox.features.jurisdiction.desc', {
+                    defaultValue:
+                      'Complaints are forwarded to the appropriate Internal Committee (IC) or Local Committee (LC) based on your workplace.',
+                  })}
                 </p>
               </div>
 
@@ -597,10 +699,13 @@ function PoshAct() {
                   <Clock className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                 </div>
                 <h4 className="font-serif font-bold text-[#102849] text-sm sm:text-base mb-1">
-                  Resolution Timeline
+                  {t('poshActPage.shebox.features.timeline.title', { defaultValue: 'Resolution Timeline' })}
                 </h4>
                 <p className="text-slate-700 text-xs sm:text-[13px] font-medium leading-relaxed">
-                  As per the Sexual Harassment of Women at Workplace Act, 2013, complaints should be resolved within <strong>90 days</strong>.
+                  {t('poshActPage.shebox.features.timeline.desc', {
+                    defaultValue:
+                      'As per the Sexual Harassment of Women at Workplace Act, 2013, complaints should be resolved within 90 days.',
+                  })}
                 </p>
               </div>
 
@@ -610,10 +715,13 @@ function PoshAct() {
                   <Shield className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                 </div>
                 <h4 className="font-serif font-bold text-[#102849] text-sm sm:text-base mb-1">
-                  Mandatory IC Registration
+                  {t('poshActPage.shebox.features.mandatory.title', { defaultValue: 'Mandatory IC Registration' })}
                 </h4>
                 <p className="text-slate-700 text-xs sm:text-[13px] font-medium leading-relaxed">
-                  In Uttar Pradesh, all organizations with 10 or more employees are required to establish Internal Committees and register them on the SHe-Box portal.
+                  {t('poshActPage.shebox.features.mandatory.desc', {
+                    defaultValue:
+                      'In Uttar Pradesh, all organizations with 10 or more employees are required to establish Internal Committees and register them on the SHe-Box portal.',
+                  })}
                 </p>
               </div>
             </div>

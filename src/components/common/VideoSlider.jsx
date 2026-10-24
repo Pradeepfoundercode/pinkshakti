@@ -58,7 +58,11 @@ export default function VideoSlider({ videos = homeVideos, className = "" }) {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-4 sm:mb-5">
           <h2 className="font-serif text-xl sm:text-2xl lg:text-[1.85rem] font-bold tracking-wider text-[#e60067] uppercase">
-            SAFETY <span className="text-[#102849]/30 mx-1 sm:mx-1.5 font-normal">|</span> AWARENESS <span className="text-[#102849]/30 mx-1 sm:mx-1.5 font-normal">|</span> EMPOWERMENT
+            {t("home.videoHeaderSafety", { defaultValue: "SAFETY" })}{' '}
+            <span className="text-[#102849]/30 mx-1 sm:mx-1.5 font-normal">|</span>{' '}
+            {t("home.videoHeaderAwareness", { defaultValue: "AWARENESS" })}{' '}
+            <span className="text-[#102849]/30 mx-1 sm:mx-1.5 font-normal">|</span>{' '}
+            {t("home.videoHeaderEmpowerment", { defaultValue: "EMPOWERMENT" })}
           </h2>
         </div>
 

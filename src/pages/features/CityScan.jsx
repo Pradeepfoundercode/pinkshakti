@@ -117,9 +117,8 @@ function CustomDropdown({
     const displayLabel = selectedOption ? selectedOption.label : ''
     displayContent = (
       <span
-        className={`truncate font-medium block flex-1 ${
-          displayLabel ? 'text-slate-800 font-semibold' : 'text-slate-400'
-        }`}
+        className={`truncate font-medium block flex-1 ${displayLabel ? 'text-slate-800 font-semibold' : 'text-slate-400'
+          }`}
       >
         {loading ? 'Loading...' : displayLabel || placeholder}
       </span>
@@ -165,25 +164,23 @@ function CustomDropdown({
             setSearchQuery('')
           }
         }}
-        className={`w-full relative min-h-[42px] flex items-center pl-11 pr-8 py-2 bg-white border text-left rounded-xl text-xs sm:text-[12.5px] transition-all duration-200 shadow-2xs group cursor-pointer ${
-          disabled
+        className={`w-full relative min-h-[42px] flex items-center pl-11 pr-8 py-2 bg-white border text-left rounded-xl text-xs sm:text-[12.5px] transition-all duration-200 shadow-2xs group cursor-pointer ${disabled
             ? 'bg-slate-100/90 border-slate-200 text-slate-400 cursor-not-allowed opacity-80'
             : error
-            ? 'border-red-400 ring-2 ring-red-100'
-            : isOpen
-            ? 'border-[#e60067] ring-4 ring-pink-500/15 bg-white'
-            : 'border-pink-200/90 hover:border-[#e60067]/60'
-        }`}
+              ? 'border-red-400 ring-2 ring-red-100'
+              : isOpen
+                ? 'border-[#e60067] ring-4 ring-pink-500/15 bg-white'
+                : 'border-pink-200/90 hover:border-[#e60067]/60'
+          }`}
       >
         {/* Left Icon badge */}
         <div
-          className={`absolute left-2.5 top-2 w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 pointer-events-none ${
-            disabled
+          className={`absolute left-2.5 top-2 w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 pointer-events-none ${disabled
               ? 'bg-slate-200/80 text-slate-400'
               : isOpen
-              ? 'bg-[#e60067] text-white shadow-xs'
-              : 'bg-pink-100/80 text-[#e60067] group-hover:bg-[#e60067] group-hover:text-white'
-          }`}
+                ? 'bg-[#e60067] text-white shadow-xs'
+                : 'bg-pink-100/80 text-[#e60067] group-hover:bg-[#e60067] group-hover:text-white'
+            }`}
         >
           {loading ? (
             <div className="w-3.5 h-3.5 border-2 border-pink-200 border-t-[#e60067] rounded-full animate-spin" />
@@ -200,13 +197,12 @@ function CustomDropdown({
         {/* Right Chevron */}
         <div className="absolute right-2.5 top-3 flex items-center pointer-events-none">
           <ChevronDown
-            className={`w-4 h-4 transition-transform duration-200 ${
-              isOpen
+            className={`w-4 h-4 transition-transform duration-200 ${isOpen
                 ? 'rotate-180 text-[#e60067]'
                 : disabled
-                ? 'text-slate-300'
-                : 'text-slate-400 group-hover:text-[#e60067]'
-            }`}
+                  ? 'text-slate-300'
+                  : 'text-slate-400 group-hover:text-[#e60067]'
+              }`}
           />
         </div>
       </button>
@@ -248,20 +244,18 @@ function CustomDropdown({
                     key={opt.value}
                     type="button"
                     onClick={() => handleSelect(opt.value)}
-                    className={`w-full text-left px-3.5 py-2.5 text-xs sm:text-[12.5px] transition-all duration-150 flex items-center justify-between group cursor-pointer ${
-                      isSelected
+                    className={`w-full text-left px-3.5 py-2.5 text-xs sm:text-[12.5px] transition-all duration-150 flex items-center justify-between group cursor-pointer ${isSelected
                         ? 'bg-pink-50 text-[#e60067] font-bold'
                         : 'text-slate-700 hover:bg-pink-50/70 hover:text-[#e60067] font-medium'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-2.5 min-w-0 pr-2">
                       {isMulti && (
                         <div
-                          className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors ${
-                            isSelected
+                          className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors ${isSelected
                               ? 'bg-[#e60067] border-[#e60067] text-white'
                               : 'border-slate-300 bg-white group-hover:border-pink-300'
-                          }`}
+                            }`}
                         >
                           {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
                         </div>
@@ -338,12 +332,12 @@ function CityScan() {
   }, [])
 
   // Fetch initial districts and problems from API
- 
 
-   useEffect(() => {
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
-       
+
         const districtRes = await getDistricts();
         setDistricts(districtRes.data);
 
@@ -533,13 +527,16 @@ function CityScan() {
           >
             {/* Header */}
             <div className="flex items-start gap-3.5 sm:gap-4">
-              <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white border border-pink-200/80 flex items-center justify-center shrink-0 shadow-xs">
-                {/* Bold Solid Scanner / Radar Icon matching banner style */}
-                <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none">
-                  <circle cx="11" cy="11" r="8" fill="#e60067" />
-                  <path d="M16.8 16.8L21.5 21.5" stroke="#e60067" strokeWidth="3" strokeLinecap="round" />
-                  <circle cx="11" cy="4.2" stroke="white" strokeWidth="2" />
-                  <circle cx="11" cy="11" r="1.6" fill="white" />
+              <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white border border-pink-200/80 flex items-center justify-center shrink-0 shadow-xs text-[#e60067]">
+                <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="#e60067" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Scanner Box 4 Corners */}
+                  <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+                  <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+                  <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+                  <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+                  {/* Search Magnifying Glass Inside */}
+                  <circle cx="11.5" cy="11.5" r="3.2" />
+                  <path d="m13.8 13.8 3.2 3.2" />
                 </svg>
               </div>
               <div>
@@ -682,11 +679,10 @@ function CityScan() {
               {/* Server status message */}
               {serverMessage.text && (
                 <div
-                  className={`mt-4 p-3.5 rounded-2xl border text-xs sm:text-[13px] flex items-center gap-2.5 shadow-sm ${
-                    serverMessage.type === 'error'
+                  className={`mt-4 p-3.5 rounded-2xl border text-xs sm:text-[13px] flex items-center gap-2.5 shadow-sm ${serverMessage.type === 'error'
                       ? 'bg-red-50 border-red-200 text-red-700'
                       : 'bg-emerald-50 border-emerald-200 text-emerald-800'
-                  }`}
+                    }`}
                 >
                   {serverMessage.type === 'error' ? (
                     <AlertTriangle className="w-5 h-5 text-red-500 shrink-0" />
@@ -773,8 +769,8 @@ function CityScan() {
                       loadingDetails
                         ? "Loading Pincodes..."
                         : !formData.district
-                        ? "Select District first"
-                        : t("cityScan.form.pincodeLabel", { defaultValue: "Select Pincode" })
+                          ? "Select District first"
+                          : t("cityScan.form.pincodeLabel", { defaultValue: "Select Pincode" })
                     }
                     value={formData.pincode}
                     onChange={(val) => handleFieldChange("pincode", val)}
@@ -798,8 +794,8 @@ function CityScan() {
                       loadingDetails
                         ? "Loading Police Stations..."
                         : !formData.district
-                        ? "Select District first"
-                        : t("cityScan.form.policeStationLabel", { defaultValue: "Select Police Station" })
+                          ? "Select District first"
+                          : t("cityScan.form.policeStationLabel", { defaultValue: "Select Police Station" })
                     }
                     value={formData.policeStation}
                     onChange={(val) => handleFieldChange("policeStation", val)}

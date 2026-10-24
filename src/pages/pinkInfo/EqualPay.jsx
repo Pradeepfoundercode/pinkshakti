@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { womenRightsList } from '../../constants/womenRightsData';
 import PhoneBanner from '../../components/common/PhoneBanner';
@@ -7,6 +8,7 @@ import PhoneBanner from '../../components/common/PhoneBanner';
 export default function EqualPay() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   // Find by numeric ID or slug (e.g. 'equal-pay')
   const right =
@@ -20,10 +22,17 @@ export default function EqualPay() {
   if (!right) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center p-6 text-center">
-        <h2 className="text-2xl font-bold text-[#102849]">Right Not Found</h2>
+        <h2 className="text-2xl font-bold text-[#102849]">
+          {t('womenRightsPage.rightNotFound', { defaultValue: 'Right Not Found' })}
+        </h2>
       </div>
     );
   }
+
+  const title = t(`womenRightsPage.items.${right.id}.title`, { defaultValue: right.title });
+  const desc = t(`womenRightsPage.items.${right.id}.desc`, { defaultValue: right.desc });
+  const isHi = i18n.language === 'hi';
+  const rightImg = isHi && right.imageHi ? right.imageHi : right.image;
 
   return (
     <div className="min-h-screen bg-[#fff7fa] text-[#102849] flex flex-col justify-between">
@@ -35,8 +44,8 @@ export default function EqualPay() {
             {/* Left Column: Image */}
             <div className="lg:col-span-6 flex items-start justify-center pt-2">
               <img
-                src={right.image}
-                alt={right.title}
+                src={rightImg}
+                alt={title}
                 className="w-full max-w-[660px] h-auto sm:h-[385px] object-fill rounded-2xl border border-pink-100/80 shadow-xs"
               />
             </div>
@@ -44,11 +53,11 @@ export default function EqualPay() {
             {/* Right Column: Title & Content */}
             <div className="lg:col-span-6 flex flex-col justify-start space-y-4">
               <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#824497] leading-tight">
-                {right.title}
+                {title}
               </h1>
 
               <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal whitespace-pre-line">
-                {right.desc}
+                {desc}
               </p>
             </div>
           </div>
@@ -63,7 +72,7 @@ export default function EqualPay() {
                 }
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#e60067] transition cursor-pointer"
               >
-                <ArrowLeft className="w-4 h-4" /> Previous Right
+                <ArrowLeft className="w-4 h-4" /> {t('womenRightsPage.prevRight', { defaultValue: 'Previous Right' })}
               </button>
             ) : (
               <div />
@@ -77,7 +86,7 @@ export default function EqualPay() {
                 }
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#e60067] transition cursor-pointer ml-auto"
               >
-                Next Right <ArrowRight className="w-4 h-4" />
+                {t('womenRightsPage.nextRight', { defaultValue: 'Next Right' })} <ArrowRight className="w-4 h-4" />
               </button>
             ) : (
               <div />

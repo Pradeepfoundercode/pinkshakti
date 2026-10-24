@@ -116,7 +116,7 @@ function Home() {
 
 
 
-      <section>
+      <section className='py-5'>
         <div className="bg-transparent px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1600px]">
 

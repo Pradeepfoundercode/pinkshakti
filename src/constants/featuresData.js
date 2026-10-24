@@ -1,3 +1,15 @@
+import {
+  MapPin,
+  FileText,
+  PhoneCall,
+  Landmark,
+  Users,
+  BookOpen,
+  HeartPulse,
+  ShieldAlert,
+  Bell,
+} from "lucide-react"
+
 import healthLogo from "../assets/logo/healths.png"
 import womenSafetyIcon from "../assets/logo/women_safety.png"
 import anonymousReportIcon from "../assets/logo/bell.png"
@@ -38,14 +50,14 @@ export const featuresList = [
   //   description: "Emergency Response Support System (ERSS) and safety resources for women.",
   //   link: "/highlights/women-safety",
   //   bgImage: cardBgImage,
-  //   icon: womenSafetyIcon,
+  //   icon: ShieldAlert,
   // },
   // {
   //   title: "Anonymous Crime Reporting",
   //   description: "Report incidents anonymously with map location & e-FIR information.",
   //   link: "/highlights/anonymous-crime-reporting",
   //   bgImage: cardBgImage2,
-  //   icon: anonymousReportIcon,
+  //   icon: Bell,
   // },
 
   {
@@ -57,7 +69,7 @@ export const featuresList = [
     },
     link: "/highlights/city-scan",
     bgImage: cardBgImage4,
-    icon: mapIcon,
+    icon: MapPin,
   },
   {
     title: "E-FIR",
@@ -68,28 +80,28 @@ export const featuresList = [
     },
     link: "/highlights/e-fir",
     bgImage: cardBgImage3,
-    icon: eFirIcon,
+    icon: FileText,
   },
-   {
+  {
     title: "Emergency Helplines",
     description: "Access important helpline numbers like 112, 181, 1090 and more.",
     link: "/highlights/emergency-helplines",
     bgImage: cardBgImage8,
-    icon: helpline,
+    icon: PhoneCall,
   },
-   {
+  {
     title: "State Women Commission",
     description: "View crime data, trends and safety insights for a safer Uttar Pradesh.",
     link: "/highlights/state-women-commission",
     bgImage: cardBgImage7,
-    icon: dataAnalytics,
+    icon: Landmark,
   },
   {
     title: "One Stop Centers",
     description: "Find One Stop Centers near you for support and assistance.",
     link: "/highlights/one-stop-centers",
     bgImage: cardBgImage9,
-    icon: communityIcon,
+    icon: Users,
   },
   {
     title: "Pink Info",
@@ -101,7 +113,7 @@ export const featuresList = [
     ],
     link: "/highlights/pink-info",
     bgImage: cardBgImage5,
-    icon: womenLawsIcon,
+    icon: BookOpen,
   },
   {
     title: "Pink Health",
@@ -113,6 +125,6 @@ export const featuresList = [
     ],
     link: "/highlights/pink-health",
     bgImage: cardBgImage6,
-    icon: healthLogo,
+    icon: HeartPulse,
   },
 ]

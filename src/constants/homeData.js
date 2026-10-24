@@ -72,6 +72,7 @@ export const homeGalleryItems = [
 export const homeFeatureCards = [
   {
     id: 1,
+    key: "app",
     image: cardImg1,
     title: "PINK SHAKTI WOMEN SAFETY APP",
     description: "Introducing Pink Shakti-An Award-Winning Women Safety Tech Solution dedicated to the Women Folk of Uttar Pradesh. This Mobile App was developed after a thorough research of four years. Through Pink Shakti App we aim to create a Social Impact to achieve SDG-5, Gender Equality. With a holistic approach towards Women Empowerment, the App is a complete power-packed solution of Women Safety, Awareness & Empowerment.",
@@ -80,24 +81,28 @@ export const homeFeatureCards = [
   },
   {
     id: 2,
+    key: "analytics",
     image: cardImg2,
     title: "Crime Data Analytics",
     description: "City-wise crime trend analytics generated through user inputs are securely stored with us. We do not share any user data with third parties. Anonymous, city-level insights derived from user activity help us identify unsafe zones, alert users in real time, and contribute to strengthening women’s safety measures across cities.",
   },
   {
     id: 3,
+    key: "crimeReporting",
     image: cardImg3,
     title: "ANONYMOUS CRIME REPORTING AND SHARING",
     description: "Women can share crime type even the smallest ones by giving the full description manually. They can also share the crime type via map on their location. This can be done in a confidential manner. Not only this, if they want to report a crime to police, they can file an e-FIR through Pink Shakti App.",
   },
   {
     id: 4,
+    key: "schemes",
     image: cardImg4,
     title: "Women Specific Schemes",
     description: "Aiming to create a social impact, updating women about government schemes specifically for them would increase Women Beneficiary Enrollment in the schemes. Women can avail benefits of the schemes helping them to become economically independent. Economically weaker and destitute women and girls would also benefit from the schemes. All the information is available on the Pink Shakti App.",
   },
   {
     id: 5,
+    key: "rights",
     image: cardImg5,
     title: "Women Rights",
     description: "We aim to provide simple and reliable information on women’s rights, laws, and safety resources. Our objective is to create awareness, empower women with knowledge, and help them understand their rights in everyday situations.",

@@ -251,7 +251,33 @@
     "galleryBadge": "GALLERY",
     "galleryTitlePink": "Creating Awareness,",
     "galleryTitleNavy": "Building Stronger Communities",
-    "viewGallery": "View Gallery"
+    "viewGallery": "View Gallery",
+    "videoHeaderSafety": "SAFETY",
+    "videoHeaderAwareness": "AWARENESS",
+    "videoHeaderEmpowerment": "EMPOWERMENT",
+    "featureCards": {
+      "app": {
+        "title": "PINK SHAKTI WOMEN SAFETY APP",
+        "description": "Introducing Pink Shakti-An Award-Winning Women Safety Tech Solution dedicated to the Women Folk of Uttar Pradesh. This Mobile App was developed after a thorough research of four years. Through Pink Shakti App we aim to create a Social Impact to achieve SDG-5, Gender Equality. With a holistic approach towards Women Empowerment, the App is a complete power-packed solution of Women Safety, Awareness & Empowerment.",
+        "buttonText": "Download Now"
+      },
+      "analytics": {
+        "title": "Crime Data Analytics",
+        "description": "City-wise crime trend analytics generated through user inputs are securely stored with us. We do not share any user data with third parties. Anonymous, city-level insights derived from user activity help us identify unsafe zones, alert users in real time, and contribute to strengthening women’s safety measures across cities."
+      },
+      "crimeReporting": {
+        "title": "ANONYMOUS CRIME REPORTING AND SHARING",
+        "description": "Women can share crime type even the smallest ones by giving the full description manually. They can also share the crime type via map on their location. This can be done in a confidential manner. Not only this, if they want to report a crime to police, they can file an e-FIR through Pink Shakti App."
+      },
+      "schemes": {
+        "title": "Women Specific Schemes",
+        "description": "Aiming to create a social impact, updating women about government schemes specifically for them would increase Women Beneficiary Enrollment in the schemes. Women can avail benefits of the schemes helping them to become economically independent. Economically weaker and destitute women and girls would also benefit from the schemes. All the information is available on the Pink Shakti App."
+      },
+      "rights": {
+        "title": "Women Rights",
+        "description": "We aim to provide simple and reliable information on women’s rights, laws, and safety resources. Our objective is to create awareness, empower women with knowledge, and help them understand their rights in everyday situations."
+      }
+    }
   },
   "about": {
     "bannerTitlePink": "About",
@@ -793,6 +819,82 @@
     "subtitle": "SCHEMES FOR WOMEN IN UTTAR PRADESH",
     "desc": "Information about various schemes and initiatives by the Government of Uttar Pradesh for the safety, education, financial support and overall empowerment of women and girls.",
     "importantNote": "The information provided here is for awareness and reference purposes only. Please check eligibility, detailed benefits and application process on the official government scheme portals.",
+    "knowMore": "Know More",
+    "schemeNotFound": "Scheme Not Found",
+    "schemeLabel": "Scheme:",
+    "scholarshipLabel": "Scholarship:",
+    "applyOnlineLabel": "APPLY ONLINE: ",
+    "call181": "Call 181 (Toll Free 24x7)",
+    "applyOnlineBtn": "Apply Online",
+    "explorePortal": "Explore Portal",
+    "prevScheme": "Previous Scheme",
+    "nextScheme": "Next Scheme",
+    "items": {
+      "1": {
+        "title": "Destitute Women's Pension After Husband's Death",
+        "desc": "Under the scheme, a pension of Rs 1000/- per month is paid to the eligible beneficiaries. Under this scheme, such women above 18 years of age who are permanent residents of Uttar Pradesh and whose husband has died and whose family annual income does not exceed Rs 2.00 lakh, will be transferred to their bank accounts as eligible beneficiaries. Is performed. In the financial year 2016-17, a total of 17.31 lakh beneficiaries were being provided pension benefits under the Destitute Women Pension Scheme after the death of their husband. Whereas in just 6 years, a total of 11.31 lakh new beneficiary women have been identified and linked to the scheme under this scheme. Thus, now a total of 28.62 lakh women are being given pension under the scheme."
+      },
+      "2": {
+        "title": "Chief Minister Kanya Sumangala Yojana",
+        "desc": "Chief Minister Kanya Sumangala Yojana was launched in the year 2019 to establish equal sex ratio in the state, prevent female feticide, strengthen the health and education of girls, provide financial assistance to the families of girls and develop positive thinking among the general public towards the girl child. Under the scheme, such beneficiaries are eligible whose family is resident of Uttar Pradesh, whose family annual income is maximum Rs 3.00 lakh and whose family has maximum two children. In total 6 categories, Rs. 2000/- at the time of birth, Rs. 1000/- at the time of completion of one year vaccination, Rs. 2000/- at the time of admission in class-1, Rs. 2000/- at the time of admission in class-6, Rs. 2000/- at the time of admission in class-9. At the time of admission, Rs. 3000/- is given and after passing 10th/12th examination, Rs. 5000/- is given on taking admission in degree or diploma course of two years or more. A total of 15.87 lakh eligible girls have been benefited under the scheme so far."
+      },
+      "3": {
+        "title": "Save Daughter, Educate Daughter",
+        "desc": "The objective of the scheme is to improve the falling sex ratio, encourage girls' education and develop positive thinking among the common people towards the girl child. Under the scheme, public awareness is being spread among the people by organizing various mediums like drama/nukkad, banners, posters, wall writing, public meetings, radio jingles, various types of competitions, workshops etc. This scheme is operated in all 75 districts of the state. Under the scheme, 12.94 lakh women and girls have been made aware through a total of 9,234 activities in the year 2022-23."
+      },
+      "4": {
+        "title": "Rani Lakshmibai Children and Women Honor Fund",
+        "desc": "The state government is extremely sensitive towards the victims of heinous crimes against women and girls. Under the scheme, a total of 701 women and girls have been given this assistance so far in the year 2022-23, along with which a total of 6,481 women and girls have been given compensation money under the scheme."
+      },
+      "5": {
+        "title": "181 Women's Helpline",
+        "desc": "For the safety and social and economic empowerment of women and girls, an initiative has been taken by the Uttar Pradesh government in the form of 181-Women Helpline. 181 is a toll free number, which works 24x7. On the women's helpline, any woman and girl who is suffering from adverse circumstances or needs any other problem or need to be fulfilled or advised can get help by calling the toll free number. This helpline has been integrated with 112 centralized call centers in Lucknow in the year 2020-21. When a woman in distress calls, the trained counselors of the call center provide counseling to the woman. Since the inception of the scheme, 5.57 lakh women have been provided assistance under the scheme."
+      },
+      "6": {
+        "title": "One Stop Center (Sakhi)",
+        "desc": "Under the scheme, all the necessary services to the women victims of violence like short stay (five days), medical aid, counseling services, legal aid and police assistance etc. are provided under one roof. At present one stop centers are being operated in all the districts of the state. Since the inception of the scheme, a total of 1.49 lakh cases have been referred to the one stop centers of the state."
+      },
+      "7": {
+        "title": "Uttar Pradesh Mukhyamantri Bal Seva Yojana (General)",
+        "desc": "Uttar Pradesh Mukhyamantri Bal Seva Yojana (General)' has been launched by the government in August 2021. Under the scheme, children under 18 years of age who have lost both or one of their parents or a guardian after March 1, 2020 due to reasons other than Corona, are being provided assistance of Rs 2500 per month. Teenagers of 18 to 23 years falling in the above category, who have passed class 12 examination and want to obtain a bachelor's degree or diploma from a government degree college, university or technical institute, will be benefited. Apart from this, meritorious students who have passed national and state level competitive examinations like NEET, JEE and CLAT will be given the benefit of this scheme till they complete 23 years of age or complete graduation or diploma from a recognized technical institute, whichever is earlier. . So far, a total of 20,632 children have been identified and benefited under the scheme."
+      },
+      "8": {
+        "title": "Mission Vatsalya Yojana",
+        "desc": "At present, under Mission Vatsalya Yojana, institutions are being run in the state with high level facilities for protection of children, modern technology, better opportunities for education, skill development and employment. A total of 58 government institutions (27 Government Observation Homes, 08 Children's Home (Boys), 05 Children's Home (Girls), 05 Children's Home (Infant), 05 Specialist Adoption Agency, 02 Special Home, 01 Place of Safety, 05 After Care Organization) is operated. Besides, under PPP model, two government specialized institutions for special children are running in Lucknow district with the help of voluntary organizations. Construction work is being done in districts Rae Bareli, Chitrakoot, Mirzapur, Kanpur city. Our effort is to provide better opportunities to the children living in these to become self-reliant. Psychosocial counselors have been appointed with the help of the Health Department for counseling of children living in the homes run by the department. A total of 1275 children have been rehabilitated through adoption from the financial year 2017-18 to 2022-23. Last year till now, 1007 children have been benefited through sponsorship and 05 children have been benefited under foster care. So far, a total of 75,811 children have been reunited with their parents/guardians in the state from 2017-18 to 2023-24. Also, in the last years, more than 3,500 adolescent girls and women have been given skill training from these homes. To prevent child marriage, a state level monitoring committee and a district level task force have been formed and more than 1436 potential child marriages have been stopped. Rules are also being made by the state for effective implementation of the Child Marriage Act."
+      },
+      "9": {
+        "title": "Shelter Facility for Destitute Women (Krishna Kutir & Sakhi Niwas)",
+        "desc": "For the protection and rehabilitation of women, 09 women's shelters, 1 protection home, 1 cell for mentally retarded women, 1 government old and disabled home and 13 Shakti Sadans are being operated in the state, in which about 700 women reside. Through which women and girls who are victims of human prostitution, in need of protection, made homeless by social, economic, natural calamities, domestic violence, family disputes and exploitation in brothels or other places, get shelter and access to skill development and mainstreaming of the society. An attempt is being made to connect. In Vrindavan, 'Krishna Kutir', a shelter with a residential capacity of 1000 women, is being run by the department for the rehabilitation of destitute women and to improve their living conditions. To provide safe and affordable residential facilities to working women, 8 Sakhi Niwas (Working Women Hostels) are being operated."
+      },
+      "10": {
+        "title": "Implementation of Various Acts Related to Children and Women",
+        "desc": "Conducting various activities and training by the department for effective implementation of acts related to harmful practices such as early child marriage, child labour, child beggary, domestic violence against women including child sexual abuse, dowry, sexual harassment of women at workplace etc. Programs and sensitization workshops are being conducted. District level Dowry Prohibition Officers and Child Marriage Prohibition Officers have been appointed. Also, to prevent sexual harassment of women at the workplace, under the Act, internal complaint committees and local complaint committees have been formed at the district level in all government and non-government/private offices where the number of employees is 10 or more."
+      },
+      "11": {
+        "title": "KVS SINGLE GIRL CHILD ADMISSION SCHEME",
+        "cardTitle": "KVS Single Girl Child Admission Scheme",
+        "schemeText": "KVS allows admission of 2 single girl children per section in Class I and 2 per class from Class VI onwards, beyond the regular class strength.",
+        "scholarshipInfo": "Full fee waiver for admitted single girl children."
+      },
+      "12": {
+        "title": "CBSE Merit Scholarship Scheme",
+        "cardTitle": "CBSE Merit Scholarship Scheme (for Single Girl Child)",
+        "schemeText": "For single girl children who scored 60% or more in Class X CBSE exams and are studying in Class XI or XII in CBSE-affiliated schools.",
+        "scholarshipInfo": "₹1000 per month for 2 years (Classes XI & XII), directly transferred to the bank account."
+      },
+      "13": {
+        "title": "CBSE UDAAN Scheme",
+        "cardTitle": "CBSE UDAAN Scheme",
+        "schemeText": "Free engineering entrance coaching for girl students of Class XI & XII to increase their chances of getting into top engineering and technical colleges.",
+        "scholarshipInfo": "Free coaching classes, study materials, and mentoring support."
+      },
+      "14": {
+        "title": "POST GRADUATE INDIRA GANDHI SCHOLARSHIP FOR SINGLE GIRL CHILD",
+        "cardTitle": "Post Graduate Indira Gandhi Scholarship for Single Girl Child",
+        "schemeText": "For single girl children pursuing postgraduate studies in UGC- recognized universities or colleges.",
+        "scholarshipInfo": "₹36,200 per year during the postgraduate course."
+      }
+    },
     "scholarships": {
       "kvs": {
         "title": "KVS Single Girl Child Admission Scheme",
@@ -822,6 +924,109 @@
     "explanation": "Explanation",
     "mainConstituents": "Main Constituents",
     "punishment": "Punishment",
+    "explanationLabel": "EXPLANATION:",
+    "mainConstituentsLabel": "MAIN CONSTITUENTS:",
+    "punishmentLabel": "PUNISHMENT:",
+    "items": {
+      "1": {
+        "title": "Section 79: Outraging the Modesty of Women (Eve Teasing)",
+        "explanation": "Section 79 of the Bharatiya Nyaya Sanhita is a crucial legal provision that addresses the issue of outraging the modesty of women, which is colloquially referred to as \"Eve teasing.\" This section has been enacted to safeguard the dignity, honour, and personal space of women by penalizing actions that are aimed at insulting or outraging their modesty. Outraging the modesty of women encompasses a wide range of behaviours, both verbal and non-verbal, that are intended to demean or belittle women, causing them discomfort, fear, or humiliation.",
+        "mainConstituents": "Section 79 covers a spectrum of actions, including obscene gestures, lewd comments, sexually coloured remarks, or any form of verbal or non-verbal communication that is derogatory or offensive towards women. It also includes actions that invade a woman's personal space and make her feel uncomfortable or violated.",
+        "punishment": "Violators of Section 79 may face legal consequences, including imprisonment for up to 1 year or a fine or both. This punishment serves as a deterrent against actions that compromise the dignity and safety of women.",
+        "conclusion": "Section 79 plays a pivotal role in empowering women and fostering a society where they can live with dignity and without fear of harassment. It underscores the importance of respecting the personal boundaries and rights of women, promoting gender equality, and ensuring a safe environment for all."
+      },
+      "2": {
+        "title": "Section 77: Voyeurism (watching women and capturing images while they undress, or naked, or engage in sexual activities)",
+        "explanation": "Section 77 of the Bharatiya Nyaya Sanhita addresses voyeurism, a reprehensible act involving the unauthorized watching or capturing of images of women in private moments, especially when they undress, are naked, or engage in intimate activities, without their knowledge or consent. This section serves to protect an individual's right to privacy and personal space.",
+        "mainConstituents": "Voyeurism includes the act of surreptitiously observing, recording, or distributing images or videos of women in situations where they have a reasonable expectation of privacy. It involves a violation of a person's dignity and can lead to severe emotional distress.",
+        "punishment": "Perpetrators of voyeurism may face imprisonment for up to 3 years or a fine or both. The severity of the punishment reflects the seriousness of this breach of privacy and serves as a deterrent against such invasive actions.",
+        "conclusion": "Section 77 underscores the importance of respecting an individual's privacy and consent. It recognizes that technological advancements have given rise to new forms of invasion of privacy, and the law is adapted to address these challenges. This section plays a crucial role in ensuring that individuals, especially women, can feel secure in their private spaces."
+      },
+      "3": {
+        "title": "Section 76: Disrobing a Woman (Stripping)",
+        "explanation": "Section 76 of the Bharatiya Nyaya Sanhita addresses the heinous crime of disrobing a woman against her will, often referred to as \"stripping.\" This legal provision aims to protect the dignity and privacy of women by criminalizing actions that involve forcibly removing a woman's clothing without her consent.",
+        "mainConstituents": "Disrobing a woman, as outlined in Section 76 involves the intentional act of stripping or undressing a woman against her wishes. This degrading act infringes upon her bodily autonomy and subjects her to humiliation and psychological distress.",
+        "punishment": "Individuals found guilty of disrobing a woman may face severe penalties, including imprisonment for up to three years, with the possibility of a fine. This punishment underscores the gravity of the offense and serves as a deterrent against such deplorable acts.",
+        "conclusion": "Section 76 plays a pivotal role in safeguarding the rights and dignity of women, reinforcing the principles of consent, respect, and gender equality. It sends a clear message that society will not tolerate actions that violate a woman's bodily integrity and privacy, promoting a culture of respect and protection for all individuals, regardless of gender."
+      },
+      "4": {
+        "title": "Section 78: Online Stalking or trying to contact despite disinterest of woman",
+        "explanation": "Section 78 of Bharatiya Nyaya Sanhita addresses the modern issue of online stalking, cyberbullying, or harassment, particularly targeted at women. It recognizes that advancements in technology have given rise to new forms of harassment that can have severe emotional and psychological consequences. Section 78 also deals with the issue of stalking, which involves persistently following or attempting to contact a woman despite her disinterest or explicit refusal. This legal provision aims to protect individuals, particularly women, from unwanted and intrusive attention that causes fear, distress, and a sense of insecurity",
+        "mainConstituents": "Online stalking involves persistent harassment through digital platforms, such as social media, email, or messaging apps. It includes sending threatening or explicit messages, spreading false information, or engaging in any form of online pursuit despite the victim's disinterest or objections. While Stalking includes actions such as repeatedly following a person, showing up at their home or workplace without permission, making unsolicited phone calls or sending messages, and engaging in any form of unwanted pursuit that disregards the person's desire for privacy.",
+        "punishment": "Violators of Section 78 may face imprisonment for up to 3 years, a fine, or both. This punishment serves as a deterrent against online harassment, emphasizing that harmful actions in the virtual world carry real-world consequences. Individuals found guilty of stalking may face penalties that can range from imprisonment for up to 3 years, a fine, or both. The severity of the punishment underscores the gravity of the offense and serves as a deterrent against this intimidating behavior.",
+        "conclusion": "Section 78 is essential in addressing the challenges posed by online harassment, which can be relentless and deeply invasive. It reinforces the principle that individuals have a right to a safe and harassment-free online experience, and those who engage in online stalking will be held accountable under the law.\n\nThese sections of the Bharatiya Nyaya Sanhitaare instrumental in protecting the rights, dignity, and safety of women in various contexts, from physical to digital spaces. They emphasize the importance of consent, respect, and personal boundaries, contributing to a more equitable and secure society for all."
+      },
+      "5": {
+        "title": "Section 63: Rape",
+        "explanation": "Section 63 of the Bharatiya Nyaya Sanhita is a pivotal legal provision that address the grave crime of rape, which is a violation of an individual's bodily integrity and autonomy, especially for women. These sections define what constitutes rape and establish the legal framework to punish those responsible for this heinous act.",
+        "mainConstituents": "Rape, as defined in these sections, involves engaging in sexual intercourse with another person without their consent or against their will. It encompasses a wide range of actions, including forced penetration, non-consensual acts, and sexual assault. Consent is a critical element, and any sexual act without voluntary and informed consent is considered rape.",
+        "punishment": "The punishment for rape can range from rigorous imprisonment not less than 10 years to life imprisonment, depending on the severity of the offense, the age of the victim, and other factors. In some cases, the death penalty may be applicable. These stringent penalties underscore the seriousness of rape and aim to deter potential offenders.",
+        "conclusion": "Section 63 is essential in combating sexual violence and protecting the rights and dignity of individuals, especially women. They emphasize the importance of consent and ensure that perpetrators of rape are held accountable for their actions, promoting a society where sexual violence is not tolerated."
+      },
+      "6": {
+        "title": "Section 74: Molestation (Any kind of Sexual Harassment or touching inappropriately)",
+        "explanation": "Section 74 of the Bharatiya Nyaya Sanhita addresses the serious issue of molestation, encompassing any form of sexual harassment or inappropriate physical contact. This legal provision is designed to protect individuals, particularly women, from unwelcome advances, gestures, or actions that infringe upon their bodily integrity and personal boundaries.",
+        "mainConstituents": "Molestation, as defined in Section 74, involves making unwanted physical contact or advances towards another person without their consent. It can include actions such as touching inappropriately, making sexually explicit gestures, or any behaviour that causes discomfort, fear, or distress.",
+        "punishment": "Offenders found guilty of molestation may face stringent penalties, including imprisonment for up to 3 years, a fine, or both. This punishment is essential to deter individuals from engaging in acts that violate the bodily autonomy and emotional well-being of others.",
+        "conclusion": "Section 74 is a vital legal provision that upholds the principles of consent, bodily autonomy, and gender equality. It sends a strong message that any form of sexual harassment or molestation will not be tolerated and will be met with legal consequences, fostering a safer and more equitable society for all."
+      },
+      "7": {
+        "title": "Section 124 (1): Acid Attack",
+        "explanation": "Section 124 (1) of the Bharatiya Nyaya Sanhita deals with acid attacks, an exceptionally brutal form of violence against women. This section has been enacted to address the heinous act of throwing or using corrosive substances like acid on a person, often resulting in devastating physical and psychological consequences.",
+        "mainConstituents": "An acid attack involves intentionally causing disfigurement, maiming, or grievous bodily harm by throwing or using acid on someone. These attacks are often acts of vengeance, revenge, or attempts to disfigure a person's face or body.",
+        "punishment": "Perpetrators found guilty of acid attacks may face severe penalties, including imprisonment for a term ranging from 10 years to life, along with the possibility of a fine. The stringent punishment reflects the gravity of the offense and aims to deter potential attackers.",
+        "conclusion": "Section 124 (1) recognizes the need for strong legal measures to combat acid attacks, protect victims, and hold perpetrators accountable. It emphasizes the importance of preventing such horrific acts and ensuring justice for survivors."
+      },
+      "8": {
+        "title": "Section 80: Dowry Death",
+        "explanation": "Section 80 of the Bharatiya Nyaya Sanhitaaddresses dowry-related deaths, a serious social issue where a woman dies under suspicious circumstances within seven years of her marriage, and there's evidence of dowry harassment. This section is designed to curb the menace of dowry-related violence against women.",
+        "mainConstituents": "Dowry death involves the unnatural death of a woman, often due to burns or bodily injuries, which occur within seven years of her marriage. For a case to be considered a dowry death, there must be evidence that the woman was subjected to harassment or cruelty by her husband or in-laws in connection with dowry demands.",
+        "punishment": "Individuals found guilty of dowry death may face a minimum imprisonment of 7 years, which can extend to life. The law seeks to ensure that those responsible for dowry-related violence are held accountable for their actions.",
+        "conclusion": "Section 80 aims to protect women from the perils of dowry-related abuse, which has long plagued Indian society. It sends a strong message that dowry demands, harassment, and violence against women will not be tolerated."
+      },
+      "9": {
+        "title": "Section 87: Kidnapping, abducting or inducing a woman for forced marriage or illicit intercourse",
+        "explanation": "Section 87 of the Bharatiya Nyaya Sanhita addresses the act of kidnapping, abducting, or inducing a woman to compel her into marriage or other unlawful activities. This section is enacted to protect women from forced marriages and other coercive actions.",
+        "mainConstituents": "The section encompasses actions involving the unlawful abduction or inducement of a woman, often with the intention of forcing her into marriage against her will or engaging in other criminal activities.",
+        "punishment": "Offenders found guilty of violating Section 87  may face imprisonment upto 10 years and fine, with the severity of the punishment depending on the circumstances of the case. The law seeks to deter individuals from engaging in activities that infringe upon a woman's autonomy and consent.",
+        "conclusion": "Section 87 underscores the importance of free and informed choices in marriage and personal decisions. It aims to safeguard women's rights and protect them from coercion, ensuring that their choices are respected and upheld under the law."
+      },
+      "10": {
+        "title": "Section 96: Procuration of a minor child (Gender Neutral)",
+        "explanation": "Section 96 of the Bharatiya Nyaya Sanhitaaddresses the grave issue of the procreation or impregnation of a minor girl. This section is designed to protect the rights and well-being of underage children irrespective of gender who are vulnerable to exploitation.",
+        "mainConstituents": "This section pertains to actions involving sexual intercourse or procreation with a minor girl or boy, which is considered a criminal offense due to the inability of minors to provide legal consent.",
+        "punishment": "Individuals found guilty of procreating with a minor girl may face imprisonment of 10 years with the duration of the sentence depending on the specific circumstances of the case. The law aims to deter adults from engaging in sexual acts with minors and to protect the rights of underage girls and boys.",
+        "conclusion": "Section 96 is essential in safeguarding the rights and well-being of minors, particularly girls, who may be at risk of exploitation. It reinforces the principle that minors cannot provide legal consent and deserve protection under the law."
+      },
+      "11": {
+        "title": "Section 141: Importation of a girl from foreign country",
+        "explanation": "Section 141 of the Bharatiya Nyaya Sanhita addresses the illegal act of importing a girl from a foreign country for immoral purposes, often involving human trafficking and exploitation. This section aims to combat human trafficking and protect vulnerable girls from being lured into unlawful activities.",
+        "mainConstituents": "Section 141 covers actions that involve the bringing of a girl from a foreign country into India for purposes that are considered immoral or illegal, such as forced labour, sexual exploitation, or other forms of abuse.",
+        "punishment": "Perpetrators found guilty of importing girls from foreign countries for immoral purposes may face imprisonment upto 10 years with the severity of the punishment determined by the specific circumstances of the case. The law seeks to deter individuals from engaging in human trafficking and exploitation.",
+        "conclusion": "Section 141 is instrumental in addressing the serious issue of human trafficking and the exploitation of vulnerable girls. It underscores the importance of protecting the rights and well-being of individuals, regardless of their origin, and upholds the principles of justice and equity."
+      },
+      "12": {
+        "title": "Section 64: Custodial Rape",
+        "explanation": "Section 64 of the Bharatiya Nyaya Sanhitaaddresses the specific crime of custodial rape, which occurs when a person in a position of authority or control, such as a law enforcement officer, commits rape against someone in their custody or control. This section recognizes the vulnerability of individuals in custody and aims to prevent abuse of power.",
+        "mainConstituents": "Custodial rape involves sexual intercourse without consent or against the will of a person who is under the control or authority of another, often in a legal or institutional setting. This includes situations where individuals are in police custody, detention centers, or similar environments.",
+        "punishment": "Those found guilty of custodial rape may face severe penalties, including imprisonment, which can range from a minimum of 10 years to life, or even the death penalty in some cases. The stringent punishment aims to deter abuse of power and protect the rights and safety of individuals in custody.",
+        "conclusion": "Section 64 is instrumental in preventing sexual abuse and exploitation within custodial settings. It underscores the responsibility of authorities to ensure the safety and well-being of individuals in their care and to uphold the principles of justice and human rights."
+      },
+      "13": {
+        "title": "Section 70(1): Gang Rape",
+        "explanation": "Section 70(1) of the Bharatiya Nyaya Sanhita addresses the heinous crime of gang rape, which occurs when multiple individuals are involved in committing rape against a single victim. Gang rape is a particularly egregious offense that inflicts severe physical and psychological trauma on the victim.",
+        "mainConstituents": "Gang rape involves multiple individuals engaging in sexual intercourse with a single victim without their consent or against their will. The element of multiple perpetrators distinguishes gang rape from other forms of rape.",
+        "punishment": "The punishment for gang rape can range from rigorous imprisonment not less than 20 years to life imprisonment or even the death penalty in some cases. The severity of the punishment reflects the gravity of the offense and aims to deter such heinous acts.",
+        "conclusion": "Section 70(1) plays a crucial role in addressing the collective responsibility of all those involved in gang rape and ensuring that justice is served for the victim. It emphasizes the importance of holding multiple offenders accountable and protecting the rights and dignity of survivors.\n\nThese sections collectively form a comprehensive legal framework to address sexual violence, rape, and related offenses, reflecting the commitment of Indian law to protecting the rights and safety of individuals, especially women, in various contexts and situations. They are instrumental in promoting gender equality and combating sexual violence in society."
+      },
+      "14": {
+        "title": "Section 85: Husband or relative of husband of a woman subjecting her to cruelty (Domestic Violence)",
+        "explanation": "Section 85 of the Bharatiya Nyaya Sanhitaaddresses the offense of subjecting a married woman to cruelty by her husband or his relatives. This section is designed to protect married women from harassment, abuse, and cruelty within the matrimonial home.",
+        "mainConstituents": "The section encompasses actions involving cruelty, harassment, or torture inflicted upon a married woman by her husband or his relatives. Cruelty can be physical or mental and may include demands for dowry, emotional abuse, or any act that endangers the woman's life or well-being.",
+        "punishment": "Individuals found guilty of subjecting a woman to cruelty within marriage may face imprisonment upto 3 years and a fine. The law seeks to deter cruelty and harassment within marital relationships, ensuring the safety and dignity of married women.",
+        "conclusion": "Section 85 plays a crucial role in protecting married women from domestic violence and cruelty, emphasizing the importance of respecting their rights and well-being within the confines of marriage."
+      }
+    },
     "readDetails": "Read Full Details",
     "close": "Close",
     "emergencyHelplines": "Emergency Helplines",
@@ -873,79 +1078,394 @@
     "badge": "PINK INFO",
     "titlePink": "Women",
     "titleNavy": "Rights",
+    "heading": "WOMEN – SPECIFIC RIGHTS",
     "tagline": "Know your rights. Build confidence. Make informed choices.",
     "desc": "Learn about the rights available to women for a safer, fairer and more equal society.",
     "importantNoteTitle": "Important Note:",
     "importantNoteDesc": "This information is for awareness only. Laws and provisions may change over time. For current and detailed legal advice, please consult a qualified lawyer or refer to official government sources.",
     "readDetails": "Read Full Details",
-    "cards": {
-      "equalPay": {
-        "title": "Right to Equal Pay",
-        "desc": "Women have the right to receive equal pay for equal work."
+    "knowMore": "Know More",
+    "prevRight": "Previous Right",
+    "nextRight": "Next Right",
+    "rightNotFound": "Right Not Found",
+    "items": {
+      "1": {
+        "title": "RIGHT TO EQUAL PAY",
+        "desc": "Women have the right to be paid the same as men for doing the same job. This means everyone should earn fair wages based on their work, not if they are a man or woman. It's about fairness at work, making sure everyone is treated the same. This right fights against unfair differences in pay because of gender, creating a society where everyone, no matter their gender, is valued and paid equally for their efforts. It's an important rule to make sure workplaces are fair, giving everyone the same chance to earn a living wage."
       },
-      "dignity": {
-        "title": "Right to Dignity and Decency",
-        "desc": "Every woman has the right to live with dignity and decency."
+      "2": {
+        "title": "RIGHT TO DIGNITY AND DECENCY",
+        "desc": "Every woman has the right to be treated with kindness and respect. This means no mean words or actions, creating a culture of fairness and mutual respect. Upholding this right is crucial for building a society where women feel secure, respected, and valued, promoting personal and professional growth. It goes beyond rules; it's about making a culture that is fair, kind, and respectful to everyone, creating an environment where women can navigate life with confidence and a sense of self-worth."
       },
-      "domesticViolence": {
-        "title": "Right Against Domestic Violence",
-        "desc": "Women have the right to live free from domestic violence."
+      "3": {
+        "title": "RIGHT AGAINST WORKPLACE HARASSMENT",
+        "desc": "Women have the right to work in places free from harassment. This means no unfair treatment, intimidation, or bad behavior at work. It's about creating a workspace where women can do their jobs without feeling uncomfortable or facing obstacles because of their gender. Upholding this right helps in making workplaces that are fair, respectful, and supportive for everyone, ensuring that women can contribute freely without compromising their well-being or facing barriers rooted in gender bias."
       },
-      "legalAid": {
-        "title": "Right to Free Legal Aid",
-        "desc": "Women have the right to free legal aid and support."
+      "4": {
+        "title": "RIGHT AGAINST DOMESTIC VIOLENCE",
+        "desc": "Every woman has the right to live at home without the fear of being hurt. This means no physical, emotional, or economic abuse, creating safe and nurturing homes. Upholding the right against domestic violence is essential for building a society that values family safety and supports women in leading happy lives without the trauma of violence at home."
+      },
+      "5": {
+        "title": "RIGHT TO FREE LEGAL AID",
+        "desc": "Every woman, no matter her money situation, should be able to get legal help. This ensures fairness and equality in the legal system, providing everyone with an equal chance to fight for their rights. It's about justice being accessible to all, irrespective of financial means, making sure that legal representation is not a privilege but a fundamental entitlement.."
+      },
+      "6": {
+        "title": "RIGHT TO NOT BE ARRESTED AT NIGHT",
+        "desc": "Women should be safe from getting arrested during the night without a good reason. This is because nighttime can be risky, and this right ensures that women are treated with care and respect by the law. It's about balancing the need for safety with an individual's right to feel secure, creating an environment where women can go about their lives without the fear of untimely or unsafe arrests.."
+      },
+      "7": {
+        "title": "RIGHT AGAINST BEING STALKED",
+        "desc": "Individuals found guilty of stalking may face penalties that can range from imprisonment for up to three years, a fine, or both. The severity of the punishment underscores the gravity of the offense and serves as a deterrent against this intimidating behavior."
+      },
+      "8": {
+        "title": "RIGHT AGAINST INDECENT PORTRAYAL",
+        "desc": "Women deserve respectful portrayal in media, protected from degrading or exploitative depictions. This right aims to create an environment where women are not reduced to stereotypes, fostering positive and empowering representations. It underscores media responsibility in shaping public perceptions towards women, making sure that media shows women with dignity and respect."
+      },
+      "9": {
+        "title": "RIGHT TO COMPLAIN AGAINST ONLINE HARASSMENT",
+        "desc": "In the online world, women have the right to complain about bad behavior promptly. This acknowledges the importance of a secure online space, encouraging reporting and contributing to deterrence of cybercrimes. This right reinforces the principle that safety and justice extend to the virtual realm, fostering a culture that values and safeguards individuals' well-being online."
+      },
+      "10": {
+        "title": "RIGHT TO MATERNITY LEAVE IS NOW A CONSTITUTIONAL RIGHT",
+        "desc": "In a landmark judgment, the Supreme Court of India has declared maternity leave a constitutional right, safeguarded under Article 21 of the Constitution, which guarantees the right to life and personal liberty. This decision empowers women by ensuring they are entitled to maternity leave regardless of the number of children they have—extending protection even for a third child and beyond. The Court ruled that state-imposed restrictions are invalid if they contradict the Maternity Benefit Act, reaffirming that women's reproductive health, dignity, and workplace equality are fundamental rights, not privileges."
+      },
+      "11": {
+        "title": "RIGHT TO KEEP THEIR IDENTITY ANONYMOUS IN CASE OF SEXUAL ASSAULT",
+        "desc": "Survivors of sexual assault have the right to keep their names private. This protects them from judgment and harm, fostering an environment where survivors feel safe to report crimes and seek justice without fear of harm or discrimination. Upholding the right to anonymity in such cases contributes to breaking the silence around sexual violence, encouraging survivors to seek justice while maintaining their dignity and protecting them from potential harm or discrimination.\n\nThese sections of the Indian Penal Code are instrumental in protecting the rights, dignity, and safety of women in various contexts, from physical to digital spaces. They emphasize the importance of consent, respect, and personal boundaries, contributing to a more equitable and secure society for all."
+      },
+      "12": {
+        "title": "RIGHT TO ZERO FIRST INFORMATION REPORT (FIR)",
+        "desc": "Women reporting crimes should experience swift, serious action. This right ensures immediate acknowledgment and action, eliminating hesitation in reporting crimes. It reinforces the principle that justice should be fast, accessible, and supportive, prioritizing the safety and well-being of women and instills confidence in the judicial process."
+      },
+      "13": {
+        "title": "RIGHT TO DISCONNECT",
+        "desc": "The Right to Disconnect is an emerging labour policy that gives employees the legal right to not respond to work calls, messages, or emails after official working hours. It protects employees from an always-on work culture and ensures a healthier work-life balance."
       }
+    },
+    "morphedSection": {
+      "title": "IMMEDIATE ACTIONS TO DELETE MORPHED PHOTOS FROM THE INTERNET",
+      "lead": "Report to the Platform Hosting the Image Whether it's a social media site, website, forum, or Google, each has a mechanism to report such content:",
+      "platformTitle": "Social Media (Facebook, Instagram, Twitter, etc.)",
+      "steps": [
+        "Go to the post/photo → Click “Report”",
+        "Select “Non-consensual intimate image”, “Harassment”, or “Inappropriate content”",
+        "Use their support form if available (especially for image-based abuse)....."
+      ],
+      "viewGuide": "View Complete Step-by-Step Guide"
+    },
+    "disconnectBenefits": {
+      "title": "How It Benefits Women",
+      "lead": "Women often shoulder dual responsibilities — professional work and unpaid household/caregiving work. This law directly supports them by:",
+      "points": [
+        "Reducing Mental Load",
+        "Supporting Working Mothers",
+        "Encouraging Fair Work Culture"
+      ]
+    },
+    "bossMisuse": {
+      "title": "How Women Can Use This Law if a Boss Misuses Power",
+      "badge": "Important: It should be used for protection, not confrontation",
+      "lead": "Here’s how women can assert their rights professionally and safely",
+      "p1Title": "1. Respond Politely Using the Law",
+      "p1Text": "- If the boss messages after work hours:",
+      "p1Quote": "“As per the Right to Disconnect guidelines, I will take this up during working hours tomorrow.”",
+      "p1Note": "A polite reminder, not a conflict.",
+      "p2Title": "2. Keep Proof",
+      "p2Text": "- If late-night messages or calls are frequent, women can:",
+      "p2List": [
+        "Take screenshots",
+        "Note dates/times",
+        "Maintain a simple log"
+      ],
+      "p2Note": "This becomes evidence if the behaviour continues.",
+      "p3Title": "3. Request Written Clarification of Work Hours",
+      "p3Text": "- Ask HR or the reporting officer:",
+      "p3Quote": "“Can you please clarify official working hours as per the Right to Disconnect policy?”",
+      "p3Note": "This puts gentle pressure on the organisation to follow rules.",
+      "p4Title": "4. Report Extreme Cases",
+      "p4Text": "- If the boss:",
+      "p4List": [
+        "Repeatedly sending messages at night",
+        "Threatens consequences",
+        "Creates discomfort through late calls"
+      ],
+      "p4Note": "Women can raise it to HR - Internal Complaints Committee (for behaviour amounting to harassment) or to Labour authorities (if it becomes exploitation)",
+      "p5Title": "5. Use Team Language, Not Personal",
+      "p5Text": "- Instead of saying “You disturb me”, say:",
+      "p5Quote": "“Our team should follow the Right to Disconnect policy for everyone.”"
+    }
+  },
+  "deleteMorphedPhotosPage": {
+    "imageAlt": "Delete and Report Morphed Images - Your Digital Self-Defense",
+    "mainHeading": "IMMEDIATE ACTIONS TO DELETE MORPHED PHOTOS FROM THE INTERNET",
+    "mainDesc": "Report to the Platform Hosting the Image Whether it's a social media site, website, forum, or Google, each has a mechanism to report such content:",
+    "benefitsHeading": "Benefits:",
+    "step1": {
+      "title": "Social Media (Facebook, Instagram, Twitter, etc.)",
+      "p1": "Go to the post/photo → Click “Report”",
+      "p2": "Select “Non-consensual intimate image”, “Harassment”, or “Inappropriate content”",
+      "p3": "Use their support form if available (especially for image-based abuse)",
+      "p4": "Facebook: Report Non-Consensual Intimate Image",
+      "p5": "Instagram: Report Abuse",
+      "p6": "Twitter/X: Report Non-consensual nudity"
+    },
+    "step2": {
+      "title": "File a Complaint on the National Cyber Crime Portal (India)",
+      "p1": "Select “Report Women/Child Related Crime”",
+      "p2": "File an official complaint (anonymous option available)",
+      "p3": "Attach screenshots, URLs, date/time, and description",
+      "b1": "The National Cyber Crime Portal is Free to use",
+      "b2": "Fastest response for Indian citizens, especially for women-related crimes",
+      "b3": "Offers assistance in getting content removed from platforms",
+      "b4": "Leads to legal action + removal orders for websites",
+      "b5": "This can result in removal of content + legal action against the uploader."
+    },
+    "step3": {
+      "title": "You can request Google to remove such images from its search results:",
+      "linkText": "Google Content Removal Request",
+      "p1": "Choose “Nude or sexually explicit content that was shared without my consent”",
+      "p2": "Fill the form and attach evidence",
+      "p3": "This doesn't delete the image from the host site, but removes it from search results, making it harder to find."
+    },
+    "step4": {
+      "title": "Contact the Website Directly",
+      "p1": "If the image is on an independent site or forum:",
+      "p2": "Look for “Contact Us”, “Report Abuse”, or DMCA takedown request",
+      "p3": "Send a formal removal request with a legal tone and evidence"
+    },
+    "step5": {
+      "title": "File an FIR or Legal Complaint",
+      "p1": "Visit your nearest Cyber Crime Cell or Police Station",
+      "p2": "Laws applicable in India:",
+      "p3": "Section 66E, 67, 67A of the IT Act",
+      "p4": "IPC 354C (voyeurism), 509 (insulting modesty) / BNS provisions",
+      "p5": "With a police complaint, you can legally force the site to remove content and prosecute the offender."
+    },
+    "step6": {
+      "title": "Seek Help from Cyber NGOs or Legal Support",
+      "p1": "Cyber Saathi – https://cybersaathi.org",
+      "p2": "Red Dot Foundation (Safecity)",
+      "p3": "Free Legal Aid Clinics – Law colleges or legal NGOs in your city"
+    },
+    "step7": {
+      "title": "StopNCII.org (Trusted, Free, Global)",
+      "p1": "Helps remove non-consensual intimate images (NCII) shared online (including morphed photos)",
+      "p2": "Created by the Revenge Porn Helpline UK with global tech support (Meta, TikTok, Bumble, etc.)",
+      "p3": "Uses a secure digital fingerprinting system to identify and block the image from being uploaded again",
+      "p4": "Privacy focused: You don’t need to upload the image to the site",
+      "p5": "Supports: Facebook, Instagram, Reddit, TikTok, OnlyFans, and more"
+    },
+    "step8": {
+      "title": "DMCA.com (Paid Service)",
+      "p1": "Professional takedown service for copyright and personal privacy violations",
+      "p2": "You submit the image + URLs, and they send official legal takedown requests to websites and hosts",
+      "b1": "Has a reputation-based advantage, especially with global web hosts",
+      "b2": "Paid service, but they manage everything for you"
+    },
+    "step9": {
+      "title": "Reputation Defender / NetReputation / Incogni (Paid, Professional Tools)",
+      "intro": "These companies specialize in removing negative or harmful content about individuals online:",
+      "b1": "Best for: High-profile cases or wide-spread content",
+      "b2": "Paid services (cost varies based on how much content is out there)"
+    },
+    "step10": {
+      "title": "Google Removal Tools",
+      "p1": "If your morphed photo appears in Google Search results",
+      "p2": "Google won’t delete the image from the host site, but will de-index it, making it harder to find"
     }
   },
   "poshActPage": {
-    "badge": "PINK INFO",
-    "titlePink": "THE PREVENTION OF",
-    "titleNavy": "SEXUAL HARASSMENT (PoSH) ACT, 2013",
-    "desc": "A safe and secure working environment for women.",
-    "posterFooter": "A SAFE WORKPLACE IS EVERY WOMAN'S RIGHT",
-    "panels": {
+    "heading": "THE PREVENTION OF SEXUAL HARASSMENT (PoSH) ACT, 2013",
+    "imageAlt": "Right Against Workplace Harassment - PoSH Act 2013",
+    "intro": "The Prevention of Sexual Harassment (PoSH) Act, 2013, is a significant piece of legislation in India aimed at ensuring a safe and secure working environment for women. Here are the essential aspects of the PoSH Act, 2013:",
+    "cards": {
       "purpose": {
         "title": "Purpose and Objective",
-        "desc": "The Prevention of Sexual Harassment (PoSH) Act, 2013 aims to protect women against sexual harassment at the workplace and to provide a safe and secure working environment. It also provides a mechanism for filing and redressing complaints."
-      },
-      "definition": {
-        "title": "Definition of Sexual Harassment",
-        "intro": "As per the Act, sexual harassment includes any one or more of the following (whether directly or by implication):",
-        "bullets": [
-          "Physical contact and advances.",
-          "Demand or request for sexual favors.",
-          "Sexually colored remarks.",
-          "Showing pornography.",
-          "Any other unwelcome physical, verbal or non-verbal conduct of a sexual nature."
-        ]
+        "desc": "The primary aim of the PoSH Act is to provide protection against sexual harassment of women at the workplace and to establish a redressal mechanism for complaints. It is intended to create a safe working environment that enables women to work without fear of prejudice, gender bias, or sexual harassment."
       },
       "scope": {
         "title": "Scope of the Act",
-        "intro": "The Act applies to:",
-        "bullets": [
-          "All Government bodies.",
-          "Private and public sector organizations.",
-          "Non-governmental organizations (NGOs).",
-          "Vocational and educational institutions.",
-          "Sports institutes.",
-          "Any place visited by a woman in the course of her employment, including transportation."
+        "desc": "The Act applies to all workplaces in India, including:",
+        "places": [
+          "Government bodies",
+          "Private and public sector organizations",
+          "Non-governmental organizations",
+          "Vocational and educational institutions",
+          "Sports institutes",
+          "Places visited by the employee during the course of employment, including transportation"
         ]
+      },
+      "definition": {
+        "title": "Definition of Sexual Harassment",
+        "desc": "The Act defines sexual harassment in a broad manner, covering any unwelcome acts or behavior (whether directly or by implication) such as:",
+        "unwelcomeActs": [
+          "Physical contact and advances",
+          "A demand or request for sexual favors",
+          "Sexually colored remarks",
+          "Showing pornography",
+          "Any other unwelcome physical, verbal, or non-verbal conduct of a sexual nature"
+        ],
+        "extendedNoteBold": "The definition also extends to places visited by the employee during the course of employment, including:",
+        "extendedNoteText": "Government bodies, private & public sector organizations, NGOs, vocational & educational institutions, sports institutes, and places visited during the course of employment, including transportation."
       },
       "icc": {
         "title": "Internal Complaints Committee (ICC)",
-        "desc": "Every employer with 10 or more employees is required to constitute an Internal Complaints Committee (ICC) at each office or branch. The ICC must have a Presiding Officer who is a senior woman employee and at least two other members who are committed to the cause of women or have experience in social work, legal knowledge or experience in dealing with sexual harassment issues."
-      },
-      "shebox": {
-        "title": "SHe-Box",
-        "desc": "SHe-Box is an online complaint management platform launched by the Ministry of Women and Child Development (Government of India) for lodging complaints of sexual harassment at the workplace.",
-        "stepsHeading": "Steps to File a Complaint on SHe-Box",
-        "steps": [
-          "Visit the official portal - shebox.wcd.gov.in",
-          "Choose your employment sector.",
-          "Enter details of complainant, workplace and respondent.",
-          "Describe the complaint and upload supporting documents (if any).",
-          "Submit the complaint and note the reference number to track the status."
+        "desc": "Every employer with 10 or more employees is required to constitute an Internal Complaints Committee (ICC) at each office or branch. The ICC is responsible for addressing complaints of sexual harassment and is composed of:",
+        "points": [
+          "A senior woman employee as the Presiding Officer",
+          "At least two employees committed to the cause of women or having experience in social work or legal knowledge",
+          "One external member from an NGO or association committed to the cause of women"
         ]
+      },
+      "lcc": {
+        "title": "Local Complaints Committee (LCC)",
+        "desc": "For workplaces with fewer than 10 employees or if the complaint is against the employer, a Local Complaints Committee (LCC) must be established by the District Officer. The LCC serves the same purpose as the ICC but operates at the district level."
+      },
+      "procedure": {
+        "title": "Complaint Procedure",
+        "step1": {
+          "tag": "Step 1",
+          "title": "Filing of Complaint",
+          "desc": "The aggrieved woman must submit a written complaint within three months from the date of the incident. This period can be extended by another three months if there are valid reasons."
+        },
+        "step2": {
+          "tag": "Step 2",
+          "title": "Conciliation",
+          "desc": "Before initiating an inquiry, the ICC/LCC can take steps to settle the matter between the aggrieved woman and the respondent through conciliation, if requested by the complainant."
+        },
+        "step3": {
+          "tag": "Step 3",
+          "title": "Inquiry",
+          "desc": "If conciliation is not possible or desired, the ICC/LCC conducts an inquiry following principles of natural justice."
+        }
+      },
+      "protection": {
+        "title": "Protection Against Retaliation",
+        "desc": "The Act ensures protection for complainants, witnesses, and ICC/LCC members against any form of retaliation or victimization."
+      },
+      "timebound": {
+        "title": "Time-bound Process",
+        "desc": "The Act mandates a time-bound process:",
+        "points": [
+          "The inquiry should be completed within 90 days.",
+          "The report of the inquiry should be submitted to the employer within 10 days of completion.",
+          "Action on the report should be taken within 60 days."
+        ]
+      },
+      "penalties": {
+        "title": "Penalties for Non-compliance",
+        "desc": "Employers who do not comply with the provisions of the Act face various penalties, including:",
+        "p1": "A fine of up to ₹50,000",
+        "p2": "Repeat offenses may lead to higher fines and cancellation of business licenses"
+      },
+      "training": {
+        "title": "Training and Awareness",
+        "desc": "Employers are responsible for organizing workshops and awareness programs at regular intervals for sensitizing employees about the provisions of the Act and forming a gender-sensitive workplace."
+      },
+      "annualReport": {
+        "title": "Annual Report",
+        "desc": "The ICC is required to prepare an annual report with details of the number of cases filed and their disposal, which must be included in the employer's annual report to the respective state government.",
+        "highlight": "The PoSH Act, 2013, represents a crucial step towards safeguarding women in the workplace."
+      }
+    },
+    "shebox": {
+      "heading": "SHe- BOX",
+      "imageAlt": "SHe-Box Sexual Harassment Complaints Portal",
+      "intro": "SHe-Box (Sexual Harassment electronic Box) is an initiative by the Ministry of Women & Child Development, Government of India, providing a single-window platform for women to report workplace sexual harassment. It caters to women across all sectors organized or unorganized, public or private.",
+      "stepsHeading": "Steps to File a Complaint on SHe-Box",
+      "steps": [
+        {
+          "num": 1,
+          "title": "Access the Portal",
+          "desc": "Navigate to the official SHe-Box website:"
+        },
+        {
+          "num": 2,
+          "title": "Initiate Complaint Registration",
+          "desc": "Start your complaint registration process:",
+          "subPoints": [
+            "a) Click on the “Register Your Complaint” tab on the homepage.",
+            "b) Select your employment sector: Central Government, State Government, or Private Sector."
+          ]
+        },
+        {
+          "num": 3,
+          "title": "Fill in Complainant Details",
+          "desc": "Provide your personal and employment details:",
+          "subPoints": [
+            "a) Indicate if you're filing for yourself or on behalf of someone else.",
+            "b) Provide your full name, valid email ID, and mobile number.",
+            "c) Specify your employment status and organization details."
+          ]
+        },
+        {
+          "num": 4,
+          "title": "Provide Workplace Information",
+          "desc": "Enter accurate workplace details:",
+          "subPoints": [
+            "a) Enter details about your workplace, including the name, address, and relevant ministry or department (if applicable).",
+            "b) Select the state and district where your workplace is located."
+          ]
+        },
+        {
+          "num": 5,
+          "title": "Enter Respondent (Accused) Details",
+          "desc": "Details of the individual against whom complaint is filed:",
+          "subPoints": [
+            "a) Provide the name, designation, and contact information of the individual you're filing the complaint against.",
+            "b) Describe your working relationship with the respondent."
+          ]
+        },
+        {
+          "num": 6,
+          "title": "Detail the Complaint",
+          "desc": "Furnish complete details of the incident:",
+          "subPoints": [
+            "a) Indicate if you've previously filed a complaint with your organization's Internal Committee (IC).",
+            "b) Select the type of harassment experienced.",
+            "c) Provide a brief description of the incident(s) (up to 500 words).",
+            "d) Upload any supporting documents (PDF, JPEG, PNG formats; maximum size 2MB)."
+          ]
+        },
+        {
+          "num": 7,
+          "title": "Submit the Complaint",
+          "desc": "Finalize and submit your complaint:",
+          "subPoints": [
+            "a) Review all entered information for accuracy.",
+            "b) Click “Submit” to file your complaint.",
+            "c) You'll receive a confirmation email with a link to set your password and activate your account."
+          ]
+        },
+        {
+          "num": 8,
+          "title": "Tracking Your Complaint",
+          "desc": "After registration, monitor the status of your complaint:",
+          "subPoints": [
+            "a) Visit https://shebox.wcd.gov.in.",
+            "b) Click on the “View Status of Complaint” tab.",
+            "c) Log in using your registered email ID and password.",
+            "d) Enter the captcha code and click “Submit” to view the current status."
+          ]
+        }
+      ],
+      "features": {
+        "confidentiality": {
+          "title": "Confidentiality",
+          "desc": "All complaints are handled with strict confidentiality."
+        },
+        "jurisdiction": {
+          "title": "Jurisdiction",
+          "desc": "Complaints are forwarded to the appropriate Internal Committee (IC) or Local Committee (LC) based on your workplace."
+        },
+        "timeline": {
+          "title": "Resolution Timeline",
+          "desc": "As per the Sexual Harassment of Women at Workplace Act, 2013, complaints should be resolved within 90 days."
+        },
+        "mandatory": {
+          "title": "Mandatory IC Registration",
+          "desc": "In Uttar Pradesh, all organizations with 10 or more employees are required to establish Internal Committees and register them on the SHe-Box portal."
+        }
       }
     }
   },
@@ -1137,7 +1657,67 @@
     "conclusionP": "In conclusion, women's safety is a collective responsibility that requires proactive measures from individuals, communities, and society as a whole. By equipping ourselves with knowledge, skills, and support networks, we can create a world where every woman feels safe, respected, and empowered to live her life to the fullest. Together, we can make safety a reality for all women.",
     "viewHelplines": "Emergency Helplines",
     "getApp": "Download Pink Shakti App",
-    "exploreRights": "Explore Women Laws & Rights"
+    "exploreRights": "Explore Women Laws & Rights",
+    "titleLabel": "Title:",
+    "fullTitle": "Empowering Women: A Guide to Ensuring Safety in Today's World",
+    "introLead": "Let's delve into some practical strategies for women to navigate the world safely:",
+    "points": [
+      {
+        "title": "1. Trust Your Instincts:",
+        "desc": "Your intuition is a powerful tool. If something feels off or unsafe, trust your gut and remove yourself from the situation. Whether it's a dark alley or a questionable encounter with a stranger, prioritize your instincts above all else."
+      },
+      {
+        "title": "2. Stay Aware of Your Surroundings:",
+        "desc": "Being aware of your surroundings can prevent potential threats. Avoid walking with headphones on or being engrossed in your phone, as this can distract you from potential dangers. Instead, stay vigilant and observant of the people and environment around you."
+      },
+      {
+        "title": "3. Learn Self-Defense Techniques:",
+        "desc": "Taking self-defense classes can equip you with valuable skills to protect yourself in threatening situations. Knowing how to defend yourself physically can provide a sense of empowerment and confidence."
+      },
+      {
+        "title": "4. Create Safety Networks:",
+        "desc": "Build a network of trusted friends, family members, and coworkers who you can rely on in times of need. Share your whereabouts with them when going out alone and establish a system for checking in with each other regularly."
+      },
+      {
+        "title": "5. Utilize Safety Apps and Tools:",
+        "desc": "Technology can be a powerful ally in ensuring your safety. There are numerous safety apps available that allow you to share your location with trusted contacts, call for help in emergencies, and even record audio or video evidence of incidents."
+      },
+      {
+        "title": "6. Educate Yourself on Your Rights:",
+        "desc": "Familiarize yourself with your legal rights regarding harassment, assault, and other forms of violence. Knowing what constitutes unlawful behavior and how to report incidents can empower you to take action against perpetrators."
+      },
+      {
+        "title": "7. Speak Up and Support Others:",
+        "desc": "If you witness harassment or violence against another woman, don't hesitate to intervene or offer support. Solidarity among women is crucial in combating misogyny and creating safer communities for all."
+      },
+      {
+        "title": "8. Advocate for Change:",
+        "desc": "Get involved in initiatives and organizations that work towards gender equality and women's safety. Whether it's volunteering at a local shelter, participating in advocacy campaigns, or lobbying for policy changes, your voice and actions can make a difference."
+      },
+      {
+        "title": "9. Practice Self-Care:",
+        "desc": "Taking care of your physical and mental well-being is essential for navigating the challenges of the world. Prioritize activities that promote relaxation, stress reduction, and self-reflection to maintain resilience in the face of adversity."
+      },
+      {
+        "title": "10. Never Blame Yourself:",
+        "desc": "Remember that no matter the circumstances, you are never to blame for someone else's actions against you. Whether it's street harassment, assault, or any other form of violence, the fault lies solely with the perpetrator. Seek support from trusted individuals and resources to process your experiences and heal."
+      }
+    ],
+    "conclusionLabel": "Conclusion:"
+  },
+  "ourVisionPage": {
+    "visionaryName": "MS. SNIGDHAA RITESH",
+    "visionaryRole": "CHIEF VISIONARY, PINK SHAKTI",
+    "visionTitle": "OUR VISION",
+    "visionText": "Promoting Holistic Women Empowerment through Technology-driven Aids to ensure Safety, Awareness & Empowerment of Women Populace in a Violence-Free Environment",
+    "missionTitle": "OUR MISSION",
+    "missionText": "To achieve SDG 5 by Empowering Women Populace of India and giving them a fair chance to contribute to Nation Building with dignity, in a Discrimination Free Environment with equal opportunities.",
+    "aboutTitle": "ABOUT US",
+    "aboutP1": "We are an Award-Winning Social Startup working towards SDG-5 Gender Equality. PINK SHAKTI APP is a One Stop Tech Solution for women providing them Safety, Awareness and Empowerment with a Holistic approach. The app functions as an integrated computer and mobile aided emergency response platform a '3-Way Emergency Response Support System (ERSS)' with Crime Data Analytics, Big Data, AI and IoT synced to it. We have developed PINK SHAKTI APP after four years of thorough research. We have validated the prototype and received positive feedback from various society stakeholders like school and college-going girls, guardians, journalists, working women, senior police officials, bureaucrats, and ministers. The concept of this innovative App is conceived by our Chief Visionary Ms. Snigdhaa Ritesh who has worked as a journalist for 16 years and covered pertinent issues concerning women safety and empowerment. She firmly believes that this initiative would impact the lives of crores of women populace of Uttar Pradesh. For our innovation and comprehensive concept, we have won many accolades and awards both at the State and Central Level. Pink Shakti App was formally launched by the Honorable Mayor of Lucknow, Ms. Shushma Kharkawal on the eve of Women's Day 2024.",
+    "aboutP2": "Working towards SDG-5, Pink Shakti firmly believes that Women & girls can never be empowered unless they are safe. Safety comes first whether they are at home, in school, college, at workplace or travelling via public or private transport or just walking on road. They will only come out of their houses to exercise their free choices when we create a conducive environment for them. Pink Shakti also opines that for all round development of women there is an utmost need to invest time and capital for all aspects- right from safety, education, financial independence, awareness, mental, physical and menstrual health to providing them equal opportunities everywhere.",
+    "aboutP3": "With joint efforts of Government and other stakeholders of Society, Pink Shakti aims to empower womenfolk, exercising free choices over their minds, to become economically independent in an atmosphere free from violence and threat. We appeal everyone to download Pink Shakti App and join our movement in empowering the womenfolk of Uttar Pradesh leading towards the path of progress and prosperity.",
+    "launchImgAlt": "Pink Shakti Grand Launch Event by Mayor of Lucknow",
+    "techImgAlt": "Pink Shakti One-Stop Tech Solution for Women"
   },
   "cervicalCancerPage": {
     "whatIs": {
@@ -1384,11 +1964,26 @@
         "symptomsHeading": "Symptoms:",
         "symptomsSub": "Sometimes you may have no symptoms, but some woman may experience:",
         "symptoms": [
-          { "label": "Pain areas:", "text": "in the pelvis." },
-          { "label": "Pain circumstances:", "text": "can occur during sexual intercourse." },
-          { "label": "Menstrual:", "text": "abnormal menstruation, heavy menstruation, irregular menstruation, or spotting." },
-          { "label": "Groin:", "text": "abnormal vaginal bleeding or abnormal vaginal discharge." },
-          { "label": "Also common:", "text": "fatigue, nausea, or weight loss." }
+          {
+            "label": "Pain areas:",
+            "text": "in the pelvis."
+          },
+          {
+            "label": "Pain circumstances:",
+            "text": "can occur during sexual intercourse."
+          },
+          {
+            "label": "Menstrual:",
+            "text": "abnormal menstruation, heavy menstruation, irregular menstruation, or spotting."
+          },
+          {
+            "label": "Groin:",
+            "text": "abnormal vaginal bleeding or abnormal vaginal discharge."
+          },
+          {
+            "label": "Also common:",
+            "text": "fatigue, nausea, or weight loss."
+          }
         ],
         "footer": "Vaccination, timely treatment and regular screening and may prevent the complications of Cervical Cancer."
       },
@@ -1406,9 +2001,3 @@
     }
   }
 }
-
-
-
-
-
-

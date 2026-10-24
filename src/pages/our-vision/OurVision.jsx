@@ -32,48 +32,48 @@ export default function OurVision() {
               <div className="h-44 w-44 sm:h-52 sm:w-52 rounded-2xl overflow-hidden border-2 border-pink-200/80 shadow-md bg-white p-1 transition-transform duration-500 group-hover:scale-105">
                 <img
                   src={visionaryImg}
-                  alt="Ms. Snigdhaa Ritesh - Chief Visionary, Pink Shakti"
+                  alt={t('ourVisionPage.visionaryName', { defaultValue: "Ms. Snigdhaa Ritesh - Chief Visionary, Pink Shakti" })}
                   className="h-full w-full object-cover rounded-xl"
                 />
               </div>
             </div>
 
             <h2 className="text-[#e60067] font-bold text-sm sm:text-base tracking-wider uppercase mt-1">
-              MS. SNIGDHAA RITESH
+              {t('ourVisionPage.visionaryName', { defaultValue: "MS. SNIGDHAA RITESH" })}
             </h2>
             <p className="text-[#e60067] font-bold text-xs sm:text-sm tracking-wider uppercase mt-0.5">
-              CHIEF VISIONARY, PINK SHAKTI
+              {t('ourVisionPage.visionaryRole', { defaultValue: "CHIEF VISIONARY, PINK SHAKTI" })}
             </p>
           </div>
 
           {/* Section: OUR VISION */}
           <div className="mt-8 sm:mt-10">
             <h3 className="font-serif text-xl sm:text-2xl font-extrabold text-[#e60067] uppercase tracking-wide">
-              OUR VISION
+              {t('ourVisionPage.visionTitle', { defaultValue: "OUR VISION" })}
             </h3>
             <p className="mt-3 text-slate-700 text-sm sm:text-[15px] leading-relaxed font-medium">
-              Promoting Holistic Women Empowerment through Technology-driven Aids to ensure Safety, Awareness & Empowerment of Women Populace in a Violence-Free Environment
+              {t('ourVisionPage.visionText', { defaultValue: "Promoting Holistic Women Empowerment through Technology-driven Aids to ensure Safety, Awareness & Empowerment of Women Populace in a Violence-Free Environment" })}
             </p>
           </div>
 
           {/* Section: OUR MISSION */}
           <div className="mt-8 sm:mt-10">
             <h3 className="font-serif text-xl sm:text-2xl font-extrabold text-[#e60067] uppercase tracking-wide">
-              OUR MISSION
+              {t('ourVisionPage.missionTitle', { defaultValue: "OUR MISSION" })}
             </h3>
             <p className="mt-3 text-slate-700 text-sm sm:text-[15px] leading-relaxed font-medium">
-              To achieve SDG 5 by Empowering Women Populace of India and giving them a fair chance to contribute to Nation Building with dignity, in a Discrimination Free Environment with equal opportunities.
+              {t('ourVisionPage.missionText', { defaultValue: "To achieve SDG 5 by Empowering Women Populace of India and giving them a fair chance to contribute to Nation Building with dignity, in a Discrimination Free Environment with equal opportunities." })}
             </p>
           </div>
 
           {/* Section: ABOUT US */}
           <div className="mt-8 sm:mt-10">
             <h3 className="font-serif text-xl sm:text-2xl font-extrabold text-[#e60067] uppercase tracking-wide">
-              ABOUT US
+              {t('ourVisionPage.aboutTitle', { defaultValue: "ABOUT US" })}
             </h3>
 
             <p className="mt-3 text-slate-700 text-sm sm:text-[15px] leading-relaxed text-justify sm:text-left">
-              We are an Award-Winning Social Startup working towards SDG-5 Gender Equality. PINK SHAKTI APP is a One Stop Tech Solution for women providing them Safety, Awareness and Empowerment with a Holistic approach. The app functions as an integrated computer and mobile aided emergency response platform a '3-Way Emergency Response Support System (ERSS)' with Crime Data Analytics, Big Data, AI and IoT synced to it. We have developed PINK SHAKTI APP after four years of thorough research. We have validated the prototype and received positive feedback from various society stakeholders like school and college-going girls, guardians, journalists, working women, senior police officials, bureaucrats, and ministers. The concept of this innovative App is conceived by our Chief Visionary Ms. Snigdhaa Ritesh who has worked as a journalist for 16 years and covered pertinent issues concerning women safety and empowerment. She firmly believes that this initiative would impact the lives of crores of women populace of Uttar Pradesh. For our innovation and comprehensive concept, we have won many accolades and awards both at the State and Central Level. Pink Shakti App was formally launched by the Honorable Mayor of Lucknow, Ms. Shushma Kharkawal on the eve of Women's Day 2024.
+              {t('ourVisionPage.aboutP1', { defaultValue: "We are an Award-Winning Social Startup working towards SDG-5 Gender Equality. PINK SHAKTI APP is a One Stop Tech Solution for women providing them Safety, Awareness and Empowerment with a Holistic approach. The app functions as an integrated computer and mobile aided emergency response platform a '3-Way Emergency Response Support System (ERSS)' with Crime Data Analytics, Big Data, AI and IoT synced to it. We have developed PINK SHAKTI APP after four years of thorough research. We have validated the prototype and received positive feedback from various society stakeholders like school and college-going girls, guardians, journalists, working women, senior police officials, bureaucrats, and ministers. The concept of this innovative App is conceived by our Chief Visionary Ms. Snigdhaa Ritesh who has worked as a journalist for 16 years and covered pertinent issues concerning women safety and empowerment. She firmly believes that this initiative would impact the lives of crores of women populace of Uttar Pradesh. For our innovation and comprehensive concept, we have won many accolades and awards both at the State and Central Level. Pink Shakti App was formally launched by the Honorable Mayor of Lucknow, Ms. Shushma Kharkawal on the eve of Women's Day 2024." })}
             </p>
 
             {/* Middle Image 1: Grand Launch Event */}
@@ -81,14 +81,14 @@ export default function OurVision() {
               <div className="w-full max-w-2xl sm:max-w-3xl rounded-2xl overflow-hidden border border-pink-200/80 shadow-sm transition-transform duration-500 hover:scale-[1.01] hover:shadow-md">
                 <img
                   src={launchImg}
-                  alt="Pink Shakti Grand Launch Event by Mayor of Lucknow"
+                  alt={t('ourVisionPage.launchImgAlt', { defaultValue: "Pink Shakti Grand Launch Event by Mayor of Lucknow" })}
                   className="w-full h-auto object-cover"
                 />
               </div>
             </div>
 
             <p className="text-slate-700 text-sm sm:text-[15px] leading-relaxed text-justify sm:text-left">
-              Working towards SDG-5, Pink Shakti firmly believes that Women & girls can never be empowered unless they are safe. Safety comes first whether they are at home, in school, college, at workplace or travelling via public or private transport or just walking on road. They will only come out of their houses to exercise their free choices when we create a conducive environment for them. Pink Shakti also opines that for all round development of women there is an utmost need to invest time and capital for all aspects- right from safety, education, financial independence, awareness, mental, physical and menstrual health to providing them equal opportunities everywhere.
+              {t('ourVisionPage.aboutP2', { defaultValue: "Working towards SDG-5, Pink Shakti firmly believes that Women & girls can never be empowered unless they are safe. Safety comes first whether they are at home, in school, college, at workplace or travelling via public or private transport or just walking on road. They will only come out of their houses to exercise their free choices when we create a conducive environment for them. Pink Shakti also opines that for all round development of women there is an utmost need to invest time and capital for all aspects- right from safety, education, financial independence, awareness, mental, physical and menstrual health to providing them equal opportunities everywhere." })}
             </p>
 
             {/* Middle Image 2: Pink Shakti Tech Solution Showcase */}
@@ -96,14 +96,14 @@ export default function OurVision() {
               <div className="w-full max-w-2xl sm:max-w-3xl rounded-2xl overflow-hidden border border-pink-200/80 shadow-sm transition-transform duration-500 hover:scale-[1.01] hover:shadow-md">
                 <img
                   src={techSolutionImg}
-                  alt="Pink Shakti One-Stop Tech Solution for Women"
+                  alt={t('ourVisionPage.techImgAlt', { defaultValue: "Pink Shakti One-Stop Tech Solution for Women" })}
                   className="w-full h-auto object-cover"
                 />
               </div>
             </div>
 
             <p className="text-slate-700 text-sm sm:text-[15px] leading-relaxed text-justify sm:text-left">
-              With joint efforts of Government and other stakeholders of Society, Pink Shakti aims to empower womenfolk, exercising free choices over their minds, to become economically independent in an atmosphere free from violence and threat. We appeal everyone to download Pink Shakti App and join our movement in empowering the womenfolk of Uttar Pradesh leading towards the path of progress and prosperity.
+              {t('ourVisionPage.aboutP3', { defaultValue: "With joint efforts of Government and other stakeholders of Society, Pink Shakti aims to empower womenfolk, exercising free choices over their minds, to become economically independent in an atmosphere free from violence and threat. We appeal everyone to download Pink Shakti App and join our movement in empowering the womenfolk of Uttar Pradesh leading towards the path of progress and prosperity." })}
             </p>
           </div>
 

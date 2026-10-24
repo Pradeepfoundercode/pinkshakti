@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ExternalLink, PhoneCall } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { womenSchemesList } from '../../constants/womenSchemesData';
 import PhoneBanner from '../../components/common/PhoneBanner';
 
 export default function WomenSchemsDetails() {
     const { id } = useParams();
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     const scheme = womenSchemesList.find((s) => s.id === parseInt(id, 10)) || womenSchemesList[0];
 
@@ -17,10 +19,17 @@ export default function WomenSchemsDetails() {
     if (!scheme) {
         return (
             <div className="min-h-[60vh] flex flex-col items-center justify-center p-6 text-center">
-                <h2 className="text-2xl font-bold text-[#102849]">Scheme Not Found</h2>
+                <h2 className="text-2xl font-bold text-[#102849]">
+                    {t('womenSchemesPage.schemeNotFound', { defaultValue: 'Scheme Not Found' })}
+                </h2>
             </div>
         );
     }
+
+    const title = t(`womenSchemesPage.items.${scheme.id}.title`, { defaultValue: scheme.title });
+    const desc = t(`womenSchemesPage.items.${scheme.id}.desc`, { defaultValue: scheme.desc });
+    const schemeText = t(`womenSchemesPage.items.${scheme.id}.schemeText`, { defaultValue: scheme.schemeText });
+    const scholarshipInfo = t(`womenSchemesPage.items.${scheme.id}.scholarshipInfo`, { defaultValue: scheme.scholarshipInfo });
 
     const isExternalUrl = scheme.applyUrl && (scheme.applyUrl.startsWith('http://') || scheme.applyUrl.startsWith('https://'));
     const isPhoneUrl = scheme.applyUrl && scheme.applyUrl.startsWith('tel:');
@@ -38,7 +47,7 @@ export default function WomenSchemsDetails() {
                         <div className="lg:col-span-6 flex items-start justify-center pt-2">
                             <img
                                 src={scheme.detailImage || scheme.image}
-                                alt={scheme.title}
+                                alt={title}
                                 className="w-full max-w-[660px] h-auto sm:h-[385px] object-fill rounded-2xl"
                             />
                         </div>
@@ -48,33 +57,35 @@ export default function WomenSchemsDetails() {
                             {scheme.schemeText ? (
                                 <div className="space-y-5">
                                     <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#824497] leading-tight">
-                                        {scheme.title}
+                                        {title}
                                     </h1>
 
                                     <div className="space-y-4">
                                         <div>
                                             <h3 className="text-base sm:text-lg font-bold text-[#102849] mb-1.5">
-                                                Scheme:
+                                                {t('womenSchemesPage.schemeLabel', { defaultValue: 'Scheme:' })}
                                             </h3>
                                             <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
-                                                {scheme.schemeText}
+                                                {schemeText}
                                             </p>
                                         </div>
 
                                         {scheme.scholarshipInfo && (
                                             <div>
                                                 <h3 className="text-base sm:text-lg font-bold text-[#102849] mb-1.5">
-                                                    Scholarship:
+                                                    {t('womenSchemesPage.scholarshipLabel', { defaultValue: 'Scholarship:' })}
                                                 </h3>
                                                 <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
-                                                    {scheme.scholarshipInfo}
+                                                    {scholarshipInfo}
                                                 </p>
                                             </div>
                                         )}
 
                                         {scheme.applyUrl && (
                                             <div className="pt-2 text-sm sm:text-base leading-relaxed">
-                                                <span className="text-[#e60067] font-bold">APPLY ONLINE: </span>
+                                                <span className="text-[#e60067] font-bold">
+                                                    {t('womenSchemesPage.applyOnlineLabel', { defaultValue: 'APPLY ONLINE: ' })}
+                                                </span>
                                                 <a
                                                     href={scheme.applyUrl}
                                                     target="_blank"
@@ -90,11 +101,11 @@ export default function WomenSchemsDetails() {
                             ) : (
                                 <div className="space-y-5">
                                     <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#102849] leading-tight">
-                                        {scheme.title}
+                                        {title}
                                     </h1>
 
                                     <div className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal whitespace-pre-line">
-                                        {scheme.desc}
+                                        {desc}
                                     </div>
 
                                     {/* Apply / Helpline Button */}
@@ -106,7 +117,7 @@ export default function WomenSchemsDetails() {
                                                     className="inline-flex items-center gap-2 rounded-xl btn-pink py-2.5 px-5 text-sm font-bold shadow-md shadow-pink-500/20 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
                                                 >
                                                     <PhoneCall className="w-4 h-4" />
-                                                    <span>Call 181 (Toll Free 24x7)</span>
+                                                    <span>{t('womenSchemesPage.call181', { defaultValue: 'Call 181 (Toll Free 24x7)' })}</span>
                                                 </a>
                                             ) : isExternalUrl ? (
                                                 <a
@@ -115,7 +126,7 @@ export default function WomenSchemsDetails() {
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center gap-2 rounded-xl btn-pink py-2.5 px-5 text-sm font-bold shadow-md shadow-pink-500/20 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
                                                 >
-                                                    <span>Apply Online</span>
+                                                    <span>{t('womenSchemesPage.applyOnlineBtn', { defaultValue: 'Apply Online' })}</span>
                                                     <ArrowRight className="w-4 h-4" />
                                                 </a>
                                             ) : (
@@ -123,7 +134,7 @@ export default function WomenSchemsDetails() {
                                                     href={scheme.applyUrl}
                                                     className="inline-flex items-center gap-2 rounded-xl btn-pink py-2.5 px-5 text-sm font-bold shadow-md shadow-pink-500/20 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
                                                 >
-                                                    <span>Explore Portal</span>
+                                                    <span>{t('womenSchemesPage.explorePortal', { defaultValue: 'Explore Portal' })}</span>
                                                     <ArrowRight className="w-4 h-4" />
                                                 </a>
                                             )}
@@ -155,7 +166,7 @@ export default function WomenSchemsDetails() {
                                 onClick={() => navigate(`/highlights/pink-info/women-schemes/${scheme.id - 1}`)}
                                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#e60067] transition cursor-pointer"
                             >
-                                <ArrowLeft className="w-4 h-4" /> Previous Scheme
+                                <ArrowLeft className="w-4 h-4" /> {t('womenSchemesPage.prevScheme', { defaultValue: 'Previous Scheme' })}
                             </button>
                         ) : <div />}
 
@@ -165,7 +176,7 @@ export default function WomenSchemsDetails() {
                                 onClick={() => navigate(`/highlights/pink-info/women-schemes/${scheme.id + 1}`)}
                                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#e60067] transition cursor-pointer ml-auto"
                             >
-                                Next Scheme <ArrowRight className="w-4 h-4" />
+                                {t('womenSchemesPage.nextScheme', { defaultValue: 'Next Scheme' })} <ArrowRight className="w-4 h-4" />
                             </button>
                         ) : <div />}
                     </div>

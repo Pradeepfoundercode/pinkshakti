@@ -19,7 +19,8 @@ import {
   AlertCircle,
   CheckCircle2,
 } from 'lucide-react'
-import PageBanner from '../../components/common/PageBanner'
+import BannerSlider from '../../components/common/BannerSlider'
+import contactBanner from '../../assets/home/Home Page 1st image alternative (2).png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 import { subjectOptions, officeLocation } from '../../constants/contactData'
 import { getContactUs, submitContactUs } from '../../services/contact.service'
@@ -97,24 +98,10 @@ export default function Contact() {
 
   return (
     <>
-      <PageBanner
-        alt="Contact Us - Pink Shakti"
-        title={
-          <>
-            <span className="text-[#e60067]">{t("contact.banner.titlePink", "Contact")}</span>{" "}
-            <span className="text-[#102849]">{t("contact.banner.titleNavy", "Us")}</span>
-          </>
-        }
-        description={
-          <>
-            <span className="block font-bold text-[#102849] text-sm sm:text-base lg:text-[1.1rem] mb-1.5 sm:mb-2">
-              {t("contact.banner.subtitleBold", "We're here to help you connect with Pink Shakti.")}
-            </span>
-            <span>
-              {t("contact.banner.subtitleDesc", "For any inquiries, collaborations, support or information, please reach out to us. We would love to hear from you.")}
-            </span>
-          </>
-        }
+      {/* Top Banner Section */}
+      <BannerSlider
+        images={[contactBanner]}
+        autoPlay={false}
       />
 
       {/* Exact Match Contact Section (Balanced Sleek Size, Pure Background Color) */}

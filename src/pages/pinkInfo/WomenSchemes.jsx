@@ -24,7 +24,7 @@ function WomenSchemes() {
       <BannerSlider
         images={[govtSchemeBanner]}
         autoPlay={false}
-        height="h-[250px] sm:h-[320px] md:h-[420px] lg:h-[570px]"
+        height="h-[250px] sm:h-[320px] md:h-[420px] lg:h-[510px]"
       />
      
 
@@ -53,20 +53,20 @@ function WomenSchemes() {
                   <div>
                     <Link to={`/highlights/pink-info/women-schemes/${scheme.id}`}>
                       <h3 className="font-serif font-bold text-[13px] sm:text-[14px] text-[#102849] leading-snug mb-1.5 line-clamp-2 group-hover:text-[#e60067] transition-colors min-h-[38px]">
-                        {scheme.title}
+                        {t(`womenSchemesPage.items.${scheme.id}.title`, { defaultValue: scheme.title })}
                       </h3>
                     </Link>
 
                     {/* Show only 2 lines of content matching the bottom scholarship cards style */}
                     <p className="text-slate-600 text-[10px] sm:text-[11px] font-medium leading-snug mb-1.5 line-clamp-2">
-                      {scheme.desc}
+                      {t(`womenSchemesPage.items.${scheme.id}.desc`, { defaultValue: scheme.desc })}
                     </p>
 
                     <Link
                       to={`/highlights/pink-info/women-schemes/${scheme.id}`}
                       className="inline-flex items-center gap-1 text-[11px] font-bold text-[#e60067] hover:text-[#c9005a] hover:underline mb-1 transition-colors group/km"
                     >
-                      <span>Know More</span>
+                      <span>{t('womenSchemesPage.knowMore', { defaultValue: 'Know More' })}</span>
                       <ArrowRight className="w-3 h-3 stroke-[2.5] transition-transform group-hover/km:translate-x-0.5" />
                     </Link>
                   </div>
@@ -101,13 +101,17 @@ function WomenSchemes() {
                         />
                       </div>
                       <h4 className="font-serif font-bold text-[12px] sm:text-[12.5px] text-[#102849] group-hover:text-[#e60067] leading-tight transition-colors line-clamp-2">
-                        {card.cardTitle || card.title}
+                        {t(`womenSchemesPage.items.${card.id}.cardTitle`, {
+                          defaultValue: t(`womenSchemesPage.items.${card.id}.title`, {
+                            defaultValue: card.cardTitle || card.title
+                          })
+                        })}
                       </h4>
                     </Link>
 
                     {/* 2 Lines Scheme Description with exact provided content */}
                     <p className="text-slate-600 text-[10px] sm:text-[10.5px] font-medium leading-snug line-clamp-2">
-                      {card.schemeText}
+                      {t(`womenSchemesPage.items.${card.id}.schemeText`, { defaultValue: card.schemeText })}
                     </p>
 
                     {/* Know More Link */}
@@ -115,7 +119,7 @@ function WomenSchemes() {
                       to={`/highlights/pink-info/women-schemes/${card.id}`}
                       className="inline-flex items-center gap-1 text-[11px] font-bold text-[#e60067] hover:text-[#c9005a] hover:underline mt-2 transition-colors group/km"
                     >
-                      <span>Know More</span>
+                      <span>{t('womenSchemesPage.knowMore', { defaultValue: 'Know More' })}</span>
                       <ArrowRight className="w-3 h-3 stroke-[2.5] transition-transform group-hover/km:translate-x-0.5" />
                     </Link>
                   </div>

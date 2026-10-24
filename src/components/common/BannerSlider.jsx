@@ -115,18 +115,18 @@ export default function BannerSlider({
             type="button"
             onClick={goToPrev}
             aria-label="Previous slide"
-            className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white/75 backdrop-blur-sm text-[#102849] hover:text-white hover:bg-[#e60067] border border-pink-100/80 shadow-md transition-all duration-200 active:scale-95 cursor-pointer"
+            className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center text-white/75 hover:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)] transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer p-1"
           >
-            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 stroke-[2]" />
           </button>
 
           <button
             type="button"
             onClick={goToNext}
             aria-label="Next slide"
-            className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white/75 backdrop-blur-sm text-[#102849] hover:text-white hover:bg-[#e60067] border border-pink-100/80 shadow-md transition-all duration-200 active:scale-95 cursor-pointer"
+            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center text-white/75 hover:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)] transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer p-1"
           >
-            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 stroke-[2]" />
           </button>
         </>
       )}

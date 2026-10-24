@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import PageBanner from '../../components/common/PageBanner'
+import BannerSlider from '../../components/common/BannerSlider'
+import aboutBanner from '../../assets/home/Home Page 1st image alternative (2).png'
 import communities from "../../assets/home/Pink Shakti Community Portrait.png"
 import cameralogo from "../../assets/home/Pink Target and Binoculars Icons1.png"
 import targetlogo from "../../assets/home/Pink Target and Binoculars Icons.png"
@@ -13,17 +14,10 @@ function About() {
 
   return (
     <div>
-      <PageBanner
-        alt="Women from diverse professions representing Pink Shakti"
-        title={
-          <>
-            {t("about.bannerTitlePink", { defaultValue: "About" })}
-            <span className="block">
-              <span className="text-[#e60067]">{t("about.bannerTitleNavy", { defaultValue: "Pink Shakti" })}</span>
-            </span>
-          </>
-        }
-        description={t("about.bannerDesc", { defaultValue: "An award-winning social startup working towards SDG-5 (Gender Equality), Pink Shakti is a one-stop technology solution for women's safety, awareness and empowerment." })}
+      {/* Top Banner Section */}
+      <BannerSlider
+        images={[aboutBanner]}
+        autoPlay={false}
       />
 
       {/* Our Journey Section */}
@@ -85,7 +79,7 @@ function About() {
                 <img
                   src={cameralogo}
                   alt="Our Vision"
-                  className="relative z-10 h-[70px] w-[120px] object-fill transition-transform duration-500 group-hover/card:rotate-3"
+                  className="relative z-10 h-[60px] w-[120px] object-fill transition-transform duration-500 group-hover/card:rotate-3"
                 />
                 {/* Soft Glow behind Icon on Hover */}
                 <div className="absolute inset-0 -z-10 rounded-full bg-pink-300 opacity-0 blur transition-opacity duration-500 group-hover/card:opacity-30"></div>

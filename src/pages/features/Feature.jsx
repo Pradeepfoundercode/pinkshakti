@@ -1,11 +1,10 @@
 import React from 'react'
 import { ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import PageBanner from '../../components/common/PageBanner'
+import BannerSlider from '../../components/common/BannerSlider'
+import highlightsBanner from '../../assets/home/Home Page 1st image alternative (2).png'
 import PhoneBanner from '../../components/common/PhoneBanner'
 import { featuresList } from '../../constants/featuresData'
-
-import healthLogo from "../../assets/logo/healths.png"
 
 function Feature() {
   const { t } = useTranslation()
@@ -63,16 +62,10 @@ function Feature() {
 
   return (
     <>
-      <PageBanner
-        alt="A Safer, Stronger and Empowered Women"
-        badge={t("features.badge", { defaultValue: "OUR FEATURES" })}
-        title={
-          <>
-            <span className="text-[#e60067]">{t("features.titlePink", { defaultValue: "A Safer, Stronger" })}</span>{' '}
-            <span className="block text-[#102849]">{t("features.titleNavy", { defaultValue: "and Empowered Women" })}</span>
-          </>
-        }
-        description={t("features.description", { defaultValue: "Pink Shakti brings together safety, awareness, health and opportunities for women in one platform." })}
+      {/* Top Banner Section */}
+      <BannerSlider
+        images={[highlightsBanner]}
+        autoPlay={false}
       />
 
       {/* 9 Features Cards Grid Section */}
@@ -95,13 +88,17 @@ function Feature() {
                 >
                   {/* Content */}
                   <div className="relative z-10 flex items-start gap-2 sm:gap-2.5 max-w-[65%] sm:max-w-[60%] lg:max-w-[56%]">
-                    {/* Left Logo */}
-                    <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full bg-pink-100/90 p-1.5 sm:p-2 border border-pink-200/60 shadow-2xs transition-transform duration-300 group-hover:scale-105">
-                      <img
-                        src={feature.icon || healthLogo}
-                        alt={trans.title}
-                        className="h-full w-full object-contain"
-                      />
+                    {/* Left Icon (Lucide Icon) */}
+                    <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full bg-pink-100/90 border border-pink-200/80 shadow-2xs transition-transform duration-300 group-hover:scale-105 text-[#e60067]">
+                      {feature.icon && (typeof feature.icon === 'function' || typeof feature.icon === 'object') ? (
+                        <feature.icon className="h-5.5 w-5.5 sm:h-6 sm:w-6 stroke-[2.7]" strokeWidth={2.7} />
+                      ) : (
+                        <img
+                          src={feature.icon}
+                          alt={trans.title}
+                          className="h-full w-full object-contain"
+                        />
+                      )}
                     </div>
 
                     {/* Text Details */}

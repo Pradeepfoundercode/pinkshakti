@@ -133,7 +133,7 @@ function StateWomenCommission() {
             {/* 4. Email */}
             <div className="bg-white rounded-xl sm:rounded-2xl border border-pink-100/90 p-3.5 sm:p-4 flex items-center gap-3.5 shadow-xs hover:shadow-md transition-all group">
               <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-pink-50/90 border border-pink-100/80 flex items-center justify-center shrink-0 text-[#e60067] group-hover:scale-105 transition-transform">
-                <Mail className="w-5 h-5 fill-current" />
+                <Mail className="w-5 h-5 stroke-[2.2]" />
               </div>
               <div className="min-w-0">
                 <p className="text-xs sm:text-[12.5px] text-[#102849] font-medium leading-tight">
