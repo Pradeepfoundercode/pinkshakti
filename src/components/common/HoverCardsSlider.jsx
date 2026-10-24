@@ -11,7 +11,7 @@ import { homeFeatureCards } from '../../constants/homeData';
 export default function HoverCardsSlider({
   items = homeFeatureCards,
   className = "",
-  cardClassName = "w-[310px] sm:w-[375px] lg:w-[calc(26%-0.6rem)] h-[240px] sm:h-[257px] shrink-0 snap-start origin-center first:origin-left last:origin-right",
+  cardClassName = "w-[296px] sm:w-[375px] lg:w-[calc(26%-0.6rem)] h-[240px] sm:h-[257px] shrink-0 snap-start origin-center first:origin-left last:origin-right",
 }) {
   const { t } = useTranslation();
 

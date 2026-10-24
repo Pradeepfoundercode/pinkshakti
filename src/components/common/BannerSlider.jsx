@@ -9,8 +9,8 @@ export default function BannerSlider({
   autoPlayInterval = 5000,
   showArrows = true,
   showDots = true,
-  height = 'h-[250px] sm:h-[310px] md:h-[340px] lg:h-[450px]',
-  objectFit = 'object-cover object-center lg:object-fill',
+  height = 'h-[220px] sm:h-[300px] md:h-[330px] lg:h-[450px]',
+  objectFit = 'object-cover object-fill lg:object-fill',
   className = '',
 }) {
   // Normalize images to array of objects: { src, alt }
