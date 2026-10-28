@@ -30,7 +30,7 @@ function StateWomenCommission() {
   }, [])
 
   return (
-    <div className="w-full bg-[#FFF9FA] min-h-screen flex flex-col justify-between">
+    <div className="w-full bg-transparent min-h-screen flex flex-col justify-between">
       {/* Top Banner Section */}
       <BannerSlider
         images={[commissionBanner]}

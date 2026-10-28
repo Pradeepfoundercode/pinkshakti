@@ -25,7 +25,7 @@ export default function OurVision() {
   const { t } = useTranslation()
 
   return (
-    <div className="w-full bg-[#FFF9FA] text-[#102849] overflow-hidden">
+    <div className="w-full bg-transparent text-[#102849] overflow-hidden">
       {/* Top Banner */}
       <BannerSlider
         images={[visionBanner]}

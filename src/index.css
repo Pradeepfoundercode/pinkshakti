@@ -15,80 +15,54 @@
   --color-bg-pink-soft: #fff5f8;
   --color-bg-pink-tint: #ffd8e6;
   --color-border-pink: #fbcfe8;
+
+  --color-theme: #fceaf1;
+  --color-lavender: #cfaee3;
+  --color-pink: #ffd7ec;
 }
 
-:root {
-  /* Unified Brand Pink (All Pink Buttons Use This Exact Same Color) */
-  --btn-primary-bg: #e60067;
-  --btn-primary-hover: #c9005a;
-  --btn-primary-active: #b80053;
-  --btn-outline-border: #e60067;
-  --btn-outline-text: #e60067;
-  --btn-outline-hover-bg: #e60067;
-
-  /* Theme Tokens */
-  --color-pink-primary: #e60067;
-  --color-pink-hover: #c9005a;
-  --color-pink-dark: #b80053;
-  --color-navy-primary: #102849;
-
-  /* Play Store Button */
-  --btn-playstore-bg: #000000;
-  --btn-playstore-border: #262626;
-  --btn-playstore-hover: #171717;
-
-  /* Backgrounds & Borders */
-  --color-footer-from: #940040;
-  --color-footer-via: #c90a63;
-  --color-footer-to: #ad0550;
-  --color-bg-pink-surface: #fff7fa;
-  --color-bg-pink-soft: #fff5f8;
-  --color-bg-pink-tint: #ffd8e6;
-  --color-border-pink: #fbcfe8;
-}
-
-/* Unified Pink Button Classes - All pink buttons share the exact same color #e60067 */
 .btn-pink,
 .btn-pink-solid,
 .btn-pink-gradient {
-  background-color: var(--btn-primary-bg);
+  background-color: var(--color-pink-primary);
   color: #ffffff;
 }
 .btn-pink:hover,
 .btn-pink-solid:hover,
 .btn-pink-gradient:hover {
-  background-color: var(--btn-primary-hover);
+  background-color: var(--color-pink-hover);
 }
 .btn-pink:active,
 .btn-pink-solid:active,
 .btn-pink-gradient:active {
-  background-color: var(--btn-primary-active);
+  background-color: var(--color-pink-dark);
 }
 
 .btn-pink-outline {
-  border: 2px solid var(--btn-outline-border);
-  color: var(--btn-outline-text);
+  border: 2px solid var(--color-pink-primary);
+  color: var(--color-pink-primary);
   background-color: rgba(255, 255, 255, 0.9);
 }
 .btn-pink-outline:hover {
-  background-color: var(--btn-outline-hover-bg);
+  background-color: var(--color-pink-primary);
   color: #ffffff;
 }
 
 .btn-playstore {
-  background-color: var(--btn-playstore-bg);
-  border: 1px solid var(--btn-playstore-border);
+  background-color: var(--color-playstore-bg);
+  border: 1px solid var(--color-playstore-border);
 }
 .btn-playstore:hover {
-  background-color: var(--btn-playstore-hover);
+  background-color: var(--color-playstore-hover);
 }
 
-html, body {
+html, body, #root {
   overflow-x: hidden;
   max-width: 100vw;
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: var(--color-theme, #fceaf1);
 }
 
 @keyframes slideDownSoft {

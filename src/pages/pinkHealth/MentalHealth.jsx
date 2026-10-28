@@ -44,7 +44,7 @@ function MentalHealth() {
   const card4Items = Array.isArray(rawCard4Items) ? rawCard4Items : defaultCard4Items
 
   return (
-    <div className="w-full bg-[#FFF9FA] min-h-screen flex flex-col justify-between">
+    <div className="w-full bg-transparent min-h-screen flex flex-col justify-between">
       {/* Top Banner Section */}
       <BannerSlider
         images={[mentalBanner]}

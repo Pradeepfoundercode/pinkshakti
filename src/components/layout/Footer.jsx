@@ -138,7 +138,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-gradient-to-br from-[#940040] via-[#c90a63] to-[#ad0550] text-white overflow-hidden">
+    <footer className="w-full bg-[#ea2163] text-white overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 py-8 lg:py-10">
         
         {/* Animated Staggered Grid */}
@@ -153,18 +153,18 @@ export default function Footer() {
           <motion.div variants={fadeInUp} className="lg:col-span-4 flex flex-col">
             <div className="group flex cursor-pointer items-center gap-3 w-fit">
               <motion.img
-                whileHover={{ rotate: -10, scale: 1.1 }}
+                whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 src={logo}
                 alt="Pink Shakti Logo"
-                className="h-12 w-12 object-contain brightness-0 invert"
+                className="h-12 w-12 object-contain rounded-full bg-white p-1 shadow-md shrink-0"
               />
               <div>
                 <h3 className="font-serif text-lg font-bold tracking-wider text-white leading-none">
                   PINK SHAKTI
                 </h3>
                 <p className="text-[10px] font-medium text-pink-200 uppercase tracking-widest mt-1">
-                  {t("footer.tagline", { defaultValue: "Women Safety & Empowerment" })}
+                  {t("footer.tagline", { defaultValue: "WOMEN SAFETY | AWARENESS | EMPOWERMENT" })}
                 </p>
               </div>
             </div>
@@ -231,7 +231,7 @@ export default function Footer() {
 
           {/* App & Visitors */}
           <motion.div variants={fadeInUp} className="lg:col-span-3 flex flex-col space-y-4 pt-1 lg:pt-0">
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.02 }}
               className="relative overflow-hidden group flex items-center gap-3.5 bg-gradient-to-br from-white/20 to-white/5 rounded-xl px-4 py-3 border border-white/30 shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md w-fit cursor-default"
             >
@@ -275,7 +275,7 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      <div className="border-t border-white/10 bg-black/10">
+      <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-center gap-4 px-6 py-4 text-[12px] font-medium text-pink-200/90 sm:flex-row sm:gap-12 sm:px-8">
           <p>© {new Date().getFullYear()} {t("footer.allRightsReserved", { defaultValue: "Pink Shakti. All Rights Reserved." })}</p>
         </div>

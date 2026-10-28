@@ -155,7 +155,7 @@ function WomenSafety() {
   ]
 
   return (
-    <div className="w-full bg-white flex flex-col justify-between min-h-screen">
+    <div className="w-full bg-transparent flex flex-col justify-between min-h-screen">
       {/* Top PageBanner */}
       <PageBanner
         alt="Women Safety - Pink Shakti"
@@ -178,7 +178,7 @@ function WomenSafety() {
       />
 
       {/* Emergency Response Support System (ERSS) Main Section - 1600px Width & Home Page Styled Cards */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
         <div className="mx-auto max-w-[1600px]">
           <div className="rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] p-5 sm:p-6 lg:p-7 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 relative overflow-hidden">
             <div className="flex flex-col xl:flex-row items-center xl:items-start justify-between gap-5 xl:gap-7 relative z-10">
@@ -265,7 +265,7 @@ function WomenSafety() {
       </section>
 
       {/* How It Works & Key Benefits Section */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
         <div className="mx-auto max-w-[1600px]">
           <div className="rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] p-5 sm:p-6 lg:p-7 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 relative overflow-hidden">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-8 items-stretch">
@@ -381,7 +381,7 @@ function WomenSafety() {
       </section>
 
       {/* Safety Tips for Women Strip / Section */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
         <div className="mx-auto max-w-[1600px]">
           <div className="rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] p-5 sm:p-6 lg:p-7 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 flex flex-col xl:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden">
             

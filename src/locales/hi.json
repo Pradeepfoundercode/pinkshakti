@@ -11,7 +11,7 @@
     "getApp": "ऐप डाउनलोड करें"
   },
   "footer": {
-    "tagline": "महिला सुरक्षा एवं सशक्तिकरण",
+    "tagline": "महिला सुरक्षा | जागरूकता | सशक्तिकरण",
     "description": "जागरूकता, त्वरित प्रतिक्रिया हेल्पलाइन और समर्पित वन-स्टॉप सहायता केंद्रों के माध्यम से महिलाओं को सशक्त बनाना।",
     "quickLinksTitle": "त्वरित लिंक",
     "oneStopCenters": "वन स्टॉप सेंटर्स",
@@ -248,9 +248,7 @@
     "galleryTitlePink": "जागरूकता का निर्माण,",
     "galleryTitleNavy": "सशक्त समुदायों का विकास",
     "viewGallery": "गैलरी देखें",
-    "videoHeaderSafety": "सुरक्षा",
-    "videoHeaderAwareness": "जागरूकता",
-    "videoHeaderEmpowerment": "सशक्तिकरण",
+    "videoHeader": "गुड स्टोरीज़",
     "featureCards": {
       "app": {
         "title": "पिंक शक्ति महिला सुरक्षा ऐप",

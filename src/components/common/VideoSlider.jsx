@@ -54,15 +54,11 @@ export default function VideoSlider({ videos = homeVideos, className = "" }) {
   return (
     <section className={`relative py-4 sm:py-6 lg:py-8 ${className}`}>
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        
+
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-4 sm:mb-5">
           <h2 className="font-serif text-xl sm:text-2xl lg:text-[1.85rem] font-bold tracking-wider text-[#e60067] uppercase">
-            {t("home.videoHeaderSafety", { defaultValue: "SAFETY" })}{' '}
-            <span className="text-[#102849]/30 mx-1 sm:mx-1.5 font-normal">|</span>{' '}
-            {t("home.videoHeaderAwareness", { defaultValue: "AWARENESS" })}{' '}
-            <span className="text-[#102849]/30 mx-1 sm:mx-1.5 font-normal">|</span>{' '}
-            {t("home.videoHeaderEmpowerment", { defaultValue: "EMPOWERMENT" })}
+            {t("home.videoHeader", { defaultValue: "GOOD STORIES" })}
           </h2>
         </div>
 
@@ -70,7 +66,7 @@ export default function VideoSlider({ videos = homeVideos, className = "" }) {
         {/* MAIN COMPACT VIDEO PLAYER (Centered & Clean)              */}
         {/* ========================================================= */}
         <div className="relative mx-auto w-full max-w-[680px] overflow-hidden rounded-xl sm:rounded-2xl border border-pink-200/80 bg-black shadow-lg shadow-pink-500/10">
-          
+
           <div className="relative aspect-video w-full">
             {isPlaying ? (
               // Active YouTube Iframe (Loads strictly when user hits play)
@@ -151,11 +147,10 @@ export default function VideoSlider({ videos = homeVideos, className = "" }) {
                 <button
                   key={video.id}
                   onClick={() => handleSelectVideo(idx)}
-                  className={`group relative shrink-0 aspect-video w-20 sm:w-24 md:w-28 rounded-lg overflow-hidden transition-all duration-300 cursor-pointer text-left ${
-                    isSelected
+                  className={`group relative shrink-0 aspect-video w-20 sm:w-24 md:w-28 rounded-lg overflow-hidden transition-all duration-300 cursor-pointer text-left ${isSelected
                       ? 'ring-2.5 ring-[#e60067] border-2 border-white scale-105 shadow-md shadow-pink-500/25 z-10'
                       : 'opacity-70 hover:opacity-100 border border-pink-100/80 shadow-xs'
-                  }`}
+                    }`}
                 >
                   {/* Thumbnail Image */}
                   <img

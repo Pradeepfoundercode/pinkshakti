@@ -509,7 +509,7 @@ function CityScan() {
 
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col justify-between">
+    <div className="min-h-screen bg-transparent flex flex-col justify-between">
       {/* banner */}
       <BannerSlider
         images={[cityScanBanner]}
@@ -517,12 +517,12 @@ function CityScan() {
       />
 
       {/* Main Feature & Form Section (Exact spacing from Feature.jsx, Rich Modern UI) */}
-      <section className="bg-white px-6 sm:px-10 lg:px-16 py-6 lg:py-8">
+      <section className="bg-transparent px-6 sm:px-10 lg:px-16 py-6 lg:py-8">
         <div className="mx-auto max-w-[1440px] grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-7 items-stretch">
 
           {/* Left Column Card: How City Scan Helps? */}
           <div
-            className={`w-full flex flex-col justify-between bg-gradient-to-b from-[#fff6fa] via-[#fff9fc] to-[#ffecf5] rounded-3xl p-5 sm:p-6 lg:p-7 border border-pink-200/90 shadow-[0_8px_30px_-6px_rgba(230,0,103,0.06)] hover:-translate-y-1 hover:border-pink-300 hover:shadow-[0_16px_40px_-8px_rgba(230,0,103,0.12)] transition-all duration-500 ease-out delay-200 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`w-full flex flex-col justify-between border border-pink-100 bg-[#fff5f8] rounded-3xl p-5 sm:p-6 lg:p-7 border border-pink-200/90 shadow-[0_8px_30px_-6px_rgba(230,0,103,0.06)] hover:-translate-y-1 hover:border-pink-300 hover:shadow-[0_16px_40px_-8px_rgba(230,0,103,0.12)] transition-all duration-500 ease-out delay-200 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
             {/* Header */}
@@ -555,7 +555,7 @@ function CityScan() {
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-4 sm:gap-5 lg:gap-5.5 mt-5.5 sm:mt-6 lg:mt-6.5 mb-3 sm:mb-4 lg:mb-4.5 items-stretch">
 
               {/* 1. Highlight Concerns - Solid Bold Alert Triangle with White Exclamation */}
-              <div className="h-full bg-gradient-to-br from-white via-[#fff8fb] to-[#ffedf5] rounded-2xl py-3 sm:py-3.5 px-3.5 sm:px-4 border border-pink-200/90 shadow-[0_3px_12px_rgba(230,0,103,0.05)] hover:shadow-[0_8px_22px_rgba(230,0,103,0.1)] hover:border-[#e60067]/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 group cursor-default">
+              <div className="h-full  rounded-2xl py-3 sm:py-3.5 px-3.5 sm:px-4 border border-pink-200/90 shadow-[0_3px_12px_rgba(230,0,103,0.05)] hover:shadow-[0_8px_22px_rgba(230,0,103,0.1)] hover:border-[#e60067]/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 group cursor-default">
                 <div className="w-11 h-11 sm:w-11.5 sm:h-11.5 rounded-full bg-white border border-pink-200/80 flex items-center justify-center shrink-0 shadow-xs transition-transform duration-300 group-hover:scale-110">
                   <svg className="w-6 h-6 sm:w-6.5 sm:h-6.5" viewBox="0 0 24 24" fill="none">
                     <path
@@ -579,7 +579,7 @@ function CityScan() {
               </div>
 
               {/* 2. Data Insights - Bold Rising Trend Chart from Banner */}
-              <div className="h-full bg-gradient-to-br from-white via-[#fff8fb] to-[#ffedf5] rounded-2xl py-3 sm:py-3.5 px-3.5 sm:px-4 border border-pink-200/90 shadow-[0_3px_12px_rgba(230,0,103,0.05)] hover:shadow-[0_8px_22px_rgba(230,0,103,0.1)] hover:border-[#e60067]/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 group cursor-default">
+              <div className="h-full  rounded-2xl py-3 sm:py-3.5 px-3.5 sm:px-4 border border-pink-200/90 shadow-[0_3px_12px_rgba(230,0,103,0.05)] hover:shadow-[0_8px_22px_rgba(230,0,103,0.1)] hover:border-[#e60067]/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 group cursor-default">
                 <div className="w-11 h-11 sm:w-11.5 sm:h-11.5 rounded-full bg-white border border-pink-200/80 flex items-center justify-center shrink-0 shadow-xs transition-transform duration-300 group-hover:scale-110">
                   <svg className="w-6 h-6 sm:w-6.5 sm:h-6.5" viewBox="0 0 24 24" fill="none">
                     <path d="M3 14.5L7.5 9.5L12 12.5L19 4.5" stroke="#e60067" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -602,7 +602,7 @@ function CityScan() {
               </div>
 
               {/* 3. Community Support - Bold People Silhouette from Banner */}
-              <div className="h-full bg-gradient-to-br from-white via-[#fff8fb] to-[#ffedf5] rounded-2xl py-3 sm:py-3.5 px-3.5 sm:px-4 border border-pink-200/90 shadow-[0_3px_12px_rgba(230,0,103,0.05)] hover:shadow-[0_8px_22px_rgba(230,0,103,0.1)] hover:border-[#e60067]/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 group cursor-default">
+              <div className="h-full  rounded-2xl py-3 sm:py-3.5 px-3.5 sm:px-4 border border-pink-200/90 shadow-[0_3px_12px_rgba(230,0,103,0.05)] hover:shadow-[0_8px_22px_rgba(230,0,103,0.1)] hover:border-[#e60067]/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 group cursor-default">
                 <div className="w-11 h-11 sm:w-11.5 sm:h-11.5 rounded-full bg-white border border-pink-200/80 flex items-center justify-center shrink-0 shadow-xs transition-transform duration-300 group-hover:scale-110">
                   <svg className="w-6 h-6 sm:w-6.5 sm:h-6.5" viewBox="0 0 24 24" fill="none">
                     <circle cx="6" cy="9.5" r="2.8" fill="#e60067" />
@@ -626,7 +626,7 @@ function CityScan() {
               </div>
 
               {/* 4. Positive Change - Bold Shield with Check from Banner */}
-              <div className="h-full bg-gradient-to-br from-white via-[#fff8fb] to-[#ffedf5] rounded-2xl py-3 sm:py-3.5 px-3.5 sm:px-4 border border-pink-200/90 shadow-[0_3px_12px_rgba(230,0,103,0.05)] hover:shadow-[0_8px_22px_rgba(230,0,103,0.1)] hover:border-[#e60067]/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 group cursor-default">
+              <div className="h-full  rounded-2xl py-3 sm:py-3.5 px-3.5 sm:px-4 border border-pink-200/90 shadow-[0_3px_12px_rgba(230,0,103,0.05)] hover:shadow-[0_8px_22px_rgba(230,0,103,0.1)] hover:border-[#e60067]/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 group cursor-default">
                 <div className="w-11 h-11 sm:w-11.5 sm:h-11.5 rounded-full bg-white border border-pink-200/80 flex items-center justify-center shrink-0 shadow-xs transition-transform duration-300 group-hover:scale-110">
                   <svg className="w-6 h-6 sm:w-6.5 sm:h-6.5" viewBox="0 0 24 24" fill="none">
                     <path d="M12 2L3.5 5.8V11.5C3.5 17 7.1 21.4 12 22.8C16.9 21.4 20.5 17 20.5 11.5V5.8L12 2Z" fill="#e60067" />
@@ -649,7 +649,7 @@ function CityScan() {
 
           {/* Right Column Card: Submit City Scan Form (Modern Elevated UI) */}
           <div
-            className={`w-full bg-gradient-to-b from-[#fff6fa] via-[#fff9fc] to-[#ffecf5] rounded-3xl p-5 sm:p-6 lg:p-7 border border-pink-200/90 shadow-[0_8px_30px_-6px_rgba(230,0,103,0.06)] hover:-translate-y-1 hover:border-pink-300 hover:shadow-[0_16px_40px_-8px_rgba(230,0,103,0.12)] transition-all duration-500 ease-out delay-300 flex flex-col justify-between ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`w-full border border-pink-100 bg-[#fff5f8] rounded-3xl p-5 sm:p-6 lg:p-7 border border-pink-200/90 shadow-[0_8px_30px_-6px_rgba(230,0,103,0.06)] hover:-translate-y-1 hover:border-pink-300 hover:shadow-[0_16px_40px_-8px_rgba(230,0,103,0.12)] transition-all duration-500 ease-out delay-300 flex flex-col justify-between ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
             <div>
@@ -853,7 +853,7 @@ function CityScan() {
       </section>
 
       {/* Simple Steps to Submit Section - Matching Upper Section Width & Background with Smooth Animations */}
-      <section className="bg-white px-6 sm:px-10 lg:px-16 py-2.5 sm:py-4 lg:py-6">
+      <section className="bg-transparent px-6 sm:px-10 lg:px-16 py-2.5 sm:py-4 lg:py-6">
         <div
           className={`mx-auto max-w-[1440px] bg-gradient-to-b from-[#fff6fa] via-[#fff9fc] to-[#ffecf5] border border-pink-200/90 rounded-3xl p-4 sm:p-5 shadow-[0_8px_30px_-6px_rgba(230,0,103,0.06)] relative overflow-hidden transition-all duration-700 ease-out delay-200 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}

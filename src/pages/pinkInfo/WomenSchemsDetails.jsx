@@ -35,7 +35,7 @@ export default function WomenSchemsDetails() {
     const isPhoneUrl = scheme.applyUrl && scheme.applyUrl.startsWith('tel:');
 
     return (
-        <div className="min-h-screen bg-[#fff7fa] text-[#102849] flex flex-col justify-between">
+        <div className="min-h-screen bg-transparent text-[#102849] flex flex-col justify-between">
             {/* Main Details Section */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">
                 <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl shadow-pink-500/5 border border-pink-100">

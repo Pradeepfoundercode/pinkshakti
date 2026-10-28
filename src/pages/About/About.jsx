@@ -46,8 +46,8 @@ function About() {
       />
 
       {/* Our Journey Section */}
-      <section className="bg-white px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
-        <div className="mx-auto max-w-[1600px]">
+      <section className="bg-transparent px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
+        <div className="mx-auto max-w-[1600px] ">
           
           <motion.div 
             variants={staggerContainer}
@@ -111,7 +111,7 @@ function About() {
 
 
       {/* Vision & Mission Section */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 ">
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 ">
         <div className="mx-auto max-w-[1600px]">
           <motion.div 
             variants={staggerContainer}
@@ -185,7 +185,7 @@ function About() {
       />
 
       {/* Leadership Panel Section */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8">
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <motion.div 
             variants={staggerContainer}
@@ -243,7 +243,7 @@ function About() {
       </section>
 
       {/* Wisdom Panel Section */}
-      <section className="bg-white py-8 px-4 sm:px-6 lg:px-8">
+      <section className="bg-transparent py-8 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <motion.div 
             variants={staggerContainer}
@@ -301,7 +301,7 @@ function About() {
       </section>
 
       {/* Enrichment Panel Section */}
-      <section className="bg-white py-6 px-4 sm:px-6 lg:px-8">
+      <section className="bg-transparent py-6 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <motion.div 
             variants={staggerContainer}
@@ -352,7 +352,7 @@ function About() {
       </section>
 
       {/* Social Impact Partners Section */}
-      <section className="bg-white py-8 px-4 sm:px-6 lg:px-8">
+      <section className="bg-transparent py-8 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <motion.div 
             variants={staggerContainer}

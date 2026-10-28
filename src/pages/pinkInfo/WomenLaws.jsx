@@ -34,7 +34,7 @@ function WomenLaws() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#fffafa] flex flex-col justify-between">
+    <div className="min-h-screen bg-transparent flex flex-col justify-between">
       {/* Top Banner Section */}
       <BannerSlider
         images={[actBanner]}

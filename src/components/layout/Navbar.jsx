@@ -60,9 +60,8 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      className={`w-full sticky top-0 z-50 transition-colors duration-500 ease-in-out border-b ${
-        scrolled ? "bg-white/95 backdrop-blur-md border-pink-100 shadow-[0_4px_20px_rgba(230,0,103,0.08)] py-1" : "bg-white border-transparent py-1.5"
-      }`}
+      className={`w-full sticky top-0 z-50 transition-colors duration-500 ease-in-out border-b ${scrolled ? "bg-[var(--color-theme,#fceaf1)]/95 backdrop-blur-md border-pink-200/80 shadow-[0_4px_20px_rgba(230,0,103,0.08)] py-1" : "bg-[var(--color-theme,#fceaf1)] border-transparent py-1.5"
+        }`}
     >
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between w-full h-14">
@@ -82,7 +81,7 @@ export default function Navbar() {
           </div>
 
           {/* Center (Nav Links) - Staggered reveal */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={{
@@ -92,21 +91,19 @@ export default function Navbar() {
             className="hidden lg:flex items-center justify-center space-x-4 xl:space-x-7"
           >
             {navLinks.map((link) => (
-              <motion.div key={link.name} variants={{ hidden: { opacity: 0, y: -10 }, visible: { opacity: 1, y: 0 }}}>
+              <motion.div key={link.name} variants={{ hidden: { opacity: 0, y: -10 }, visible: { opacity: 1, y: 0 } }}>
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>
-                    `group relative py-2 text-[15px] font-medium transition-colors duration-300 whitespace-nowrap ${
-                      isActive ? "text-[#E60067]" : "text-gray-600 hover:text-[#E60067]"
+                    `group relative py-2 text-[15px] font-medium transition-colors duration-300 whitespace-nowrap ${isActive ? "text-[#E60067]" : "text-gray-600 hover:text-[#E60067]"
                     }`
                   }
                 >
                   {({ isActive }) => (
                     <>
                       {link.name}
-                      <span className={`absolute left-1/2 bottom-0 h-[2.5px] rounded-full -translate-x-1/2 bg-[#E60067] transition-all duration-300 ease-out ${
-                        isActive ? "w-4/5 opacity-100" : "w-0 opacity-0 group-hover:w-4/5 group-hover:opacity-100"
-                      }`}></span>
+                      <span className={`absolute left-1/2 bottom-0 h-[2.5px] rounded-full -translate-x-1/2 bg-[#E60067] transition-all duration-300 ease-out ${isActive ? "w-4/5 opacity-100" : "w-0 opacity-0 group-hover:w-4/5 group-hover:opacity-100"
+                        }`}></span>
                     </>
                   )}
                 </NavLink>
@@ -116,7 +113,7 @@ export default function Navbar() {
 
           {/* Right Side (Actions) */}
           <div className="flex lg:flex-1 items-center justify-end gap-3 sm:gap-4">
-            
+
             {/* Download CTA Button */}
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -152,7 +149,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-3 w-36 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 overflow-hidden origin-top-right"
+                    className="absolute right-0 mt-3 w-36 bg-[var(--color-theme,#fceaf1)] rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-pink-200 overflow-hidden origin-top-right"
                   >
                     <div className="p-1.5">
                       <button
@@ -193,12 +190,12 @@ export default function Navbar() {
       {/* Smooth Mobile Menu with AnimatePresence */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-md shadow-2xl border-t border-pink-50"
+            className="lg:hidden overflow-hidden bg-[var(--color-theme,#fceaf1)]/98 backdrop-blur-md shadow-2xl border-t border-pink-200/80"
           >
             <div className="px-4 py-5 space-y-2">
               {navLinks.map((link) => (
@@ -207,8 +204,7 @@ export default function Navbar() {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                      isActive ? "bg-pink-50 text-[#E60067] translate-x-2" : "text-gray-600 hover:bg-gray-50 hover:text-[#E60067] hover:translate-x-1"
+                    `block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${isActive ? "bg-pink-50 text-[#E60067] translate-x-2" : "text-gray-600 hover:bg-gray-50 hover:text-[#E60067] hover:translate-x-1"
                     }`
                   }
                 >
@@ -235,7 +231,7 @@ export default function Navbar() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden mt-2 ml-1 w-40 bg-white rounded-2xl shadow-md border border-gray-100"
+                      className="overflow-hidden mt-2 ml-1 w-40 bg-[var(--color-theme,#fceaf1)] rounded-2xl shadow-md border border-pink-200"
                     >
                       <div className="p-1.5">
                         <button onClick={() => changeLanguage("EN")} className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium ${language === "EN" ? "bg-pink-50 text-[#E60067]" : "text-gray-600"}`}>

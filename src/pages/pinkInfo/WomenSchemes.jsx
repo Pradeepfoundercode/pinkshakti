@@ -20,7 +20,7 @@ function WomenSchemes() {
 
 
   return (
-    <div className="w-full bg-white flex flex-col justify-between min-h-screen">
+    <div className="w-full bg-transparent flex flex-col justify-between min-h-screen">
       <BannerSlider
         images={[govtSchemeBanner]}
         autoPlay={false}
@@ -29,7 +29,7 @@ function WomenSchemes() {
      
 
 
-      <section className="bg-[#fcfafb] px-3 sm:px-5 lg:px-7 py-7 sm:py-9 lg:py-12">
+      <section className="bg-transparent px-3 sm:px-5 lg:px-7 py-7 sm:py-9 lg:py-12">
         <div className="mx-auto max-w-[1700px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 lg:gap-x-4.5 gap-y-7 sm:gap-y-9 lg:gap-y-10 items-stretch">
             {schemes.map((scheme, index) => (

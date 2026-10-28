@@ -15,7 +15,7 @@ export default function PhoneBanner() {
 
   return (
     // Reduced height for small devices to h-[160px]
-    <section className="relative isolate overflow-hidden w-full h-[190px] md:h-[300px] lg:h-[300px]">
+    <section className="relative isolate overflow-hidden w-full h-[130px] md:h-[250px] lg:h-[290px]">
       {/* Background Image with slow zoom-out effect */}
       <img
         src={appDownloadBanner}

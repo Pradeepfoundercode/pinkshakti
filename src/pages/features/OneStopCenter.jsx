@@ -351,7 +351,7 @@ function OneStopCenter() {
       />
 
       {/* Main Section */}
-      <section className="bg-white px-4 py-8 sm:px-6 lg:px-8 lg:py-8">
+      <section className="bg-transparent px-4 py-8 sm:px-6 lg:px-8 lg:py-8">
         <div className="mx-auto max-w-[1400px]">
           {/* Search & Filter Header Box */}
           <div className="rounded-2xl sm:rounded-3xl border border-pink-100 bg-[#fff7fa] p-5 sm:p-7 shadow-sm mb-8 transition-all duration-300 hover:shadow-md">

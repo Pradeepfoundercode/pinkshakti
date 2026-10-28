@@ -61,7 +61,7 @@ function PinkInfo() {
   ]
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-transparent">
       {/* Top Banner Section */}
       <BannerSlider
         images={[govtSchemeBanner]}
@@ -70,7 +70,7 @@ function PinkInfo() {
       />
 
       {/* 4 Pink Info Cards Grid Section */}
-      <section className="bg-white px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
+      <section className="bg-transparent px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2">
             {infoCards.map((item) => (

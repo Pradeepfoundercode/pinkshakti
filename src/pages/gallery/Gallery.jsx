@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Camera, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import BannerSlider from "../../components/common/BannerSlider";
+import galleryBanner from "../../assets/home/Home Page 1st image alternative (2).png";
 import PhoneBanner from "../../components/common/PhoneBanner";
 import { getGalleryImage } from "../../services/gallery.service";
 
@@ -40,8 +42,14 @@ function Gallery() {
   };
 
   return (
-    <>
-      <section className="bg-white px-4 py-4 sm:px-6  lg:px-8">
+    <div className="overflow-hidden">
+      {/* Top Banner Section */}
+      <BannerSlider
+        images={[galleryBanner]}
+        autoPlay={false}
+      />
+
+      <section className="bg-transparent px-4 py-4 lg:py-6 sm:px-6  lg:px-8">
         <div className="mx-auto max-w-[1600px] flex flex-col gap-10">
 
           {isLoading ? (
@@ -172,7 +180,7 @@ function Gallery() {
       )}
 
       <PhoneBanner />
-    </>
+    </div>
   );
 }
 

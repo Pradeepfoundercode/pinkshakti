@@ -77,7 +77,7 @@ function Feature() {
       />
 
       {/* 9 Features Cards Grid Section */}
-      <section className="bg-white px-6 sm:px-10 lg:px-16 py-6 lg:py-8">
+      <section className="bg-transparent px-6 sm:px-10 lg:px-16 py-6 lg:py-8">
         <div className="mx-auto max-w-[1440px]">
           {/* Normal Grid Container (Parent) */}
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 sm:gap-6 lg:gap-7">
@@ -92,9 +92,10 @@ function Feature() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.15 }} // Jab 15% card screen par aayega tab trigger hoga
-                  whileHover={{ y: -6, scale: 1.02 }}
+                  whileHover={{ y: -6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-pink-200/90 bg-pink-100/50 bg-no-repeat p-2.5 sm:px-4 sm:py-2.5 shadow-xs transition-shadow duration-300 hover:shadow-lg min-h-[136px] sm:min-h-[144px]"
+                  // className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-pink-200/90 bg-pink-100/50 bg-no-repeat p-2.5 sm:px-4 sm:py-2.5 shadow-xs transition-shadow duration-300 hover:shadow-lg min-h-[136px] sm:min-h-[144px] [transform:translateZ(0)]"
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-pink-200 bg-pink-50 bg-no-repeat p-2.5 sm:px-4 sm:py-2.5 shadow-xs transition-shadow duration-300 hover:shadow-lg min-h-[136px] sm:min-h-[144px] [transform:translateZ(0)]"
                   style={{
                     backgroundImage: `url("${feature.bgImage}")`,
                     backgroundSize: "contain",
@@ -104,10 +105,9 @@ function Feature() {
                 >
                   {/* Content */}
                   <div className="relative z-10 flex items-start gap-2 sm:gap-2.5 max-w-[65%] sm:max-w-[60%] lg:max-w-[56%]">
-                    
-                    {/* Left Icon with bouncy hover */}
-                    <motion.div 
-                      whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+
+                    {/* Left Icon */}
+                    <div
                       className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full bg-pink-100/90 border border-pink-200/80 shadow-2xs text-[#e60067]"
                     >
                       {feature.icon && (typeof feature.icon === 'function' || typeof feature.icon === 'object') ? (
@@ -116,15 +116,15 @@ function Feature() {
                         <img
                           src={feature.icon}
                           alt={trans.title}
-                          className="h-full w-full object-contain"
+                          className="h-[30px] w-[30px] sm:h-[34px] sm:w-[34px] object-contain"
                         />
                       )}
-                    </motion.div>
+                    </div>
 
                     {/* Text Details */}
                     <div className="flex-1 min-w-0 pr-1">
                       <h3 className="font-bold text-xs sm:text-[14px] text-[#102849] leading-snug">
-                        <a href={feature.link} className="hover:text-[#e60067] transition-colors">
+                        <a href={feature.link}>
                           {trans.title}
                         </a>
                       </h3>
@@ -137,7 +137,7 @@ function Feature() {
                       {feature.dedicatedLink && (
                         <a
                           href={feature.dedicatedLink.to}
-                          className="mt-0.5 inline-block text-[11px] sm:text-xs font-semibold text-[#e60067] hover:underline transition-all"
+                          className="mt-0.5 inline-block text-[11px] sm:text-xs font-semibold text-[#e60067] no-underline"
                         >
                           {trans.dedicated || feature.dedicatedLink.text}
                         </a>

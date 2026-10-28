@@ -149,7 +149,7 @@ function AnonymousCrimeReporting() {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col justify-between">
+    <div className="min-h-screen bg-transparent flex flex-col justify-between">
       {/* Banner Section */}
       <section className="relative isolate h-[200px] w-full overflow-hidden sm:h-[260px] md:h-[320px] lg:h-[340px]">
         {/* Background Image with slow zoom-out effect */}

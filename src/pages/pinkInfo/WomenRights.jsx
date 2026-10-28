@@ -17,7 +17,7 @@ function WomenRights() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#FFF9FA]">
+    <div className="min-h-screen bg-transparent">
       <BannerSlider
         images={[womenRightsBanner]}
         autoPlay={false}

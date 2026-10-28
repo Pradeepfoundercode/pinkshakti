@@ -14,7 +14,7 @@ function EFIR() {
   }, [])
 
   return (
-    <div className="w-full bg-white flex flex-col justify-between min-h-screen">
+    <div className="w-full bg-transparent flex flex-col justify-between min-h-screen">
       {/* Top Banner Section */}
       <BannerSlider
         images={[efirBanner]}
@@ -22,7 +22,7 @@ function EFIR() {
       />
 
       {/* About E-FIR Section */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
         <div className="mx-auto max-w-[1600px]">
           <div className="rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] p-5 sm:p-6 lg:p-7 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 relative overflow-hidden">
             <div className="flex flex-col xl:flex-row items-center xl:items-start justify-between gap-4 sm:gap-5 xl:gap-6 relative z-10">
@@ -201,7 +201,7 @@ function EFIR() {
       </section>
 
       {/* When to Use E-FIR & When to Visit Police Station Section */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
         <div className="mx-auto max-w-[1600px]">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 sm:gap-6">
             
@@ -435,7 +435,7 @@ function EFIR() {
       </section>
 
       {/* How to Register E-FIR & Important Points Section */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5">
         <div className="mx-auto max-w-[1600px]">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-5 sm:gap-6 items-stretch">
             

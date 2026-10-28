@@ -13,7 +13,7 @@ export default function VisionBanner({
   quote,
   portrait = defaultPortrait,
   backdrop = defaultBackdrop,
-  containerClassName = "bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-14",
+  containerClassName = "bg-transparent px-4 py-10 sm:px-6 lg:px-8 lg:py-14",
 }) {
   return (
     <section className={containerClassName}>

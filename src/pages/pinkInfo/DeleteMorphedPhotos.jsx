@@ -12,7 +12,7 @@ export default function DeleteMorphedPhotos() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fff7fa] text-[#102849]">
+    <div className="min-h-screen bg-transparent text-[#102849]">
       {/* Main Container */}
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Main Content Card */}

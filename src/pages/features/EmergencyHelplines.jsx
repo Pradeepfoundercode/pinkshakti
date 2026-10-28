@@ -35,7 +35,7 @@ function EmergencyHelplines() {
       />
 
       {/* Main Helplines Section */}
-      <section className="bg-white px-4 py-5 sm:px-6 lg:px-8">
+      <section className="bg-transparent px-4 py-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {helplines.map((item, index) => {
@@ -122,7 +122,7 @@ function EmergencyHelplines() {
       </section>
 
       {/* Other Important Helplines Section */}
-      <section className="bg-white px-4 py-5 sm:px-6 lg:px-8">
+      <section className="bg-transparent px-4 py-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1400px]">
           <motion.h2 
             variants={fadeInUp}
@@ -196,7 +196,7 @@ function EmergencyHelplines() {
       </section>
 
       {/* Safety Tips Section */}
-      <section className="bg-white px-4 py-5 sm:px-6 lg:px-8 ">
+      <section className="bg-transparent px-4 py-5 sm:px-6 lg:px-8 ">
         <div className="mx-auto max-w-[1400px]">
           <motion.div 
             variants={fadeInUp}

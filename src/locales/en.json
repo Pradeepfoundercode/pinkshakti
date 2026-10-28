@@ -11,7 +11,7 @@
     "getApp": "Get The App"
   },
   "footer": {
-    "tagline": "Women Safety & Empowerment",
+    "tagline": "WOMEN SAFETY | AWARENESS | EMPOWERMENT",
     "description": "Empowering women through awareness, rapid response helplines, and dedicated one-stop support centers.",
     "quickLinksTitle": "Quick Links",
     "oneStopCenters": "One Stop Centers",
@@ -252,9 +252,7 @@
     "galleryTitlePink": "Creating Awareness,",
     "galleryTitleNavy": "Building Stronger Communities",
     "viewGallery": "View Gallery",
-    "videoHeaderSafety": "SAFETY",
-    "videoHeaderAwareness": "AWARENESS",
-    "videoHeaderEmpowerment": "EMPOWERMENT",
+    "videoHeader": "GOOD STORIES",
     "featureCards": {
       "app": {
         "title": "PINK SHAKTI WOMEN SAFETY APP",

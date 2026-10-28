@@ -105,7 +105,7 @@ export default function Contact() {
       />
 
       {/* Exact Match Contact Section (Balanced Sleek Size, Pure Background Color) */}
-      <section className="bg-white px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+      <section className="bg-transparent px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-[1100px]">
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6 items-stretch">
 
@@ -490,7 +490,7 @@ export default function Contact() {
       </section>
 
       {/* Location Section: Find Us Here (Pure Background Color Matching Design) */}
-      <section className="bg-white px-4 pb-4 sm:px-6  lg:px-8  pt-0">
+      <section className="bg-transparent px-4 pb-4 sm:px-6  lg:px-8  pt-0">
         <div className="mx-auto max-w-[1600px]">
           {/* Main Container - Reduced padding (p-4 sm:p-5 lg:p-6) and added Hover Lift */}
           <div className="group/location relative overflow-hidden rounded-2xl sm:rounded-3xl border border-pink-100 bg-[#fff5f8] px-2 md:px-8  py-4 shadow-xs transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-500/10">
@@ -574,7 +574,7 @@ export default function Contact() {
       </section>
 
       {/* Pillars Strip: Safety | Awareness | Empowerment */}
-      <section className="bg-white px-2 sm:px-4 py-6 sm:px-6 lg:py-6 ">
+      <section className="bg-transparent px-2 sm:px-4 py-6 sm:px-6 lg:py-6 ">
         <div className="mx-auto max-w-[1600px]">
           {/* Main Container - Reduced mobile horizontal padding (px-3) to give more room */}
           <div className="group/banner relative overflow-hidden rounded-2xl sm:rounded-3xl border border-pink-100 bg-[#fff5f8] py-3.5 sm:py-5 px-3 sm:px-12 shadow-xs transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-500/10">

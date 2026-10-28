@@ -53,7 +53,7 @@ function PinkHealth() {
   ]
 
   return (
-    <div className="w-full bg-white flex flex-col justify-between min-h-screen">
+    <div className="w-full bg-transparent flex flex-col justify-between min-h-screen">
       {/* Top Banner Section */}
       <BannerSlider
         images={[mentalBanner]}
@@ -61,7 +61,7 @@ function PinkHealth() {
       />
 
       {/* 3 Health Pillars Cards Section */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-5 sm:py-7 lg:py-9">
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 py-5 sm:py-7 lg:py-9">
         <div className="mx-auto max-w-[1600px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 items-stretch">
             {healthCards.map((card) => (

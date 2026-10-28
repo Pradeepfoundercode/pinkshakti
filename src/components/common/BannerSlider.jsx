@@ -8,7 +8,6 @@ export default function BannerSlider({
   autoPlay = true,
   autoPlayInterval = 5000,
   showArrows = true,
-  showDots = true,
   height = 'h-[220px] sm:h-[300px] md:h-[330px] lg:h-[450px]',
   objectFit = 'object-cover object-fill lg:object-fill',
   className = '',
@@ -39,10 +38,6 @@ export default function BannerSlider({
   const goToPrev = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
   }, [total]);
-
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
 
   // Auto-play effect
   useEffect(() => {
@@ -129,28 +124,6 @@ export default function BannerSlider({
             <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 stroke-[2]" />
           </button>
         </>
-      )}
-
-      {/* Bottom Dots Indicator (only if more than 1 image) */}
-      {showDots && total > 1 && (
-        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-black/25 backdrop-blur-xs">
-          {normalizedImages.map((_, index) => {
-            const isActive = index === currentIndex;
-            return (
-              <button
-                key={index}
-                type="button"
-                onClick={() => goToSlide(index)}
-                aria-label={`Go to slide ${index + 1}`}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${
-                  isActive
-                    ? 'w-6 sm:w-7 h-2 bg-[#e60067] shadow-xs'
-                    : 'w-2 h-2 bg-white/75 hover:bg-white'
-                }`}
-              />
-            );
-          })}
-        </div>
       )}
     </section>
   );

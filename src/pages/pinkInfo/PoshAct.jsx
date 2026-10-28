@@ -153,7 +153,7 @@ function PoshAct() {
     : defaultSheboxSteps
 
   return (
-    <div className="min-h-screen bg-[#FFF9FA]">
+    <div className="min-h-screen bg-transparent">
       {/* Top Banner Section */}
       <BannerSlider
         images={[poshBanner]}

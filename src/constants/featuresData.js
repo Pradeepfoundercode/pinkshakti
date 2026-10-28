@@ -20,6 +20,7 @@ import communityIcon from "../assets/logo/communities.png"
 import mapIcon from "../assets/logo/Glossy Magenta Location Pin.png"
 import helpline from "../assets/logo/Glossy Pink Telephone Handset.png"
 import dataAnalytics from "../assets/logo/Glossy Rising Magenta Chart Icon.png"
+import stateWomenCommissionIcon from "../assets/logo/3f2192c9-4836-405e-aec7-812ec252cad4.png"
 
 import cardBgImage from "../assets/features/Smiling Woman with Pink Shield Design.png"
 import cardBgImage2 from "../assets/features/Pink Security Alert with Hidden Figure.png"
@@ -94,7 +95,7 @@ export const featuresList = [
     description: "View crime data, trends and safety insights for a safer Uttar Pradesh.",
     link: "/highlights/state-women-commission",
     bgImage: cardBgImage7,
-    icon: Landmark,
+    icon: stateWomenCommissionIcon,
   },
   {
     title: "One Stop Centers",

@@ -57,9 +57,9 @@ function Home() {
     <>
       <BannerSlider images={homeBannerSlides} />
 
-      <section className="bg-white px-4 sm:px-6 lg:px-8 pt-7 overflow-hidden">
-        <div className="feature-panel mx-auto max-w-[1600px] rounded-3xl bg-[#fff7fa] px-4 py-6 sm:px-6">
-          <motion.div 
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 pt-7 overflow-hidden">
+        <div className="feature-panel mx-auto max-w-[1600px] rounded-3xl border border-pink-100 bg-[#fff5f8]  px-4 py-6 sm:px-6">
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -71,10 +71,10 @@ function Home() {
                 {t("home.featuresBadge", { defaultValue: "• Our Highlights" })}
               </motion.p>
               {/* Animated Text Reveal Heading */}
-              <motion.h2 
-                variants={staggerContainer} 
-                initial="hidden" 
-                whileInView="visible" 
+              <motion.h2
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
                 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#102849] sm:text-4xl"
               >
@@ -130,12 +130,12 @@ function Home() {
       <section className='py-5 overflow-hidden'>
         <div className="bg-transparent px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1600px]">
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
-              className="flex flex-col gap-8 rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] p-5 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:px-10"
+              className="flex flex-col gap-8 rounded-3xl border border-pink-100 bg-[#fff5f8] p-5 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:px-10"
             >
               <div className="shrink-0 lg:max-w-xs xl:max-w-sm">
                 <motion.span variants={fadeInUp} className="inline-flex cursor-default items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-sm">
@@ -145,13 +145,13 @@ function Home() {
                   </span>
                   {t("home.impactBadge", { defaultValue: "OUR IMPACT" })}
                 </motion.span>
-                
+
                 {/* Animated Text Reveal Heading */}
-                <motion.h2 
+                <motion.h2
                   variants={staggerContainer}
                   className="mt-2.5 font-serif text-2xl font-bold leading-tight text-[#102849] sm:text-3xl lg:text-[2rem]"
                 >
-                  <motion.span variants={textReveal} className="inline-block text-[#e60067] mr-1.5">{t("home.impactTogether", { defaultValue: "Together" })}</motion.span> 
+                  <motion.span variants={textReveal} className="inline-block text-[#e60067] mr-1.5">{t("home.impactTogether", { defaultValue: "Together" })}</motion.span>
                   <motion.span variants={textReveal} className="inline-block">{t("home.impactFor", { defaultValue: "For" })}</motion.span>
                   <motion.span variants={textReveal} className="block text-[#102849]">{t("home.impactSaferTomorrow", { defaultValue: "A Safer Tomorrow" })}</motion.span>
                 </motion.h2>
@@ -161,23 +161,22 @@ function Home() {
                 {homeImpactItems.map((item, index) => (
                   <motion.div
                     variants={fadeInUp}
-                    whileHover={{ y: -8 }} 
+                    whileHover={{ y: -8 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     key={item.title}
-                    className={`group flex flex-1 cursor-pointer flex-col items-center justify-center px-2 text-center lg:px-4 ${
-                      index !== 0 ? "lg:border-l lg:border-pink-200/80" : ""
-                    }`}
+                    className={`group flex flex-1 cursor-pointer flex-col items-center justify-center px-2 text-center lg:px-4 ${index !== 0 ? "lg:border-l lg:border-pink-200/80" : ""
+                      }`}
                   >
-                    <motion.div 
-                      whileHover={{ scale: 1.15, rotate: [0, -5, 5, 0] }}
-                      className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[#fdebf3] p-3 sm:h-[72px] sm:w-[72px] sm:p-3.5"
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm border border-pink-100 p-3 sm:h-[72px] sm:w-[72px] sm:p-3.5 transition-shadow duration-300 group-hover:shadow-md"
                     >
                       <img
                         src={item.icon}
                         alt={item.title}
                         className="relative z-10 h-full w-full object-contain"
                       />
-                      <div className="absolute inset-0 -z-10 rounded-full bg-pink-400 opacity-0 blur transition-opacity duration-500 group-hover:opacity-20"></div>
                     </motion.div>
                     {/* Animated Number/Text Hover */}
                     <span className="mt-3 text-xs font-bold text-[#102849] transition-colors duration-300 group-hover:text-[#e60067] sm:text-sm lg:text-[0.95rem]">
@@ -192,14 +191,14 @@ function Home() {
       </section>
 
       <section className="mt-7 overflow-hidden">
-        <div className="bg-white px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
+        <div className="bg-transparent px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
           <div className="mx-auto max-w-[1600px]">
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
-              className="flex flex-col gap-6 rounded-3xl border border-pink-100 bg-gradient-to-r from-[#fff5f8] via-[#fff9fb] to-[#fff5f8] p-5 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 sm:p-7 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:px-8 xl:px-10"
+              className="flex flex-col gap-6 rounded-3xl border border-pink-100 bg-[#fff5f8] p-5 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-pink-500/10 sm:p-7 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:px-8 xl:px-10"
             >
               <div className="w-full shrink-0 lg:w-64 xl:w-80">
                 <motion.span variants={fadeInUp} className="inline-flex cursor-default items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-sm">
@@ -211,7 +210,7 @@ function Home() {
                 </motion.span>
 
                 {/* Animated Text Reveal Heading */}
-                <motion.h2 
+                <motion.h2
                   variants={staggerContainer}
                   className="mt-2.5 font-serif text-2xl font-bold leading-tight text-[#102849] sm:text-3xl lg:text-[1.75rem] xl:text-[2rem]"
                 >
@@ -224,8 +223,8 @@ function Home() {
                 {homeGalleryItems.map((item, idx) => (
                   <motion.div
                     variants={scaleIn}
-                    whileHover={{ scale: 1.03, y: -5 }} 
-                    whileTap={{ scale: 0.97 }} 
+                    whileHover={{ scale: 1.03, y: -5 }}
+                    whileTap={{ scale: 0.97 }}
                     key={item.id}
                     className="group relative aspect-[4/3] w-full min-w-0 cursor-pointer overflow-hidden rounded-xl bg-pink-50/60 shadow-xs border border-pink-100 sm:rounded-2xl"
                   >
