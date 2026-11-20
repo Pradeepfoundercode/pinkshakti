@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import BannerSlider from "../../components/common/BannerSlider"
-import VisionBanner from "../../components/common/VisionBanner"
 import PhoneBanner from '../../components/common/PhoneBanner'
 import HoverCardsSlider from '../../components/common/HoverCardsSlider'
 import VideoSlider from '../../components/common/VideoSlider'
@@ -15,6 +14,8 @@ import slide1 from "../../assets/home/Home Page 1st image alternative (2).png"
 import slide2 from "../../assets/home/Slide1.png"
 import slide3 from "../../assets/home/Slide2.png"
 import slide4 from "../../assets/home/Slide3.png"
+import cameralogo from "../../assets/home/Pink Target and Binoculars Icons1.png"
+import targetlogo from "../../assets/home/Pink Target and Binoculars Icons.png"
 
 const homeBannerSlides = [slide1, slide2, slide3, slide4]
 
@@ -105,25 +106,71 @@ function Home() {
         </div>
       </section>
 
-      <VisionBanner
-        badge={t("home.visionBadge", { defaultValue: "Our Vision" })}
-        title={
-          <>
-            {t("home.visionTitle1", { defaultValue: "A Safer Uttar Pradesh" })}
-            <span className="block">
-              {t("home.visionWith", { defaultValue: "With" })}{' '}
-              <span className="text-[#e60067]">{t("home.visionTitle2", { defaultValue: "Empowered Women" })}</span>
-            </span>
-          </>
-        }
-        description={t("home.visionDesc", { defaultValue: "Pink Shakti is the vision of Snigdhaa Ritesh, envisioned to create a safer, more aware and empowered community of women in Uttar Pradesh." })}
-        name={t("home.visionName", { defaultValue: "Snigdhaa Ritesh" })}
-        role={t("home.visionRole", { defaultValue: "Chief Visionary, Pink Shakti" })}
-        quote={{
-          text: t("home.visionQuote", { defaultValue: "When women are safe, aware and empowered, society becomes stronger." }),
-          author: t("home.visionName", { defaultValue: "Snigdhaa Ritesh" }),
-        }}
-      />
+      {/* Vision & Mission Section */}
+      <section className="bg-transparent px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
+        <div className="mx-auto max-w-[1600px]">
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8"
+          >
+            {/* Our Vision Card */}
+            <motion.div 
+              variants={fadeInUp}
+              whileHover={{ y: -8 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="group/card flex flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-6 rounded-3xl border border-pink-100 bg-[#fff5f8] p-6 shadow-sm transition-shadow duration-500 hover:shadow-xl hover:shadow-pink-500/10 sm:p-7"
+            >
+              <div className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-pink-100/80 p-4 transition-transform duration-500 group-hover/card:scale-110 sm:h-24 sm:w-24 sm:p-4.5">
+                <motion.img
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                  src={cameralogo}
+                  alt="Our Vision"
+                  className="relative z-10 h-[60px] w-[120px] object-fill transition-transform duration-500 group-hover/card:rotate-3"
+                />
+                <div className="absolute inset-0 -z-10 rounded-full bg-pink-300 opacity-0 blur transition-opacity duration-500 group-hover/card:opacity-30"></div>
+              </div>
+              <div className="flex-1 text-center sm:text-left">
+                <span className="inline-flex cursor-default items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-sm">
+                  {t("about.visionBadge", { defaultValue: "• OUR VISION" })}
+                </span>
+                <p className="mt-2.5 text-xs sm:text-sm lg:text-[0.95rem] font-medium sm:font-semibold leading-relaxed text-[#102849] transition-colors duration-300 group-hover/card:text-slate-800">
+                  {t("about.visionText", { defaultValue: "Promoting Holistic Women Empowerment through Technology-driven Aids to ensure Safety, Awareness & Empowerment of Women Populace in a Violence-Free Environment." })}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Our Mission Card */}
+            <motion.div 
+              variants={fadeInUp}
+              whileHover={{ y: -8 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="group/card flex flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-6 rounded-3xl border border-pink-100 bg-[#fff5f8] p-6 shadow-sm transition-shadow duration-500 hover:shadow-xl hover:shadow-pink-500/10 sm:p-7"
+            >
+              <div className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-pink-100/80 p-4 transition-transform duration-500 group-hover/card:scale-110 sm:h-24 sm:w-24 sm:p-4.5">
+                <motion.img
+                  whileHover={{ rotate: -10, scale: 1.1 }}
+                  src={targetlogo}
+                  alt="Our Mission"
+                  className="relative z-10 h-full w-full object-contain transition-transform duration-500 group-hover/card:-rotate-3"
+                />
+                <div className="absolute inset-0 -z-10 rounded-full bg-pink-300 opacity-0 blur transition-opacity duration-500 group-hover/card:opacity-30"></div>
+              </div>
+              <div className="flex-1 text-center sm:text-left">
+                <span className="inline-flex cursor-default items-center gap-1.5 rounded-full bg-pink-100/90 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-[#e60067] shadow-sm">
+                  {t("about.missionBadge", { defaultValue: "• OUR MISSION" })}
+                </span>
+                <p className="mt-2.5 text-xs sm:text-sm lg:text-[0.95rem] font-medium sm:font-semibold leading-relaxed text-[#102849] transition-colors duration-300 group-hover/card:text-slate-800">
+                  {t("about.missionText", { defaultValue: "To achieve SDG 5 by Empowering Women Populace of India and giving them a fair chance to contribute to Nation-Building with dignity, in a Discrimination-Free Environment with equal opportunities." })}
+                </p>
+              </div>
+            </motion.div>
+
+          </motion.div>
+        </div>
+      </section>
 
       <PhoneBanner />
 

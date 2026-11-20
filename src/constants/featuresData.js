@@ -20,7 +20,7 @@ import communityIcon from "../assets/logo/communities.png"
 import mapIcon from "../assets/logo/Glossy Magenta Location Pin.png"
 import helpline from "../assets/logo/Glossy Pink Telephone Handset.png"
 import dataAnalytics from "../assets/logo/Glossy Rising Magenta Chart Icon.png"
-import stateWomenCommissionIcon from "../assets/logo/3f2192c9-4836-405e-aec7-812ec252cad4.png"
+import stateWomenCommissionIcon from "../assets/logo/Hot Pink Uttar Pradesh.png"
 
 import cardBgImage from "../assets/features/Smiling Woman with Pink Shield Design.png"
 import cardBgImage2 from "../assets/features/Pink Security Alert with Hidden Figure.png"
@@ -64,10 +64,6 @@ export const featuresList = [
   {
     title: "City Scan",
     description: "Check safety information and report unsafe areas in your city.",
-    dedicatedLink: {
-      text: "View dedicated City Scan page →",
-      to: "/highlights/city-scan",
-    },
     link: "/highlights/city-scan",
     bgImage: cardBgImage4,
     icon: MapPin,
@@ -75,10 +71,6 @@ export const featuresList = [
   {
     title: "E-FIR",
     description: "E-FIR information and official link to UP Police e-FIR portal.",
-    dedicatedLink: {
-      text: "View dedicated E-FIR page →",
-      to: "/highlights/e-fir",
-    },
     link: "/highlights/e-fir",
     bgImage: cardBgImage3,
     icon: FileText,

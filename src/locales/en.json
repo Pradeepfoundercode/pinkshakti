@@ -796,17 +796,17 @@
       "mentalHealth": {
         "title": "Mental Health",
         "desc": "Learn about mental health, common concerns, coping strategies and where to seek support for a healthier and happier you.",
-        "readMore": "Read More"
+        "knowMore": "Know More"
       },
       "menstrualHealth": {
         "title": "Menstrual Health",
         "desc": "Get information about menstrual health, hygiene, common issues and tips for a safe and healthy menstrual cycle.",
-        "readMore": "Read More"
+        "knowMore": "Know More"
       },
       "cervicalCancer": {
         "title": "Cervical Cancer",
         "desc": "Learn about cervical cancer, its prevention, screening, vaccination and early detection for a healthier future.",
-        "readMore": "Read More"
+        "knowMore": "Know More"
       }
     }
   },

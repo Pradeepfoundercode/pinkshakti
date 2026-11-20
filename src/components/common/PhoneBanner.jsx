@@ -29,20 +29,9 @@ export default function PhoneBanner() {
 
       <div className="relative z-10 flex flex-col justify-center h-full ml-[41%] sm:ml-[45%] lg:ml-[45%] w-[58%] sm:w-[45%] lg:w-[40%] text-[#102849] pr-2 sm:pr-0">
         
-        {/* Badge */}
-        <div 
-          className={`transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] delay-100 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <p className="inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-xs font-bold text-[#e60067] shadow-sm">
-            <span>•&nbsp; {t("phoneBanner.badge", { defaultValue: "DOWNLOAD NOW" })}</span>
-          </p>
-        </div>
-
         {/* Title */}
         <h2 
-          className={`mt-1 sm:mt-3 lg:mt-5 font-serif text-[18px] sm:text-[28px] md:text-[36px] lg:text-[42px] font-bold leading-[1.15] sm:leading-tight transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] delay-300 ${
+          className={`font-serif text-[18px] sm:text-[28px] md:text-[36px] lg:text-[42px] font-bold leading-[1.15] sm:leading-tight transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] delay-300 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -50,18 +39,9 @@ export default function PhoneBanner() {
           <span className="block text-[#102849]">{t("phoneBanner.titleNavy", { defaultValue: "Now On Your Mobile" })}</span>
         </h2>
 
-        {/* Description */}
-        <p 
-          className={`mt-1 sm:mt-2.5 lg:mt-3 max-w-md text-[10px] sm:text-sm lg:text-[16px] leading-snug sm:leading-normal text-slate-700 font-medium transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] delay-500 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          {t("phoneBanner.description", { defaultValue: "A Safer, Empowered and Informed You – Always." })}
-        </p>
-
         {/* MODERN BUTTON */}
         <div 
-          className={`mt-1.5 sm:mt-3 md:mt-4 lg:mt-5 flex items-center transition-all duration-[1200ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] delay-700 ${
+          className={`mt-2 sm:mt-3 md:mt-4 lg:mt-5 flex items-center transition-all duration-[1200ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] delay-500 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >

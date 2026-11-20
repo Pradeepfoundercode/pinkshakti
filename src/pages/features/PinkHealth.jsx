@@ -25,7 +25,7 @@ function PinkHealth() {
         defaultValue:
           'Learn about mental health, common concerns, coping strategies and where to seek support for a healthier and happier you.',
       }),
-      readMore: t('pinkHealthPage.cards.mentalHealth.readMore', { defaultValue: 'Read More' }),
+      knowMore: t('pinkHealthPage.cards.mentalHealth.knowMore', { defaultValue: 'Know More' }),
       link: '/highlights/pink-health/mental-health',
     },
     {
@@ -36,7 +36,7 @@ function PinkHealth() {
         defaultValue:
           'Get information about menstrual health, hygiene, common issues and tips for a safe and healthy menstrual cycle.',
       }),
-      readMore: t('pinkHealthPage.cards.menstrualHealth.readMore', { defaultValue: 'Read More' }),
+      knowMore: t('pinkHealthPage.cards.menstrualHealth.knowMore', { defaultValue: 'Know More' }),
       link: '/highlights/pink-health/menstrual-health',
     },
     {
@@ -47,7 +47,7 @@ function PinkHealth() {
         defaultValue:
           'Learn about cervical cancer, its prevention, screening, vaccination and early detection for a healthier future.',
       }),
-      readMore: t('pinkHealthPage.cards.cervicalCancer.readMore', { defaultValue: 'Read More' }),
+      knowMore: t('pinkHealthPage.cards.cervicalCancer.knowMore', { defaultValue: 'Know More' }),
       link: '/highlights/pink-health/cervical-cancer',
     },
   ]
@@ -92,13 +92,13 @@ function PinkHealth() {
                     </p>
                   </div>
 
-                  {/* Read More Link - Only on first card */}
-                  {card.link && card.readMore && (
+                  {/* Know More Link */}
+                  {card.link && card.knowMore && (
                     <a
                       href={card.link}
                       className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#e60067] group-hover:text-[#c9005a] transition-colors mt-auto cursor-pointer"
                     >
-                      <span>{card.readMore}</span>
+                      <span>{card.knowMore}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                     </a>
                   )}

@@ -28,13 +28,11 @@ function Feature() {
     },
     "E-FIR": {
       title: t("features.items.eFir.title", { defaultValue: "E-FIR" }),
-      desc: t("features.items.eFir.desc", { defaultValue: "E-FIR information and official link to UP Police e-FIR portal." }),
-      dedicated: t("features.dedicatedEfir", { defaultValue: "View dedicated E-FIR page →" })
+      desc: t("features.items.eFir.desc", { defaultValue: "E-FIR information and official link to UP Police e-FIR portal." })
     },
     "City Scan": {
       title: t("features.items.cityScan.title", { defaultValue: "City Scan" }),
-      desc: t("features.items.cityScan.desc", { defaultValue: "Check safety information and report unsafe areas in your city." }),
-      dedicated: t("features.dedicatedCityScan", { defaultValue: "View dedicated City Scan page →" })
+      desc: t("features.items.cityScan.desc", { defaultValue: "Check safety information and report unsafe areas in your city." })
     },
     "Pink Info": {
       title: t("features.items.pinkInfo.title", { defaultValue: "Pink Info" }),
