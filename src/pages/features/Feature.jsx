@@ -54,7 +54,7 @@ function Feature() {
     },
     "State Women Commission": {
       title: t("features.items.stateWomenCommission.title", { defaultValue: "State Women Commission" }),
-      desc: t("features.items.stateWomenCommission.desc", { defaultValue: "View crime data, trends and safety insights for a safer Uttar Pradesh." })
+      desc: t("features.items.stateWomenCommission.desc", { defaultValue: "Reach out to State Women Commission to register your complaint." })
     },
     "Crime Data Analytics": {
       title: t("features.items.analytics.title", { defaultValue: "Crime Data Analytics" }),

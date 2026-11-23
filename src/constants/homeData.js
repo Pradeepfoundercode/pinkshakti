@@ -111,11 +111,25 @@ export const homeFeatureCards = [
 
 export const homeVideos = [
   {
-    id: "gTcjH3DHxDc",
-    title: "Ms. Snigdha | Pink Shakti Official",
-    speaker: "Ms. Snigdha",
+    id: "gmyMQ0iuaK4",
+    title: "Pink Shakti Women Safety & Awareness",
+    speaker: "Pink Shakti Initiative",
     channel: "PINK SHAKTI OFFICIAL",
-    embedUrl: "https://www.youtube.com/embed/gTcjH3DHxDc?si=TL1DSCVZLEGat7hD",
+    embedUrl: "https://www.youtube.com/embed/gmyMQ0iuaK4?si=r8886AMs_Ne2Tm2G",
+  },
+  {
+    id: "U-Ura0Zymxo",
+    title: "Chief Visionary Pink Shakti - Ms. Snigdhaa Ritesh on Akashwani Lucknow",
+    speaker: "Ms. Snigdhaa Ritesh",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/U-Ura0Zymxo?si=ktQeYvl1cXNgLSfZ",
+  },
+  {
+    id: "Ym_MzW8g5u8",
+    title: "SASHAKT NARI SAMRIDDH BHARAT - Panel Discussion",
+    speaker: "Women Empowerment Panel",
+    channel: "PINK SHAKTI OFFICIAL",
+    embedUrl: "https://www.youtube.com/embed/Ym_MzW8g5u8?si=aeb_fbbhJvXSKod3",
   },
   {
     id: "Ja14ocNuiv8",

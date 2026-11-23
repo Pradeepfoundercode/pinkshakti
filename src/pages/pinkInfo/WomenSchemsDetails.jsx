@@ -34,6 +34,11 @@ export default function WomenSchemsDetails() {
     const isExternalUrl = scheme.applyUrl && (scheme.applyUrl.startsWith('http://') || scheme.applyUrl.startsWith('https://'));
     const isPhoneUrl = scheme.applyUrl && scheme.applyUrl.startsWith('tel:');
 
+    const isHi = i18n.language?.startsWith('hi');
+    const displayImage = isHi
+        ? (scheme.detailImageHi || scheme.imageHi || scheme.detailImage || scheme.detailImageEn || scheme.image)
+        : (scheme.detailImageEn || scheme.detailImage || scheme.imageEn || scheme.image);
+
     return (
         <div className="min-h-screen bg-transparent text-[#102849] flex flex-col justify-between">
             {/* Main Details Section */}
@@ -46,7 +51,7 @@ export default function WomenSchemsDetails() {
                         {/* Left Column: Image (wider width, same height) */}
                         <div className="lg:col-span-6 flex items-start justify-center pt-2">
                             <img
-                                src={scheme.detailImage || ((i18n.language?.startsWith('hi') && scheme.imageHi) ? scheme.imageHi : (scheme.imageEn || scheme.image))}
+                                src={displayImage}
                                 alt={title}
                                 className="w-full max-w-[660px] h-auto sm:h-[385px] object-fill rounded-2xl"
                             />

@@ -85,7 +85,7 @@ export const featuresList = [
   },
   {
     title: "State Women Commission",
-    description: "View crime data, trends and safety insights for a safer Uttar Pradesh.",
+    description: "Reach out to State Women Commission to register your complaint.",
     link: "/highlights/state-women-commission",
     bgImage: cardBgImage7,
     bgImageHi: cardBgImage7Hi,

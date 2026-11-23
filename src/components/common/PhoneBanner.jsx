@@ -27,11 +27,11 @@ export default function PhoneBanner() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-100/70 to-pink-100/95 sm:hidden z-0"></div>
 
-      <div className="relative z-10 flex flex-col justify-center h-full ml-[41%] sm:ml-[45%] lg:ml-[45%] w-[58%] sm:w-[52%] lg:w-[50%] text-[#102849] pr-2 sm:pr-0">
+      <div className="relative z-10 flex flex-col justify-center h-full ml-[36%] sm:ml-[39%] lg:ml-[37%] w-[62%] sm:w-[59%] lg:w-[60%] text-[#102849] pr-3 sm:pr-6 md:pr-10 lg:pr-12">
         
         {/* Title */}
         <h2 
-          className={`font-serif text-[17px] sm:text-[26px] md:text-[34px] lg:text-[40px] font-bold leading-[1.15] sm:leading-tight transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] delay-300 ${
+          className={`text-center sm:-translate-x-3 md:-translate-x-6 lg:-translate-x-8 font-serif text-[17px] sm:text-[26px] md:text-[34px] lg:text-[40px] font-bold leading-[1.15] sm:leading-tight transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] delay-300 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -41,7 +41,7 @@ export default function PhoneBanner() {
 
         {/* MODERN BUTTON */}
         <div 
-          className={`mt-2 sm:mt-3 md:mt-4 lg:mt-5 flex items-center transition-all duration-[1200ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] delay-500 ${
+          className={`mt-1 sm:mt-1.5 md:mt-2 lg:mt-2.5 flex items-center justify-end pr-4 sm:pr-8 md:pr-14 lg:pr-16 transition-all duration-[1200ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] delay-500 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
