@@ -101,7 +101,7 @@ export const womenSchemesList = [
     detailImage: detailImg3En,
     detailImageEn: detailImg3En,
     detailImageHi: detailImg3Hi,
-    title: 'Save Daughter, Educate Daughter',
+    title: 'Beti Bachao, Beti Padhao',
     desc: "The objective of the scheme is to improve the falling sex ratio, encourage girls' education and develop positive thinking among the common people towards the girl child. Under the scheme, public awareness is being spread among the people by organizing various mediums like drama/nukkad, banners, posters, wall writing, public meetings, radio jingles, various types of competitions, workshops etc. This scheme is operated in all 75 districts of the state. Under the scheme, 12.94 lakh women and girls have been made aware through a total of 9,234 activities in the year 2022-23.",
     category: 'Awareness & Education',
   },
