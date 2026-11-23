@@ -111,11 +111,11 @@ export const homeFeatureCards = [
 
 export const homeVideos = [
   {
-    id: "gmyMQ0iuaK4",
-    title: "Pink Shakti Women Safety & Awareness",
-    speaker: "Pink Shakti Initiative",
+    id: "Ym_MzW8g5u8",
+    title: "SASHAKT NARI SAMRIDDH BHARAT - Panel Discussion",
+    speaker: "Women Empowerment Panel",
     channel: "PINK SHAKTI OFFICIAL",
-    embedUrl: "https://www.youtube.com/embed/gmyMQ0iuaK4?si=r8886AMs_Ne2Tm2G",
+    embedUrl: "https://www.youtube.com/embed/Ym_MzW8g5u8?si=aeb_fbbhJvXSKod3",
   },
   {
     id: "U-Ura0Zymxo",
@@ -125,11 +125,11 @@ export const homeVideos = [
     embedUrl: "https://www.youtube.com/embed/U-Ura0Zymxo?si=ktQeYvl1cXNgLSfZ",
   },
   {
-    id: "Ym_MzW8g5u8",
-    title: "SASHAKT NARI SAMRIDDH BHARAT - Panel Discussion",
-    speaker: "Women Empowerment Panel",
+    id: "gmyMQ0iuaK4",
+    title: "Pink Shakti Women Safety & Awareness",
+    speaker: "Pink Shakti Initiative",
     channel: "PINK SHAKTI OFFICIAL",
-    embedUrl: "https://www.youtube.com/embed/Ym_MzW8g5u8?si=aeb_fbbhJvXSKod3",
+    embedUrl: "https://www.youtube.com/embed/gmyMQ0iuaK4?si=r8886AMs_Ne2Tm2G",
   },
   {
     id: "Ja14ocNuiv8",
