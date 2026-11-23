@@ -15,7 +15,7 @@ const fadeInUp = {
 }
 
 function Feature() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const featureTranslations = {
     "Women Safety": {
@@ -52,6 +52,10 @@ function Feature() {
         t("features.items.pinkHealth.b3", { defaultValue: "Cervical Cancer Awareness" })
       ]
     },
+    "State Women Commission": {
+      title: t("features.items.stateWomenCommission.title", { defaultValue: "State Women Commission" }),
+      desc: t("features.items.stateWomenCommission.desc", { defaultValue: "View crime data, trends and safety insights for a safer Uttar Pradesh." })
+    },
     "Crime Data Analytics": {
       title: t("features.items.analytics.title", { defaultValue: "Crime Data Analytics" }),
       desc: t("features.items.analytics.desc", { defaultValue: "View crime data, trends and safety insights for a safer Uttar Pradesh." })
@@ -81,6 +85,8 @@ function Feature() {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 sm:gap-6 lg:gap-7">
             {featuresList.map((feature, index) => {
               const trans = featureTranslations[feature.title] || { title: feature.title, desc: feature.description }
+              const isHi = i18n.language?.startsWith('hi')
+              const cardBg = (isHi && feature.bgImageHi) ? feature.bgImageHi : feature.bgImage
 
               return (
                 // Individual Card par whileInView lagaya gaya hai
@@ -95,7 +101,7 @@ function Feature() {
                   // className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-pink-200/90 bg-pink-100/50 bg-no-repeat p-2.5 sm:px-4 sm:py-2.5 shadow-xs transition-shadow duration-300 hover:shadow-lg min-h-[136px] sm:min-h-[144px] [transform:translateZ(0)]"
                   className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-pink-200 bg-pink-50 bg-no-repeat p-2.5 sm:px-4 sm:py-2.5 shadow-xs transition-shadow duration-300 hover:shadow-lg min-h-[136px] sm:min-h-[144px] [transform:translateZ(0)]"
                   style={{
-                    backgroundImage: `url("${feature.bgImage}")`,
+                    backgroundImage: `url("${cardBg}")`,
                     backgroundSize: "contain",
                     backgroundPosition: "right center",
                     backgroundRepeat: "no-repeat",

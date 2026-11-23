@@ -29,8 +29,8 @@ export default function DeleteMorphedPhotos() {
           </div>
 
           {/* 2. Main Heading */}
-          <div className="text-center sm:text-left mb-8 border-b border-pink-100 pb-5">
-            <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#e60067] leading-tight">
+          <div className="text-center mb-8 border-b border-pink-100 pb-5">
+            <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#e60067] leading-tight text-center">
               {t('deleteMorphedPhotosPage.mainHeading', { defaultValue: 'IMMEDIATE ACTIONS TO DELETE MORPHED PHOTOS FROM THE INTERNET' })}
             </h1>
           </div>

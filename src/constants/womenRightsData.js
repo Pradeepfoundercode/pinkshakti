@@ -9,6 +9,7 @@ import imgIndecentPortrayal from '../assets/women-rights/WhatsApp Image 2024-01-
 import imgOnlineHarassment from '../assets/women-rights/download.png';
 import imgMaternityLeave from '../assets/women-rights/download (2).png';
 import imgAnonymousIdentity from '../assets/women-rights/31.png';
+import imgAnonymousIdentityHi from '../assets/women-rights/Confidentiality Rights Poster.png';
 import imgZeroFir from '../assets/women-rights/WhatsApp Image 2024-01-02 at 18.50.36.jpeg';
 import imgDisconnect from '../assets/women-rights/download (4).png';
 
@@ -112,7 +113,7 @@ export const womenRightsList = [
     slug: 'anonymous-identity',
     title: 'RIGHT TO KEEP THEIR IDENTITY ANONYMOUS IN CASE OF SEXUAL ASSAULT',
     image: imgAnonymousIdentity,
-    imageHi: imgAnonymousIdentity,
+    imageHi: imgAnonymousIdentityHi,
     desc: "Survivors of sexual assault have the right to keep their names private. This protects them from judgment and harm, fostering an environment where survivors feel safe to report crimes and seek justice without fear of harm or discrimination. Upholding the right to anonymity in such cases contributes to breaking the silence around sexual violence, encouraging survivors to seek justice while maintaining their dignity and protecting them from potential harm or discrimination.\n\nThese sections of the Indian Penal Code are instrumental in protecting the rights, dignity, and safety of women in various contexts, from physical to digital spaces. They emphasize the importance of consent, respect, and personal boundaries, contributing to a more equitable and secure society for all."
   },
   {

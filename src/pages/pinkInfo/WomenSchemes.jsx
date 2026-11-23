@@ -8,7 +8,7 @@ import PhoneBanner from '../../components/common/PhoneBanner'
 import { womenSchemesList, girlChildScholarshipsList } from '../../constants/womenSchemesData'
 
 function WomenSchemes() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -32,7 +32,11 @@ function WomenSchemes() {
       <section className="bg-transparent px-3 sm:px-5 lg:px-7 py-7 sm:py-9 lg:py-12">
         <div className="mx-auto max-w-[1700px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 lg:gap-x-4.5 gap-y-7 sm:gap-y-9 lg:gap-y-10 items-stretch">
-            {schemes.map((scheme, index) => (
+            {schemes.map((scheme, index) => {
+              const isHi = i18n.language?.startsWith('hi')
+              const schemeImg = (isHi && scheme.imageHi) ? scheme.imageHi : (scheme.imageEn || scheme.image)
+
+              return (
               <div
                 key={scheme.id}
                 style={{ transitionDelay: `${index * 60}ms` }}
@@ -41,7 +45,7 @@ function WomenSchemes() {
               >
                 <Link to={`/highlights/pink-info/women-schemes/${scheme.id}`} className="block relative w-full h-[120px] sm:h-[130px] lg:h-[138px] rounded-xl overflow-hidden mb-2.5 bg-pink-50/50 shadow-2xs">
                   <img
-                    src={scheme.image}
+                    src={schemeImg}
                     alt={scheme.title}
                     className="h-full w-full object-fill transition-transform duration-500 ease-out group-hover:scale-108"
                     loading="lazy"
@@ -52,7 +56,7 @@ function WomenSchemes() {
                 <div className="flex flex-col justify-between flex-1 px-1.5">
                   <div>
                     <Link to={`/highlights/pink-info/women-schemes/${scheme.id}`}>
-                      <h3 className="font-serif font-bold text-[13px] sm:text-[14px] text-[#102849] leading-snug mb-1.5 line-clamp-2 group-hover:text-[#e60067] transition-colors min-h-[38px]">
+                      <h3 className="font-serif font-bold text-[13px] sm:text-[14px] text-[#102849] text-center leading-snug mb-1.5 line-clamp-2 group-hover:text-[#e60067] transition-colors min-h-[38px]">
                         {t(`womenSchemesPage.items.${scheme.id}.title`, { defaultValue: scheme.title })}
                       </h3>
                     </Link>
@@ -72,7 +76,8 @@ function WomenSchemes() {
                   </div>
                 </div>
               </div>
-            ))}
+            );
+          })}
           </div>
 
           {/* Girl Child Education & Scholarship Schemes (4 Horizontal Cards) */}

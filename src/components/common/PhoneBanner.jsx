@@ -27,15 +27,15 @@ export default function PhoneBanner() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-100/70 to-pink-100/95 sm:hidden z-0"></div>
 
-      <div className="relative z-10 flex flex-col justify-center h-full ml-[41%] sm:ml-[45%] lg:ml-[45%] w-[58%] sm:w-[45%] lg:w-[40%] text-[#102849] pr-2 sm:pr-0">
+      <div className="relative z-10 flex flex-col justify-center h-full ml-[41%] sm:ml-[45%] lg:ml-[45%] w-[58%] sm:w-[52%] lg:w-[50%] text-[#102849] pr-2 sm:pr-0">
         
         {/* Title */}
         <h2 
-          className={`font-serif text-[18px] sm:text-[28px] md:text-[36px] lg:text-[42px] font-bold leading-[1.15] sm:leading-tight transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] delay-300 ${
+          className={`font-serif text-[17px] sm:text-[26px] md:text-[34px] lg:text-[40px] font-bold leading-[1.15] sm:leading-tight transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] delay-300 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-[#e60067]">{t("phoneBanner.titlePink", { defaultValue: "Pink Shakti App" })}</span>
+          <span className="text-[#e60067]">{t("phoneBanner.titlePink", { defaultValue: "Pink Shakti Women Safety App" })}</span>
           <span className="block text-[#102849]">{t("phoneBanner.titleNavy", { defaultValue: "Now On Your Mobile" })}</span>
         </h2>
 
@@ -61,8 +61,8 @@ export default function PhoneBanner() {
         </div>
       </div>
 
-      {/* MODERN QR CODE */}
-      <a 
+      {/* MODERN QR CODE (Commented out) */}
+      {/* <a 
         href="https://play.google.com/store/apps/details?id=com.inaequalisconsulting.pinkshakti"
         target="_blank"
         rel="noopener noreferrer"
@@ -82,7 +82,7 @@ export default function PhoneBanner() {
         <p className="mt-1.5 text-center text-[10px] md:text-[11px] lg:text-[12px] font-bold leading-tight text-[#e60067]">
           {t("phoneBanner.scanTitle", { defaultValue: "Scan to Download" })}<br />{t("phoneBanner.scanSubtitle", { defaultValue: "Pink Shakti App" })}
         </p>
-      </a>
+      </a> */}
     </section>
   );
 }

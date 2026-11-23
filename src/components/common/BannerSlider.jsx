@@ -8,7 +8,7 @@ export default function BannerSlider({
   autoPlay = true,
   autoPlayInterval = 5000,
   showArrows = true,
-  height = 'h-[220px] sm:h-[300px] md:h-[330px] lg:h-[450px]',
+  height = 'h-[240px] sm:h-[310px] md:h-[360px] lg:h-[500px]',
   objectFit = 'object-cover object-fill lg:object-fill',
   className = '',
 }) {

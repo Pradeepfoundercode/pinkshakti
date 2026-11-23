@@ -29,6 +29,7 @@ import cardBgImage4 from "../assets/features/Glossy Pink City Map Banner.png"
 import cardBgImage5 from "../assets/features/Pink Shield of Knowledge Books.png"
 import cardBgImage6 from "../assets/features/Serene Pink Wellness Woman with Health Icons.png"
 import cardBgImage7 from "../assets/features/Pink India Map Analytics Banner.png"
+import cardBgImage7Hi from "../assets/features/उत्तर_प्रदेश_राज्य_महिला_आयोग_Banner-removebg-preview.png"
 import cardBgImage8 from "../assets/features/Pink Emergency Call Safety Illustration.png"
 import cardBgImage9 from "../assets/features/Pink One-Stop Center Building.png"
 
@@ -87,6 +88,7 @@ export const featuresList = [
     description: "View crime data, trends and safety insights for a safer Uttar Pradesh.",
     link: "/highlights/state-women-commission",
     bgImage: cardBgImage7,
+    bgImageHi: cardBgImage7Hi,
     icon: stateWomenCommissionIcon,
   },
   {

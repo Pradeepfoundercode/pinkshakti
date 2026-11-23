@@ -76,7 +76,7 @@ function WomenLaws() {
                   {/* Right Column: Exact Heading & Full Content */}
                   <div className="flex flex-col justify-start space-y-4">
                     {/* Law Title */}
-                    <h2 className="font-serif text-xl sm:text-2xl lg:text-[25px] font-bold text-[#824497] leading-tight">
+                    <h2 className="font-serif text-xl sm:text-2xl lg:text-[25px] font-bold text-[#824497] leading-tight text-center">
                       {title}
                     </h2>
 

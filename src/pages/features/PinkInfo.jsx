@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { ArrowRight, Landmark, Gavel, ShieldCheck, Briefcase } from 'lucide-react'
 import BannerSlider from '../../components/common/BannerSlider'
 import govtSchemeBanner from '../../assets/women-schemes/govt_scheme.jpg'
-import cardBgImage from "../../assets/pinkInfo/e726b4cb-7e86-4313-8089-c7a40539f54c.png"
-import cardBgImage2 from "../../assets/pinkInfo/97994605-1eef-4eee-9ffe-ab5bb70bf8f5.png"
-import cardBgImage3 from "../../assets/pinkInfo/1e1024c3-4848-4eec-8050-2ccb3630466a.png"
-import cardBgImage4 from "../../assets/pinkInfo/ccbbf1cb-259c-4315-9350-54a8a73b61e5.png"
+import cardBgImage from "../../assets/pinkInfo/Lavender Campus Welcome Banner.png"
+import cardBgImage2 from "../../assets/pinkInfo/Lavender Justice and Leadership Banner.png"
+import cardBgImage3 from "../../assets/pinkInfo/Lavender Dreams Promotional Banner.png"
+import cardBgImage4 from "../../assets/pinkInfo/Lavender Safe Workplace Office Banner.png"
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 function PinkInfo() {

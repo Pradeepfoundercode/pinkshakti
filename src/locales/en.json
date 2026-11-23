@@ -11,6 +11,7 @@
     "getApp": "Get The App"
   },
   "footer": {
+    "home": "Home",
     "tagline": "WOMEN SAFETY | AWARENESS | EMPOWERMENT",
     "description": "Empowering women through awareness, rapid response helplines, and dedicated one-stop support centers.",
     "quickLinksTitle": "Quick Links",
@@ -31,7 +32,7 @@
   },
   "phoneBanner": {
     "badge": "DOWNLOAD NOW",
-    "titlePink": "Pink Shakti App",
+    "titlePink": "Pink Shakti Women Safety App",
     "titleNavy": "Now On Your Mobile",
     "description": "A Safer, Empowered and Informed You – Always.",
     "scanTitle": "Scan to Download",
@@ -345,6 +346,10 @@
       },
       "analytics": {
         "title": "Crime Data Analytics",
+        "desc": "View crime data, trends and safety insights for a safer Uttar Pradesh."
+      },
+      "stateWomenCommission": {
+        "title": "State Women Commission",
         "desc": "View crime data, trends and safety insights for a safer Uttar Pradesh."
       },
       "helplines": {
@@ -849,7 +854,7 @@
         "desc": "For the safety and social and economic empowerment of women and girls, an initiative has been taken by the Uttar Pradesh government in the form of 181-Women Helpline. 181 is a toll free number, which works 24x7. On the women's helpline, any woman and girl who is suffering from adverse circumstances or needs any other problem or need to be fulfilled or advised can get help by calling the toll free number. This helpline has been integrated with 112 centralized call centers in Lucknow in the year 2020-21. When a woman in distress calls, the trained counselors of the call center provide counseling to the woman. Since the inception of the scheme, 5.57 lakh women have been provided assistance under the scheme."
       },
       "6": {
-        "title": "One Stop Center (Sakhi)",
+        "title": "One Stop Center",
         "desc": "Under the scheme, all the necessary services to the women victims of violence like short stay (five days), medical aid, counseling services, legal aid and police assistance etc. are provided under one roof. At present one stop centers are being operated in all the districts of the state. Since the inception of the scheme, a total of 1.49 lakh cases have been referred to the one stop centers of the state."
       },
       "7": {

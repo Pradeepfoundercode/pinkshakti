@@ -8,7 +8,7 @@ import PhoneBanner from '../../components/common/PhoneBanner';
 export default function WomenSchemsDetails() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const scheme = womenSchemesList.find((s) => s.id === parseInt(id, 10)) || womenSchemesList[0];
 
@@ -46,7 +46,7 @@ export default function WomenSchemsDetails() {
                         {/* Left Column: Image (wider width, same height) */}
                         <div className="lg:col-span-6 flex items-start justify-center pt-2">
                             <img
-                                src={scheme.detailImage || scheme.image}
+                                src={scheme.detailImage || ((i18n.language?.startsWith('hi') && scheme.imageHi) ? scheme.imageHi : (scheme.imageEn || scheme.image))}
                                 alt={title}
                                 className="w-full max-w-[660px] h-auto sm:h-[385px] object-fill rounded-2xl"
                             />
@@ -56,7 +56,7 @@ export default function WomenSchemsDetails() {
                         <div className="lg:col-span-6 flex flex-col justify-start">
                             {scheme.schemeText ? (
                                 <div className="space-y-5">
-                                    <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#824497] leading-tight">
+                                    <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#824497] leading-tight text-center">
                                         {title}
                                     </h1>
 
@@ -100,7 +100,7 @@ export default function WomenSchemsDetails() {
                                 </div>
                             ) : (
                                 <div className="space-y-5">
-                                    <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#102849] leading-tight">
+                                    <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#102849] leading-tight text-center">
                                         {title}
                                     </h1>
 

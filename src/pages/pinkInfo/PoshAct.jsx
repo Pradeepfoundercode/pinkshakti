@@ -17,22 +17,45 @@ import {
   MapPin,
   CheckCircle2,
   FileCheck,
-  AlertCircle
+  AlertCircle,
+  X
 } from 'lucide-react'
 import BannerSlider from '../../components/common/BannerSlider'
 import poshBanner from '../../assets/posh-act/POSH 1.jpg'
 import poshActImage from '../../assets/posh-act/post_act2.jpeg'
 import poshActImageHi from '../../assets/women-rights/3.png'
-import sheboxImage from '../../assets/posh-act/download.png'
+import sheboxImage from '../../assets/posh-act/WhatsApp Image 2026-11-21 at 12.38.01 PM.jpeg'
 import PhoneBanner from '../../components/common/PhoneBanner'
 
 function PoshAct() {
   const { t, i18n } = useTranslation()
   const [isLoaded, setIsLoaded] = useState(false)
+  const [previewImage, setPreviewImage] = useState(null)
+  const [isZoomed, setIsZoomed] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
   }, [])
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setPreviewImage(null)
+        setIsZoomed(false)
+      }
+    }
+    if (previewImage) {
+      document.body.style.overflow = 'hidden'
+      window.addEventListener('keydown', handleKeyDown)
+    } else {
+      document.body.style.overflow = 'unset'
+      setIsZoomed(false)
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [previewImage])
 
   const defaultUnwelcomeActs = [
     'Physical contact and advances',
@@ -177,12 +200,21 @@ function PoshAct() {
 
           {/* UPER: Image on Top (Showcase Card) */}
           <div className="w-full max-w-[700px] mx-auto mb-5">
-            <div className="bg-white rounded-2xl border border-pink-100 shadow-[0_4px_18px_-4px_rgba(230,0,103,0.08)] overflow-hidden">
-              <div className="p-2 sm:p-2.5 bg-gradient-to-b from-pink-50/50 to-white flex justify-center">
+            <div 
+              onClick={() => {
+                setPreviewImage({
+                  src: i18n.language === 'hi' ? poshActImageHi : poshActImage,
+                  alt: t('poshActPage.imageAlt', { defaultValue: 'Right Against Workplace Harassment - PoSH Act 2013' })
+                });
+                setIsZoomed(false);
+              }}
+              className="group cursor-pointer bg-white rounded-2xl border border-pink-100 shadow-[0_4px_18px_-4px_rgba(230,0,103,0.08)] hover:shadow-[0_8px_25px_-4px_rgba(230,0,103,0.18)] transition-all duration-300 overflow-hidden"
+            >
+              <div className="p-2 sm:p-2.5 bg-gradient-to-b from-pink-50/50 to-white flex justify-center overflow-hidden">
                 <img
                   src={i18n.language === 'hi' ? poshActImageHi : poshActImage}
                   alt={t('poshActPage.imageAlt', { defaultValue: 'Right Against Workplace Harassment - PoSH Act 2013' })}
-                  className="w-full h-auto max-h-[350px] object-cover sm:object-fill rounded-xl border border-pink-100/90 shadow-2xs"
+                  className="w-full h-auto max-h-[350px] object-cover sm:object-fill rounded-xl border border-pink-100/90 shadow-2xs transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                 />
               </div>
             </div>
@@ -565,12 +597,21 @@ function PoshAct() {
 
           {/* UPER: SHe-Box Image on Top (Showcase Card) */}
           <div className="w-full max-w-[620px] mx-auto mb-5">
-            <div className="bg-white rounded-2xl border border-pink-100 shadow-[0_4px_18px_-4px_rgba(230,0,103,0.08)] overflow-hidden">
-              <div className="p-2 sm:p-2.5 bg-gradient-to-b from-pink-50/50 to-white flex justify-center">
+            <div 
+              onClick={() => {
+                setPreviewImage({
+                  src: sheboxImage,
+                  alt: t('poshActPage.shebox.imageAlt', { defaultValue: 'SHe-Box Sexual Harassment Complaints Portal' })
+                });
+                setIsZoomed(false);
+              }}
+              className="group cursor-pointer bg-white rounded-2xl border border-pink-100 shadow-[0_4px_18px_-4px_rgba(230,0,103,0.08)] hover:shadow-[0_8px_25px_-4px_rgba(230,0,103,0.18)] transition-all duration-300 overflow-hidden"
+            >
+              <div className="p-2 sm:p-2.5 bg-gradient-to-b from-pink-50/50 to-white flex justify-center overflow-hidden">
                 <img
                   src={sheboxImage}
                   alt={t('poshActPage.shebox.imageAlt', { defaultValue: 'SHe-Box Sexual Harassment Complaints Portal' })}
-                  className="w-full h-auto max-h-[320px] object-cover sm:object-fill rounded-xl border border-pink-100/90 shadow-2xs"
+                  className="w-full h-auto max-h-[320px] object-cover sm:object-fill rounded-xl border border-pink-100/90 shadow-2xs transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                 />
               </div>
             </div>
@@ -728,6 +769,47 @@ function PoshAct() {
           </div>
         </section>
       </main>
+
+      {/* Lightbox / Image Preview Modal */}
+      {previewImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-2 sm:p-4 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => {
+            setPreviewImage(null)
+            setIsZoomed(false)
+          }}
+          role="dialog"
+          aria-modal="true"
+        >
+          {/* Close button FIXED to screen's top-right corner on ALL devices */}
+          <button
+            type="button"
+            onClick={() => {
+              setPreviewImage(null)
+              setIsZoomed(false)
+            }}
+            className="fixed right-4 top-4 z-[60] flex h-9 w-9 sm:h-10 sm:w-10 cursor-pointer items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition-colors hover:bg-[#e60067]"
+            aria-label="Close image preview"
+          >
+            <X className="h-5 w-5 sm:h-6 sm:w-6" />
+          </button>
+
+          {/* Modal Content - ONLY Image (No Title/Text) */}
+          <div
+            className="relative flex items-center justify-center max-h-[92vh] max-w-[95vw] lg:max-w-6xl overflow-hidden rounded-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={previewImage.src}
+              alt={previewImage.alt || 'Preview'}
+              onClick={() => setIsZoomed(!isZoomed)}
+              className={`max-h-[88vh] max-w-full rounded-xl object-contain transition-transform duration-300 select-none ${
+                isZoomed ? 'scale-150 sm:scale-[1.75] cursor-zoom-out' : 'scale-100 cursor-zoom-in'
+              }`}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Bottom Phone Banner */}
       <div>
