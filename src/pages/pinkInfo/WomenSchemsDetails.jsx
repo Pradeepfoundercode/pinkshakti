@@ -61,7 +61,7 @@ export default function WomenSchemsDetails() {
                         <div className="lg:col-span-6 flex flex-col justify-start">
                             {scheme.schemeText ? (
                                 <div className="space-y-5">
-                                    <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#824497] leading-tight text-center">
+                                    <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#824497] leading-snug pt-1 text-center">
                                         {title}
                                     </h1>
 
@@ -105,7 +105,7 @@ export default function WomenSchemsDetails() {
                                 </div>
                             ) : (
                                 <div className="space-y-5">
-                                    <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#102849] leading-tight text-center">
+                                    <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#102849] leading-snug pt-1 text-center">
                                         {title}
                                     </h1>
 

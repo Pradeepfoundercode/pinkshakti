@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Globe, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { motion, useInView, animate } from "framer-motion"; 
+import { motion, useInView, animate } from "framer-motion";
 import logo from "../../assets/logo/image.png";
 import communitiesLogo from "../../assets/logo/communities.png";
 import { getSocialMediaContent } from "../../services/social.service";
@@ -42,7 +42,7 @@ const cleanUrl = (url) => {
 const getSocialIcon = (platform = "", icon = "") => {
   const p = (platform || "").toLowerCase();
   const i = (icon || "").toLowerCase();
-  
+
   if (p.includes("link") || i.includes("link")) {
     return <svg className="h-4.5 w-4.5 fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>;
   }
@@ -86,26 +86,12 @@ export default function Footer() {
   const [visitorCount, setVisitorCount] = useState(93211);
 
   useEffect(() => {
-    const cachedData = sessionStorage.getItem("pinkshakti_footer_data");
-    if (cachedData) {
-      try {
-        const { links, visitors } = JSON.parse(cachedData);
-        if (links?.length) setSocialLinks(links);
-        if (visitors) setVisitorCount(visitors);
-        return;
-      } catch (err) {
-        console.error("Cache parsing error:", err);
-      }
-    }
-
     let isMounted = true;
     getSocialMediaContent()
       .then((res) => {
         if (!isMounted) return;
-        let formattedLinks = [];
-        let totalVisitors = null;
         if (res?.status && res?.social_media?.data?.length > 0) {
-          formattedLinks = res.social_media.data
+          const formattedLinks = res.social_media.data
             .filter((item) => item.status === "1" || item.status === 1 || item.status === undefined)
             .sort((a, b) => Number(a.sort_order || 0) - Number(b.sort_order || 0))
             .map((item) => ({
@@ -117,15 +103,11 @@ export default function Footer() {
           if (formattedLinks.length > 0) setSocialLinks(formattedLinks);
         }
         if (res?.status && res?.visitors?.total) {
-          totalVisitors = res.visitors.total;
-          setVisitorCount(totalVisitors);
+          setVisitorCount(res.visitors.total);
         }
-        sessionStorage.setItem("pinkshakti_footer_data", JSON.stringify({
-          links: formattedLinks.length > 0 ? formattedLinks : defaultSocialLinks,
-          visitors: totalVisitors || 93211,
-        }));
       })
       .catch((err) => console.error("Failed to fetch social media & visitors:", err));
+
     return () => { isMounted = false; };
   }, []);
 
@@ -140,9 +122,9 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#ea2163] text-white overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 pt-8 sm:pt-10 lg:pt-12 pb-7 sm:pb-8">
-        
+
         {/* Animated Staggered Grid */}
-        <motion.div 
+        <motion.div
           variants={footerStagger}
           initial="hidden"
           whileInView="visible"

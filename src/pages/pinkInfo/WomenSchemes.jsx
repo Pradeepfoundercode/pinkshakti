@@ -43,7 +43,7 @@ function WomenSchemes() {
                 className={`group flex flex-col justify-between rounded-2xl pb-2 border border-pink-100/90 bg-white shadow-[0_4px_20px_-4px_rgba(230,0,103,0.06)] hover:shadow-xl hover:border-[#e60067]/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden cursor-default ${isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.98]'
                   }`}
               >
-                <Link to={`/highlights/pink-info/women-schemes/${scheme.id}`} className="block relative w-full h-[120px] sm:h-[130px] lg:h-[138px] rounded-xl overflow-hidden mb-2.5 bg-pink-50/50 shadow-2xs">
+                <Link to={`/highlights/pink-info/women-schemes/${scheme.id}`} className="block relative w-full h-[120px] sm:h-[130px] lg:h-[138px] rounded-xl overflow-hidden mb-3.5 bg-pink-50/50 shadow-2xs">
                   <img
                     src={schemeImg}
                     alt={scheme.title}
@@ -55,8 +55,8 @@ function WomenSchemes() {
 
                 <div className="flex flex-col justify-between flex-1 px-1.5">
                   <div>
-                    <Link to={`/highlights/pink-info/women-schemes/${scheme.id}`}>
-                      <h3 className="font-serif font-bold text-[13px] sm:text-[14px] text-[#102849] text-center leading-snug mb-1.5 line-clamp-2 group-hover:text-[#e60067] transition-colors min-h-[38px]">
+                    <Link to={`/highlights/pink-info/women-schemes/${scheme.id}`} className="block pt-1">
+                      <h3 className="font-serif font-bold text-[13px] sm:text-[14px] text-[#102849] text-center leading-normal mb-1.5 line-clamp-2 group-hover:text-[#e60067] transition-colors min-h-[42px] pt-0.5">
                         {t(`womenSchemesPage.items.${scheme.id}.title`, { defaultValue: scheme.title })}
                       </h3>
                     </Link>
@@ -95,7 +95,7 @@ function WomenSchemes() {
                     {/* Logo & Title in one row side-by-side */}
                     <Link
                       to={`/highlights/pink-info/women-schemes/${card.id}`}
-                      className="flex items-center gap-1.5 sm:gap-2 mb-1.5"
+                      className="flex items-center gap-1.5 sm:gap-2 mb-1.5 pt-0.5"
                     >
                       <div className="h-9 w-9 sm:h-11 sm:w-11 shrink-0 flex items-center justify-center">
                         <img
@@ -105,7 +105,7 @@ function WomenSchemes() {
                           loading="lazy"
                         />
                       </div>
-                      <h4 className="font-serif font-bold text-[12px] sm:text-[12.5px] text-[#102849] group-hover:text-[#e60067] leading-tight transition-colors line-clamp-2">
+                      <h4 className="font-serif font-bold text-[12px] sm:text-[12.5px] text-[#102849] group-hover:text-[#e60067] leading-normal transition-colors line-clamp-2 pt-1 pb-0.5">
                         {t(`womenSchemesPage.items.${card.id}.cardTitle`, {
                           defaultValue: t(`womenSchemesPage.items.${card.id}.title`, {
                             defaultValue: card.cardTitle || card.title

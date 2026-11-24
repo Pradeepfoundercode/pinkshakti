@@ -51,6 +51,12 @@ import detailImg12 from '../assets/women-schemes/download (1).png'; // CBSE Meri
 import detailImg13 from '../assets/women-schemes/download (2).png'; // CBSE UDAAN
 import detailImg14 from '../assets/women-schemes/download (3).png'; // Post Graduate Indira Gandhi
 
+// Detail infographic cards for Girl Child Education & Scholarships (Hindi)
+import detailImg11Hi from '../assets/women-schemes/WhatsApp Image 2026-11-23 at 6.13.29 PM.jpeg'; // KVS Single Girl Child (Hindi)
+import detailImg12Hi from '../assets/women-schemes/WhatsApp Image 2026-11-23 at 6.13.05 PM.jpeg'; // CBSE Merit Scholarship (Hindi)
+import detailImg13Hi from '../assets/women-schemes/WhatsApp Image 2026-11-23 at 6.13.04 PM (1).jpeg'; // CBSE UDAAN (Hindi)
+import detailImg14Hi from '../assets/women-schemes/WhatsApp Image 2026-11-23 at 6.13.04 PM.jpeg'; // Post Graduate Indira Gandhi (Hindi)
+
 // Logos & Photos for Scholarship Cards
 import kvsLogo from '../assets/pinkInfo/Kendriya Vidyalaya Emblem.png';
 import cbseLogo from '../assets/pinkInfo/577ff876-f303-4736-beb2-c42703e3490b.png';
@@ -71,7 +77,7 @@ export const womenSchemesList = [
     detailImage: detailImg1En,
     detailImageEn: detailImg1En,
     detailImageHi: detailImg1Hi,
-    title: "Destitute Women's Pension After Husband's Death",
+    title: 'Vidhwa Pension Yojana',
     desc: "Under the scheme, a pension of Rs 1000/- per month is paid to the eligible beneficiaries. Under this scheme, such women above 18 years of age who are permanent residents of Uttar Pradesh and whose husband has died and whose family annual income does not exceed Rs 2.00 lakh, will be transferred to their bank accounts as eligible beneficiaries. Is performed. In the financial year 2016-17, a total of 17.31 lakh beneficiaries were being provided pension benefits under the Destitute Women Pension Scheme after the death of their husband. Whereas in just 6 years, a total of 11.31 lakh new beneficiary women have been identified and linked to the scheme under this scheme. Thus, now a total of 28.62 lakh women are being given pension under the scheme.",
     applyUrl: 'https://sspy-up.gov.in/',
     portalText: 'sspy-up.gov.in',
@@ -86,7 +92,7 @@ export const womenSchemesList = [
     detailImage: detailImg2En,
     detailImageEn: detailImg2En,
     detailImageHi: detailImg2Hi,
-    title: 'Chief Minister Kanya Sumangala Yojana',
+    title: 'Mukhyamantri Kanya Sumangala Yojana',
     desc: 'Chief Minister Kanya Sumangala Yojana was launched in the year 2019 to establish equal sex ratio in the state, prevent female feticide, strengthen the health and education of girls, provide financial assistance to the families of girls and develop positive thinking among the general public towards the girl child. Under the scheme, such beneficiaries are eligible whose family is resident of Uttar Pradesh, whose family annual income is maximum Rs 3.00 lakh and whose family has maximum two children. In total 6 categories, Rs. 2000/- at the time of birth, Rs. 1000/- at the time of completion of one year vaccination, Rs. 2000/- at the time of admission in class-1, Rs. 2000/- at the time of admission in class-6, Rs. 2000/- at the time of admission in class-9. At the time of admission, Rs. 3000/- is given and after passing 10th/12th examination, Rs. 5000/- is given on taking admission in degree or diploma course of two years or more. A total of 15.87 lakh eligible girls have been benefited under the scheme so far.',
     applyUrl: 'https://mksy.up.gov.in/women_welfare/citizen/guest_login.php',
     portalText: 'mksy.up.gov.in',
@@ -113,7 +119,7 @@ export const womenSchemesList = [
     detailImage: detailImg4En,
     detailImageEn: detailImg4En,
     detailImageHi: detailImg4Hi,
-    title: 'Rani Lakshmibai Children and Women Honor Fund',
+    title: 'Rani Lakshmibai Bal Evam Mahila Samman Nidhi',
     desc: 'The state government is extremely sensitive towards the victims of heinous crimes against women and girls. Under the scheme, a total of 701 women and girls have been given this assistance so far in the year 2022-23, along with which a total of 6,481 women and girls have been given compensation money under the scheme.',
     applyUrl: 'https://www.msk.upsdc.gov.in/',
     portalText: 'msk.upsdc.gov.in',
@@ -128,7 +134,7 @@ export const womenSchemesList = [
     detailImage: detailImg5En,
     detailImageEn: detailImg5En,
     detailImageHi: detailImg5Hi,
-    title: "181 Women's Helpline",
+    title: '181 Mahila Helpline',
     desc: "For the safety and social and economic empowerment of women and girls, an initiative has been taken by the Uttar Pradesh government in the form of 181-Women Helpline. 181 is a toll free number, which works 24x7. On the women's helpline, any woman and girl who is suffering from adverse circumstances or needs any other problem or need to be fulfilled or advised can get help by calling the toll free number. This helpline has been integrated with 112 centralized call centers in Lucknow in the year 2020-21. When a woman in distress calls, the trained counselors of the call center provide counseling to the woman. Since the inception of the scheme, 5.57 lakh women have been provided assistance under the scheme.",
     category: 'Emergency & Helpline',
   },
@@ -167,7 +173,7 @@ export const womenSchemesList = [
     detailImage: detailImg8En,
     detailImageEn: detailImg8En,
     detailImageHi: detailImg8Hi,
-    title: 'Mission Vatsalya Yojana',
+    title: 'Mission Vatsalya',
     desc: "At present, under Mission Vatsalya Yojana, institutions are being run in the state with high level facilities for protection of children, modern technology, better opportunities for education, skill development and employment. A total of 58 government institutions (27 Government Observation Homes, 08 Children's Home (Boys), 05 Children's Home (Girls), 05 Children's Home (Infant), 05 Specialist Adoption Agency, 02 Special Home, 01 Place of Safety, 05 After Care Organization) is operated. Besides, under PPP model, two government specialized institutions for special children are running in Lucknow district with the help of voluntary organizations. Construction work is being done in districts Rae Bareli, Chitrakoot, Mirzapur, Kanpur city. Our effort is to provide better opportunities to the children living in these to become self-reliant. Psychosocial counselors have been appointed with the help of the Health Department for counseling of children living in the homes run by the department. A total of 1275 children have been rehabilitated through adoption from the financial year 2017-18 to 2022-23. Last year till now, 1007 children have been benefited through sponsorship and 05 children have been benefited under foster care. So far, a total of 75,811 children have been reunited with their parents/guardians in the state from 2017-18 to 2023-24. Also, in the last years, more than 3,500 adolescent girls and women have been given skill training from these homes. To prevent child marriage, a state level monitoring committee and a district level task force have been formed and more than 1436 potential child marriages have been stopped. Rules are also being made by the state for effective implementation of the Child Marriage Act.",
     category: 'Child Protection & Rehabilitation',
   },
@@ -179,7 +185,7 @@ export const womenSchemesList = [
     detailImage: detailImg9En,
     detailImageEn: detailImg9En,
     detailImageHi: detailImg9Hi,
-    title: 'Shelter Facility for Destitute Women',
+    title: 'Nirashrit Mahila Aashray Grih',
     desc: "For the protection and rehabilitation of women, 09 women's shelters, 1 protection home, 1 cell for mentally retarded women, 1 government old and disabled home and 13 Shakti Sadans are being operated in the state, in which about 700 women reside. Through which women and girls who are victims of human prostitution, in need of protection, made homeless by social, economic, natural calamities, domestic violence, family disputes and exploitation in brothels or other places, get shelter and access to skill development and mainstreaming of the society. An attempt is being made to connect. In Vrindavan, 'Krishna Kutir', a shelter with a residential capacity of 1000 women, is being run by the department for the rehabilitation of destitute women and to improve their living conditions. To provide safe and affordable residential facilities to working women, 8 Sakhi Niwas (Working Women Hostels) are being operated.",
     category: 'Shelter & Safe Housing',
   },
@@ -198,7 +204,11 @@ export const womenSchemesList = [
   {
     id: 11,
     image: detailImg11,
+    imageEn: detailImg11,
+    imageHi: detailImg11Hi,
     detailImage: detailImg11,
+    detailImageEn: detailImg11,
+    detailImageHi: detailImg11Hi,
     logo: kvsLogo,
     girlImage: kvsGirl,
     title: 'KVS SINGLE GIRL CHILD ADMISSION SCHEME',
@@ -212,7 +222,11 @@ export const womenSchemesList = [
   {
     id: 12,
     image: detailImg12,
+    imageEn: detailImg12,
+    imageHi: detailImg12Hi,
     detailImage: detailImg12,
+    detailImageEn: detailImg12,
+    detailImageHi: detailImg12Hi,
     logo: cbseLogo,
     girlImage: cbseGirl,
     title: 'CBSE Merit Scholarship Scheme',
@@ -226,7 +240,11 @@ export const womenSchemesList = [
   {
     id: 13,
     image: detailImg13,
+    imageEn: detailImg13,
+    imageHi: detailImg13Hi,
     detailImage: detailImg13,
+    detailImageEn: detailImg13,
+    detailImageHi: detailImg13Hi,
     logo: udaanLogo,
     girlImage: udaanGirl,
     title: 'CBSE UDAAN Scheme',
@@ -240,7 +258,11 @@ export const womenSchemesList = [
   {
     id: 14,
     image: detailImg14,
+    imageEn: detailImg14,
+    imageHi: detailImg14Hi,
     detailImage: detailImg14,
+    detailImageEn: detailImg14,
+    detailImageHi: detailImg14Hi,
     logo: indiraLogo,
     girlImage: indiraGirl,
     title: 'POST GRDUATE INDIRA GANDHI SCHOLARSHIP FOR SINGLE GIRL CHILD',
