@@ -39,21 +39,44 @@ export default function WomenSchemsDetails() {
         ? (scheme.detailImageHi || scheme.imageHi || scheme.detailImage || scheme.detailImageEn || scheme.image)
         : (scheme.detailImageEn || scheme.detailImage || scheme.imageEn || scheme.image);
 
+    const [imgLoaded, setImgLoaded] = React.useState(false);
+
+    useEffect(() => {
+        setImgLoaded(false);
+        if (!displayImage) return;
+        const img = new Image();
+        img.src = displayImage;
+        if (img.complete && img.naturalWidth > 0) {
+            setImgLoaded(true);
+        } else {
+            img.onload = () => setImgLoaded(true);
+            img.onerror = () => setImgLoaded(true);
+        }
+    }, [displayImage]);
+
     return (
         <div className="min-h-screen bg-transparent text-[#102849] flex flex-col justify-between">
             {/* Main Details Section */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">
                 <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl shadow-pink-500/5 border border-pink-100">
 
                     {/* 2-Column Layout: Left Image, Right Content (Top-aligned) */}
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
                         {/* Left Column: Image (wider width, same height) */}
-                        <div className="lg:col-span-6 flex items-start justify-center pt-2">
+                        <div className="lg:col-span-6 flex items-start justify-center pt-2 relative min-h-[260px] sm:min-h-[385px] w-full">
+                            {!imgLoaded && (
+                                <div className="w-full max-w-[660px] h-[260px] sm:h-[385px] rounded-2xl bg-pink-100/40 animate-pulse flex flex-col items-center justify-center border border-pink-200/40">
+                                    <div className="w-8 h-8 border-3 border-pink-300 border-t-[#e60067] rounded-full animate-spin"></div>
+                                </div>
+                            )}
                             <img
                                 src={displayImage}
                                 alt={title}
-                                className="w-full max-w-[660px] h-auto sm:h-[385px] object-fill rounded-2xl"
+                                onLoad={() => setImgLoaded(true)}
+                                className={`w-full max-w-[660px] h-auto sm:h-[385px] object-fill rounded-2xl transition-opacity duration-300 ${
+                                    imgLoaded ? 'opacity-100 block' : 'opacity-0 hidden'
+                                }`}
                             />
                         </div>
 
@@ -187,7 +210,7 @@ export default function WomenSchemsDetails() {
                     </div>
 
                 </div>
-            </main>
+            </div>
 
             {/* Mobile Download Banner */}
             <div className="mt-8">

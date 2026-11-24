@@ -48,7 +48,6 @@ function WomenSchemes() {
                     src={schemeImg}
                     alt={scheme.title}
                     className="h-full w-full object-fill transition-transform duration-500 ease-out group-hover:scale-108"
-                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                 </Link>
@@ -102,7 +101,6 @@ function WomenSchemes() {
                           src={card.logo}
                           alt="Logo"
                           className="max-h-full max-w-full object-contain"
-                          loading="lazy"
                         />
                       </div>
                       <h4 className="font-serif font-bold text-[12px] sm:text-[12.5px] text-[#102849] group-hover:text-[#e60067] leading-normal transition-colors line-clamp-2 pt-1 pb-0.5">
@@ -139,7 +137,6 @@ function WomenSchemes() {
                     src={card.girlImage}
                     alt={card.cardTitle || card.title}
                     className="h-full w-auto max-h-[135px] sm:max-h-[145px] object-contain object-bottom transition-transform duration-500 ease-out group-hover:scale-110"
-                    loading="lazy"
                   />
                 </Link>
               </div>

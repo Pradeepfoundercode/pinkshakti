@@ -1,62 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import PageLoader from "../components/common/PageLoader";
 
-// Extract all image URLs from <img> tags and CSS background-images inside a container
-function extractAllPageImages(container) {
-  const urls = new Set();
-  if (!container) return [];
-
-  // 1. All <img> elements
-  const imgs = container.querySelectorAll("img");
-  imgs.forEach((img) => {
-    const src = img.currentSrc || img.src;
-    if (src && !src.startsWith("data:")) {
-      urls.add(src);
-    }
-  });
-
-  // Helper to extract URLs from background-image string
-  const addFromBgString = (bgStr) => {
-    if (!bgStr || bgStr === "none") return;
-    const regex = /url\(["']?([^"')]+)["']?\)/g;
-    let match;
-    while ((match = regex.exec(bgStr)) !== null) {
-      if (match[1] && !match[1].startsWith("data:")) {
-        urls.add(match[1]);
-      }
-    }
-  };
-
-  // 2. All elements with CSS background-image (inline or computed)
-  const allElements = container.querySelectorAll("*");
-  allElements.forEach((el) => {
-    addFromBgString(el.style?.backgroundImage);
-    const computedBg = window.getComputedStyle(el).backgroundImage;
-    addFromBgString(computedBg);
-  });
-
-  return Array.from(urls);
-}
-
-// Preload a single image URL and resolve when loaded or errored
-function preloadImageUrl(url) {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.src = url;
-    if (img.complete && img.naturalWidth > 0) {
-      resolve();
-    } else {
-      img.onload = () => resolve();
-      img.onerror = () => resolve(); // never block on failed image
-    }
-  });
-}
-
 function MainLayout() {
   const { pathname } = useLocation();
+  const { i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -64,41 +15,125 @@ function MainLayout() {
     setIsLoading(true);
 
     let active = true;
+    let checkAttempts = 0;
+    const maxAttempts = 10; // Check up to 500ms for images to mount in DOM
 
-    // Small delay so React mounts the new route's elements into the DOM
-    const scanTimer = setTimeout(() => {
+    const scanAndLoad = () => {
       if (!active) return;
 
       const mainEl = document.querySelector("main");
-      const urls = extractAllPageImages(mainEl);
+      if (!mainEl) {
+        if (checkAttempts++ < maxAttempts) {
+          setTimeout(scanAndLoad, 50);
+        } else {
+          setIsLoading(false);
+        }
+        return;
+      }
 
-      if (urls.length === 0) {
+      // Collect all actual <img> elements in the page content
+      const domImgs = Array.from(mainEl.querySelectorAll("img"));
+
+      // Also collect any CSS background-images
+      const bgUrls = new Set();
+      const allEls = mainEl.querySelectorAll("*");
+      allEls.forEach((el) => {
+        const bg = el.style?.backgroundImage;
+        if (bg && bg !== "none") {
+          const m = bg.match(/url\(["']?([^"')]+)["']?\)/);
+          if (m && m[1] && !m[1].startsWith("data:")) bgUrls.add(m[1]);
+        }
+      });
+
+      // If no images are found yet, wait for React to finish mounting the route components
+      if (domImgs.length === 0 && bgUrls.size === 0 && checkAttempts++ < maxAttempts) {
+        setTimeout(scanAndLoad, 50);
+        return;
+      }
+
+      // Wait for every DOM <img> element to load AND decode before lifting the loader
+      const imgPromises = domImgs.map((img) => {
+        return new Promise((resolve) => {
+          if (img.complete && img.naturalWidth > 0) {
+            if (typeof img.decode === "function") {
+              img.decode().catch(() => {}).then(resolve);
+            } else {
+              resolve();
+            }
+            return;
+          }
+          if (img.complete && img.naturalWidth === 0 && img.src) {
+            // Broken or missing image, don't block
+            resolve();
+            return;
+          }
+          const onDone = () => {
+            img.removeEventListener("load", onDone);
+            img.removeEventListener("error", onDone);
+            if (typeof img.decode === "function" && img.naturalWidth > 0) {
+              img.decode().catch(() => {}).then(resolve);
+            } else {
+              resolve();
+            }
+          };
+          img.addEventListener("load", onDone, { once: true });
+          img.addEventListener("error", onDone, { once: true });
+        });
+      });
+
+      // Wait for any CSS background-images
+      const bgPromises = Array.from(bgUrls).map((url) => {
+        return new Promise((resolve) => {
+          const i = new Image();
+          const onDone = () => {
+            if (typeof i.decode === "function" && i.naturalWidth > 0) {
+              i.decode().catch(() => {}).then(resolve);
+            } else {
+              resolve();
+            }
+          };
+          i.onload = onDone;
+          i.onerror = resolve;
+          i.src = url;
+          if (i.complete && i.naturalWidth > 0) {
+            onDone();
+          }
+        });
+      });
+
+      const allPromises = [...imgPromises, ...bgPromises];
+
+      if (allPromises.length === 0) {
         if (active) setIsLoading(false);
         return;
       }
 
-      // Wait for all images (both <img> and CSS background-images) to fully load
-      Promise.all(urls.map(preloadImageUrl)).then(() => {
+      Promise.all(allPromises).then(() => {
         if (active) {
-          // Small buffer to allow the browser to paint the loaded images
-          setTimeout(() => {
-            if (active) setIsLoading(false);
-          }, 80);
+          // Double rAF ensures the browser has rendered the decoded images
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              if (active) setIsLoading(false);
+            });
+          });
         }
       });
-    }, 60);
+    };
 
-    // Fallback safety timeout (max 2500ms) so users never wait indefinitely on slow networks
+    // Initial check after React starts mounting
+    const timer = setTimeout(scanAndLoad, 60);
+
+    // Fallback safety timeout (3500ms) so users are never stuck permanently on slow connections
     const safetyTimeout = setTimeout(() => {
       if (active) setIsLoading(false);
-    }, 2500);
+    }, 3500);
 
     return () => {
       active = false;
-      clearTimeout(scanTimer);
+      clearTimeout(timer);
       clearTimeout(safetyTimeout);
     };
-  }, [pathname]);
+  }, [pathname, i18n.language]);
 
   return (
     <div className="flex min-h-screen flex-col w-full max-w-full overflow-x-hidden bg-[var(--color-theme,#fceaf1)] relative">
@@ -107,6 +142,7 @@ function MainLayout() {
       <Navbar />
 
       <main
+        key={`${pathname}-${i18n.language}`}
         className={`flex-1 w-full max-w-full overflow-x-hidden bg-transparent transition-opacity duration-200 ${
           isLoading ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
